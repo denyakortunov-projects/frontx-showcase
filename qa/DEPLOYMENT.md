@@ -55,3 +55,13 @@ This is a reviewable demo and proposed integration contract. It does not claim p
 - HTTP verification at 14:44:47 UTC confirmed exact fingerprint/assets/archive. Thirteen public browser checks passed, including independent green light/dark mode, compact monthly activity, calendar without scrolling and leaf-only treemap.
 - Local verification: 43 calendar/comparison checks, 17 activity/mosaic checks, 45 palette/mode geometry checks, and 17 existing utility interaction checks passed with no runtime errors. See REFINEMENTS-2026-09-25.md.
 - While this release was building, owner further requested cleaner funnel and mosaic labels. That follow-up is a separate forward patch; this verified release is its baseline.
+
+## Widget polish v0.2.2 — 2026-09-25
+
+- Source commit `403c2981a040d959e0fa1a1b0c7ea8ce4fd6c1ba`, pushed fast-forward to GitHub main; owner-authorized continuation on the same FrontX site.
+- Funnel uses a separate aligned stage/count column. Mosaic has soft colors, 8px gaps and no label plates. Revenue pulse replaces the calendar; legacy calendar URL remains compatible. Activity selected tabs use contrasting primary fill.
+- Source fingerprint `e217505009cb01b21d666e4536abacb48423b7ce4288c48ff1eb8048c8a4bbe0`; public source ZIP SHA256 `56f5948a7be75b79c79af74d140b09e484e81ae578e5f39f77d3b56a9e6d6d4a`, 87,372 bytes.
+- Hostinger deployment `01a0d910-d8de-724f-ae76-46716fd59f2a`, completed 14:55:55–14:56:24 UTC (29 seconds), existing source-archive API transport. No other sites or DNS changed.
+- Build and 71 targeted browser assertions passed; desktop/mobile and light/dark screenshots reviewed. Public HTTPS at 14:57:02 UTC matched exact manifest, assets and archive. Thirteen public browser checks passed without runtime errors.
+- Evidence: CHART-LABELS-2026-09-25.md, chart-labels-report.json, metric-tabs-report.json, public-expansion-report.json, public-browser-expansion-report.json.
+- This follow-up records release evidence and corrects repository README descriptions; deployed source remains the exact source commit above. Public handoff README/CONTRACT already describe the replacement metric.
