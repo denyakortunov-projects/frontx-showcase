@@ -1,0 +1,23 @@
+{
+  "name": "frontx-showcase",
+  "version": "0.1.0",
+  "sourceFingerprint": "de2a2f9c1c944502c3764ec0f33b73c7cfb31fd2e7a3af66d3008d3273e8b92c",
+  "files": {
+    "package.json": "8167f66a9bdacfedc88537e8d72d7daa64f1f37e4c6f08c71d8de08a6f95466a",
+    "package-lock.json": "90e39d95251c55b929c4bebf636ca58563ccdebfdc4b2a0e639e644410b12c5e",
+    "tsconfig.json": "6c420d32a164a15184293a0dea1f8938ce40310dfcd01b9814eb0b6c601aabd4",
+    "vite.config.ts": "4c176a81060f72365d86a18a1f399fb37a00a80fb68dc8ffe38e60c5f2fa7cf3",
+    "index.html": "329ef52dc71780c66f760dfaf18fbf1fdb18de1a2b817bf525ce8297c59799a0",
+    "README.md": "93e381810061b93713596209ad9e512de1a5d39b36e87e179bd1acc3faede617",
+    ".gitignore": "c953140808f0ebb9817e6fdae0975e143b048b28e8735c44a87b156852bff88a",
+    "src/WidgetFrame.tsx": "03c3628d084285dd258a70bf10cd8f69eec22aea53eb6ae42fd85579ca28a107",
+    "src/data.ts": "2b4f3b47a2856a27b042f68e0eaec468a5bbfa24aebca16745cb294027433f4e",
+    "src/main.tsx": "0ee1e7e597a88b160a3cab0925ca5a7003df7ab257f145697dc85b134b841dc1",
+    "src/style.css": "fb5a66b4c99a1e246f6dad8c57dba5fe0ad48a59cfad9f0f0318ea955365c48b",
+    "src/widgets.tsx": "4dc92cfb155612294bc6c0f919d73b77342be9a258f83b804c5a714be7996190",
+    "public/favicon.svg": "8366f114ba45bd38872a6844f8229609519f0844f3a5769ca48eb38c176179c4",
+    "public/handoff/README.md": "79ba2a03a5fdbb90746e9574bc40ddc98c45f0ae2b414357869088fb21254e20",
+    "public/handoff/CONTRACT.md": "5f756f7846a7229a1d482338672809620bed998cad381ec1e98bec0f5a2a5424"
+  },
+  "archiveSha256": "a3dff48736a16574dc06137bf144043d91b9bfa54c3be75452c156a5fd7a871d"
+}

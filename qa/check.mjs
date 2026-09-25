@@ -1,0 +1,10 @@
+import {chromium} from 'playwright';
+import fs from 'node:fs';
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1600,height:1000},reducedMotion:'reduce'});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://127.0.0.1:5198');await page.locator('.recharts-surface').first().waitFor();
+await page.screenshot({path:'qa/gallery-desktop.png',fullPage:true});
+console.log(JSON.stringify({charts:await page.locator('.recharts-surface').count(),errors,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),cards:await page.locator('.gallery-item').count()}));
+await page.goto('http://127.0.0.1:5198/?page=widget&widget=radar&width=6&height=464');await page.locator('.recharts-surface').waitFor();await page.screenshot({path:'qa/radar-desktop.png'});
+await page.setViewportSize({width:390,height:844});await page.screenshot({path:'qa/mobile.png',fullPage:true});console.log('mobile overflow',await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth));await browser.close();
