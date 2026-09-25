@@ -209,7 +209,6 @@ try {
   );
   for (const theme of ["fabric", "editorial", "terminal", "iris", "lagoon"]) {
     for (const mode of ["light", "dark"]) {
-      if (theme === "terminal" && mode === "light") continue;
       await route(`page=elements&theme=${theme}&mode=${mode}`);
       ok(
         `${theme} ${mode} tokens`,

@@ -1,0 +1,187 @@
+{
+  "base": "http://127.0.0.1:5201",
+  "checkedAt": "2026-09-25T14:40:37.879Z",
+  "checks": [
+    {
+      "name": "1600 fabric preserves light",
+      "passed": true
+    },
+    {
+      "name": "1600 fabric same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "1600 editorial preserves light",
+      "passed": true
+    },
+    {
+      "name": "1600 editorial same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "1600 terminal preserves light",
+      "passed": true
+    },
+    {
+      "name": "1600 terminal same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "1600 iris preserves light",
+      "passed": true
+    },
+    {
+      "name": "1600 iris same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "1600 lagoon preserves light",
+      "passed": true
+    },
+    {
+      "name": "1600 lagoon same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "1600 fabric preserves dark",
+      "passed": true
+    },
+    {
+      "name": "1600 fabric same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "1600 editorial preserves dark",
+      "passed": true
+    },
+    {
+      "name": "1600 editorial same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "1600 terminal preserves dark",
+      "passed": true
+    },
+    {
+      "name": "1600 terminal same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "1600 iris preserves dark",
+      "passed": true
+    },
+    {
+      "name": "1600 iris same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "1600 lagoon preserves dark",
+      "passed": true
+    },
+    {
+      "name": "1600 lagoon same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "1600 light toggle preserves green",
+      "passed": true
+    },
+    {
+      "name": "1600 Back restores dark green",
+      "passed": true
+    },
+    {
+      "name": "390 fabric preserves light",
+      "passed": true
+    },
+    {
+      "name": "390 fabric same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "390 editorial preserves light",
+      "passed": true
+    },
+    {
+      "name": "390 editorial same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "390 terminal preserves light",
+      "passed": true
+    },
+    {
+      "name": "390 terminal same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "390 iris preserves light",
+      "passed": true
+    },
+    {
+      "name": "390 iris same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "390 lagoon preserves light",
+      "passed": true
+    },
+    {
+      "name": "390 lagoon same type and geometry light",
+      "passed": true
+    },
+    {
+      "name": "390 fabric preserves dark",
+      "passed": true
+    },
+    {
+      "name": "390 fabric same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "390 editorial preserves dark",
+      "passed": true
+    },
+    {
+      "name": "390 editorial same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "390 terminal preserves dark",
+      "passed": true
+    },
+    {
+      "name": "390 terminal same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "390 iris preserves dark",
+      "passed": true
+    },
+    {
+      "name": "390 iris same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "390 lagoon preserves dark",
+      "passed": true
+    },
+    {
+      "name": "390 lagoon same type and geometry dark",
+      "passed": true
+    },
+    {
+      "name": "390 light toggle preserves green",
+      "passed": true
+    },
+    {
+      "name": "390 Back restores dark green",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

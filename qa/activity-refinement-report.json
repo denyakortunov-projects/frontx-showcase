@@ -1,0 +1,75 @@
+{
+  "base": "http://127.0.0.1:5201",
+  "checkedAt": "2026-09-25T14:39:42.621Z",
+  "checks": [
+    {
+      "name": "light 3 shows 30 days",
+      "passed": true
+    },
+    {
+      "name": "light 30 cumulative matches visible data",
+      "passed": true
+    },
+    {
+      "name": "light 6 shows 90 days",
+      "passed": true
+    },
+    {
+      "name": "light 90 cumulative matches visible data",
+      "passed": true
+    },
+    {
+      "name": "light 12 shows 365 days",
+      "passed": true
+    },
+    {
+      "name": "light 365 cumulative matches visible data",
+      "passed": true
+    },
+    {
+      "name": "light mosaic has 9 leaf tiles only",
+      "passed": true
+    },
+    {
+      "name": "light no total drawn beneath tiles",
+      "passed": true
+    },
+    {
+      "name": "dark 3 shows 30 days",
+      "passed": true
+    },
+    {
+      "name": "dark 30 cumulative matches visible data",
+      "passed": true
+    },
+    {
+      "name": "dark 6 shows 90 days",
+      "passed": true
+    },
+    {
+      "name": "dark 90 cumulative matches visible data",
+      "passed": true
+    },
+    {
+      "name": "dark 12 shows 365 days",
+      "passed": true
+    },
+    {
+      "name": "dark 365 cumulative matches visible data",
+      "passed": true
+    },
+    {
+      "name": "dark mosaic has 9 leaf tiles only",
+      "passed": true
+    },
+    {
+      "name": "dark no total drawn beneath tiles",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

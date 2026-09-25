@@ -14,7 +14,7 @@ This is a static Vite demo of proposed reusable widget compositions built on `@g
 
 The layout uses a 12-column grid. Width and height are independent: supported width spans are 3, 4, 6, 8, 9, and 12 columns; heights are M 304 px, L 464 px, and XL 624 px. Preserve the selected height while rendering each chart. In narrow containers, use one column and keep widgets in reading order. Respect intrinsic/min-content needs: a chart, title, legend, and controls must remain usable; avoid clipping labels or forcing page-wide horizontal overflow.
 
-Five showcase themes demonstrate product flexibility: Fabric blue, Editorial terracotta with serif typography, Terminal dark green, Iris violet, and Lagoon teal. Each theme has light/dark palettes except Terminal, which stays dark. The Colors page exposes the six series tokens and copyable JSON; src/themes.ts is the palette source. Themes may visibly restyle typography, palette, surfaces, borders, and radii while preserving the same data meaning and widget behavior. These are demo choices, not approved product themes.
+Five color palettes are available: Fabric blue, Editorial terracotta, Terminal green, Iris violet, and Lagoon teal. Every palette supports light and dark mode. Palette and mode are independent: the dots change colors only, the sun/moon button changes mode only. Fonts, font sizes, spacing, layout and radii remain identical across palettes and modes. The Colors page exposes the six series tokens and copyable JSON; src/themes.ts is the palette source. These are demo choices, not approved product themes.
 
 ## Handoff boundary
 
@@ -37,3 +37,7 @@ Release calendar and Build activity round out the gallery to 18 widgets. Both us
 The 20 examples use installed FrontX exports: Button, Badge, Tabs, Avatar, Accordion, Alert, Progress, Slider, Switch, Checkbox, RadioGroup, Input, Textarea, Select, DropdownMenu, Dialog, Tooltip, Popover, Skeleton, and Table. `src/Elements.tsx` is a runnable composition reference. Base UI owns keyboard and overlay behavior; CSS uses shared semantic tokens. The catalogue's updated muted background/foreground tokens correct the original tab and hover styling.
 
 Architecture references: [shadcn components](https://ui.shadcn.com/docs/components), [shadcn charts](https://ui.shadcn.com/charts), and the installed FrontX kit's API declarations. Do not initialize a second headless library in a consuming FrontX app.
+
+Token activity adapts its visible date window to its rendered width: below 360 px it shows up to 30 days, below 760 px up to 90 days, and otherwise up to 365 days. The selected period caps the window. Weekly and cumulative values are computed over that visible window. The Data tab exposes the selected source period, which may be longer than the compact view.
+
+The release calendar fits six full weeks without internal scrolling. Selecting a date opens a Base UI dialog with release details or an empty state. Audience by channel is a horizontal 100% stacked comparison with a fixed illustrative audience mix.

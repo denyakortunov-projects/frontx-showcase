@@ -17,8 +17,7 @@ export const themes = [
   {
     id: "editorial",
     name: "Editorial",
-    description:
-      "Terracotta, sage and warm neutrals, with serif headings and precise corners.",
+    description: "Terracotta, sage and warm neutral colors.",
     colors: ["#b74d31", "#d9845c", "#b0aa83", "#386959", "#dbb887", "#7d8699"],
     darkColors: [
       "#f7a37d",
@@ -32,9 +31,8 @@ export const themes = [
   {
     id: "terminal",
     name: "Terminal",
-    description:
-      "Lime and mint on deep green. Monospace typography, always in dark mode.",
-    colors: ["#b6f777", "#50c8a3", "#85a2c2", "#e3ce74", "#c897c2", "#7d9b75"],
+    description: "Leaf green, mint and soft earth tones.",
+    colors: ["#508b32", "#289779", "#628cad", "#b69937", "#a777a1", "#82996f"],
     darkColors: [
       "#b6f777",
       "#50c8a3",
@@ -76,5 +74,5 @@ export const themes = [
 export type ThemeName = (typeof themes)[number]["id"];
 export function paletteFor(id: string, dark: boolean) {
   const theme = themes.find((t) => t.id === id) || themes[0];
-  return dark || id === "terminal" ? theme.darkColors : theme.colors;
+  return dark ? theme.darkColors : theme.colors;
 }

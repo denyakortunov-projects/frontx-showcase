@@ -103,8 +103,9 @@ export function Themes({
             {dark
               ? "Dark palettes are shown above."
               : "Light palettes are shown above."}{" "}
-            The header switch previews the alternate mode. Terminal stays dark;
-            every other theme supports both.
+            All five palettes support both modes. The sun/moon switch changes
+            only the mode; palette selection changes only colors. Typography,
+            spacing and component sizes stay the same.
           </p>
         </section>
       </div>

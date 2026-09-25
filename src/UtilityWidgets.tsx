@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Badge,
   Button,
@@ -149,6 +149,27 @@ export function ReleaseCalendar() {
   const [selected, setSelected] = useState<Date | undefined>(
     () => new Date(2026, 8, 29),
   );
+  const [open, setOpen] = useState(false);
+  const [daySize, setDaySize] = useState(26);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const dayRef = useRef<HTMLButtonElement | null>(null);
+  useEffect(() => {
+    if (!rootRef.current) return;
+    const observer = new ResizeObserver(([entry]) =>
+      setDaySize(
+        Math.max(
+          20,
+          Math.min(
+            36,
+            Math.floor((entry.contentRect.height - 28) / 7),
+            Math.floor(entry.contentRect.width / 7),
+          ),
+        ),
+      ),
+    );
+    observer.observe(rootRef.current);
+    return () => observer.disconnect();
+  }, []);
   const releaseDates = useMemo(
     () => releases.map((release) => parseLocalDate(release.date)),
     [],
@@ -156,61 +177,71 @@ export function ReleaseCalendar() {
   const selectedReleases = releases.filter(
     (release) => selected && release.date === dateKey(selected),
   );
-
   return (
-    <div className="utility-calendar-widget">
-      <div className="utility-calendar-scroll">
-        <Calendar
-          className="utility-calendar"
-          mode="single"
-          month={month}
-          onMonthChange={setMonth}
-          selected={selected}
-          onSelect={setSelected}
-          modifiers={{ scheduledRelease: releaseDates }}
-          modifiersClassNames={{
-            scheduledRelease: "utility-calendar-release-day",
-          }}
-          aria-label="Synthetic release calendar"
-        />
-      </div>
-      <div className="utility-calendar-selection" aria-live="polite">
-        <span className="utility-calendar-date">
-          <CalendarDays size={15} />
-          {selected ? formatDate(selected) : "Select a date"}
-        </span>
-        {selectedReleases.length ? (
-          <ul>
-            {selectedReleases.map((release) => (
-              <li key={release.name}>
-                <span>
-                  <strong>{release.name}</strong>
-                  <small>{release.version}</small>
-                </span>
-                <Badge
-                  variant={
-                    release.status === "Shipped"
-                      ? "success"
-                      : release.status === "In review"
-                        ? "warning"
-                        : "info"
-                  }
-                  dot
-                >
-                  {release.status}
-                </Badge>
-              </li>
-            ))}
-          </ul>
-        ) : selected ? (
-          <p>No scheduled releases on this date.</p>
-        ) : (
-          <p>Select a day to view its release schedule.</p>
-        )}
-      </div>
-      <p className="utility-widget-note">
-        Sample release schedule · September 2026
-      </p>
+    <div className="utility-calendar-widget" ref={rootRef}>
+      <Calendar
+        className="utility-calendar"
+        style={{ "--control-height-md": `${daySize}px` } as React.CSSProperties}
+        classNames={{
+          month: "utility-calendar-month",
+          week: "utility-calendar-week",
+          month_caption: "utility-calendar-caption",
+        }}
+        mode="single"
+        required
+        fixedWeeks
+        month={month}
+        onMonthChange={setMonth}
+        selected={selected}
+        onSelect={(date, _triggerDate, _modifiers, event) => {
+          setSelected(date);
+          dayRef.current = event.currentTarget as HTMLButtonElement;
+          setOpen(true);
+        }}
+        modifiers={{ scheduledRelease: releaseDates }}
+        modifiersClassNames={{
+          scheduledRelease: "utility-calendar-release-day",
+        }}
+        aria-label="Synthetic release calendar"
+      />
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent finalFocus={dayRef}>
+          <DialogHeader>
+            <DialogTitle>
+              {selected ? formatDate(selected) : "Release schedule"}
+            </DialogTitle>
+            <DialogDescription>Sample release schedule</DialogDescription>
+          </DialogHeader>
+          <div className="utility-calendar-selection">
+            {selectedReleases.length ? (
+              <ul>
+                {selectedReleases.map((release) => (
+                  <li key={release.name}>
+                    <span>
+                      <strong>{release.name}</strong>
+                      <small>{release.version}</small>
+                    </span>
+                    <Badge
+                      variant={
+                        release.status === "Shipped"
+                          ? "success"
+                          : release.status === "In review"
+                            ? "warning"
+                            : "info"
+                      }
+                      dot
+                    >
+                      {release.status}
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No scheduled releases on this date.</p>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

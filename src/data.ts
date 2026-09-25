@@ -116,6 +116,19 @@ export function chartData(
   );
 
   if (kind === "calendar" || kind === "builds") return [];
+  if (kind === "stacked") {
+    return [
+      ["Search", 72],
+      ["Social", 84],
+      ["Direct", 38],
+      ["Email", 24],
+      ["Referral", 61],
+    ].map(([label, share], index) => ({
+      ...row(String(label), index),
+      newShare: Number(share),
+      returningShare: 100 - Number(share),
+    }));
+  }
 
   if (kind === "donut" || kind === "pie") {
     return segments.map(([label, share], index) => ({

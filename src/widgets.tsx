@@ -123,10 +123,10 @@ export const widgets: Array<{
   },
   {
     id: "stacked",
-    title: "Channel contribution",
-    category: "Trends",
-    description: "Organic and paid visits contributing to daily traffic.",
-    unit: "visits",
+    title: "Audience by channel",
+    category: "Comparison",
+    description: "New and returning audience shares within each channel.",
+    unit: "%",
   },
   {
     id: "composed",
@@ -167,7 +167,8 @@ export const widgets: Array<{
     id: "heatmap",
     title: "Token activity",
     category: "Activity",
-    description: "Daily, weekly and cumulative activity across a year.",
+    description:
+      "Daily, weekly and cumulative activity; the visible period adapts to width.",
     unit: "contributions",
   },
   {
@@ -271,8 +272,8 @@ function legendItems(kind: WidgetKind): LegendItem[] {
       ];
     case "stacked":
       return [
-        { label: "Organic", color: VIZ[0] },
-        { label: "Paid", color: VIZ[1] },
+        { label: "New", color: VIZ[0] },
+        { label: "Returning", color: VIZ[2] },
       ];
     case "composed":
       return [
@@ -371,6 +372,7 @@ function tooltipContent(kind: WidgetKind, hideLabel = false) {
         const label = String(name ?? "");
         const unit =
           kind === "donut" ||
+          kind === "stacked" ||
           kind === "pie" ||
           kind === "radial" ||
           label === "Activity" ||
@@ -416,6 +418,7 @@ function tooltipContent(kind: WidgetKind, hideLabel = false) {
 }
 
 function TreemapCell(node: TreemapNode): ReactElement {
+  if (node.depth === 0 || node.children?.length) return <g />;
   const color = VIZ[node.index % VIZ.length];
   const hasLabelRoom = node.width > 48 && node.height > 28;
   const maxCharacters = Math.max(3, Math.floor((node.width - 22) / 7));
@@ -433,7 +436,7 @@ function TreemapCell(node: TreemapNode): ReactElement {
         height={Math.max(0, node.height)}
         rx={5}
         fill={color}
-        fillOpacity={0.88}
+        fillOpacity={1}
         stroke="var(--background)"
         strokeWidth={3}
       />
@@ -444,7 +447,7 @@ function TreemapCell(node: TreemapNode): ReactElement {
             x={node.x + 4}
             y={node.y + 4}
             width={Math.max(0, labelWidth)}
-            height={20}
+            height={node.height > 44 ? 36 : 20}
             rx={4}
             fill="var(--background)"
             fillOpacity={0.9}
@@ -456,7 +459,7 @@ function TreemapCell(node: TreemapNode): ReactElement {
             fontSize={12}
             fontWeight={600}
           >
-            {node.name}
+            {label}
           </text>
           {node.height > 44 && (
             <text
@@ -1049,38 +1052,46 @@ function renderChart(
       );
     case "stacked":
       return (
-        <BarChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
-          <CartesianGrid stroke="var(--grid)" vertical={false} />
+        <BarChart
+          layout="vertical"
+          data={data}
+          margin={{ top: 8, right: 8, bottom: 0, left: 0 }}
+        >
+          <CartesianGrid stroke="var(--grid)" horizontal={false} />
           <XAxis
-            dataKey="label"
+            type="number"
+            domain={[0, 100]}
+            ticks={[0, 25, 50, 75, 100]}
+            tickFormatter={(v) => `${v}%`}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
-            minTickGap={28}
           />
           <YAxis
+            type="category"
+            dataKey="label"
+            width={62}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
-            width={46}
-            tickFormatter={(v) => compactNumber(Number(v))}
           />
           {commonTooltip}
           <Bar
-            dataKey="organic"
-            name="Organic"
-            stackId="channels"
+            dataKey="newShare"
+            name="New"
+            stackId="audience"
             fill={VIZ[0]}
-            maxBarSize={22}
+            radius={[5, 0, 0, 5]}
+            maxBarSize={26}
             isAnimationActive={false}
           />
           <Bar
-            dataKey="paid"
-            name="Paid"
-            stackId="channels"
-            fill={VIZ[1]}
-            radius={[5, 5, 0, 0]}
-            maxBarSize={22}
+            dataKey="returningShare"
+            name="Returning"
+            stackId="audience"
+            fill={VIZ[2]}
+            radius={[0, 5, 5, 0]}
+            maxBarSize={26}
             isAnimationActive={false}
           />
         </BarChart>

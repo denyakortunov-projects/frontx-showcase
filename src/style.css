@@ -84,10 +84,6 @@
   --viz-4: #386959;
   --viz-5: #dbb887;
   --viz-6: #7d8699;
-  --radius: 3px;
-  --radius-lg: 3px;
-  --radius-md: 3px;
-  --radius-sm: 2px;
   --surface: #faf7f3;
 }
 :root[data-brand="editorial"][data-theme="dark"] {
@@ -105,6 +101,21 @@
   --accent-foreground: #ffe0cc;
 }
 :root[data-brand="terminal"] {
+  --primary: #386d25;
+  --primary-foreground: #fff;
+  --accent: #eaf4e4;
+  --accent-foreground: #386d25;
+  --secondary: #edf4e9;
+  --secondary-foreground: #36502f;
+  --muted: #edf4e9;
+  --muted-foreground: #5d7058;
+  --surface: #f5f9f2;
+  --border: #dce6d5;
+  --input: #c9d8c1;
+  --ring: #508435;
+  --grid: #e3eddc;
+}
+:root[data-brand="terminal"][data-theme="dark"] {
   --primary: #b6f777;
   --primary-foreground: #132013;
   --accent: #213522;
@@ -129,11 +140,6 @@
   --viz-4: #e3ce74;
   --viz-5: #c897c2;
   --viz-6: #7d9b75;
-  --radius: 5px;
-  --radius-lg: 5px;
-  --radius-md: 4px;
-  --radius-sm: 3px;
-  font-family: "SFMono-Regular", Consolas, monospace;
 }
 * {
   box-sizing: border-box;
@@ -982,20 +988,7 @@ footer a {
   align-items: center;
   gap: 4px;
 }
-[data-brand="editorial"] h1,
-[data-brand="editorial"] h2,
-[data-brand="editorial"] .metric-card strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  letter-spacing: -1px;
-}
-[data-brand="terminal"] h1 {
-  letter-spacing: -2px;
-  font-size: 46px;
-}
-[data-brand="terminal"] .widget-frame {
-  box-shadow: none;
-}
+
 [data-brand="terminal"] .mini-chart {
   color: var(--primary);
 }
@@ -1271,9 +1264,7 @@ footer a {
   footer a {
     margin-left: auto;
   }
-  [data-brand="terminal"] h1 {
-    font-size: 32px;
-  }
+
   .widget-body {
     padding-left: 5px;
     padding-right: 5px;
@@ -1322,8 +1313,6 @@ footer a {
   --input: #d8ccea;
   --ring: #8966d6;
   --grid: #ede7f5;
-  --radius: 16px;
-  --radius-lg: 16px;
 }
 :root[data-brand="iris"][data-theme="dark"] {
   --primary: #c0a3ff;
@@ -1357,8 +1346,6 @@ footer a {
   --input: #c6dcdf;
   --ring: #168a93;
   --grid: #e2eeee;
-  --radius: 10px;
-  --radius-lg: 10px;
 }
 :root[data-brand="lagoon"][data-theme="dark"] {
   --primary: #68d1d2;

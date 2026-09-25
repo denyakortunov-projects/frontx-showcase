@@ -41,19 +41,6 @@ const chartConfig: ChartConfig = {
   value: { label: "Activity", color: "var(--viz-1)" },
 };
 
-const monthAxis = (() => {
-  const gridStart = Date.UTC(2025, 8, 21);
-  return Array.from({ length: 12 }, (_, monthOffset) => {
-    const date = new Date(Date.UTC(2025, 9 + monthOffset, 1));
-    return {
-      week: Math.floor(
-        (date.getTime() - gridStart) / (7 * 24 * 60 * 60 * 1000),
-      ),
-      label: date.toLocaleDateString("en", { month: "short", timeZone: "UTC" }),
-    };
-  });
-})();
-
 function dateFromIso(value: string) {
   const [year = 2026, month = 1, day = 1] = value.split("-").map(Number);
   return new Date(Date.UTC(year, month - 1, day));
@@ -106,15 +93,53 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
   const selectedValueId = `token-activity-selected-${useId().replace(/:/g, "")}`;
   const plotRef = useRef<HTMLDivElement>(null);
   const daily = useMemo(() => chartData("heatmap", 365), []);
-  const activeStart = Math.max(
-    0,
-    daily.length - Math.max(1, Math.min(daily.length, Math.round(period))),
+  const visiblePeriod = Math.min(
+    Math.max(1, Math.round(period)),
+    plotWidth < 360 ? 30 : plotWidth < 760 ? 90 : 365,
   );
+  const activeStart = daily.length - visiblePeriod;
+  const gridStartMs = useMemo(() => {
+    const date = dateFromIso(daily[activeStart].date);
+    date.setUTCDate(date.getUTCDate() - date.getUTCDay());
+    return date.getTime();
+  }, [activeStart, daily]);
+  const weekCount = Math.ceil(
+    (dateFromIso(daily[daily.length - 1].date).getTime() -
+      gridStartMs +
+      86400000) /
+      (7 * 86400000),
+  );
+  const monthAxis = useMemo(() => {
+    if (visiblePeriod <= 31)
+      return Array.from({ length: weekCount }, (_, week) => ({
+        week,
+        label: new Date(gridStartMs + week * 7 * 86400000).toLocaleDateString(
+          "en",
+          { month: "short", day: "numeric", timeZone: "UTC" },
+        ),
+      }));
+    const result: { week: number; label: string }[] = [];
+    const end = dateFromIso(daily[daily.length - 1].date);
+    const date = dateFromIso(daily[activeStart].date);
+    date.setUTCDate(1);
+    if (date.getTime() < gridStartMs) date.setUTCMonth(date.getUTCMonth() + 1);
+    while (date <= end) {
+      result.push({
+        week: Math.floor((date.getTime() - gridStartMs) / (7 * 86400000)),
+        label: date.toLocaleDateString("en", {
+          month: "short",
+          timeZone: "UTC",
+        }),
+      });
+      date.setUTCMonth(date.getUTCMonth() + 1);
+    }
+    return result;
+  }, [visiblePeriod, weekCount, gridStartMs, activeStart, daily]);
   const cellSize = Math.max(
     3,
     Math.min(
       22,
-      Math.floor((plotWidth - 42) / 53) - 1,
+      Math.floor((plotWidth - 42) / weekCount) - 1,
       Math.floor((plotHeight - 38) / 7) - 2,
     ),
   );
@@ -131,10 +156,11 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
   }, []);
 
   const { points, maxValue, selected } = useMemo(() => {
-    const gridStart = new Date(Date.UTC(2025, 8, 21));
+    const gridStart = new Date(gridStartMs);
     const weekSums = new Map<number, number>();
     let cumulative = 0;
-    const actual = daily.map((entry, index) => {
+    const actual = daily.slice(activeStart).map((entry, offset) => {
+      const index = offset + activeStart;
       const date = dateFromIso(entry.date);
       const week = Math.floor(
         (date.getTime() - gridStart.getTime()) / (7 * 24 * 60 * 60 * 1000),
@@ -189,7 +215,7 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
       transformed.map((point) => `${point.x}:${point.y}`),
     );
     const padded = Array.from(
-      { length: 53 * 7 },
+      { length: weekCount * 7 },
       (_, index): GridPoint | null => {
         const x = Math.floor(index / 7);
         const y = 6 - (index % 7);
@@ -210,16 +236,17 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
     );
     const clampedIndex = Math.max(
       activeStart,
-      Math.min(actual.length - 1, selectedIndex),
+      Math.min(daily.length - 1, selectedIndex),
     );
     const selectedPoint =
-      transformed[clampedIndex] ?? transformed[transformed.length - 1];
+      transformed.find((point) => point.index === clampedIndex) ??
+      transformed[transformed.length - 1];
     return {
       points: all,
       maxValue: Math.max(1, ...transformed.map((point) => point.value)),
       selected: selectedPoint,
     };
-  }, [activeStart, daily, mode, selectedIndex]);
+  }, [activeStart, daily, mode, selectedIndex, gridStartMs, weekCount]);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const movements: Record<string, number> = {
@@ -233,7 +260,10 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
       setSelectedIndex((current) =>
         Math.max(
           activeStart,
-          Math.min(daily.length - 1, current + movements[event.key]),
+          Math.min(
+            daily.length - 1,
+            Math.max(activeStart, current) + movements[event.key],
+          ),
         ),
       );
     } else if (event.key === "Home") {
@@ -305,7 +335,7 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
           id={selectedValueId}
           aria-live="polite"
         >
-          Last {period} days ·{" "}
+          Last {visiblePeriod} days ·{" "}
           {mode === "weekly"
             ? `Week of ${selected?.weekLabel}`
             : selected?.label}
@@ -322,7 +352,7 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
         className="token-activity__scroll"
         role="application"
         tabIndex={0}
-        aria-label={`Activity calendar for the last ${period} days. Use arrow keys to move between days, Home for first day and End for last day.`}
+        aria-label={`Activity calendar for the last ${visiblePeriod} days. Use arrow keys to move between days, Home for first day and End for last day.`}
         aria-describedby={selectedValueId}
         onKeyDown={handleKeyDown}
       >
@@ -343,10 +373,8 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
               <XAxis
                 type="number"
                 dataKey="x"
-                domain={[-0.5, 52.5]}
-                ticks={monthAxis
-                  .filter((_, index) => plotWidth >= 480 || index % 2 === 0)
-                  .map((item) => item.week)}
+                domain={[-0.5, weekCount - 0.5]}
+                ticks={monthAxis.map((item) => item.week)}
                 tickFormatter={(week: number) =>
                   monthAxis.find((item) => item.week === week)?.label ?? ""
                 }

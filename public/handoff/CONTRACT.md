@@ -14,7 +14,7 @@ The eventual shared package should expose typed React compositions over `@gears-
 - Heights: M = 304 px, L = 464 px, XL = 624 px. Width and height are independent choices.
 - Keep panel boundaries aligned for widgets at the same grid height. Let content size to its container; titles, legends, axes, and values must fit without overlap.
 - On a one-column narrow layout, preserve reading order and allow necessary local table scrolling. Minimum-content requirements may make some width/height combinations unsuitable; offer a valid larger size rather than hiding content.
-- Theme variants: Fabric blue; editorial terracotta/serif; Terminal dark green; Iris violet; Lagoon teal. Theme may substantially change appearance while retaining shared behavior, data meaning, and reading order.
+- Color palettes: Fabric blue; Editorial terracotta; Terminal green; Iris violet; Lagoon teal. Each supports light and dark independently. Palette switching changes only color tokens. Keep typography, font sizes, spacing, geometry and radii unchanged.
 
 ## Runtime JSON is a proposal
 

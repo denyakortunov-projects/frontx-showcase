@@ -142,7 +142,7 @@ function DataGrid({
     radar: ["label", "value", "target"],
     radial: ["label", "value", "target"],
     scatter: ["label", "x", "y", "value", "segment"],
-    stacked: ["label", "organic", "paid"],
+    stacked: ["label", "newShare", "returningShare"],
     composed: ["label", "visitors", "conversionRate"],
     waterfall: ["label", "increase", "decrease", "total"],
     funnel: ["label", "value"],
@@ -159,9 +159,13 @@ function DataGrid({
         ? "Contributor"
         : kind === "radar"
           ? "Dimension"
-          : "Period",
+          : kind === "stacked"
+            ? "Channel"
+            : "Period",
     segment: "Channel",
     value: kind === "ranked" ? "Changes" : kind === "radar" ? "Score" : "Value",
+    newShare: "New %",
+    returningShare: "Returning %",
     organic: "Organic",
     paid: "Paid",
     conversions: "Conversions",
@@ -273,7 +277,7 @@ function App() {
   const theme = themes.map((t) => t.id as string).includes(q.get("theme") || "")
     ? q.get("theme")!
     : "fabric";
-  const dark = q.get("mode") === "dark" || theme === "terminal";
+  const dark = q.get("mode") === "dark";
   const width = [3, 4, 6, 8, 9, 12].includes(Number(q.get("width")))
     ? Number(q.get("width"))
     : 6;
@@ -411,7 +415,6 @@ function App() {
             onClick={() =>
               update({
                 mode: dark ? "light" : "dark",
-                theme: theme === "terminal" ? "fabric" : theme,
               })
             }
             icon={dark ? <Sun /> : <Moon />}
@@ -741,20 +744,22 @@ function App() {
                   ])}
                   onChange={(v) => update({ state: v })}
                 />
-                {kind !== "calendar" && kind !== "builds" && (
-                  <Control
-                    label="Period"
-                    value={String(period)}
-                    options={[
-                      ["7", "Last 7 days"],
-                      ["30", "Last 30 days"],
-                      ...(kind === "heatmap"
-                        ? [["365", "Last 365 days"] as [string, string]]
-                        : []),
-                    ]}
-                    onChange={(v) => update({ period: v })}
-                  />
-                )}
+                {kind !== "calendar" &&
+                  kind !== "builds" &&
+                  kind !== "stacked" && (
+                    <Control
+                      label="Period"
+                      value={String(period)}
+                      options={[
+                        ["7", "Last 7 days"],
+                        ["30", "Last 30 days"],
+                        ...(kind === "heatmap"
+                          ? [["365", "Last 365 days"] as [string, string]]
+                          : []),
+                      ]}
+                      onChange={(v) => update({ period: v })}
+                    />
+                  )}
                 <div className="size-readout">
                   <Grid2X2 size={17} />
                   <span>
@@ -785,7 +790,11 @@ function App() {
                             ? "Sample release schedule · September 2026"
                             : kind === "builds"
                               ? "Sample builds · September 24–25, 2026"
-                              : `Sample data · last ${period} days`
+                              : kind === "heatmap"
+                                ? "Sample data · window adapts to widget width"
+                                : kind === "stacked"
+                                  ? "Sample audience shares · each channel totals 100%"
+                                  : `Sample data · last ${period} days`
                         }
                         height={height}
                         state={state}

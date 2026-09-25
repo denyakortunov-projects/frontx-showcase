@@ -83,6 +83,8 @@ try {
     "calendar date selection",
     await page.getByText("Navigation refresh", { exact: true }).isVisible(),
   );
+  await page.keyboard.press("Escape");
+  await page.getByRole("dialog").waitFor({ state: "hidden" });
   await page.getByRole("button", { name: "Go to the next month" }).click();
   ok(
     "calendar month navigation",
@@ -94,10 +96,10 @@ try {
   await page.keyboard.press("Enter");
   ok(
     "calendar keyboard selection",
-    (await page.locator(".utility-calendar-date").innerText()).includes(
-      "September 4",
-    ),
+    (await page.getByRole("dialog").innerText()).includes("September 4"),
   );
+  await page.keyboard.press("Escape");
+  await page.getByRole("dialog").waitFor({ state: "hidden" });
   await page.getByRole("tab", { name: "Data", exact: true }).click();
   await page.locator(".data-scroll tbody tr").first().waitFor();
   ok(

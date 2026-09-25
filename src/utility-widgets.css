@@ -1,20 +1,40 @@
 .utility-calendar-widget {
   height: 100%;
-  overflow: auto;
-  display: flex;
   min-width: 0;
-  flex-direction: column;
-  gap: 9px;
-}
-.utility-calendar-scroll {
-  min-width: 0;
-  overflow-x: auto;
-  padding: 0 2px;
+  display: grid;
+  place-items: center;
 }
 .utility-calendar {
-  margin-inline: auto;
-  --control-height-md: 24px;
-  --space-2: 4px;
+  width: 100%;
+  max-width: 320px;
+  background: transparent;
+  --space-2: 0px;
+  --space-4: 4px;
+}
+.utility-calendar-month {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.utility-calendar-week {
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+.utility-calendar-caption {
+  height: var(--control-height-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: var(--control-height-md);
+}
+.utility-calendar [data-day] {
+  aspect-ratio: auto;
+}
+.utility-calendar [data-day] > button {
+  height: var(--control-height-md);
+  aspect-ratio: auto;
+  min-width: 0;
 }
 .utility-calendar .utility-calendar-release-day > button::after {
   position: absolute;

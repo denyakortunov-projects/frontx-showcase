@@ -1,0 +1,179 @@
+{
+  "base": "http://127.0.0.1:5201",
+  "checkedAt": "2026-09-25T14:35:26.815Z",
+  "checks": [
+    {
+      "name": "calendar fits M 3 light",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 3 light six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "October fits M 3 light",
+      "passed": true
+    },
+    {
+      "name": "October fits M 3 light six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 6 light",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 6 light six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "October fits M 6 light",
+      "passed": true
+    },
+    {
+      "name": "October fits M 6 light six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 12 light",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 12 light six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "October fits M 12 light",
+      "passed": true
+    },
+    {
+      "name": "October fits M 12 light six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 3 dark",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 3 dark six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "October fits M 3 dark",
+      "passed": true
+    },
+    {
+      "name": "October fits M 3 dark six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 6 dark",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 6 dark six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "October fits M 6 dark",
+      "passed": true
+    },
+    {
+      "name": "October fits M 6 dark six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 12 dark",
+      "passed": true
+    },
+    {
+      "name": "calendar fits M 12 dark six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "October fits M 12 dark",
+      "passed": true
+    },
+    {
+      "name": "October fits M 12 dark six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "release details",
+      "passed": true
+    },
+    {
+      "name": "focus returns to chosen day",
+      "passed": true
+    },
+    {
+      "name": "keyboard date details",
+      "passed": true
+    },
+    {
+      "name": "new chart label",
+      "passed": true
+    },
+    {
+      "name": "horizontal chart segments",
+      "passed": true
+    },
+    {
+      "name": "five channels total 100 percent",
+      "passed": true
+    },
+    {
+      "name": "gallery calendar 1600",
+      "passed": true
+    },
+    {
+      "name": "gallery calendar 1600 six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "gallery count 1600",
+      "passed": true
+    },
+    {
+      "name": "page fits 1600",
+      "passed": true
+    },
+    {
+      "name": "gallery calendar 390",
+      "passed": true
+    },
+    {
+      "name": "gallery calendar 390 six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "gallery count 390",
+      "passed": true
+    },
+    {
+      "name": "page fits 390",
+      "passed": true
+    },
+    {
+      "name": "gallery calendar 320",
+      "passed": true
+    },
+    {
+      "name": "gallery calendar 320 six complete weeks",
+      "passed": true
+    },
+    {
+      "name": "gallery count 320",
+      "passed": true
+    },
+    {
+      "name": "page fits 320",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}
