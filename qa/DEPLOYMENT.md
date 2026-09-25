@@ -46,3 +46,12 @@ This is a reviewable demo and proposed integration contract. It does not claim p
 - HTTPS verification at 14:29:10 UTC matched the new fingerprint, both exact JS/CSS assets, handoff documents and source ZIP SHA256. Eight public browser checks passed with no JavaScript errors: 18 widgets, 20 elements, Iris dark theme, Base UI menu, independent grid width, cumulative activity mode and distinct build details.
 - Evidence: `EXPANSION-2026-09-25.md`, `expansion-report.json`, `utilities-report.json`, `elements-extras-report.json`, `public-expansion-report.json`, `public-browser-expansion-report.json`.
 - This documentation-only release record follows the source commit; it does not alter the deployed runtime or public fingerprint.
+
+## Review refinements v0.2.1 — 2026-09-25
+
+- Source `6f9f2bdfe2c35b13775f60ebbe2a9ffcd95bed47`; GitHub main updated fast-forward.
+- Fingerprint `40b8e57a58e4ad20e0f2f5a9d6e3e0651479eb8b10ce98113d1e4cd619681e6f`; source ZIP SHA256 `2f37a33aa004ef9c9b46ec41cc225857756f0dfb9392e453bb4a263cc925aba0`, 87,584 bytes.
+- Deployment `01a0d905-0cf3-7395-ba35-b22294b8354f` completed 14:43:02–14:43:33 UTC (31 seconds), same existing FrontX Hostinger site.
+- HTTP verification at 14:44:47 UTC confirmed exact fingerprint/assets/archive. Thirteen public browser checks passed, including independent green light/dark mode, compact monthly activity, calendar without scrolling and leaf-only treemap.
+- Local verification: 43 calendar/comparison checks, 17 activity/mosaic checks, 45 palette/mode geometry checks, and 17 existing utility interaction checks passed with no runtime errors. See REFINEMENTS-2026-09-25.md.
+- While this release was building, owner further requested cleaner funnel and mosaic labels. That follow-up is a separate forward patch; this verified release is its baseline.

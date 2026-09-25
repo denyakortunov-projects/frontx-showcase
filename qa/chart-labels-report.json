@@ -1,0 +1,143 @@
+{
+  "base": "http://127.0.0.1:5201",
+  "checkedAt": "2026-09-25T14:51:58.461Z",
+  "checks": [
+    {
+      "name": "funnel light 3 five aligned stages",
+      "passed": true
+    },
+    {
+      "name": "funnel light 3 no floating labels",
+      "passed": true
+    },
+    {
+      "name": "funnel light 3 fits",
+      "passed": true
+    },
+    {
+      "name": "treemap light 3 nine unlayered tiles",
+      "passed": true
+    },
+    {
+      "name": "treemap light 3 text contained",
+      "passed": true
+    },
+    {
+      "name": "funnel light 6 five aligned stages",
+      "passed": true
+    },
+    {
+      "name": "funnel light 6 no floating labels",
+      "passed": true
+    },
+    {
+      "name": "funnel light 6 fits",
+      "passed": true
+    },
+    {
+      "name": "treemap light 6 nine unlayered tiles",
+      "passed": true
+    },
+    {
+      "name": "treemap light 6 text contained",
+      "passed": true
+    },
+    {
+      "name": "funnel light 12 five aligned stages",
+      "passed": true
+    },
+    {
+      "name": "funnel light 12 no floating labels",
+      "passed": true
+    },
+    {
+      "name": "funnel light 12 fits",
+      "passed": true
+    },
+    {
+      "name": "treemap light 12 nine unlayered tiles",
+      "passed": true
+    },
+    {
+      "name": "treemap light 12 text contained",
+      "passed": true
+    },
+    {
+      "name": "funnel dark 3 five aligned stages",
+      "passed": true
+    },
+    {
+      "name": "funnel dark 3 no floating labels",
+      "passed": true
+    },
+    {
+      "name": "funnel dark 3 fits",
+      "passed": true
+    },
+    {
+      "name": "treemap dark 3 nine unlayered tiles",
+      "passed": true
+    },
+    {
+      "name": "treemap dark 3 text contained",
+      "passed": true
+    },
+    {
+      "name": "funnel dark 6 five aligned stages",
+      "passed": true
+    },
+    {
+      "name": "funnel dark 6 no floating labels",
+      "passed": true
+    },
+    {
+      "name": "funnel dark 6 fits",
+      "passed": true
+    },
+    {
+      "name": "treemap dark 6 nine unlayered tiles",
+      "passed": true
+    },
+    {
+      "name": "treemap dark 6 text contained",
+      "passed": true
+    },
+    {
+      "name": "funnel dark 12 five aligned stages",
+      "passed": true
+    },
+    {
+      "name": "funnel dark 12 no floating labels",
+      "passed": true
+    },
+    {
+      "name": "funnel dark 12 fits",
+      "passed": true
+    },
+    {
+      "name": "treemap dark 12 nine unlayered tiles",
+      "passed": true
+    },
+    {
+      "name": "treemap dark 12 text contained",
+      "passed": true
+    },
+    {
+      "name": "funnel counts match Data",
+      "passed": true
+    },
+    {
+      "name": "funnel mobile fits",
+      "passed": true
+    },
+    {
+      "name": "treemap mobile fits",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

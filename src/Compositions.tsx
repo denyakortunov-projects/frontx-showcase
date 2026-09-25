@@ -550,7 +550,7 @@ export function Compositions({
         <Section title="Release operations">
           <div className="dashboard-grid">
             <div className="span6">
-              <WidgetFrame title="Release calendar" height={464}>
+              <WidgetFrame title="Revenue pulse" height={464}>
                 <WidgetChart kind="calendar" />
               </WidgetFrame>
             </div>
@@ -568,9 +568,9 @@ export function Compositions({
           <h2>Build from this recipe</h2>
           <p>
             Shared period state feeds the trend charts. The annual activity
-            calendar and release schedule keep their labelled time windows.
-            Fixed scores and category shares stay unchanged. Tables use the same
-            fixture functions as charts; replace those with your data adapter.
+            activity and revenue keep their labelled time windows. Fixed scores
+            and category shares stay unchanged. Tables use the same fixture
+            functions as charts; replace those with your data adapter.
           </p>
         </div>
         <Button

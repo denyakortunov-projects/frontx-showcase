@@ -1,6 +1,6 @@
 {
   "base": "https://frontx.constructor.rocks",
-  "checkedAt": "2026-09-25T14:29:12.219Z",
+  "checkedAt": "2026-09-25T14:44:53.429Z",
   "checks": [
     {
       "name": "public 18 widgets",
@@ -28,6 +28,26 @@
     },
     {
       "name": "public build details",
+      "passed": true
+    },
+    {
+      "name": "green palette stays light",
+      "passed": true
+    },
+    {
+      "name": "mode toggle preserves green",
+      "passed": true
+    },
+    {
+      "name": "compact activity is monthly",
+      "passed": true
+    },
+    {
+      "name": "calendar fits without scrolling",
+      "passed": true
+    },
+    {
+      "name": "mosaic contains leaves only",
       "passed": true
     },
     {

@@ -149,7 +149,7 @@ function DataGrid({
     treemap: ["label", "value"],
     bubble: ["label", "x", "y", "value", "segment"],
     heatmap: ["date", "value"],
-    calendar: ["date", "name", "version", "status"],
+    calendar: ["date", "revenue"],
     builds: ["id", "status", "durationSeconds", "branch"],
   };
   const keys = columns[kind];
@@ -787,7 +787,7 @@ function App() {
                         title={current.title}
                         subtitle={
                           kind === "calendar"
-                            ? "Sample release schedule · September 2026"
+                            ? "Sample revenue · September 1–25, 2026"
                             : kind === "builds"
                               ? "Sample builds · September 24–25, 2026"
                               : kind === "heatmap"
@@ -864,7 +864,7 @@ function App() {
                   <h2>Implementation</h2>
                   <p>
                     {kind === "calendar"
-                      ? "FrontX Calendar (shadcn / react-day-picker)."
+                      ? "FrontX ChartContainer + Recharts AreaChart."
                       : kind === "builds"
                         ? "FrontX Table, Badge and Base UI Dialog."
                         : "FrontX ChartContainer + Recharts."}{" "}

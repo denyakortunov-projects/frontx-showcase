@@ -40,3 +40,5 @@ The visual width unit maps to three CSS grid columns. The grid has 12 columns, 1
 Compositions expose reproducible recipe JSON and the installed primitives they use. Keep all declared chart/table relationships on shared data. Example workflow activity is synthetic and is not an audit log.
 
 Series palette tokens --viz-1 through --viz-6 are separate from semantic success/warning/danger tokens. Preserve category-to-color mapping across views and provide labels, tooltips and a data view. Theme swaps must not change data meaning.
+
+Revenue pulse replaces the release calendar with a large USD metric, period comparison and a data-driven sparkline. The legacy `calendar` kind remains URL-compatible and now resolves to Revenue pulse. Its Data view exposes the same 25 dated revenue values. Token Activity selected mode uses a contrasting primary fill in both display modes.

@@ -1,11 +1,11 @@
 {
   "base": "https://frontx.constructor.rocks",
-  "verifiedAt": "2026-09-25T14:29:10.565Z",
-  "sourceFingerprint": "5deeb0f16b6fcf86e9fbef2885a71c027eeae034f93a613c5c64796e9a2930e2",
+  "verifiedAt": "2026-09-25T14:44:47.411Z",
+  "sourceFingerprint": "40b8e57a58e4ad20e0f2f5a9d6e3e0651479eb8b10ce98113d1e4cd619681e6f",
   "assets": [
-    "/assets/index-BEaZP80J.js",
-    "/assets/index-C-1OattS.css"
+    "/assets/index-BZWX1Bll.js",
+    "/assets/index-h2wNreRS.css"
   ],
-  "sourceZipBytes": 86387,
-  "archiveSha256": "986d7e115e9dc3998c09b5ab3e047df78d92b49d67f217792bd63e5345d4fd51"
+  "sourceZipBytes": 87584,
+  "archiveSha256": "2f37a33aa004ef9c9b46ec41cc225857756f0dfb9392e453bb4a263cc925aba0"
 }

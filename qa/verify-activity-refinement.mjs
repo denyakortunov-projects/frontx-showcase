@@ -60,7 +60,7 @@ try {
     await p.locator(".widget-frame svg").waitFor();
     ok(
       `${mode} mosaic has 9 leaf tiles only`,
-      (await p.locator('.widget-frame svg rect[fill-opacity="1"]').count()) ===
+      (await p.locator('.adoption-tile > rect').count()) ===
         9,
     );
     ok(

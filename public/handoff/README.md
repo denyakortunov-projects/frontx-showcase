@@ -30,7 +30,7 @@ Compositions includes Product analytics, Delivery overview and Audience insights
 
 Token activity uses a data-driven calendar with Daily / Weekly / Cumulative modes, dated tooltips, keyboard selection and light/dark tokens. Read the mode and unit before comparing intensities; cumulative values are running totals, not daily usage.
 
-Release calendar and Build activity round out the gallery to 18 widgets. Both use maintained UI Kit primitives; calendar selection and build details are local synthetic examples. They are not chart imitations or connections to CI.
+Revenue pulse and Build activity round out the gallery to 18 widgets; all data are synthetic.
 
 ## UI element inventory
 
@@ -40,4 +40,6 @@ Architecture references: [shadcn components](https://ui.shadcn.com/docs/componen
 
 Token activity adapts its visible date window to its rendered width: below 360 px it shows up to 30 days, below 760 px up to 90 days, and otherwise up to 365 days. The selected period caps the window. Weekly and cumulative values are computed over that visible window. The Data tab exposes the selected source period, which may be longer than the compact view.
 
-The release calendar fits six full weeks without internal scrolling. Selecting a date opens a Base UI dialog with release details or an empty state. Audience by channel is a horizontal 100% stacked comparison with a fixed illustrative audience mix.
+Audience by channel is a horizontal 100% stacked comparison with a fixed illustrative audience mix.
+
+Revenue pulse replaces the release calendar with a large USD metric, period comparison and a data-driven sparkline. The legacy `calendar` kind remains URL-compatible and now resolves to Revenue pulse. Its Data view exposes the same 25 dated revenue values. Token Activity selected mode uses a contrasting primary fill in both display modes.

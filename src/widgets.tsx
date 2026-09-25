@@ -46,7 +46,7 @@ import {
 } from "@gears-frontx/ui-kit/chart";
 import { chartData, type WidgetKind } from "./data";
 import TokenActivity from "./TokenActivity";
-import { BuildTable, ReleaseCalendar } from "./UtilityWidgets";
+import { BuildTable, RevenueMetric } from "./UtilityWidgets";
 export { chartData } from "./data";
 
 export type { WidgetKind } from "./data";
@@ -153,7 +153,7 @@ export const widgets: Array<{
     id: "treemap",
     title: "Feature adoption",
     category: "Composition",
-    description: "Relative synthetic adoption volume across product areas.",
+    description: "Synthetic adoption events by product area.",
     unit: "adoption events",
   },
   {
@@ -173,10 +173,10 @@ export const widgets: Array<{
   },
   {
     id: "calendar",
-    title: "Release calendar",
-    category: "Planning",
-    description: "Upcoming and shipped release milestones.",
-    unit: "releases",
+    title: "Revenue pulse",
+    category: "Metrics",
+    description: "Revenue run rate · September 1–25, 2026.",
+    unit: "USD",
   },
   {
     id: "builds",
@@ -420,59 +420,45 @@ function tooltipContent(kind: WidgetKind, hideLabel = false) {
 function TreemapCell(node: TreemapNode): ReactElement {
   if (node.depth === 0 || node.children?.length) return <g />;
   const color = VIZ[node.index % VIZ.length];
-  const hasLabelRoom = node.width > 48 && node.height > 28;
-  const maxCharacters = Math.max(3, Math.floor((node.width - 22) / 7));
+  const hasLabelRoom = node.width >= 62 && node.height >= 34;
+  const maxCharacters = Math.max(3, Math.floor((node.width - 24) / 6.8));
   const label =
     node.name.length > maxCharacters
-      ? `${node.name.slice(0, Math.max(2, maxCharacters - 1))}…`
+      ? `${node.name.slice(0, maxCharacters - 1)}…`
       : node.name;
-  const labelWidth = Math.min(node.width - 8, label.length * 7 + 14);
   return (
-    <g>
+    <g className="adoption-tile">
       <rect
         x={node.x}
         y={node.y}
         width={Math.max(0, node.width)}
         height={Math.max(0, node.height)}
-        rx={5}
-        fill={color}
-        fillOpacity={1}
-        stroke="var(--background)"
-        strokeWidth={3}
+        rx={6}
+        fill={`color-mix(in srgb, ${color} 22%, var(--card))`}
+        stroke={`color-mix(in srgb, ${color} 35%, var(--card))`}
+        strokeWidth={1}
       />
       <title>{`${node.name}: ${Number(node.value).toLocaleString()} adoption events`}</title>
       {hasLabelRoom && (
-        <>
-          <rect
-            x={node.x + 4}
-            y={node.y + 4}
-            width={Math.max(0, labelWidth)}
-            height={node.height > 44 ? 36 : 20}
-            rx={4}
-            fill="var(--background)"
-            fillOpacity={0.9}
-          />
-          <text
-            x={node.x + 10}
-            y={node.y + 18}
-            fill="var(--foreground)"
-            fontSize={12}
-            fontWeight={600}
-          >
-            {label}
-          </text>
-          {node.height > 44 && (
-            <text
-              x={node.x + 8}
-              y={node.y + 34}
-              fill="var(--foreground)"
-              fillOpacity={0.9}
-              fontSize={11}
-            >
-              {Number(node.value).toLocaleString()}
-            </text>
-          )}
-        </>
+        <text
+          x={node.x + 12}
+          y={node.y + 21}
+          fill="var(--foreground)"
+          fontSize={12}
+          fontWeight={600}
+        >
+          {label}
+        </text>
+      )}
+      {hasLabelRoom && node.height >= 54 && (
+        <text
+          x={node.x + 12}
+          y={node.y + 40}
+          fill="var(--muted-foreground)"
+          fontSize={11}
+        >
+          {Number(node.value).toLocaleString()}
+        </text>
       )}
     </g>
   );
@@ -967,7 +953,7 @@ function renderChart(
     case "funnel": {
       const funnelData = data.map(({ label, value }) => ({ label, value }));
       return (
-        <FunnelChart margin={{ top: 12, right: 30, bottom: 8, left: 30 }}>
+        <FunnelChart margin={{ top: 12, right: 4, bottom: 12, left: 4 }}>
           {commonTooltip}
           <Funnel
             data={funnelData}
@@ -979,13 +965,6 @@ function renderChart(
             {data.map((item, index) => (
               <Cell key={item.label} fill={VIZ[index % VIZ.length]} />
             ))}
-            <LabelList
-              dataKey="label"
-              position="right"
-              fill="var(--foreground)"
-              fontSize={12}
-              fontWeight={600}
-            />
           </Funnel>
         </FunnelChart>
       );
@@ -997,7 +976,8 @@ function renderChart(
           dataKey="value"
           nameKey="label"
           aspectRatio={1.5}
-          nodeGap={3}
+          nodeGap={8}
+          nodeInset={2}
           content={TreemapCell}
           isAnimationActive={false}
         >
@@ -1120,10 +1100,40 @@ export function WidgetChart({
     );
     observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [kind]);
   if (kind === "heatmap") return <TokenActivity period={period} />;
-  if (kind === "calendar") return <ReleaseCalendar />;
+  if (kind === "calendar") return <RevenueMetric />;
   if (kind === "builds") return <BuildTable />;
+  if (kind === "funnel")
+    return (
+      <div ref={ref} className="funnel-layout">
+        <ChartContainer
+          config={CONFIG}
+          style={{
+            width: "100%",
+            height: "100%",
+            minWidth: 0,
+            minHeight: 0,
+            aspectRatio: "auto",
+          }}
+          aria-label="Conversion funnel chart"
+        >
+          {renderChart(kind, period, chartId, compact)}
+        </ChartContainer>
+        <ol className="funnel-stages" aria-label="Conversion stages">
+          {chartData(kind, period).map((stage, index) => (
+            <li key={stage.label}>
+              <span className="funnel-stage-name">
+                <i style={{ background: VIZ[index] }} />
+                {stage.label}
+              </span>
+              <strong>{Number(stage.value).toLocaleString()}</strong>
+            </li>
+          ))}
+        </ol>
+      </div>
+    );
+
   return (
     <div
       ref={ref}
@@ -1150,7 +1160,7 @@ export function WidgetChart({
       >
         {renderChart(kind, period, chartId, compact)}
       </ChartContainer>
-      <WidgetLegend kind={kind} />
+      {kind !== "treemap" && <WidgetLegend kind={kind} />}
     </div>
   );
 }

@@ -104,3 +104,13 @@
   font-size: 12px;
   box-shadow: 0 4px 16px #0001;
 }
+
+.token-activity__tabs-list [role="tab"][aria-selected="true"] {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: none;
+  border-color: transparent;
+}
+.token-activity__tabs-list [role="tab"] {
+  box-shadow: none;
+}

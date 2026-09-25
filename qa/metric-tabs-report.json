@@ -1,0 +1,155 @@
+{
+  "base": "http://127.0.0.1:5201",
+  "checkedAt": "2026-09-25T14:54:02.590Z",
+  "checks": [
+    {
+      "name": "metric light 1600 value",
+      "passed": true
+    },
+    {
+      "name": "metric light 1600 fits",
+      "passed": true
+    },
+    {
+      "name": "metric light 1600 paired data",
+      "passed": true
+    },
+    {
+      "name": "activity light 1600 Daily selected",
+      "passed": true
+    },
+    {
+      "name": "activity light 1600 Daily visible fill",
+      "passed": true
+    },
+    {
+      "name": "activity light 1600 Weekly selected",
+      "passed": true
+    },
+    {
+      "name": "activity light 1600 Weekly visible fill",
+      "passed": true
+    },
+    {
+      "name": "activity light 1600 Cumulative selected",
+      "passed": true
+    },
+    {
+      "name": "activity light 1600 Cumulative visible fill",
+      "passed": true
+    },
+    {
+      "name": "metric light 390 value",
+      "passed": true
+    },
+    {
+      "name": "metric light 390 fits",
+      "passed": true
+    },
+    {
+      "name": "metric light 390 paired data",
+      "passed": true
+    },
+    {
+      "name": "activity light 390 Daily selected",
+      "passed": true
+    },
+    {
+      "name": "activity light 390 Daily visible fill",
+      "passed": true
+    },
+    {
+      "name": "activity light 390 Weekly selected",
+      "passed": true
+    },
+    {
+      "name": "activity light 390 Weekly visible fill",
+      "passed": true
+    },
+    {
+      "name": "activity light 390 Cumulative selected",
+      "passed": true
+    },
+    {
+      "name": "activity light 390 Cumulative visible fill",
+      "passed": true
+    },
+    {
+      "name": "metric dark 1600 value",
+      "passed": true
+    },
+    {
+      "name": "metric dark 1600 fits",
+      "passed": true
+    },
+    {
+      "name": "metric dark 1600 paired data",
+      "passed": true
+    },
+    {
+      "name": "activity dark 1600 Daily selected",
+      "passed": true
+    },
+    {
+      "name": "activity dark 1600 Daily visible fill",
+      "passed": true
+    },
+    {
+      "name": "activity dark 1600 Weekly selected",
+      "passed": true
+    },
+    {
+      "name": "activity dark 1600 Weekly visible fill",
+      "passed": true
+    },
+    {
+      "name": "activity dark 1600 Cumulative selected",
+      "passed": true
+    },
+    {
+      "name": "activity dark 1600 Cumulative visible fill",
+      "passed": true
+    },
+    {
+      "name": "metric dark 390 value",
+      "passed": true
+    },
+    {
+      "name": "metric dark 390 fits",
+      "passed": true
+    },
+    {
+      "name": "metric dark 390 paired data",
+      "passed": true
+    },
+    {
+      "name": "activity dark 390 Daily selected",
+      "passed": true
+    },
+    {
+      "name": "activity dark 390 Daily visible fill",
+      "passed": true
+    },
+    {
+      "name": "activity dark 390 Weekly selected",
+      "passed": true
+    },
+    {
+      "name": "activity dark 390 Weekly visible fill",
+      "passed": true
+    },
+    {
+      "name": "activity dark 390 Cumulative selected",
+      "passed": true
+    },
+    {
+      "name": "activity dark 390 Cumulative visible fill",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

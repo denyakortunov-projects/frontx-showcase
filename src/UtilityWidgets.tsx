@@ -1,8 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import {
   Badge,
   Button,
-  Calendar,
   Dialog,
   DialogContent,
   DialogDescription,
@@ -16,41 +15,22 @@ import {
   TableHeader,
   TableRow,
 } from "@gears-frontx/ui-kit";
-import { ArrowDown, ArrowUp, ArrowUpDown, CalendarDays } from "lucide-react";
+import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
+import { Area, AreaChart, XAxis, YAxis } from "recharts";
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@gears-frontx/ui-kit/chart";
 import "./utility-widgets.css";
 
-const releases = [
-  {
-    date: "2026-09-03",
-    name: "Navigation refresh",
-    version: "v2.8.0",
-    status: "Shipped",
-  },
-  {
-    date: "2026-09-08",
-    name: "Search improvements",
-    version: "v2.8.1",
-    status: "Shipped",
-  },
-  {
-    date: "2026-09-14",
-    name: "Dashboard preview",
-    version: "v2.9.0",
-    status: "In review",
-  },
-  {
-    date: "2026-09-21",
-    name: "Access controls",
-    version: "v2.9.1",
-    status: "Planned",
-  },
-  {
-    date: "2026-09-29",
-    name: "Workspace exports",
-    version: "v3.0.0",
-    status: "Planned",
-  },
-];
+export const revenueSeries = [
+  32, 34, 33, 38, 36, 41, 40, 45, 43, 47, 46, 50, 48, 53, 51, 57, 55, 59, 58,
+  63, 62, 67, 65, 71, 74,
+].map((value, index) => ({
+  date: `2026-09-${String(index + 1).padStart(2, "0")}`,
+  value: value * 1000,
+}));
 
 const builds = [
   {
@@ -116,7 +96,11 @@ export type UtilityRow = Record<string, string | number>;
 
 /** Small deterministic fixtures for the showcase Data view; all values are synthetic. */
 export function utilityRows(kind: UtilityWidgetKind): UtilityRow[] {
-  if (kind === "calendar") return releases.map((release) => ({ ...release }));
+  if (kind === "calendar")
+    return revenueSeries.map((point) => ({
+      date: point.date,
+      revenue: point.value,
+    }));
   return builds.map(({ id, status, duration, sha, branch }) => ({
     id,
     status,
@@ -126,122 +110,63 @@ export function utilityRows(kind: UtilityWidgetKind): UtilityRow[] {
   }));
 }
 
-function parseLocalDate(value: string) {
-  const [year, month, day] = value.split("-").map(Number);
-  return new Date(year, month - 1, day);
-}
-
-function dateKey(date: Date) {
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
-}
-
-function formatDate(date: Date) {
-  return new Intl.DateTimeFormat("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  }).format(date);
-}
-
-export function ReleaseCalendar() {
-  const [month, setMonth] = useState(() => new Date(2026, 8, 1));
-  const [selected, setSelected] = useState<Date | undefined>(
-    () => new Date(2026, 8, 29),
-  );
-  const [open, setOpen] = useState(false);
-  const [daySize, setDaySize] = useState(26);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const dayRef = useRef<HTMLButtonElement | null>(null);
-  useEffect(() => {
-    if (!rootRef.current) return;
-    const observer = new ResizeObserver(([entry]) =>
-      setDaySize(
-        Math.max(
-          20,
-          Math.min(
-            36,
-            Math.floor((entry.contentRect.height - 28) / 7),
-            Math.floor(entry.contentRect.width / 7),
-          ),
-        ),
-      ),
-    );
-    observer.observe(rootRef.current);
-    return () => observer.disconnect();
-  }, []);
-  const releaseDates = useMemo(
-    () => releases.map((release) => parseLocalDate(release.date)),
-    [],
-  );
-  const selectedReleases = releases.filter(
-    (release) => selected && release.date === dateKey(selected),
-  );
+export function RevenueMetric() {
+  const id = useId().replace(/:/g, "");
+  const current = revenueSeries.at(-1)!.value;
+  const previous = 66000;
+  const growth = (((current - previous) / previous) * 100).toFixed(1);
   return (
-    <div className="utility-calendar-widget" ref={rootRef}>
-      <Calendar
-        className="utility-calendar"
-        style={{ "--control-height-md": `${daySize}px` } as React.CSSProperties}
-        classNames={{
-          month: "utility-calendar-month",
-          week: "utility-calendar-week",
-          month_caption: "utility-calendar-caption",
+    <div className="revenue-metric">
+      <div className="revenue-metric-summary">
+        <strong>${current.toLocaleString()}</strong>
+        <span className="revenue-metric-change">
+          <ArrowUp size={14} />
+          {growth}%<small>vs previous period</small>
+        </span>
+      </div>
+      <ChartContainer
+        config={{ value: { label: "Revenue", color: "var(--viz-1)" } }}
+        style={{
+          width: "100%",
+          height: "100%",
+          minHeight: 0,
+          aspectRatio: "auto",
         }}
-        mode="single"
-        required
-        fixedWeeks
-        month={month}
-        onMonthChange={setMonth}
-        selected={selected}
-        onSelect={(date, _triggerDate, _modifiers, event) => {
-          setSelected(date);
-          dayRef.current = event.currentTarget as HTMLButtonElement;
-          setOpen(true);
-        }}
-        modifiers={{ scheduledRelease: releaseDates }}
-        modifiersClassNames={{
-          scheduledRelease: "utility-calendar-release-day",
-        }}
-        aria-label="Synthetic release calendar"
-      />
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent finalFocus={dayRef}>
-          <DialogHeader>
-            <DialogTitle>
-              {selected ? formatDate(selected) : "Release schedule"}
-            </DialogTitle>
-            <DialogDescription>Sample release schedule</DialogDescription>
-          </DialogHeader>
-          <div className="utility-calendar-selection">
-            {selectedReleases.length ? (
-              <ul>
-                {selectedReleases.map((release) => (
-                  <li key={release.name}>
-                    <span>
-                      <strong>{release.name}</strong>
-                      <small>{release.version}</small>
-                    </span>
-                    <Badge
-                      variant={
-                        release.status === "Shipped"
-                          ? "success"
-                          : release.status === "In review"
-                            ? "warning"
-                            : "info"
-                      }
-                      dot
-                    >
-                      {release.status}
-                    </Badge>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No scheduled releases on this date.</p>
-            )}
-          </div>
-        </DialogContent>
-      </Dialog>
+        aria-label="Revenue sparkline for September 1–25, 2026"
+      >
+        <AreaChart
+          data={revenueSeries}
+          margin={{ top: 8, right: 0, bottom: 0, left: 0 }}
+        >
+          <defs>
+            <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="var(--viz-1)" stopOpacity={0.3} />
+              <stop offset="100%" stopColor="var(--viz-1)" stopOpacity={0.02} />
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="date" hide />
+          <YAxis hide domain={[0, "dataMax"]} />
+          <ChartTooltip
+            content={
+              <ChartTooltipContent
+                formatter={(value) => `$${Number(value).toLocaleString()}`}
+              />
+            }
+          />
+          <Area
+            type="monotone"
+            dataKey="value"
+            stroke="var(--viz-1)"
+            strokeWidth={2.5}
+            fill={`url(#${id})`}
+            isAnimationActive={false}
+          />
+        </AreaChart>
+      </ChartContainer>
+      <div className="revenue-metric-range">
+        <span>Sep 1</span>
+        <span>Sep 25</span>
+      </div>
     </div>
   );
 }
