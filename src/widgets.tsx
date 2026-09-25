@@ -1,4 +1,11 @@
-import { useId, useEffect, useRef, useState, type CSSProperties } from "react";
+import {
+  useId,
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactElement,
+} from "react";
 import {
   Area,
   AreaChart,
@@ -6,6 +13,9 @@ import {
   BarChart,
   CartesianGrid,
   Cell,
+  ComposedChart,
+  Funnel,
+  FunnelChart,
   Line,
   LineChart,
   Label,
@@ -22,6 +32,8 @@ import {
   Scatter,
   ScatterChart,
   Tooltip,
+  Treemap,
+  type TreemapNode,
   XAxis,
   YAxis,
   ZAxis,
@@ -33,6 +45,8 @@ import {
   type ChartConfig,
 } from "@gears-frontx/ui-kit/chart";
 import { chartData, type WidgetKind } from "./data";
+import TokenActivity from "./TokenActivity";
+import { BuildTable, ReleaseCalendar } from "./UtilityWidgets";
 export { chartData } from "./data";
 
 export type { WidgetKind } from "./data";
@@ -114,21 +128,78 @@ export const widgets: Array<{
     description: "Organic and paid visits contributing to daily traffic.",
     unit: "visits",
   },
+  {
+    id: "composed",
+    title: "Reach and conversion",
+    category: "Trends",
+    description: "Daily visits paired with conversion rate on a second scale.",
+    unit: "visits and percent",
+  },
+  {
+    id: "waterfall",
+    title: "Revenue bridge",
+    category: "Change",
+    description: "A period-scaled bridge from starting to closing value.",
+    unit: "synthetic value units",
+  },
+  {
+    id: "funnel",
+    title: "Conversion funnel",
+    category: "Conversion",
+    description: "Synthetic audience counts through five conversion stages.",
+    unit: "accounts",
+  },
+  {
+    id: "treemap",
+    title: "Feature adoption",
+    category: "Composition",
+    description: "Relative synthetic adoption volume across product areas.",
+    unit: "adoption events",
+  },
+  {
+    id: "bubble",
+    title: "Account opportunity",
+    category: "Distribution",
+    description: "Synthetic account adoption, engagement and opportunity size.",
+    unit: "percent and index",
+  },
+  {
+    id: "heatmap",
+    title: "Token activity",
+    category: "Activity",
+    description: "Daily, weekly and cumulative activity across a year.",
+    unit: "contributions",
+  },
+  {
+    id: "calendar",
+    title: "Release calendar",
+    category: "Planning",
+    description: "Upcoming and shipped release milestones.",
+    unit: "releases",
+  },
+  {
+    id: "builds",
+    title: "Build activity",
+    category: "Developer tools",
+    description: "Synthetic recent build results and stage details.",
+    unit: "builds",
+  },
 ];
 
 const VIZ = [
-  "var(--viz-1)",
-  "var(--viz-2)",
-  "var(--viz-3)",
-  "var(--viz-4)",
-  "var(--viz-5)",
-  "var(--viz-6)",
+  "var(--chart-1)",
+  "var(--chart-2)",
+  "var(--chart-3)",
+  "var(--chart-4)",
+  "var(--chart-5)",
+  "var(--chart-6, var(--viz-6))",
 ] as const;
 
 const CONFIG: ChartConfig = {
   visitors: { label: "Visits", color: VIZ[0] },
   conversions: { label: "Conversions", color: VIZ[1] },
   conversionsTarget: { label: "Target", color: VIZ[2] },
+  conversionRate: { label: "Conversion rate", color: VIZ[2] },
   target: { label: "Target", color: VIZ[2] },
   organic: { label: "Organic", color: VIZ[0] },
   paid: { label: "Paid", color: VIZ[1] },
@@ -139,6 +210,10 @@ const CONFIG: ChartConfig = {
   New: { label: "New accounts", color: VIZ[0] },
   Returning: { label: "Returning accounts", color: VIZ[1] },
   Partner: { label: "Partner accounts", color: VIZ[2] },
+  increase: { label: "Increase", color: VIZ[1] },
+  decrease: { label: "Decrease", color: VIZ[4] },
+  total: { label: "Total", color: VIZ[0] },
+  base: { label: "Starting level", color: "transparent" },
 };
 
 const channelColor: Record<string, string> = {
@@ -148,7 +223,7 @@ const channelColor: Record<string, string> = {
   Referral: VIZ[3],
   Social: VIZ[4],
 };
-const axisTick = { fill: "var(--muted)", fontSize: 12 };
+const axisTick = { fill: "var(--muted-foreground)", fontSize: 12 };
 
 type LegendItem = { label: string; color: string; style?: "line" | "dashed" };
 
@@ -199,6 +274,37 @@ function legendItems(kind: WidgetKind): LegendItem[] {
         { label: "Organic", color: VIZ[0] },
         { label: "Paid", color: VIZ[1] },
       ];
+    case "composed":
+      return [
+        { label: "Visits", color: VIZ[0] },
+        { label: "Conversion rate", color: VIZ[2], style: "line" },
+      ];
+    case "waterfall":
+      return [
+        { label: "Increase", color: VIZ[1] },
+        { label: "Decrease", color: VIZ[4] },
+        { label: "Total", color: VIZ[0] },
+      ];
+    case "funnel":
+      return [
+        { label: "Visitors", color: VIZ[0] },
+        { label: "Qualified", color: VIZ[1] },
+        { label: "Trials", color: VIZ[2] },
+        { label: "Activated", color: VIZ[3] },
+        { label: "Customers", color: VIZ[4] },
+      ];
+    case "treemap":
+      return [{ label: "Adoption events", color: VIZ[0] }];
+    case "bubble":
+      return [
+        { label: "Core", color: VIZ[0] },
+        { label: "Growth", color: VIZ[1] },
+        { label: "Emerging", color: VIZ[2] },
+      ];
+    case "heatmap":
+    case "calendar":
+    case "builds":
+      return [];
     case "ranked":
       return [];
   }
@@ -218,7 +324,7 @@ function WidgetLegend({ kind }: { kind: WidgetKind }) {
         alignItems: "center",
         gap: "6px 16px",
         padding: "4px 8px 2px",
-        color: "var(--muted)",
+        color: "var(--muted-foreground)",
         fontSize: 12,
         lineHeight: 1.4,
       }}
@@ -267,7 +373,8 @@ function tooltipContent(kind: WidgetKind, hideLabel = false) {
           kind === "donut" ||
           kind === "pie" ||
           kind === "radial" ||
-          label === "Activity"
+          label === "Activity" ||
+          label === "Adoption"
             ? "%"
             : label === "Engagement score" || kind === "radar"
               ? "/100"
@@ -275,7 +382,19 @@ function tooltipContent(kind: WidgetKind, hideLabel = false) {
                 ? "conversions"
                 : label === "Monthly visits"
                   ? "visits"
-                  : "visits";
+                  : kind === "funnel"
+                    ? "accounts"
+                    : kind === "treemap"
+                      ? "events"
+                      : kind === "waterfall"
+                        ? "value units"
+                        : kind === "bubble" && label === "Opportunity"
+                          ? "index"
+                          : kind === "composed" && label === "Conversion rate"
+                            ? "%"
+                            : kind === "composed" && label === "Visits"
+                              ? "visits"
+                              : "visits";
         return (
           <span
             style={{
@@ -293,6 +412,66 @@ function tooltipContent(kind: WidgetKind, hideLabel = false) {
         );
       }}
     />
+  );
+}
+
+function TreemapCell(node: TreemapNode): ReactElement {
+  const color = VIZ[node.index % VIZ.length];
+  const hasLabelRoom = node.width > 48 && node.height > 28;
+  const maxCharacters = Math.max(3, Math.floor((node.width - 22) / 7));
+  const label =
+    node.name.length > maxCharacters
+      ? `${node.name.slice(0, Math.max(2, maxCharacters - 1))}…`
+      : node.name;
+  const labelWidth = Math.min(node.width - 8, label.length * 7 + 14);
+  return (
+    <g>
+      <rect
+        x={node.x}
+        y={node.y}
+        width={Math.max(0, node.width)}
+        height={Math.max(0, node.height)}
+        rx={5}
+        fill={color}
+        fillOpacity={0.88}
+        stroke="var(--background)"
+        strokeWidth={3}
+      />
+      <title>{`${node.name}: ${Number(node.value).toLocaleString()} adoption events`}</title>
+      {hasLabelRoom && (
+        <>
+          <rect
+            x={node.x + 4}
+            y={node.y + 4}
+            width={Math.max(0, labelWidth)}
+            height={20}
+            rx={4}
+            fill="var(--background)"
+            fillOpacity={0.9}
+          />
+          <text
+            x={node.x + 10}
+            y={node.y + 18}
+            fill="var(--foreground)"
+            fontSize={12}
+            fontWeight={600}
+          >
+            {node.name}
+          </text>
+          {node.height > 44 && (
+            <text
+              x={node.x + 8}
+              y={node.y + 34}
+              fill="var(--foreground)"
+              fillOpacity={0.9}
+              fontSize={11}
+            >
+              {Number(node.value).toLocaleString()}
+            </text>
+          )}
+        </>
+      )}
+    </g>
   );
 }
 
@@ -488,7 +667,7 @@ function renderChart(
               dataKey="value"
               position="right"
               formatter={(value) => Number(value).toLocaleString()}
-              fill="var(--muted)"
+              fill="var(--muted-foreground)"
               fontSize={10}
             />
           </Bar>
@@ -558,7 +737,7 @@ function renderChart(
                   )[v] || v
                 : v
             }
-            tick={{ fill: "var(--muted)", fontSize: 12 }}
+            tick={{ fill: "var(--muted-foreground)", fontSize: 12 }}
           />
           <PolarRadiusAxis
             angle={90}
@@ -666,6 +845,208 @@ function renderChart(
           ))}
         </ScatterChart>
       );
+    case "composed":
+      return (
+        <ComposedChart
+          data={data}
+          margin={{ top: 8, right: 8, bottom: 0, left: 0 }}
+        >
+          <CartesianGrid stroke="var(--grid)" vertical={false} />
+          <XAxis
+            dataKey="label"
+            tick={axisTick}
+            tickLine={false}
+            axisLine={false}
+            minTickGap={28}
+          />
+          <YAxis
+            yAxisId="visits"
+            tick={axisTick}
+            tickLine={false}
+            axisLine={false}
+            width={46}
+            tickFormatter={(v) => compactNumber(Number(v))}
+          />
+          <YAxis
+            yAxisId="rate"
+            orientation="right"
+            domain={[0, 8]}
+            tick={axisTick}
+            tickLine={false}
+            axisLine={false}
+            width={38}
+            tickFormatter={(v) => `${v}%`}
+          />
+          {commonTooltip}
+          <Bar
+            yAxisId="visits"
+            dataKey="visitors"
+            name="Visits"
+            fill={VIZ[0]}
+            fillOpacity={0.82}
+            radius={[4, 4, 0, 0]}
+            maxBarSize={20}
+            isAnimationActive={false}
+          />
+          <Line
+            yAxisId="rate"
+            type="monotone"
+            dataKey="conversionRate"
+            name="Conversion rate"
+            stroke={VIZ[2]}
+            strokeWidth={2.5}
+            dot={false}
+            activeDot={{ r: 4 }}
+            isAnimationActive={false}
+          />
+        </ComposedChart>
+      );
+    case "waterfall":
+      return (
+        <BarChart
+          data={data}
+          margin={{ top: 12, right: 16, bottom: 4, left: 4 }}
+        >
+          <CartesianGrid stroke="var(--grid)" vertical={false} />
+          <XAxis
+            dataKey="label"
+            tick={axisTick}
+            tickLine={false}
+            axisLine={false}
+            interval={0}
+            angle={-14}
+            textAnchor="end"
+            height={46}
+          />
+          <YAxis
+            tick={axisTick}
+            tickLine={false}
+            axisLine={false}
+            width={48}
+            tickFormatter={(v) => compactNumber(Number(v))}
+          />
+          {commonTooltip}
+          <Bar
+            dataKey="base"
+            name="Starting level"
+            stackId="bridge"
+            fill="transparent"
+            stroke="none"
+            legendType="none"
+            isAnimationActive={false}
+          />
+          <Bar
+            dataKey="increase"
+            name="Increase"
+            stackId="bridge"
+            fill={VIZ[1]}
+            radius={[4, 4, 0, 0]}
+            isAnimationActive={false}
+          />
+          <Bar
+            dataKey="decrease"
+            name="Decrease"
+            stackId="bridge"
+            fill={VIZ[4]}
+            radius={[4, 4, 0, 0]}
+            isAnimationActive={false}
+          />
+          <Bar
+            dataKey="total"
+            name="Total"
+            stackId="bridge"
+            fill={VIZ[0]}
+            radius={[4, 4, 0, 0]}
+            isAnimationActive={false}
+          />
+        </BarChart>
+      );
+    case "funnel": {
+      const funnelData = data.map(({ label, value }) => ({ label, value }));
+      return (
+        <FunnelChart margin={{ top: 12, right: 30, bottom: 8, left: 30 }}>
+          {commonTooltip}
+          <Funnel
+            data={funnelData}
+            dataKey="value"
+            nameKey="label"
+            isAnimationActive={false}
+            lastShapeType="rectangle"
+          >
+            {data.map((item, index) => (
+              <Cell key={item.label} fill={VIZ[index % VIZ.length]} />
+            ))}
+            <LabelList
+              dataKey="label"
+              position="right"
+              fill="var(--foreground)"
+              fontSize={12}
+              fontWeight={600}
+            />
+          </Funnel>
+        </FunnelChart>
+      );
+    }
+    case "treemap":
+      return (
+        <Treemap
+          data={data}
+          dataKey="value"
+          nameKey="label"
+          aspectRatio={1.5}
+          nodeGap={3}
+          content={TreemapCell}
+          isAnimationActive={false}
+        >
+          {commonTooltip}
+        </Treemap>
+      );
+    case "bubble":
+      return (
+        <ScatterChart margin={{ top: 12, right: 18, bottom: 8, left: 0 }}>
+          <CartesianGrid stroke="var(--grid)" />
+          <XAxis
+            type="number"
+            dataKey="x"
+            name="Adoption"
+            domain={[0, 110]}
+            tick={axisTick}
+            tickLine={false}
+            axisLine={false}
+            tickFormatter={(v) => `${v}%`}
+          />
+          <YAxis
+            type="number"
+            dataKey="y"
+            name="Engagement score"
+            domain={[0, 110]}
+            tick={axisTick}
+            tickLine={false}
+            axisLine={false}
+            width={42}
+          />
+          <ZAxis
+            type="number"
+            dataKey="value"
+            range={[100, 520]}
+            name="Opportunity"
+          />
+          <Tooltip
+            cursor={{ strokeDasharray: "3 3" }}
+            content={tooltipContent(kind)}
+          />
+          {(["Core", "Growth", "Emerging"] as const).map((segment, index) => (
+            <Scatter
+              key={segment}
+              name={segment}
+              data={data.filter((item) => item.segment === segment)}
+              fill={VIZ[index]}
+              fillOpacity={0.7}
+              isAnimationActive={false}
+            />
+          ))}
+        </ScatterChart>
+      );
     case "stacked":
       return (
         <BarChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
@@ -704,12 +1085,16 @@ function renderChart(
           />
         </BarChart>
       );
+    case "heatmap":
+    case "calendar":
+    case "builds":
+      return null;
   }
 }
 
 export function WidgetChart({
   kind,
-  period = 30,
+  period = kind === "heatmap" ? 365 : 30,
 }: {
   kind: WidgetKind;
   period?: number;
@@ -725,6 +1110,9 @@ export function WidgetChart({
     observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+  if (kind === "heatmap") return <TokenActivity period={period} />;
+  if (kind === "calendar") return <ReleaseCalendar />;
+  if (kind === "builds") return <BuildTable />;
   return (
     <div
       ref={ref}

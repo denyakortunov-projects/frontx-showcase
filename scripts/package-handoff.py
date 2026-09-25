@@ -14,5 +14,5 @@ with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
   info=zipfile.ZipInfo('frontx-showcase/'+str(p.relative_to(base)),date_time=(2026,9,25,0,0,0))
   info.compress_type=zipfile.ZIP_DEFLATED
   z.writestr(info,p.read_bytes())
-(base/'public/release.json').write_text(json.dumps({'name':'frontx-showcase','version':'0.1.0','sourceFingerprint':fingerprint,'files':manifest,'archiveSha256':hashlib.sha256(out.read_bytes()).hexdigest()},indent=2)+'\n')
+(base/'public/release.json').write_text(json.dumps({'name':'frontx-showcase','version':json.loads((base/'package.json').read_text())['version'],'sourceFingerprint':fingerprint,'files':manifest,'archiveSha256':hashlib.sha256(out.read_bytes()).hexdigest()},indent=2)+'\n')
 print(json.dumps({'sourceFingerprint':fingerprint,'files':len(files),'archiveBytes':out.stat().st_size}))

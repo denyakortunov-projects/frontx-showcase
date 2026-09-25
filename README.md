@@ -17,11 +17,19 @@ The application is static. Deploy `dist/` with no server, environment variables,
 
 ## Structure
 
-- `src/widgets.tsx`: ten chart renderers through FrontX ChartContainer and Recharts.
+- `src/widgets.tsx`: widget catalogue and 16 data visualizations using FrontX ChartContainer and Recharts.
 - `src/data.ts`: shared deterministic fixtures.
 - `src/WidgetFrame.tsx`: common header/body and loading/empty/error states.
-- `src/main.tsx`: gallery, playground, compositions, elements and handoff.
-- `src/style.css`: responsive grid and Fabric/editorial/terminal themes.
+- `src/main.tsx`: gallery, chart playground, URL navigation and handoff.
+- `src/UtilityWidgets.tsx`: Release calendar and Build activity using FrontX Calendar, Table, Badge and Dialog.
+- `src/TokenActivity.tsx`: annual activity grid, token aggregation and keyboard selection.
+- `src/Elements.tsx`: 20 interactive installed-kit examples.
+- `src/Compositions.tsx`: three complete screen recipes with shared data.
+- `src/Modularity.tsx`: 1/2/3/4-block width sandbox, independent row spans and JSON.
+- `src/UtilityWidgets.tsx`: release calendar and interactive build table.
+- `src/TokenActivity.tsx`: calendar heatmap with daily, weekly and cumulative modes.
+- `src/themes.ts`, `src/ThemeGallery.tsx`: five palettes, modes and token handoff.
+- `src/style.css`: responsive grid and five product themes.
 - `public/handoff/`: integration notes and source download.
 
 Use React 19 and `@gears-frontx/ui-kit@0.4.0-alpha.5`; no copied primitive library. Product-owned adapters will provide real data, permissions, actions and persistence. The proposed JSON config describes this demo only; it is not a generic code executor or a production GTS renderer.

@@ -1,0 +1,15 @@
+import {createHash} from 'node:crypto';
+import {readFileSync,writeFileSync} from 'node:fs';
+const base=process.argv[2]||'https://frontx.constructor.rocks';
+const expected=JSON.parse(readFileSync('public/release.json','utf8'));
+const get=async path=>{const r=await fetch(base+path,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error(`${path}: ${r.status}`);return r};
+const manifest=await(await get('/release.json')).json();
+if(manifest.sourceFingerprint!==expected.sourceFingerprint)throw Error('Public source differs from selected build');
+const html=await(await get('/')).text();
+const assets=[...html.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)].map(m=>m[1]);
+for(const asset of assets)await get(asset);
+const zip=await(await get('/handoff/frontx-showcase-source.zip')).arrayBuffer();
+if(createHash('sha256').update(Buffer.from(zip)).digest('hex')!==expected.archiveSha256)throw Error('Wrong public source archive');
+for(const name of ['README.md','CONTRACT.md'])await get('/handoff/'+name);
+const report={base,verifiedAt:new Date().toISOString(),sourceFingerprint:manifest.sourceFingerprint,assets,sourceZipBytes:zip.byteLength,archiveSha256:manifest.archiveSha256};
+writeFileSync('qa/public-expansion-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

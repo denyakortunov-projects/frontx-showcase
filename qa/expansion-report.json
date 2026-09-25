@@ -1,0 +1,487 @@
+{
+  "base": "http://127.0.0.1:5201",
+  "checkedAt": "2026-09-25T14:24:08.394Z",
+  "checks": [
+    {
+      "name": "18 gallery entries",
+      "passed": true
+    },
+    {
+      "name": "polar filter",
+      "passed": true
+    },
+    {
+      "name": "heatmap search",
+      "passed": true
+    },
+    {
+      "name": "area renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "area has data rows",
+      "passed": true
+    },
+    {
+      "name": "area respects height",
+      "passed": true
+    },
+    {
+      "name": "line renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "line has data rows",
+      "passed": true
+    },
+    {
+      "name": "line respects height",
+      "passed": true
+    },
+    {
+      "name": "bar renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "bar has data rows",
+      "passed": true
+    },
+    {
+      "name": "bar respects height",
+      "passed": true
+    },
+    {
+      "name": "ranked renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "ranked has data rows",
+      "passed": true
+    },
+    {
+      "name": "ranked respects height",
+      "passed": true
+    },
+    {
+      "name": "donut renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "donut has data rows",
+      "passed": true
+    },
+    {
+      "name": "donut respects height",
+      "passed": true
+    },
+    {
+      "name": "pie renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "pie has data rows",
+      "passed": true
+    },
+    {
+      "name": "pie respects height",
+      "passed": true
+    },
+    {
+      "name": "radar renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "radar has data rows",
+      "passed": true
+    },
+    {
+      "name": "radar respects height",
+      "passed": true
+    },
+    {
+      "name": "radial renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "radial has data rows",
+      "passed": true
+    },
+    {
+      "name": "radial respects height",
+      "passed": true
+    },
+    {
+      "name": "scatter renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "scatter has data rows",
+      "passed": true
+    },
+    {
+      "name": "scatter respects height",
+      "passed": true
+    },
+    {
+      "name": "stacked renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "stacked has data rows",
+      "passed": true
+    },
+    {
+      "name": "stacked respects height",
+      "passed": true
+    },
+    {
+      "name": "composed renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "composed has data rows",
+      "passed": true
+    },
+    {
+      "name": "composed respects height",
+      "passed": true
+    },
+    {
+      "name": "waterfall renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "waterfall has data rows",
+      "passed": true
+    },
+    {
+      "name": "waterfall respects height",
+      "passed": true
+    },
+    {
+      "name": "funnel renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "funnel has data rows",
+      "passed": true
+    },
+    {
+      "name": "funnel respects height",
+      "passed": true
+    },
+    {
+      "name": "treemap renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "treemap has data rows",
+      "passed": true
+    },
+    {
+      "name": "treemap respects height",
+      "passed": true
+    },
+    {
+      "name": "bubble renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "bubble has data rows",
+      "passed": true
+    },
+    {
+      "name": "bubble respects height",
+      "passed": true
+    },
+    {
+      "name": "heatmap renders data graphic",
+      "passed": true
+    },
+    {
+      "name": "heatmap has data rows",
+      "passed": true
+    },
+    {
+      "name": "heatmap respects height",
+      "passed": true
+    },
+    {
+      "name": "period updates data",
+      "passed": true
+    },
+    {
+      "name": "error retry",
+      "passed": true
+    },
+    {
+      "name": "default five modules",
+      "passed": true
+    },
+    {
+      "name": "three block URL",
+      "passed": true
+    },
+    {
+      "name": "independent height",
+      "passed": true
+    },
+    {
+      "name": "back restores height",
+      "passed": true
+    },
+    {
+      "name": "forward restores height",
+      "passed": true
+    },
+    {
+      "name": "selected module changes only second",
+      "passed": true
+    },
+    {
+      "name": "add module",
+      "passed": true
+    },
+    {
+      "name": "remove module",
+      "passed": true
+    },
+    {
+      "name": "compact preset",
+      "passed": true
+    },
+    {
+      "name": "20 component demos",
+      "passed": true
+    },
+    {
+      "name": "action feedback",
+      "passed": true
+    },
+    {
+      "name": "working tabs",
+      "passed": true
+    },
+    {
+      "name": "keyboard tabs",
+      "passed": true
+    },
+    {
+      "name": "switch toggles",
+      "passed": true
+    },
+    {
+      "name": "dialog visible",
+      "passed": true
+    },
+    {
+      "name": "dialog Escape",
+      "passed": true
+    },
+    {
+      "name": "dialog focus restored",
+      "passed": true
+    },
+    {
+      "name": "menu visible",
+      "passed": true
+    },
+    {
+      "name": "table empty filter",
+      "passed": true
+    },
+    {
+      "name": "skeleton resolves",
+      "passed": true
+    },
+    {
+      "name": "fabric light tokens",
+      "passed": true
+    },
+    {
+      "name": "fabric dark tokens",
+      "passed": true
+    },
+    {
+      "name": "editorial light tokens",
+      "passed": true
+    },
+    {
+      "name": "editorial dark tokens",
+      "passed": true
+    },
+    {
+      "name": "terminal dark tokens",
+      "passed": true
+    },
+    {
+      "name": "iris light tokens",
+      "passed": true
+    },
+    {
+      "name": "iris dark tokens",
+      "passed": true
+    },
+    {
+      "name": "lagoon light tokens",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark tokens",
+      "passed": true
+    },
+    {
+      "name": "five named palettes",
+      "passed": true
+    },
+    {
+      "name": "apply palette",
+      "passed": true
+    },
+    {
+      "name": "palette Back",
+      "passed": true
+    },
+    {
+      "name": "overview three sections",
+      "passed": true
+    },
+    {
+      "name": "overview shared period",
+      "passed": true
+    },
+    {
+      "name": "insight three sections",
+      "passed": true
+    },
+    {
+      "name": "insight shared period",
+      "passed": true
+    },
+    {
+      "name": "polar three sections",
+      "passed": true
+    },
+    {
+      "name": "polar shared period",
+      "passed": true
+    },
+    {
+      "name": "gallery fits 1920",
+      "passed": true
+    },
+    {
+      "name": "elements fits 1920",
+      "passed": true
+    },
+    {
+      "name": "themes fits 1920",
+      "passed": true
+    },
+    {
+      "name": "modularity fits 1920",
+      "passed": true
+    },
+    {
+      "name": "layouts fits 1920",
+      "passed": true
+    },
+    {
+      "name": "handoff fits 1920",
+      "passed": true
+    },
+    {
+      "name": "widget fits 1920",
+      "passed": true
+    },
+    {
+      "name": "gallery fits 1280",
+      "passed": true
+    },
+    {
+      "name": "elements fits 1280",
+      "passed": true
+    },
+    {
+      "name": "themes fits 1280",
+      "passed": true
+    },
+    {
+      "name": "modularity fits 1280",
+      "passed": true
+    },
+    {
+      "name": "layouts fits 1280",
+      "passed": true
+    },
+    {
+      "name": "handoff fits 1280",
+      "passed": true
+    },
+    {
+      "name": "widget fits 1280",
+      "passed": true
+    },
+    {
+      "name": "gallery fits 390",
+      "passed": true
+    },
+    {
+      "name": "elements fits 390",
+      "passed": true
+    },
+    {
+      "name": "themes fits 390",
+      "passed": true
+    },
+    {
+      "name": "modularity fits 390",
+      "passed": true
+    },
+    {
+      "name": "layouts fits 390",
+      "passed": true
+    },
+    {
+      "name": "handoff fits 390",
+      "passed": true
+    },
+    {
+      "name": "widget fits 390",
+      "passed": true
+    },
+    {
+      "name": "gallery fits 320",
+      "passed": true
+    },
+    {
+      "name": "elements fits 320",
+      "passed": true
+    },
+    {
+      "name": "themes fits 320",
+      "passed": true
+    },
+    {
+      "name": "modularity fits 320",
+      "passed": true
+    },
+    {
+      "name": "layouts fits 320",
+      "passed": true
+    },
+    {
+      "name": "handoff fits 320",
+      "passed": true
+    },
+    {
+      "name": "widget fits 320",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

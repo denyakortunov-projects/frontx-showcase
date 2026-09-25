@@ -58,8 +58,21 @@ import {
 import { WidgetChart, widgets, chartData, type WidgetKind } from "./widgets";
 import "@gears-frontx/ui-kit/theme.css";
 import "./style.css";
+import { Elements } from "./Elements";
+import { Themes } from "./ThemeGallery";
+import { Modularity } from "./Modularity";
+import { Compositions } from "./Compositions";
+import { themes, paletteFor } from "./themes";
+import { utilityRows } from "./UtilityWidgets";
 
-type Route = "gallery" | "layouts" | "elements" | "handoff" | "widget";
+type Route =
+  | "gallery"
+  | "layouts"
+  | "elements"
+  | "handoff"
+  | "widget"
+  | "themes"
+  | "modularity";
 type LoadState = "ready" | "loading" | "empty" | "error";
 function useQuery() {
   const [query, setQuery] = useState(
@@ -114,7 +127,11 @@ function DataGrid({
   period?: number;
 }) {
   const [sort, setSort] = useState(false);
-  const rows = chartData(kind, period) as Record<string, unknown>[];
+  const rows = (
+    kind === "calendar" || kind === "builds"
+      ? utilityRows(kind)
+      : chartData(kind, period)
+  ) as Record<string, unknown>[];
   const columns: Record<WidgetKind, string[]> = {
     area: ["label", "organic", "paid"],
     line: ["label", "conversions", "conversionsTarget"],
@@ -126,6 +143,14 @@ function DataGrid({
     radial: ["label", "value", "target"],
     scatter: ["label", "x", "y", "value", "segment"],
     stacked: ["label", "organic", "paid"],
+    composed: ["label", "visitors", "conversionRate"],
+    waterfall: ["label", "increase", "decrease", "total"],
+    funnel: ["label", "value"],
+    treemap: ["label", "value"],
+    bubble: ["label", "x", "y", "value", "segment"],
+    heatmap: ["date", "value"],
+    calendar: ["date", "name", "version", "status"],
+    builds: ["id", "status", "durationSeconds", "branch"],
   };
   const keys = columns[kind];
   const names: Record<string, string> = {
@@ -143,7 +168,18 @@ function DataGrid({
     conversionsTarget: "Target",
     visitors: "Visits",
     target: "Target",
-    x: "Activity %",
+    conversionRate: "Conversion %",
+    date: "Date",
+    name: "Release",
+    id: "Build",
+    status: "Status",
+    version: "Version",
+    durationSeconds: "Duration (seconds)",
+    branch: "Branch",
+    increase: "Increase",
+    decrease: "Decrease",
+    total: "Total",
+    x: kind === "bubble" ? "Adoption %" : "Activity %",
     y: "Engagement",
   };
   const visible = sort
@@ -205,28 +241,40 @@ function ChartIcon({ kind }: { kind: WidgetKind }) {
     radial: Gauge,
     scatter: ChartScatter,
     stacked: ChartColumn,
+    composed: ChartLine,
+    waterfall: ChartColumn,
+    funnel: Layers,
+    treemap: Grid2X2,
+    bubble: ChartScatter,
+    heatmap: Grid2X2,
+    calendar: Grid2X2,
+    builds: Layers,
   }[kind];
   return <Icon size={16} />;
 }
 function App() {
   const [q, update] = useQuery();
   const page = (
-    ["gallery", "layouts", "elements", "handoff", "widget"].includes(
-      q.get("page") || "",
-    )
+    [
+      "gallery",
+      "layouts",
+      "elements",
+      "handoff",
+      "widget",
+      "themes",
+      "modularity",
+    ].includes(q.get("page") || "")
       ? q.get("page")
       : "gallery"
   ) as Route;
   const kind = (
     widgets.some((w) => w.id === q.get("widget")) ? q.get("widget") : "area"
   ) as WidgetKind;
-  const theme = ["fabric", "editorial", "terminal"].includes(
-    q.get("theme") || "",
-  )
+  const theme = themes.map((t) => t.id as string).includes(q.get("theme") || "")
     ? q.get("theme")!
     : "fabric";
   const dark = q.get("mode") === "dark" || theme === "terminal";
-  const width = [3, 4, 6, 8, 12].includes(Number(q.get("width")))
+  const width = [3, 4, 6, 8, 9, 12].includes(Number(q.get("width")))
     ? Number(q.get("width"))
     : 6;
   const height = [304, 464, 624].includes(Number(q.get("height")))
@@ -237,15 +285,24 @@ function App() {
       ? q.get("state")
       : "ready"
   ) as LoadState;
-  const period = q.get("period") === "7" ? 7 : 30;
+  const period =
+    q.get("period") === "7"
+      ? 7
+      : q.get("period") === "30"
+        ? 30
+        : kind === "heatmap"
+          ? 365
+          : 30;
   const tab = q.get("tab") || "preview";
   const [search, setSearch] = useState("");
   const [notice, setNotice] = useState("");
-  const [enabled, setEnabled] = useState(true);
   const [filter, setFilter] = useState("all");
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
     document.documentElement.dataset.brand = theme;
+    paletteFor(theme, dark).forEach((color, i) =>
+      document.documentElement.style.setProperty(`--viz-${i + 1}`, color),
+    );
   }, [dark, theme]);
   useEffect(() => {
     if (notice) {
@@ -309,36 +366,45 @@ function App() {
           <span className="collection-label">collection</span>
         </a>
         <nav className="main-nav" aria-label="Main navigation">
-          {(["gallery", "layouts", "elements", "handoff"] as Route[]).map(
-            (p) => (
-              <a
-                key={p}
-                href={`?page=${p}`}
-                aria-current={
-                  page === p || (p === "gallery" && page === "widget")
-                    ? "page"
-                    : undefined
-                }
-                onClick={(e) => {
-                  e.preventDefault();
-                  go(p);
-                }}
-              >
+          {(
+            [
+              "gallery",
+              "layouts",
+              "modularity",
+              "elements",
+              "themes",
+              "handoff",
+            ] as Route[]
+          ).map((p) => (
+            <a
+              key={p}
+              href={`?page=${p}`}
+              aria-current={
+                page === p || (p === "gallery" && page === "widget")
+                  ? "page"
+                  : undefined
+              }
+              onClick={(e) => {
+                e.preventDefault();
+                go(p);
+              }}
+            >
+              {
                 {
-                  {
-                    gallery: "Widgets",
-                    layouts: "Compositions",
-                    elements: "Elements",
-                    handoff: "Developers",
-                    widget: "",
-                  }[p]
-                }
-              </a>
-            ),
-          )}
+                  gallery: "Widgets",
+                  layouts: "Compositions",
+                  elements: "Elements",
+                  handoff: "Developers",
+                  widget: "",
+                  themes: "Colors",
+                  modularity: "Modularity",
+                }[p]
+              }
+            </a>
+          ))}
         </nav>
         <div className="top-actions">
-          <span className="version">v0.1 preview</span>
+          <span className="version">v0.2 preview</span>
           <Button
             variant="ghost"
             aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
@@ -368,7 +434,7 @@ function App() {
             onClick={() => go("gallery")}
           >
             <Grid2X2 size={17} />
-            All widgets<span>10</span>
+            All widgets<span>{widgets.length}</span>
           </button>
           <button
             className={`side-link ${page === "layouts" ? "active" : ""}`}
@@ -388,13 +454,27 @@ function App() {
               {w.title}
             </button>
           ))}
+          <button
+            className={`side-link ${page === "modularity" ? "active" : ""}`}
+            onClick={() => go("modularity")}
+          >
+            <Grid2X2 size={17} />
+            Modularity
+          </button>
           <div className="sidebar-label">FOUNDATIONS</div>
+          <button
+            className={`side-link ${page === "themes" ? "active" : ""}`}
+            onClick={() => go("themes")}
+          >
+            <CircleDashed size={17} />
+            Color & themes
+          </button>
           <button
             className={`side-link ${page === "elements" ? "active" : ""}`}
             onClick={() => go("elements")}
           >
             <Component size={17} />
-            Fabric elements
+            UI elements
           </button>
           <button
             className={`side-link ${page === "handoff" ? "active" : ""}`}
@@ -421,11 +501,18 @@ function App() {
                     ? "Compositions"
                     : page === "elements"
                       ? "Elements"
-                      : "Developers"}
+                      : page === "themes"
+                        ? "Color & themes"
+                        : page === "modularity"
+                          ? "Modularity"
+                          : "Developers"}
             </span>
             <span className="theme-choice">
               <span className="small-label">THEME</span>
-              {["fabric", "editorial", "terminal"].map((t) => (
+              <span className="theme-name">
+                {themes.find((t) => t.id === theme)?.name}
+              </span>
+              {themes.map(({ id: t }) => (
                 <button
                   key={t}
                   title={`${t} theme`}
@@ -454,7 +541,8 @@ function App() {
                 <div className="heading-side">
                   <span className="count-label">THE COLLECTION</span>
                   <strong>
-                    10<span> widgets</span>
+                    {widgets.length}
+                    <span> widgets</span>
                   </strong>
                   <Button
                     variant="outline"
@@ -472,6 +560,7 @@ function App() {
                     ["cartesian", "Cartesian"],
                     ["polar", "Polar"],
                     ["comparison", "Comparison"],
+                    ["tools", "Tools"],
                   ].map(([v, l]) => (
                     <button
                       key={v}
@@ -507,6 +596,14 @@ function App() {
                         "radial",
                         "scatter",
                         "stacked",
+                        "composed",
+                        "waterfall",
+                        "funnel",
+                        "treemap",
+                        "bubble",
+                        "heatmap",
+                        "calendar",
+                        "builds",
                       ].indexOf(a.id) -
                       [
                         "area",
@@ -519,23 +616,43 @@ function App() {
                         "radial",
                         "scatter",
                         "stacked",
+                        "composed",
+                        "waterfall",
+                        "funnel",
+                        "treemap",
+                        "bubble",
+                        "heatmap",
+                        "calendar",
+                        "builds",
                       ].indexOf(b.id),
                   )
                   .filter(
                     (w) =>
                       (filter === "all" ||
-                        (filter === "polar"
-                          ? ["pie", "donut", "radar", "radial"].includes(w.id)
-                          : filter === "comparison"
-                            ? ["bar", "ranked", "stacked"].includes(w.id)
-                            : ["area", "line", "scatter"].includes(w.id))) &&
+                        (filter === "tools"
+                          ? ["calendar", "builds", "heatmap"].includes(w.id)
+                          : filter === "polar"
+                            ? ["pie", "donut", "radar", "radial"].includes(w.id)
+                            : filter === "comparison"
+                              ? [
+                                  "bar",
+                                  "ranked",
+                                  "stacked",
+                                  "waterfall",
+                                  "funnel",
+                                  "treemap",
+                                ].includes(w.id)
+                              : [
+                                  "area",
+                                  "line",
+                                  "scatter",
+                                  "composed",
+                                  "bubble",
+                                ].includes(w.id))) &&
                       w.title.toLowerCase().includes(search.toLowerCase()),
                   )
                   .map((w, i) => (
-                    <section
-                      key={w.id}
-                      className={`gallery-item ${w.id === "area" ? "featured" : ""}`}
-                    >
+                    <section key={w.id} className="gallery-item">
                       <WidgetFrame
                         title={w.title}
                         subtitle={w.description}
@@ -599,7 +716,7 @@ function App() {
                 <Control
                   label="Width"
                   value={String(width)}
-                  options={[3, 4, 6, 8, 12].map((v) => [
+                  options={[3, 4, 6, 8, 9, 12].map((v) => [
                     String(v),
                     `${v} columns`,
                   ])}
@@ -624,15 +741,20 @@ function App() {
                   ])}
                   onChange={(v) => update({ state: v })}
                 />
-                <Control
-                  label="Period"
-                  value={String(period)}
-                  options={[
-                    ["7", "Last 7 days"],
-                    ["30", "Last 30 days"],
-                  ]}
-                  onChange={(v) => update({ period: v })}
-                />
+                {kind !== "calendar" && kind !== "builds" && (
+                  <Control
+                    label="Period"
+                    value={String(period)}
+                    options={[
+                      ["7", "Last 7 days"],
+                      ["30", "Last 30 days"],
+                      ...(kind === "heatmap"
+                        ? [["365", "Last 365 days"] as [string, string]]
+                        : []),
+                    ]}
+                    onChange={(v) => update({ period: v })}
+                  />
+                )}
                 <div className="size-readout">
                   <Grid2X2 size={17} />
                   <span>
@@ -658,7 +780,13 @@ function App() {
                     >
                       <WidgetFrame
                         title={current.title}
-                        subtitle={`Sample data · last ${period} days`}
+                        subtitle={
+                          kind === "calendar"
+                            ? "Sample release schedule · September 2026"
+                            : kind === "builds"
+                              ? "Sample builds · September 24–25, 2026"
+                              : `Sample data · last ${period} days`
+                        }
                         height={height}
                         state={state}
                         retry={() => update({ state: "ready" })}
@@ -726,241 +854,39 @@ function App() {
                 <div>
                   <h2>Implementation</h2>
                   <p>
-                    FrontX ChartContainer + Recharts. The same renderer powers
-                    the gallery, playground and compositions.
+                    {kind === "calendar"
+                      ? "FrontX Calendar (shadcn / react-day-picker)."
+                      : kind === "builds"
+                        ? "FrontX Table, Badge and Base UI Dialog."
+                        : "FrontX ChartContainer + Recharts."}{" "}
+                    The same renderer powers the gallery, playground and
+                    compositions.
                   </p>
                 </div>
               </div>
             </>
           )}
-          {page === "layouts" && (
-            <>
-              <div className="detail-heading">
-                <div>
-                  <h1>Compositions</h1>
-                  <p>
-                    A shared grid. Independent dimensions. The same widgets.
-                  </p>
-                </div>
-                <Control
-                  label="Composition"
-                  value={q.get("layout") || "overview"}
-                  options={[
-                    ["overview", "Product overview"],
-                    ["insight", "Chart + table"],
-                    ["polar", "Polar collection"],
-                  ]}
-                  onChange={(v) => update({ layout: v })}
-                />
-              </div>
-              <div className="layout-note">
-                <Grid2X2 size={16} />
-                12 columns <span>·</span>16 px gap <span>·</span>Shared row
-                heights <span className="mock-label">Sample data</span>
-              </div>
-              {(q.get("layout") || "overview") === "overview" ? (
-                <>
-                  <div className="metric-row">
-                    {[
-                      ["Active users", "24,892", "+12.8%"],
-                      ["Conversion", "6.42%", "+0.8 pp"],
-                      ["Avg. response", "142 ms", "−18 ms"],
-                      ["Availability", "99.98%", "Last 30 days"],
-                    ].map(([l, v, d]) => (
-                      <Card className="metric-card" key={l}>
-                        <span>{l}</span>
-                        <strong>{v}</strong>
-                        <small>{d}</small>
-                      </Card>
-                    ))}
-                  </div>
-                  <div className="dashboard-grid">
-                    <div className="span8">
-                      <WidgetFrame
-                        title="Traffic over time"
-                        subtitle="Organic and paid visits · daily"
-                        height={464}
-                      >
-                        <WidgetChart kind="area" />
-                      </WidgetFrame>
-                    </div>
-                    <div className="span4">
-                      <WidgetFrame
-                        title="Traffic sources"
-                        subtitle="Share of total visits"
-                        height={464}
-                      >
-                        <WidgetChart kind="donut" />
-                      </WidgetFrame>
-                    </div>
-                    <div className="span6">
-                      <WidgetFrame title="Weekly activity" height={304}>
-                        <WidgetChart kind="bar" />
-                      </WidgetFrame>
-                    </div>
-                    <div className="span6">
-                      <WidgetFrame title="Quality profile" height={304}>
-                        <WidgetChart kind="radar" />
-                      </WidgetFrame>
-                    </div>
-                  </div>
-                </>
-              ) : q.get("layout") === "insight" ? (
-                <>
-                  <div className="dashboard-grid">
-                    <div className="span6">
-                      <WidgetFrame
-                        title="Top contributors"
-                        subtitle="Completed changes · last 30 days"
-                        height={464}
-                      >
-                        <WidgetChart kind="ranked" />
-                      </WidgetFrame>
-                    </div>
-                    <div className="span6">
-                      <WidgetFrame
-                        title="Contributors"
-                        subtitle="The same dataset · exact values"
-                        height={464}
-                      >
-                        <DataGrid kind="ranked" />
-                      </WidgetFrame>
-                    </div>
-                  </div>
-                  <div className="layout-explainer">
-                    <span>6 columns × L</span>
-                    <span>6 columns × L</span>
-                  </div>
-                </>
-              ) : (
-                <div className="dashboard-grid">
-                  {(["donut", "pie", "radar", "radial"] as WidgetKind[]).map(
-                    (k) => (
-                      <div className="span6" key={k}>
-                        <WidgetFrame
-                          title={widgets.find((w) => w.id === k)!.title}
-                          height={464}
-                        >
-                          <WidgetChart kind={k} />
-                        </WidgetFrame>
-                      </div>
-                    ),
-                  )}
-                </div>
-              )}
-            </>
+          {page === "layouts" && <Compositions query={q} update={update} />}
+          {page === "modularity" && <Modularity query={q} update={update} />}
+          {page === "themes" && (
+            <Themes
+              current={theme}
+              dark={dark}
+              select={(theme) => update({ theme })}
+            />
           )}
           {page === "elements" && (
             <>
               <div className="detail-heading">
                 <div>
-                  <h1>Fabric elements</h1>
+                  <h1>UI elements</h1>
                   <p>
-                    Existing FrontX primitives, composed in the Fabric language.
+                    20 interactive examples from the FrontX UI Kit · shadcn +
+                    Base UI.
                   </p>
                 </div>
-                <Badge>UI Kit 0.4.0-alpha.5</Badge>
               </div>
-              <div className="elements-grid">
-                <Card className="element-card">
-                  <h2>Actions</h2>
-                  <div className="element-sample">
-                    <Button
-                      onClick={() => setNotice("Example action completed")}
-                      icon={<Check />}
-                    >
-                      Create project
-                    </Button>
-                    <Button
-                      variant="outline"
-                      onClick={() => setNotice("Outline action completed")}
-                    >
-                      View details
-                    </Button>
-                    <Button
-                      variant="secondary"
-                      onClick={() => setNotice("Secondary action completed")}
-                    >
-                      Duplicate
-                    </Button>
-                    <Button disabled>Unavailable</Button>
-                  </div>
-                  <code>@gears-frontx/ui-kit/button</code>
-                </Card>
-                <Card className="element-card">
-                  <h2>Filters & controls</h2>
-                  <div className="element-sample vertical">
-                    <Input
-                      aria-label="Example project name"
-                      placeholder="Project name"
-                    />
-                    <Control
-                      label="Workspace"
-                      value={q.get("workspace") || "design"}
-                      options={[
-                        ["design", "Design systems"],
-                        ["product", "Product engineering"],
-                      ]}
-                      onChange={(v) => update({ workspace: v })}
-                    />
-                    <label className="switch-row">
-                      <Switch checked={enabled} onCheckedChange={setEnabled} />
-                      Show comparison period
-                    </label>
-                  </div>
-                  <code>@gears-frontx/ui-kit/input · switch</code>
-                </Card>
-                <Card className="element-card">
-                  <h2>Tabs & status</h2>
-                  <Tabs defaultValue="overview">
-                    <TabsList>
-                      <TabsTrigger value="overview">Overview</TabsTrigger>
-                      <TabsTrigger value="activity">Activity</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="overview">
-                      <div className="element-sample">
-                        <Badge>Published</Badge>
-                        <Badge variant="secondary">Draft</Badge>
-                        <Badge variant="outline">In review</Badge>
-                      </div>
-                    </TabsContent>
-                    <TabsContent value="activity">
-                      <p>Three components updated in this demo workspace.</p>
-                    </TabsContent>
-                  </Tabs>
-                  <code>@gears-frontx/ui-kit/tabs · badge</code>
-                </Card>
-                <Card className="element-card">
-                  <h2>Card composition</h2>
-                  <Card className="nested-card">
-                    <div className="nested-icon">
-                      <Boxes />
-                    </div>
-                    <strong>Content Policy</strong>
-                    <p>Rules and evaluation for generated content.</p>
-                    <div>
-                      <Badge variant="outline">Gear</Badge>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => setNotice("Demo component selected")}
-                        icon={<ArrowUpRight />}
-                      >
-                        Explore
-                      </Button>
-                    </div>
-                  </Card>
-                  <code>@gears-frontx/ui-kit/card</code>
-                </Card>
-              </div>
-              <h2 className="section-title">One table. Multiple contexts.</h2>
-              <WidgetFrame
-                title="Contributors"
-                subtitle="Sortable sample data"
-                height={464}
-              >
-                <DataGrid kind="ranked" />
-              </WidgetFrame>
+              <Elements />
             </>
           )}
           {page === "handoff" && (
@@ -1024,8 +950,8 @@ function App() {
                 <div>
                   <h2>Shared structure. Your product.</h2>
                   <p>
-                    Three themes demonstrate that typography, surfaces, radii
-                    and palettes can change without forking widgets. Layout is
+                    Five themes demonstrate that typography, surfaces, radii and
+                    palettes can change without forking widgets. Layout is
                     chosen by developers or AI; an end-user dashboard editor is
                     a later layer.
                   </p>

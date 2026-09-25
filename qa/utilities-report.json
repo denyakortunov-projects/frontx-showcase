@@ -1,0 +1,75 @@
+{
+  "base": "http://127.0.0.1:5201",
+  "checkedAt": "2026-09-25T14:25:17.001Z",
+  "checks": [
+    {
+      "name": "weekly sums token counts",
+      "passed": true
+    },
+    {
+      "name": "cumulative equals 365 daily rows",
+      "passed": true
+    },
+    {
+      "name": "keyboard Home selects first day",
+      "passed": true
+    },
+    {
+      "name": "keyboard End selects last day",
+      "passed": true
+    },
+    {
+      "name": "arrow keys select earlier week",
+      "passed": true
+    },
+    {
+      "name": "mouse selects cell",
+      "passed": true
+    },
+    {
+      "name": "tooltip shows token total once",
+      "passed": true
+    },
+    {
+      "name": "calendar date selection",
+      "passed": true
+    },
+    {
+      "name": "calendar month navigation",
+      "passed": true
+    },
+    {
+      "name": "calendar keyboard selection",
+      "passed": true
+    },
+    {
+      "name": "calendar five release rows",
+      "passed": true
+    },
+    {
+      "name": "build sort",
+      "passed": true
+    },
+    {
+      "name": "unique build details",
+      "passed": true
+    },
+    {
+      "name": "build dialog focus restored",
+      "passed": true
+    },
+    {
+      "name": "gallery all 18 at 1600",
+      "passed": true
+    },
+    {
+      "name": "gallery all 18 at 390",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

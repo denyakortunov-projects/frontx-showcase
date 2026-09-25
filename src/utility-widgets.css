@@ -1,0 +1,210 @@
+.utility-calendar-widget {
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 9px;
+}
+.utility-calendar-scroll {
+  min-width: 0;
+  overflow-x: auto;
+  padding: 0 2px;
+}
+.utility-calendar {
+  margin-inline: auto;
+  --control-height-md: 24px;
+  --space-2: 4px;
+}
+.utility-calendar .utility-calendar-release-day > button::after {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 3px;
+  width: 4px;
+  height: 4px;
+  margin-inline: auto;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+.utility-calendar .utility-calendar-release-day[data-selected] > button::after {
+  background: var(--primary-foreground);
+}
+.utility-calendar-selection {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 8px);
+  background: var(--surface);
+  color: var(--foreground);
+}
+.utility-calendar-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.utility-calendar-selection > p {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.utility-calendar-selection ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.utility-calendar-selection li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+}
+.utility-calendar-selection li > span:first-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+.utility-calendar-selection strong {
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.utility-calendar-selection small {
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.utility-widget-note {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.4;
+}
+.utility-build-table-wrap {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+.utility-build-table {
+  width: 100%;
+  table-layout: fixed;
+  font-size: 12px;
+}
+.utility-build-table [data-slot="table-head"],
+.utility-build-table [data-slot="table-cell"] {
+  padding: 7px 6px;
+  white-space: nowrap;
+}
+.utility-build-table [data-slot="table-head"]:first-child,
+.utility-build-table [data-slot="table-cell"]:first-child {
+  width: 28%;
+}
+.utility-build-table [data-slot="table-head"]:last-child,
+.utility-build-table [data-slot="table-cell"]:last-child {
+  width: 27%;
+  text-align: right;
+}
+.utility-sort-button {
+  height: 26px;
+  gap: 3px;
+  padding: 0 2px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.utility-sort-button:hover {
+  color: var(--foreground);
+}
+.utility-build-link {
+  height: auto;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.utility-build-duration {
+  color: var(--muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+.utility-build-dialog {
+  gap: 0;
+}
+.utility-build-meta {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.utility-build-meta code {
+  overflow-wrap: anywhere;
+  color: var(--foreground);
+  font-size: 12px;
+}
+.utility-build-stages {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 3px 0;
+  list-style: none;
+}
+.utility-build-stages li {
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  border-bottom: 1px solid var(--border);
+}
+.utility-build-stages li:last-child {
+  border-bottom: 0;
+}
+.utility-build-stages strong {
+  font-size: 12px;
+  font-weight: 550;
+}
+.utility-build-stages small {
+  min-width: 32px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  text-align: right;
+}
+.utility-stage-state {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--muted-foreground);
+}
+.utility-stage-state[data-state="passed"] {
+  background: var(--success);
+}
+.utility-stage-state[data-state="failed"] {
+  background: var(--danger);
+}
+.utility-stage-state[data-state="running"] {
+  background: var(--info);
+}
+@media (max-width: 390px) {
+  .utility-build-table [data-slot="table-head"],
+  .utility-build-table [data-slot="table-cell"] {
+    padding-inline: 4px;
+  }
+}
+
+.utility-calendar-scroll,
+.utility-calendar-selection,
+.utility-calendar-widget > .utility-widget-note {
+  flex-shrink: 0;
+}

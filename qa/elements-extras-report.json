@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-09-25T14:26:40.726Z",
+  "base": "http://127.0.0.1:5201",
+  "checks": [
+    "Select value",
+    "Popover filters",
+    "Local access form",
+    "Download JSON"
+  ],
+  "errors": []
+}

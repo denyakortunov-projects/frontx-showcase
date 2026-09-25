@@ -8,7 +8,15 @@ export type WidgetKind =
   | "radar"
   | "radial"
   | "scatter"
-  | "stacked";
+  | "stacked"
+  | "composed"
+  | "waterfall"
+  | "funnel"
+  | "treemap"
+  | "bubble"
+  | "heatmap"
+  | "calendar"
+  | "builds";
 
 export interface ChartRow {
   [key: string]: string | number;
@@ -17,6 +25,7 @@ export interface ChartRow {
   visitors: number;
   conversions: number;
   conversionsTarget: number;
+  conversionRate: number;
   target: number;
   organic: number;
   paid: number;
@@ -84,6 +93,7 @@ function row(label: string, index: number, date = ""): ChartRow {
     visitors,
     conversions,
     conversionsTarget: Math.round(conversions * 1.09),
+    conversionRate: Math.round((conversions / visitors) * 1000) / 10,
     target: Math.round(visitors * 1.08),
     organic,
     paid,
@@ -96,11 +106,16 @@ function row(label: string, index: number, date = ""): ChartRow {
 }
 
 /** Deterministic, synthetic samples for chart rendering and CSV/table inspection. */
-export function chartData(kind: WidgetKind, period = 30): ChartRow[] {
+export function chartData(
+  kind: WidgetKind,
+  period = kind === "heatmap" ? 365 : 30,
+): ChartRow[] {
   const safePeriod = Math.max(
     1,
     Math.min(365, Math.round(Number.isFinite(period) ? period : 30)),
   );
+
+  if (kind === "calendar" || kind === "builds") return [];
 
   if (kind === "donut" || kind === "pie") {
     return segments.map(([label, share], index) => ({
@@ -152,6 +167,99 @@ export function chartData(kind: WidgetKind, period = 30): ChartRow[] {
         segment: ["New", "Returning", "Partner"][index % 3],
       }),
     );
+  }
+
+  if (kind === "bubble") {
+    const groups = ["Core", "Growth", "Emerging"];
+    return Array.from(
+      { length: Math.max(16, Math.min(36, safePeriod + 4)) },
+      (_, index) => ({
+        ...row(`Account ${String(index + 1).padStart(2, "0")}`, index),
+        x: 8 + ((index * 31 + 17) % 90),
+        y: 12 + ((index * 43 + 9) % 82),
+        value: 25 + ((index * 59 + 19) % 210),
+        segment: groups[index % groups.length],
+      }),
+    );
+  }
+
+  if (kind === "waterfall") {
+    const steps = [
+      ["Starting total", 0, 980, "total"],
+      ["New projects", 980, 225, "increase"],
+      ["Expansion", 1205, 160, "increase"],
+      ["Churn", 1273, 92, "decrease"],
+      ["Upgrades", 1273, 135, "increase"],
+      ["Closing total", 0, 1408, "total"],
+    ] as const;
+    const scale = safePeriod / 30;
+    return steps.map(([label, base, amount, type], index) => ({
+      ...row(label, index),
+      base: Math.round(base * scale),
+      increase: type === "increase" ? Math.round(amount * scale) : 0,
+      decrease: type === "decrease" ? Math.round(amount * scale) : 0,
+      total: type === "total" ? Math.round(amount * scale) : 0,
+      value: Math.round(amount * scale),
+      segment: type,
+    }));
+  }
+
+  if (kind === "funnel") {
+    const stages = [
+      ["Visitors", 12400],
+      ["Qualified", 8350],
+      ["Trials", 3920],
+      ["Activated", 2180],
+      ["Customers", 940],
+    ] as const;
+    const scale = safePeriod / 30;
+    return stages.map(([label, value], index) => ({
+      ...row(label, index),
+      value: Math.round(value * scale),
+      segment: label,
+    }));
+  }
+
+  if (kind === "treemap") {
+    const groups = [
+      ["Collaboration", 720],
+      ["Analytics", 580],
+      ["Automation", 490],
+      ["Knowledge", 420],
+      ["Integrations", 360],
+      ["Onboarding", 310],
+      ["Search", 270],
+      ["Reporting", 230],
+      ["Other", 190],
+    ] as const;
+    const scale = safePeriod / 30;
+    return groups.map(([label, value], index) => ({
+      ...row(label, index),
+      value: Math.round(value * scale),
+      segment: label,
+    }));
+  }
+
+  if (kind === "heatmap") {
+    const today = new Date(Date.UTC(2026, 8, 25));
+    return Array.from({ length: safePeriod }, (_, index) => {
+      const date = new Date(
+        Date.UTC(
+          today.getUTCFullYear(),
+          today.getUTCMonth(),
+          today.getUTCDate() - (safePeriod - index - 1),
+        ),
+      );
+      const label = dayLabel(date);
+      const dayOrdinal = Math.floor(date.getTime() / (24 * 60 * 60 * 1000));
+      const quietDay =
+        (dayOrdinal * 11 + Math.floor(dayOrdinal / 9)) % 13 === 0;
+      const value = quietDay
+        ? 0
+        : 1000 +
+          ((dayOrdinal * 7 + Math.floor(dayOrdinal / 6) * 5) % 12) * 1000;
+      return { ...row(label, index, date.toISOString().slice(0, 10)), value };
+    });
   }
 
   // Fixed fixture end date keeps every period preset auditable and stable.
