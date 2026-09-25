@@ -34,3 +34,15 @@ User explicitly authorized a separate demo website and publication at frontx.con
 - Credentials remain outside repositories at ~/.config/hostinger/api-token; see shared access guide. No secrets were included in the build or handoff bundle.
 
 This is a reviewable demo and proposed integration contract. It does not claim production readiness or an accepted FrontX schema. Drag/resize dashboard editing remains a later scope.
+
+## Expansion v0.2.0 — 2026-09-25
+
+- Explicit owner requests: expand the showcase, publish to the existing FrontX site, and update its associated GitHub repository after the build.
+- Source commit: `e5ab664bc0f07a93036caf4502e0dd2e7a8bb837`, pushed fast-forward to `main` at https://github.com/denyakortunov-projects/frontx-showcase. Repository remote was established after the initial release recorded above; no automatic hosting deployment is configured.
+- Source fingerprint: `5deeb0f16b6fcf86e9fbef2885a71c027eeae034f93a613c5c64796e9a2930e2`.
+- Public archive SHA256: `986d7e115e9dc3998c09b5ab3e047df78d92b49d67f217792bd63e5345d4fd51`; 86,387 bytes; 27 allowlisted source files.
+- Hostinger deployment: `01a0d8f7-4c67-7295-ac13-3a584016b3f4`, completed 14:28:00–14:28:46 UTC (46 seconds). Same official API source-archive transport, existing site and parked alias; no DNS or other website changes.
+- Before release, HTTPS still served the exact accepted prior fingerprint. Selected source had a clean Git worktree; production build and 141 browser checks passed before publication.
+- HTTPS verification at 14:29:10 UTC matched the new fingerprint, both exact JS/CSS assets, handoff documents and source ZIP SHA256. Eight public browser checks passed with no JavaScript errors: 18 widgets, 20 elements, Iris dark theme, Base UI menu, independent grid width, cumulative activity mode and distinct build details.
+- Evidence: `EXPANSION-2026-09-25.md`, `expansion-report.json`, `utilities-report.json`, `elements-extras-report.json`, `public-expansion-report.json`, `public-browser-expansion-report.json`.
+- This documentation-only release record follows the source commit; it does not alter the deployed runtime or public fingerprint.

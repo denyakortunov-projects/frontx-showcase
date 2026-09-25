@@ -1,0 +1,39 @@
+{
+  "base": "https://frontx.constructor.rocks",
+  "checkedAt": "2026-09-25T14:29:12.219Z",
+  "checks": [
+    {
+      "name": "public 18 widgets",
+      "passed": true
+    },
+    {
+      "name": "public 20 components",
+      "passed": true
+    },
+    {
+      "name": "public Iris theme",
+      "passed": true
+    },
+    {
+      "name": "public Base UI menu",
+      "passed": true
+    },
+    {
+      "name": "public independent width",
+      "passed": true
+    },
+    {
+      "name": "public activity modes",
+      "passed": true
+    },
+    {
+      "name": "public build details",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

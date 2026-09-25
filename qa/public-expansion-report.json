@@ -1,0 +1,11 @@
+{
+  "base": "https://frontx.constructor.rocks",
+  "verifiedAt": "2026-09-25T14:29:10.565Z",
+  "sourceFingerprint": "5deeb0f16b6fcf86e9fbef2885a71c027eeae034f93a613c5c64796e9a2930e2",
+  "assets": [
+    "/assets/index-BEaZP80J.js",
+    "/assets/index-C-1OattS.css"
+  ],
+  "sourceZipBytes": 86387,
+  "archiveSha256": "986d7e115e9dc3998c09b5ab3e047df78d92b49d67f217792bd63e5345d4fd51"
+}
