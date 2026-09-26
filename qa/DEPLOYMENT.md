@@ -65,3 +65,11 @@ This is a reviewable demo and proposed integration contract. It does not claim p
 - Build and 71 targeted browser assertions passed; desktop/mobile and light/dark screenshots reviewed. Public HTTPS at 14:57:02 UTC matched exact manifest, assets and archive. Thirteen public browser checks passed without runtime errors.
 - Evidence: CHART-LABELS-2026-09-25.md, chart-labels-report.json, metric-tabs-report.json, public-expansion-report.json, public-browser-expansion-report.json.
 - This follow-up records release evidence and corrects repository README descriptions; deployed source remains the exact source commit above. Public handoff README/CONTRACT already describe the replacement metric.
+
+## Standard and Compact density v0.2.3 — 2026-09-26
+
+- Source commit `a54c815a8169e94a2fa2f6afe5b622c1982cee02`, pushed fast-forward to GitHub main. Existing Standard height preserved; Compact uses 65% height, with shared data and renderer across gallery, widget detail, compositions and Modularity.
+- Source fingerprint `59f4a2b85839aaa983de65bfe6d4209ae4a7308f94336acaf247009fca8f7e20`; source ZIP SHA256 `d91398c24287c00ffe653a55550c42ed55a17beb68a40021f328780137125f8c`, 89,282 bytes, 27 allowlisted files.
+- Hostinger deployment `01a0dc04-2708-734d-abcc-be917930a0d8`, completed 04:40:54–04:41:47 UTC (53 seconds). Same existing FrontX site and source-archive API transport; no other site or DNS change.
+- Public HTTPS verification at 04:42:25 UTC confirmed exact source fingerprint, JS/CSS assets, handoff documents and archive checksum. Twenty-two public browser checks passed at 04:42 UTC: all 18 widgets in both sizes, URL and Back behavior, light/dark funnel, Token activity, revenue metric, compact compositions and modular grid, and mobile width. No runtime errors. Local visual review and overflow inspection covered all three compositions and default modular layout.
+- Evidence: `DENSITY-2026-09-26.md`, `density-report.json`, `public-expansion-report.json` and reviewed screenshots. This documentation-only commit follows the deployed source and does not change its public fingerprint.
