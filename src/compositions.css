@@ -5,6 +5,12 @@
   gap: 20px;
   margin: 8px 0 24px;
 }
+.recipe-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 .recipe-heading h2 {
   font-size: 24px;
   margin: 0 0 8px;
@@ -75,6 +81,15 @@
   flex-direction: column;
   gap: 26px;
   padding: 18px 8px;
+}
+.widget-frame--compact .target-list {
+  height: 100%;
+  overflow-y: auto;
+  gap: 14px;
+  padding: 8px 4px;
+}
+.widget-frame--compact .recipe-activity > div {
+  padding-block: 10px;
 }
 .target-list > div > span {
   display: flex;

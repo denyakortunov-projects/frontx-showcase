@@ -34,6 +34,6 @@ The application is static. Deploy `dist/` with no server, environment variables,
 
 Use React 19 and `@gears-frontx/ui-kit@0.4.0-alpha.5`; no copied primitive library. Product-owned adapters will provide real data, permissions, actions and persistence. The proposed JSON config describes this demo only; it is not a generic code executor or a production GTS renderer.
 
-Width and height are selected independently. End-user drag/resize editing is deliberately deferred. Small containers switch to one column. Use chart Data tabs for exact values and the shared-data chart/table composition for comparison.
+The gallery and widget playground offer Standard and Compact density. Compact renders the same data at 65% of the selected standard height, with tighter heading, chart and table spacing. The choice is URL-addressable via `density=compact`, and `WidgetFrame` accepts `density="compact"`. Width and height are selected independently. End-user drag/resize editing is deliberately deferred. Small containers switch to one column. Use chart Data tabs for exact values and the shared-data chart/table composition for comparison.
 
 Third-party components retain their respective licenses. FrontX kit includes Apache-2.0 and upstream notices in its installed package.

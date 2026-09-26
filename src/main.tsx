@@ -1,4 +1,9 @@
-import { WidgetFrame } from "./WidgetFrame";
+import {
+  WidgetFrame,
+  WidgetDensitySwitch,
+  widgetHeight,
+  type WidgetDensity,
+} from "./WidgetFrame";
 import React, {
   useEffect,
   useState,
@@ -284,6 +289,8 @@ function App() {
   const height = [304, 464, 624].includes(Number(q.get("height")))
     ? Number(q.get("height"))
     : 464;
+  const density: WidgetDensity =
+    q.get("density") === "compact" ? "compact" : "standard";
   const state = (
     ["ready", "loading", "empty", "error"].includes(q.get("state") || "")
       ? q.get("state")
@@ -323,12 +330,12 @@ function App() {
     schemaVersion: "0.1-demo",
     kind,
     period,
-    layout: { columns: width, height },
+    layout: { columns: width, height: widgetHeight(height, density), density },
     theme,
     state,
   };
   const json = JSON.stringify(config, null, 2);
-  const code = `import { WidgetChart } from './widgets';\nimport { WidgetFrame } from './WidgetFrame';\n\n// Local showcase compositions, not UI Kit exports.\n<WidgetFrame title="${current.title}" height={${height}}>\n  <WidgetChart kind="${kind}" period={${period}} />\n</WidgetFrame>`;
+  const code = `import { WidgetChart } from './widgets';\nimport { WidgetFrame } from './WidgetFrame';\n\n// Local showcase compositions, not UI Kit exports.\n<WidgetFrame title="${current.title}" height={${height}} density="${density}">\n  <WidgetChart kind="${kind}" period={${period}} />\n</WidgetFrame>`;
   const copy = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -574,15 +581,21 @@ function App() {
                     </button>
                   ))}
                 </div>
-                <label className="search">
-                  <Search size={16} />
-                  <Input
-                    aria-label="Search widgets"
-                    placeholder="Find a widget…"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
+                <div className="gallery-actions">
+                  <WidgetDensitySwitch
+                    value={density}
+                    onChange={(value) => update({ density: value })}
                   />
-                </label>
+                  <label className="search">
+                    <Search size={16} />
+                    <Input
+                      aria-label="Search widgets"
+                      placeholder="Find a widget…"
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
+                    />
+                  </label>
+                </div>
               </div>
               <div className="gallery">
                 {[...widgets]
@@ -660,6 +673,7 @@ function App() {
                         title={w.title}
                         subtitle={w.description}
                         height={340}
+                        density={density}
                         action={
                           <Button
                             variant="ghost"
@@ -716,6 +730,13 @@ function App() {
                 </Button>
               </div>
               <div className="playground-controls">
+                <div className="density-control">
+                  <span>Widget height</span>
+                  <WidgetDensitySwitch
+                    value={density}
+                    onChange={(value) => update({ density: value })}
+                  />
+                </div>
                 <Control
                   label="Width"
                   value={String(width)}
@@ -763,7 +784,7 @@ function App() {
                 <div className="size-readout">
                   <Grid2X2 size={17} />
                   <span>
-                    {width} / 12 × {height}px
+                    {width} / 12 × {widgetHeight(height, density)}px
                   </span>
                 </div>
               </div>
@@ -797,6 +818,7 @@ function App() {
                                   : `Sample data · last ${period} days`
                         }
                         height={height}
+                        density={density}
                         state={state}
                         retry={() => update({ state: "ready" })}
                       >

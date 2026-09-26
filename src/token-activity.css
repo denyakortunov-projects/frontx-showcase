@@ -114,3 +114,25 @@
 .token-activity__tabs-list [role="tab"] {
   box-shadow: none;
 }
+.widget-frame--compact .token-activity {
+  gap: 5px;
+}
+.widget-frame--compact .token-activity__toolbar {
+  gap: 5px;
+}
+.widget-frame--compact .token-activity__tabs-list [role="tab"] {
+  padding: 4px 7px;
+  font-size: 11px;
+}
+.widget-frame--compact .token-activity__selected,
+.widget-frame--compact .token-activity__legend {
+  font-size: 10px;
+}
+.widget-frame--compact .token-activity__weekly-note {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

@@ -78,6 +78,10 @@
   gap: 16px;
   align-items: start;
 }
+.module-canvas--compact {
+  grid-auto-rows: 94px;
+  gap: 10px;
+}
 .module-cell {
   grid-column: span var(--module-columns);
   grid-row: span var(--module-rows);

@@ -23,7 +23,12 @@ import {
   Search,
   Grid2X2,
 } from "lucide-react";
-import { WidgetFrame } from "./WidgetFrame";
+import {
+  WidgetFrame,
+  WidgetDensitySwitch,
+  widgetHeight,
+  type WidgetDensity,
+} from "./WidgetFrame";
 import { WidgetChart, chartData, type WidgetKind } from "./widgets";
 import "./compositions.css";
 function Panel({
@@ -33,6 +38,7 @@ function Panel({
   span = 6,
   height = 464,
   period,
+  density,
 }: {
   kind: WidgetKind;
   title: string;
@@ -40,10 +46,16 @@ function Panel({
   span?: number;
   height?: number;
   period: number;
+  density: WidgetDensity;
 }) {
   return (
     <div className={`span${span}`}>
-      <WidgetFrame title={title} subtitle={subtitle} height={height}>
+      <WidgetFrame
+        density={density}
+        title={title}
+        subtitle={subtitle}
+        height={height}
+      >
         <WidgetChart kind={kind} period={period} />
       </WidgetFrame>
     </div>
@@ -88,6 +100,8 @@ export function Compositions({
     ? query.get("layout")!
     : "overview";
   const period = query.get("period") === "7" ? 7 : 30;
+  const density: WidgetDensity =
+    query.get("density") === "compact" ? "compact" : "standard";
   const [search, setSearch] = useState(""),
     [descending, setDescending] = useState(true),
     [notice, setNotice] = useState("");
@@ -108,6 +122,7 @@ export function Compositions({
   const recipe = {
     name: title,
     period,
+    density,
     components: [
       "Card",
       "ChartContainer",
@@ -149,6 +164,14 @@ export function Compositions({
               ["channel-table", 6, 464],
             ],
   };
+  const renderedRecipe = {
+    ...recipe,
+    sections: recipe.sections.map(([kind, span, height]) => [
+      kind,
+      span,
+      typeof height === "number" ? widgetHeight(height, density) : height,
+    ]),
+  };
   const table = (
     <div className="recipe-table">
       <Table label="Acquisition channels" density="compact">
@@ -184,7 +207,9 @@ export function Compositions({
   );
   async function copy() {
     try {
-      await navigator.clipboard.writeText(JSON.stringify(recipe, null, 2));
+      await navigator.clipboard.writeText(
+        JSON.stringify(renderedRecipe, null, 2),
+      );
       setNotice("Composition JSON copied");
     } catch {
       setNotice("Select and copy the configuration below.");
@@ -220,18 +245,24 @@ export function Compositions({
           <h2>{title}</h2>
           <span>Synthetic data · {trend[0].label}–Sep 25, 2026</span>
         </div>
-        <div className="recipe-period" aria-label="Composition period">
-          {[7, 30].map((n) => (
-            <Button
-              key={n}
-              variant={period === n ? "secondary" : "ghost"}
-              size="sm"
-              aria-pressed={period === n}
-              onClick={() => update({ period: String(n) })}
-            >
-              Last {n} days
-            </Button>
-          ))}
+        <div className="recipe-heading-actions">
+          <WidgetDensitySwitch
+            value={density}
+            onChange={(value) => update({ density: value })}
+          />
+          <div className="recipe-period" aria-label="Composition period">
+            {[7, 30].map((n) => (
+              <Button
+                key={n}
+                variant={period === n ? "secondary" : "ghost"}
+                size="sm"
+                aria-pressed={period === n}
+                onClick={() => update({ period: String(n) })}
+              >
+                Last {n} days
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
       <div className="metric-row">
@@ -273,6 +304,7 @@ export function Compositions({
           <Section title="Traffic & acquisition">
             <div className="dashboard-grid">
               <Panel
+                density={density}
                 kind="area"
                 title="Traffic over time"
                 subtitle={`Daily visits · last ${period} days`}
@@ -280,6 +312,7 @@ export function Compositions({
                 period={period}
               />
               <Panel
+                density={density}
                 kind="donut"
                 title="Acquisition mix"
                 subtitle="Channel share of visits"
@@ -291,6 +324,7 @@ export function Compositions({
           <Section title="From visit to conversion">
             <div className="dashboard-grid">
               <Panel
+                density={density}
                 kind="funnel"
                 title="Conversion funnel"
                 subtitle="Synthetic stages · same period filter"
@@ -298,6 +332,7 @@ export function Compositions({
               />
               <div className="span6">
                 <WidgetFrame
+                  density={density}
                   title="Acquisition channels"
                   subtitle="Shares and estimated visits"
                   height={464}
@@ -310,6 +345,7 @@ export function Compositions({
           <Section title="Daily performance">
             <div className="dashboard-grid">
               <Panel
+                density={density}
                 kind="composed"
                 title="Traffic & conversion rate"
                 subtitle="Visits and conversion rate use separate axes"
@@ -318,7 +354,11 @@ export function Compositions({
                 period={period}
               />
               <div className="span4">
-                <WidgetFrame title="Monthly targets" height={304}>
+                <WidgetFrame
+                  density={density}
+                  title="Monthly targets"
+                  height={304}
+                >
                   <div className="target-list">
                     {[
                       [
@@ -354,6 +394,7 @@ export function Compositions({
           <Section title="Contributions">
             <div className="dashboard-grid">
               <Panel
+                density={density}
                 kind="ranked"
                 title="Top contributors"
                 subtitle={`Completed changes · last ${period} days`}
@@ -361,6 +402,7 @@ export function Compositions({
               />
               <div className="span6">
                 <WidgetFrame
+                  density={density}
                   title="Contributors"
                   subtitle="Same dataset · filter and sort the table"
                   height={464}
@@ -417,6 +459,7 @@ export function Compositions({
           <Section title="Workload & targets">
             <div className="dashboard-grid">
               <Panel
+                density={density}
                 kind="bar"
                 title="Sample demand"
                 subtitle="Daily visits against target"
@@ -425,6 +468,7 @@ export function Compositions({
                 period={period}
               />
               <Panel
+                density={density}
                 kind="radial"
                 title="Monthly target"
                 subtitle="Fixed sample target · 76%"
@@ -437,6 +481,7 @@ export function Compositions({
           <Section title="Change & activity">
             <div className="dashboard-grid">
               <Panel
+                density={density}
                 kind="waterfall"
                 title="Revenue movement"
                 subtitle="Bridge example · selected period"
@@ -444,6 +489,7 @@ export function Compositions({
               />
               <div className="span6">
                 <WidgetFrame
+                  density={density}
                   title="Recent activity"
                   subtitle="Example workflow events · Sep 25"
                   height={464}
@@ -483,12 +529,14 @@ export function Compositions({
           <Section title="Audience profile">
             <div className="dashboard-grid">
               <Panel
+                density={density}
                 kind="radar"
                 title="Lifecycle health"
                 subtitle="Current and target scores"
                 period={period}
               />
               <Panel
+                density={density}
                 kind="donut"
                 title="Acquisition mix"
                 subtitle="Share of visits"
@@ -499,6 +547,7 @@ export function Compositions({
           <Section title="Segments & opportunity">
             <div className="dashboard-grid">
               <Panel
+                density={density}
                 kind="bubble"
                 title="Account opportunities"
                 subtitle="Bubble size indicates opportunity"
@@ -506,6 +555,7 @@ export function Compositions({
                 period={period}
               />
               <Panel
+                density={density}
                 kind="pie"
                 title="Channel share"
                 subtitle="Same channel palette and data"
@@ -517,6 +567,7 @@ export function Compositions({
           <Section title="Composition & exact values">
             <div className="dashboard-grid">
               <Panel
+                density={density}
                 kind="treemap"
                 title="Portfolio distribution"
                 subtitle="Rectangle area encodes value"
@@ -524,6 +575,7 @@ export function Compositions({
               />
               <div className="span6">
                 <WidgetFrame
+                  density={density}
                   title="Acquisition channels"
                   subtitle={`Estimated visits · last ${period} days`}
                   height={464}
@@ -538,6 +590,7 @@ export function Compositions({
       {view === "overview" && (
         <Section title="Token activity">
           <WidgetFrame
+            density={density}
             title="Token activity"
             subtitle="Sep 26, 2025–Sep 25, 2026 · annual sample"
             height={304}
@@ -550,12 +603,16 @@ export function Compositions({
         <Section title="Release operations">
           <div className="dashboard-grid">
             <div className="span6">
-              <WidgetFrame title="Revenue pulse" height={464}>
+              <WidgetFrame density={density} title="Revenue pulse" height={464}>
                 <WidgetChart kind="calendar" />
               </WidgetFrame>
             </div>
             <div className="span6">
-              <WidgetFrame title="Build activity" height={464}>
+              <WidgetFrame
+                density={density}
+                title="Build activity"
+                height={464}
+              >
                 <WidgetChart kind="builds" />
               </WidgetFrame>
             </div>
@@ -600,7 +657,7 @@ export function Compositions({
         >
           Copy recipe
         </Button>
-        <pre>{JSON.stringify(recipe, null, 2)}</pre>
+        <pre>{JSON.stringify(renderedRecipe, null, 2)}</pre>
         <p>
           Demo recipe, not a published FrontX schema. Keep datasets, units,
           statuses and permissions in product-owned adapters.

@@ -1,0 +1,95 @@
+{
+  "base": "http://127.0.0.1:5201",
+  "checkedAt": "2026-09-26T04:38:44.409Z",
+  "checks": [
+    {
+      "name": "18 standard widgets",
+      "passed": true
+    },
+    {
+      "name": "compact choice in URL",
+      "passed": true
+    },
+    {
+      "name": "18 compact widgets fit",
+      "passed": true
+    },
+    {
+      "name": "gallery height decreases 35 percent",
+      "passed": true
+    },
+    {
+      "name": "standard restores height",
+      "passed": true
+    },
+    {
+      "name": "Back restores compact choice",
+      "passed": true
+    },
+    {
+      "name": "funnel compact light height",
+      "passed": true
+    },
+    {
+      "name": "funnel compact light stages",
+      "passed": true
+    },
+    {
+      "name": "funnel compact light contained",
+      "passed": true
+    },
+    {
+      "name": "funnel compact dark height",
+      "passed": true
+    },
+    {
+      "name": "funnel compact dark stages",
+      "passed": true
+    },
+    {
+      "name": "funnel compact dark contained",
+      "passed": true
+    },
+    {
+      "name": "compact activity modes work",
+      "passed": true
+    },
+    {
+      "name": "compact revenue metric value",
+      "passed": true
+    },
+    {
+      "name": "compact metric contained",
+      "passed": true
+    },
+    {
+      "name": "compositions use compact widgets",
+      "passed": true
+    },
+    {
+      "name": "compositions restore standard widgets",
+      "passed": true
+    },
+    {
+      "name": "modularity uses compact grid rows",
+      "passed": true
+    },
+    {
+      "name": "modularity uses compact widgets",
+      "passed": true
+    },
+    {
+      "name": "mobile compact height",
+      "passed": true
+    },
+    {
+      "name": "mobile page no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -2,7 +2,12 @@ import { useState, type CSSProperties } from "react";
 import { Button } from "@gears-frontx/ui-kit/button";
 import { NativeSelect } from "@gears-frontx/ui-kit/native-select";
 import { Plus, Check, Trash2, Copy, Grid2X2, Code2 } from "lucide-react";
-import { WidgetFrame } from "./WidgetFrame";
+import {
+  WidgetFrame,
+  WidgetDensitySwitch,
+  widgetHeight,
+  type WidgetDensity,
+} from "./WidgetFrame";
 import { WidgetChart, widgets, type WidgetKind } from "./widgets";
 import "./modularity.css";
 type Module = { id: number; kind: WidgetKind; width: number; rows: number };
@@ -53,6 +58,8 @@ export function Modularity({
   } catch {}
   const selected =
     modules.find((m) => m.id === Number(query.get("selected"))) || modules[0];
+  const density: WidgetDensity =
+    query.get("density") === "compact" ? "compact" : "standard";
   const [notice, setNotice] = useState("");
   const change = (patch: Partial<Module>) =>
     update({
@@ -63,12 +70,17 @@ export function Modularity({
     });
   const recipe = {
     schemaVersion: "0.1-demo",
-    grid: { columns: 12, gap: 16, rowHeight: 144 },
+    density,
+    grid: {
+      columns: 12,
+      gap: density === "compact" ? 10 : 16,
+      rowHeight: density === "compact" ? 94 : 144,
+    },
     widgets: modules.map((m) => ({
       kind: m.kind,
       columns: m.width * 3,
       rowSpan: m.rows,
-      height: m.rows * 144 + (m.rows - 1) * 16,
+      height: widgetHeight(m.rows * 144 + (m.rows - 1) * 16, density),
     })),
   };
   async function copy() {
@@ -102,6 +114,10 @@ export function Modularity({
             {name[0].toUpperCase() + name.slice(1)}
           </Button>
         ))}
+        <WidgetDensitySwitch
+          value={density}
+          onChange={(value) => update({ density: value })}
+        />
       </div>
       <div className="module-controls">
         <label>
@@ -198,7 +214,7 @@ export function Modularity({
           </span>
         ))}
       </div>
-      <div className="module-canvas">
+      <div className={`module-canvas module-canvas--${density}`}>
         {modules.map((m, i) => (
           <section
             key={m.id}
@@ -211,6 +227,7 @@ export function Modularity({
             }
           >
             <WidgetFrame
+              density={density}
               height={m.rows * 144 + (m.rows - 1) * 16}
               title={widgets.find((w) => w.id === m.kind)!.title}
               action={
@@ -235,9 +252,10 @@ export function Modularity({
       <div className="module-explanation">
         <p>
           <strong>Width:</strong> 1 block = 3 of 12 columns.{" "}
-          <strong>Height:</strong> rows are 144 px, with 16 px gaps. Widget
-          order stays stable; smaller screens stack cards without changing the
-          saved configuration.
+          <strong>Height:</strong> rows are {density === "compact" ? 94 : 144}
+          px, with {density === "compact" ? 10 : 16}px gaps. Widget order stays
+          stable; smaller screens stack cards without changing the saved
+          configuration.
         </p>
         <span>Demo layout · Select a card with its size button</span>
       </div>

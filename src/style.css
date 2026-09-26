@@ -466,6 +466,50 @@ main {
   border-top: 1px solid var(--border);
   padding: 18px 0 24px;
 }
+.gallery-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+.density-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  white-space: nowrap;
+}
+.density-switch button {
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--muted-foreground);
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.density-switch button[aria-pressed="true"] {
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: 0 1px 3px #12204818;
+  font-weight: 600;
+}
+.density-switch button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.density-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.density-control > span {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
 .category-tabs {
   display: flex;
   gap: 6px;
@@ -537,6 +581,54 @@ main {
   width: 100%;
   height: 100%;
   min-width: 0;
+}
+.widget-frame--compact .widget-heading {
+  min-height: 0;
+  padding: 13px 16px 7px;
+}
+.widget-frame--compact .widget-heading > div {
+  min-width: 0;
+}
+.widget-frame--compact .widget-heading h3 {
+  font-size: 14px;
+  line-height: 1.2;
+}
+.widget-frame--compact .widget-heading p {
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.widget-frame--compact .widget-heading .ui-button,
+.widget-frame--compact .widget-heading button {
+  min-width: 26px;
+  min-height: 26px;
+}
+.widget-frame--compact .widget-body {
+  padding: 4px 14px 12px;
+}
+.widget-frame--compact .recharts-text {
+  font-size: 10px;
+}
+.widget-frame--compact .widget-legend {
+  font-size: 10px;
+}
+.widget-frame--compact .funnel-stages {
+  padding: 8px 0;
+}
+.widget-frame--compact .funnel-stages li {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.widget-frame--compact .funnel-stage-name {
+  font-size: 10px;
+}
+.widget-frame--compact .funnel-stages strong {
+  padding: 0;
+  font-size: 11px;
 }
 .gallery-caption {
   display: flex;
@@ -1185,6 +1277,14 @@ footer a {
   }
   .gallery-item .widget-frame {
     height: 330px !important;
+  }
+  .gallery-item .widget-frame--compact {
+    height: 221px !important;
+  }
+  .gallery-actions {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   .detail-heading {
     flex-direction: column;

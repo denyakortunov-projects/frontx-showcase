@@ -4,6 +4,19 @@
   flex-direction: column;
   gap: 8px;
 }
+.widget-frame--compact .utility-build-table-wrap {
+  height: 100%;
+  overflow-y: auto;
+  gap: 0;
+}
+.widget-frame--compact .utility-build-table [data-slot="table-head"],
+.widget-frame--compact .utility-build-table [data-slot="table-cell"] {
+  padding-block: 4px;
+  font-size: 11px;
+}
+.widget-frame--compact .utility-build-table-wrap > .utility-widget-note {
+  display: none;
+}
 .utility-build-table {
   width: 100%;
   table-layout: fixed;
@@ -113,8 +126,6 @@
   }
 }
 
-
-
 .revenue-metric {
   height: 100%;
   min-height: 0;
@@ -152,5 +163,17 @@
   display: flex;
   justify-content: space-between;
   color: var(--muted-foreground);
+  font-size: 11px;
+}
+.widget-frame--compact .revenue-metric {
+  gap: 6px;
+}
+.widget-frame--compact .revenue-metric-summary {
+  gap: 4px;
+}
+.widget-frame--compact .revenue-metric-summary > strong {
+  font-size: 30px;
+}
+.widget-frame--compact .revenue-metric-change {
   font-size: 11px;
 }
