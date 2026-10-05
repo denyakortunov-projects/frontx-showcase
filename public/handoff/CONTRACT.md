@@ -52,3 +52,7 @@ Calendar parameters are `calDate`, `calView`, `calSpan`, `calEvent`, `calDensity
 The navigation groups existing routes under Components, Examples and Foundations; old query routes are preserved. There is no migration of either hosting or the published UI Kit. Local tests and source downloads do not constitute public release approval.
 
 Visual refresh: views are Day / Week / Month / Year; `agenda` remains a backwards-compatible internal list view. Optional event `color` uses `accent | blue | teal | violet | amber | rose` and has no product/category meaning. Theme colour follows FrontX primary; the other families remain identifiable across themes while surfaces and text adapt to their tokens. Preview hosts three live sizes; Playground uses existing FrontX Select; view/colour selectors use FrontX ToggleGroup. Components starts with Charts & widgets, then Calendar. Local verification is recorded separately in `qa/calendar-refresh/REPORT.md`.
+
+## Shared numeric-axis rule — 2026-10-05
+
+All numeric Cartesian axes in `WidgetChart` use `src/chart-axis.ts`: outward-rounded bounds, steps from 1/2/5 × powers of ten, density based on chart dimensions, integer counts, and explicit bounded-percentage exceptions. Data values stay unchanged. [Policy and integration](CHART-AXES.md) covers stacked extents, dual axes, semantic intervals and regression checks. The source archive carries the helper and its tests. Consumers must adopt the updated source; this is not an automatic update of the published FrontX UI Kit or existing applications.

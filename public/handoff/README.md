@@ -66,3 +66,7 @@ A host may pass a stable `scrollPositions: Map<string, number>` to retain grid s
 ## Calendar component downloads
 
 Use [calendar components](frontx-calendar-components.zip) with [EventCalendar integration](EVENT-CALENDAR.md) and [DatePicker / range integration](DATE-PICKER.md). This source-only bundle includes a typed entry point, controlled host recipe, responsive range wrapper, exact dependency versions and a file hash manifest. EventCalendar remains a local proposed composition. Calendar and DatePicker are existing kit exports. See the separate Date picker catalogue route for a round-trip range, single date and inline calendar.
+
+## Shared numeric-axis rule — 2026-10-05
+
+All numeric Cartesian axes in `WidgetChart` use `src/chart-axis.ts`: outward-rounded bounds, steps from 1/2/5 × powers of ten, density based on chart dimensions, integer counts, and explicit bounded-percentage exceptions. Data values stay unchanged. [Policy and integration](CHART-AXES.md) covers stacked extents, dual axes, semantic intervals and regression checks. The source archive carries the helper and its tests. Consumers must adopt the updated source; this is not an automatic update of the published FrontX UI Kit or existing applications.

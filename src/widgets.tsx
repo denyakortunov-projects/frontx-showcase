@@ -45,6 +45,7 @@ import {
   type ChartConfig,
 } from "@gears-frontx/ui-kit/chart";
 import { chartData, type WidgetKind } from "./data";
+import { numericAxis, boundedPercentAxis, stackedExtents } from "./chart-axis";
 import TokenActivity from "./TokenActivity";
 import { BuildTable, RevenueMetric } from "./UtilityWidgets";
 export { chartData } from "./data";
@@ -469,14 +470,27 @@ function renderChart(
   period: number,
   chartId: string,
   compact: boolean,
+  size: { width: number; height: number },
 ) {
   const data = chartData(kind, period);
   const commonTooltip = <ChartTooltip content={tooltipContent(kind)} />;
-  const compactNumber = (value: number) =>
-    new Intl.NumberFormat("en", {
-      notation: "compact",
-      maximumFractionDigits: 1,
-    }).format(value);
+  const plotHeight = Math.max(0, size.height - (kind === "waterfall" ? 62 : 42));
+  const plotWidth = Math.max(0, size.width - (kind === "ranked" ? 104 : 70));
+  const values = (...keys: string[]) => data.flatMap(row => keys.map(key => Number(row[key])));
+  const axis = (numbers: number[], integer = true, horizontal = false) => {
+    const { step: _step, ...props } = numericAxis(numbers, {
+      integer,
+      pixels: horizontal ? plotWidth : plotHeight,
+      orientation: horizontal ? "horizontal" : "vertical",
+    });
+    return { ...props, interval: 0 as const };
+  };
+  const percentAxis = (horizontal = false) => {
+    const { step: _step, ...props } = boundedPercentAxis(
+      horizontal ? plotWidth : plotHeight, horizontal ? "horizontal" : "vertical",
+    );
+    return { ...props, interval: 0 as const };
+  };
 
   switch (kind) {
     case "area":
@@ -510,11 +524,11 @@ function renderChart(
             minTickGap={28}
           />
           <YAxis
+            {...axis(values("organic", "paid"))}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
             width={46}
-            tickFormatter={(v) => compactNumber(Number(v))}
           />
           {commonTooltip}
           <Area
@@ -553,7 +567,7 @@ function renderChart(
             axisLine={false}
             minTickGap={28}
           />
-          <YAxis tick={axisTick} tickLine={false} axisLine={false} width={38} />
+          <YAxis {...axis(values("conversions", "conversionsTarget"))} tick={axisTick} tickLine={false} axisLine={false} width={38} />
           {commonTooltip}
           <Line
             type="monotone"
@@ -594,11 +608,11 @@ function renderChart(
             minTickGap={28}
           />
           <YAxis
+            {...axis(values("visitors", "target"))}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
             width={46}
-            tickFormatter={(v) => compactNumber(Number(v))}
           />
           {commonTooltip}
           <Bar
@@ -628,11 +642,11 @@ function renderChart(
         >
           <CartesianGrid stroke="var(--grid)" horizontal={false} />
           <XAxis
+            {...axis(values("value"), true, true)}
             type="number"
             tick={axisTick}
             tickLine={false}
             axisLine={false}
-            tickFormatter={(v) => compactNumber(Number(v))}
           />
           <YAxis
             type="category"
@@ -794,7 +808,7 @@ function renderChart(
             type="number"
             dataKey="x"
             name="Activity"
-            domain={[0, 110]}
+            {...percentAxis(true)}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
@@ -804,7 +818,7 @@ function renderChart(
             type="number"
             dataKey="y"
             name="Engagement score"
-            domain={[0, 110]}
+            {...percentAxis()}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
@@ -850,16 +864,16 @@ function renderChart(
           />
           <YAxis
             yAxisId="visits"
+            {...axis(values("visitors"))}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
             width={46}
-            tickFormatter={(v) => compactNumber(Number(v))}
           />
           <YAxis
             yAxisId="rate"
             orientation="right"
-            domain={[0, 8]}
+            {...axis(values("conversionRate"), false)}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
@@ -908,11 +922,11 @@ function renderChart(
             height={46}
           />
           <YAxis
+            {...axis(stackedExtents(data.map(row => ["base", "increase", "decrease", "total"].map(key => Number(row[key])))))}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
             width={48}
-            tickFormatter={(v) => compactNumber(Number(v))}
           />
           {commonTooltip}
           <Bar
@@ -992,7 +1006,7 @@ function renderChart(
             type="number"
             dataKey="x"
             name="Adoption"
-            domain={[0, 110]}
+            {...percentAxis(true)}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
@@ -1002,7 +1016,7 @@ function renderChart(
             type="number"
             dataKey="y"
             name="Engagement score"
-            domain={[0, 110]}
+            {...percentAxis()}
             tick={axisTick}
             tickLine={false}
             axisLine={false}
@@ -1035,13 +1049,12 @@ function renderChart(
         <BarChart
           layout="vertical"
           data={data}
-          margin={{ top: 8, right: 8, bottom: 0, left: 0 }}
+          margin={{ top: 8, right: 24, bottom: 0, left: 0 }}
         >
           <CartesianGrid stroke="var(--grid)" horizontal={false} />
           <XAxis
             type="number"
-            domain={[0, 100]}
-            ticks={[0, 25, 50, 75, 100]}
+            {...percentAxis(true)}
             tickFormatter={(v) => `${v}%`}
             tick={axisTick}
             tickLine={false}
@@ -1092,13 +1105,19 @@ export function WidgetChart({
 }) {
   const chartId = useId().replace(/:/g, "");
   const ref = useRef<HTMLDivElement>(null);
-  const [compact, setCompact] = useState(false);
+  const [size, setSize] = useState({ width: 480, height: 240 });
+  const compact = size.width < 360;
   useEffect(() => {
     if (!ref.current) return;
-    const observer = new ResizeObserver(([entry]) =>
-      setCompact(entry.contentRect.width < 360),
-    );
-    observer.observe(ref.current);
+    // Measure the chart itself: the outer widget also contains a wrapping legend.
+    const chart = ref.current.firstElementChild;
+    if (!chart) return;
+    const observer = new ResizeObserver(([entry]) => {
+      const { width, height } = entry.contentRect;
+      setSize(previous => previous.width === width && previous.height === height
+        ? previous : { width, height });
+    });
+    observer.observe(chart);
     return () => observer.disconnect();
   }, [kind]);
   if (kind === "heatmap") return <TokenActivity period={period} />;
@@ -1118,7 +1137,7 @@ export function WidgetChart({
           }}
           aria-label="Conversion funnel chart"
         >
-          {renderChart(kind, period, chartId, compact)}
+          {renderChart(kind, period, chartId, compact, size)}
         </ChartContainer>
         <ol className="funnel-stages" aria-label="Conversion stages">
           {chartData(kind, period).map((stage, index) => (
@@ -1158,7 +1177,7 @@ export function WidgetChart({
         }
         aria-label={`${widgets.find((widget) => widget.id === kind)?.title ?? "Analytics"} chart`}
       >
-        {renderChart(kind, period, chartId, compact)}
+        {renderChart(kind, period, chartId, compact, size)}
       </ChartContainer>
       {kind !== "treemap" && <WidgetLegend kind={kind} />}
     </div>

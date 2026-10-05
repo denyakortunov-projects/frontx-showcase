@@ -1,14 +1,14 @@
 {
   "name": "frontx-showcase",
   "version": "0.2.3",
-  "sourceFingerprint": "f35639b9bf3f310e4a9079a061d684623fae989f75c134648ced776f6d7e3c43",
+  "sourceFingerprint": "5cec81bee32d2fa47a5a1c96d7b49545cbfd9d1ec86d41f65641ca2029cdd5d4",
   "files": {
     "package.json": "406850bd1f0bb4d8f7211c36cc405bf9856b5f3095a8f730cb84162628332ac9",
     "package-lock.json": "66e5fe62b0caf0599950383af78d15cec650349bfe218a9ce73079913aa3296f",
     "tsconfig.json": "6c420d32a164a15184293a0dea1f8938ce40310dfcd01b9814eb0b6c601aabd4",
     "vite.config.ts": "4c176a81060f72365d86a18a1f399fb37a00a80fb68dc8ffe38e60c5f2fa7cf3",
     "index.html": "329ef52dc71780c66f760dfaf18fbf1fdb18de1a2b817bf525ce8297c59799a0",
-    "README.md": "0e435adf9cbed8e188fa3d8ba09e87dad82608345aeca3bb88a895912fe52374",
+    "README.md": "84fc79a07e611c928df507c95507a19367b63c7a06be1fb59421620cbc449529",
     ".gitignore": "c953140808f0ebb9817e6fdae0975e143b048b28e8735c44a87b156852bff88a",
     "src/CalendarShowcase.tsx": "5346a4011997bdbc0059a197b33c7ddb24bab0d759dc0a398e424cda47c17e01",
     "src/Compositions.tsx": "3e755fcabdf0c179d9262e3722015342b6bcdd8bbd193b6ff214aeb2b73141a3",
@@ -32,6 +32,7 @@
     "src/calendar/model.ts": "3cbcff2e7f0323c9ca9552b492be02847d03774cf89d546d8dc15a2ecf353f24",
     "src/calendar/navigation.ts": "ad6420e1680a6c047c6751a4d7fea33a0905e35d20ccd6e976f155bf8385250b",
     "src/calendar/types.ts": "455b482015d9d8cc774fe7a46bdbde41a92c89a7863da8dbe524a3b734c9acae",
+    "src/chart-axis.ts": "035b2fd13fb6390a0ec3c89f12b921ce4e1222b0a014b882c13f0a0791ea25f1",
     "src/compositions.css": "b5095e334346b4222a61c62bfca57b22f7888c21d31d8669b09fa240a1299727",
     "src/data.ts": "26a455b7828b423fb91b920cd9ec48a814483234f0b6b456ba9f6dc8cdd90b05",
     "src/date-picker/DateCalendar.tsx": "35283a71515eff3377b09e114858ecbdd86b4b5b08b2ba0669b970d2bc023b39",
@@ -39,7 +40,7 @@
     "src/date-picker/date-picker.css": "9050d08062e0db8cbd1021ecea45159ad60af12cbee1827e5f6c28a14f023a9e",
     "src/date-picker/date-preferences.ts": "d7462deaef9b1766a2f911e93828a2342760f1494c1845f7012987992184d070",
     "src/elements.css": "876acf0ea14c1178f6fa3484e6c2c7bbd8fb822d454e21ddca206fb9f85fa132",
-    "src/main.tsx": "ecb5b130cb650b1d276c988116bd4cd4871335c2cb830ce9ea5768607c0f738c",
+    "src/main.tsx": "f51cd949c5adfb484bc594c58024067c77332f6267affcc3984c01e80ec85828",
     "src/modularity.css": "6d0c4738294db4724c966f0c2dcc0078d1b8d5a7db4e63ecdf97bba232e05fdb",
     "src/showcase/DateFormatSettings.tsx": "b9abefc8dd8333bcad879b618134967e95eb49ba09a308b88872444ac5293144",
     "src/showcase/PageHeader.tsx": "de53c78d2d95c779a48ba31fcc2dadd463ab798563c848284e3b3917f4052bb5",
@@ -54,7 +55,7 @@
     "src/themes.ts": "77be1eebe961fe59454354252f9cefd98356358a027802fc06124a7e28d7eae3",
     "src/token-activity.css": "747f42902052c1cd2ba355af3740b2d4609af4ac2553edb1d8c7f59d8186a9bb",
     "src/utility-widgets.css": "74712088981307b66fa1bc982182d5d690b6686168c1ce32147d4beeac22c876",
-    "src/widgets.tsx": "6cbcf6e445b833a7148663d151567e1f6f65385e5cc78cb569817de28e02ea42",
+    "src/widgets.tsx": "190c2f85b33ca65629ffddc25d439630dbe5ba9e72c3c041d7ac44459deaf796",
     "docs/calendar/ACCEPTANCE.md": "4fcbd52229dac4ce8e63d450152dd7cbb162cf38f94306b20109267026237787",
     "docs/calendar/DESIGN-2026-10-05.md": "7daa2cf24751e01b22371eeadf6323794c8c43cb9ad003412f78288ee727a89b",
     "docs/calendar/ENGINE-DECISION.md": "d458d2209570772c7c34b07388a0efd665a692d7a4bd8057f013e67762bdf057",
@@ -100,8 +101,13 @@
     "qa/date-picker-refresh/consumer.html": "7801d76af3eee2adfbf468abb72f0a0354f8c55da28104f87b0e43143ca31b4a",
     "qa/date-picker-refresh/model.test.ts": "a302316dccab149f3e44a14640dd45ca99260837e90376a8377617f114843f66",
     "public/favicon.svg": "8366f114ba45bd38872a6844f8229609519f0844f3a5769ca48eb38c176179c4",
-    "public/handoff/README.md": "5d05472bd6063ed2b61c79453fe3fcec58dc89627891137958bbadb3f71e4e6c",
-    "public/handoff/CONTRACT.md": "aa39321bb0c1874614d7521af26bc00ab0123ef5f2eba5eb242b4908dae0b6c4"
+    "public/handoff/README.md": "5d22b145b27c13f421a02cd82a6e4b0b762096f658fb74129eb433e02b121c6a",
+    "public/handoff/CONTRACT.md": "364d4e39946f2b4b55279fadff549704a33924cccc34391cef3d40b447b66fff",
+    "public/handoff/CHART-AXES.md": "33d685cd460a74f117295fbe7918c0b4f6d38cb67e5f516e42e029aba0d11521",
+    "scripts/package-handoff.py": "2bc66db4bc074fa651fe6af3d3fdfb498bdd8d4ced12e89d8d8b4e0610f854d2",
+    "qa/axis-rules/model.test.ts": "0d92c467a118bb9d83494bdc7236f2c82713112cc18ce7e2f18d1afb7bdce1f8",
+    "qa/axis-rules/verify.mjs": "4d8f33a3625ae8ecec0eda1421c3584902fec84c058a3250afe176ba4e5da6da",
+    "qa/axis-rules/REPORT.md": "5d52f5b6aa0a6086f31a65dfd16c276ceab356f6f498e78bbb2a1f63e58b98a7"
   },
-  "archiveSha256": "7f228f19de93f203e6103daaeb72b8e58c3e3ce4527977bfbc501bb1212e98c3"
+  "archiveSha256": "551ccd3cfc41a98e213a57b7e8e3d8845f997dfb5c0e30ad8b4bdb100aceeda8"
 }

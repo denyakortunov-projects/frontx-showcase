@@ -14,6 +14,10 @@ files += sorted((base/'qa/date-picker-refresh').glob('*.mjs'))
 files += sorted((base/'qa/date-picker-refresh').glob('*.py'))
 files += [base/'qa/date-picker-refresh/consumer.tsx',base/'qa/date-picker-refresh/consumer.html',base/'qa/date-picker-refresh/model.test.ts']
 files += [base/'public/favicon.svg',base/'public/handoff/README.md',base/'public/handoff/CONTRACT.md']
+files += [base/'public/handoff/CHART-AXES.md',base/'scripts/package-handoff.py']
+files += sorted((base/'qa/axis-rules').glob('*.ts'))
+files += sorted((base/'qa/axis-rules').glob('*.mjs'))
+files += sorted((base/'qa/axis-rules').glob('*.md'))
 files=list(dict.fromkeys(p for p in files if p.is_file()))
 manifest={str(p.relative_to(base)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 fingerprint=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest()

@@ -821,6 +821,10 @@ function App() {
                   <li><a href="/handoff/DATE-PICKER.md" download>DatePicker and ranges</a></li>
                 </ul>
               </section>
+              <section className="handoff-summary">
+                <div><h2>Chart axes</h2><p>Shared numeric scales use rounded steps and adapt to plot size. Update the widget source and axis helper together.</p></div>
+                <ul><li><a href="/handoff/CHART-AXES.md" download>Numeric-axis rules and integration</a></li></ul>
+              </section>
               <div className="handoff-grid">
                 <section>
                   <span className="step-number">01</span>
