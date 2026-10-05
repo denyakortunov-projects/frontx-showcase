@@ -85,3 +85,8 @@ Deployment `01a10ade-fcc8-7179-b0b3-f759236f14ba` completed at 07:03:09 UTC. Pub
 ## Date picker and international formats · 2026-10-05
 
 Explicit owner request: “делай деплой”. Released `f834ac9aa9f5fbd73f436bb4281c76ef8abd0ab8` through the existing official Hostinger source-archive workflow. Deployment `01a10b29-3303-7294-9ccc-45f08eacedfd` completed at 08:24:23 UTC. Public fingerprint `f7b35f6d740118469ad1593a74c91b6b23d2bb5ea03dccb87e4e2c3ed6469af8`. 21 HTTP + 64 browser checks passed, zero browser errors; exact archives verified. [Release evidence](release-2026-10-05-date-picker/RELEASE.md). Other sites, DNS and hosting configuration unchanged.
+
+
+## Catalogue structure and typography · 2026-10-05
+
+Owner explicitly requested deployment. Source `aadbe1220058c2f4eb5d212258488adecf690974` published through the existing Hostinger source-archive workflow; deployment `01a10b4b-9237-732b-9d57-9bcc650a6d42` completed 09:01:56 UTC. Public fingerprint `f35639b9bf3f310e4a9079a061d684623fae989f75c134648ced776f6d7e3c43`. 21 HTTP + 78 browser checks passed, zero page errors; downloads match source exactly. [Release evidence](release-2026-10-05-consistency/RELEASE.md).
