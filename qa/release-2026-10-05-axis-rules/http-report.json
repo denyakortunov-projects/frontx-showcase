@@ -1,0 +1,104 @@
+{
+  "base": "https://frontx.constructor.rocks",
+  "verifiedAt": "2026-10-05T09:36:41.401Z",
+  "sourceFingerprint": "5cec81bee32d2fa47a5a1c96d7b49545cbfd9d1ec86d41f65641ca2029cdd5d4",
+  "archiveSha256": "551ccd3cfc41a98e213a57b7e8e3d8845f997dfb5c0e30ad8b4bdb100aceeda8",
+  "assets": [
+    "/assets/index-ZRTvPRDE.js",
+    "/assets/index-BlG04QPe.css"
+  ],
+  "checks": [
+    {
+      "name": "HTTP /release.json",
+      "passed": true
+    },
+    {
+      "name": "exact release fingerprint",
+      "passed": true
+    },
+    {
+      "name": "HTTP /",
+      "passed": true
+    },
+    {
+      "name": "HTTP /assets/index-ZRTvPRDE.js",
+      "passed": true
+    },
+    {
+      "name": "asset type /assets/index-ZRTvPRDE.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP /assets/index-BlG04QPe.css",
+      "passed": true
+    },
+    {
+      "name": "asset type /assets/index-BlG04QPe.css",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/frontx-showcase-source.zip",
+      "passed": true
+    },
+    {
+      "name": "exact bytes frontx-showcase-source.zip",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/frontx-calendar-components.zip",
+      "passed": true
+    },
+    {
+      "name": "exact bytes frontx-calendar-components.zip",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/EVENT-CALENDAR.md",
+      "passed": true
+    },
+    {
+      "name": "exact bytes EVENT-CALENDAR.md",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/DATE-PICKER.md",
+      "passed": true
+    },
+    {
+      "name": "exact bytes DATE-PICKER.md",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/README.md",
+      "passed": true
+    },
+    {
+      "name": "exact bytes README.md",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "exact bytes CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/CHART-AXES.md",
+      "passed": true
+    },
+    {
+      "name": "exact bytes CHART-AXES.md",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/ControlledCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "exact bytes ControlledCalendar.tsx",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "commit": "194bb07159770df7c2434e11126eabf2c4ad17dd",
+  "sourceFingerprint": "5cec81bee32d2fa47a5a1c96d7b49545cbfd9d1ec86d41f65641ca2029cdd5d4",
+  "archiveSha256": "551ccd3cfc41a98e213a57b7e8e3d8845f997dfb5c0e30ad8b4bdb100aceeda8",
+  "previousDeployment": "01a10b4b-9237-732b-9d57-9bcc650a6d42",
+  "authorization": "Owner: Делай деплой, чтобы у разработчиков тоже это всё ушло. и в этот выкладывай на GitHub.",
+  "transport": "official Hostinger source-archive API, existing FrontX origin and alias",
+  "state": "deployed and publicly verified",
+  "deployment": "01a10b6b-3705-7026-8bae-88d823eec0d6",
+  "completedAt": "2026-10-05T09:36:19Z"
+}

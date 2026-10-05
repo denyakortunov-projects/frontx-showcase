@@ -1,0 +1,690 @@
+{
+  "base": "https://frontx.constructor.rocks",
+  "checks": [
+    {
+      "name": "area/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "area/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "area/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "area/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "area/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "area/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "area/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "area/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "area/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "area/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "line/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "line/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "line/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "line/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "line/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "line/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "line/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "line/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "line/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "line/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "bar/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "bar/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "bar/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "bar/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "bar/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "bar/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "bar/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "bar/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "bar/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "bar/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "ranked/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "ranked/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "ranked/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "ranked/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "ranked/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "ranked/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "ranked/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "ranked/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "ranked/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "ranked/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "stacked/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "stacked/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "stacked/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "stacked/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "stacked: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "stacked/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "stacked: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "scatter/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "scatter/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "scatter/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "scatter/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "scatter: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "scatter/standard axis 1: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "scatter/standard axis 1: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "scatter/standard axis 1: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "scatter: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "scatter/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "scatter: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 1: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 1: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 1: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "scatter: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "bubble/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "bubble/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "bubble/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "bubble/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "bubble: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "bubble/standard axis 1: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "bubble/standard axis 1: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "bubble/standard axis 1: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "bubble: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "bubble/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "bubble/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "bubble/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "bubble/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "bubble/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "bubble: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "bubble/compact axis 1: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "bubble/compact axis 1: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "bubble/compact axis 1: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "bubble: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "bubble/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "composed/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 1: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 1: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 1: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "composed/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "composed/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 1: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 1: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 1: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "composed/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "waterfall/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "waterfall/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "waterfall/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "waterfall/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "waterfall/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "waterfall/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "waterfall/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "waterfall/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "waterfall/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "waterfall/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "composed/standard/6/dark: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 1: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 1: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "composed/standard axis 1: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "composed/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "line/standard/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "line/standard axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "line/standard axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "line/standard axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "line/standard: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "Data tab keyboard accessible",
+      "passed": true
+    },
+    {
+      "name": "Back restores preview",
+      "passed": true
+    },
+    {
+      "name": "line/compact/6/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "line/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "line/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "line/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "line/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "density preserves exact Data values",
+      "passed": true
+    },
+    {
+      "name": "bar/compact/3/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "bar/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "bar/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "bar/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "bar/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "composed/compact/3/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 1: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 1: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "composed/compact axis 1: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "composed/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact/3/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "scatter: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 1: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 1: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact axis 1: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "scatter: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "scatter/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact/3/light: numeric axes",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact axis 0: labels contained in SVG",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact axis 0: nice equal unique ticks",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact axis 0: labels do not overlap",
+      "passed": true
+    },
+    {
+      "name": "stacked: bounded 0–100",
+      "passed": true
+    },
+    {
+      "name": "stacked/compact: no page overflow",
+      "passed": true
+    },
+    {
+      "name": "policy discoverable in handoff",
+      "passed": true
+    },
+    {
+      "name": "policy downloadable",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

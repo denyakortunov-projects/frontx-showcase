@@ -90,3 +90,8 @@ Explicit owner request: “делай деплой”. Released `f834ac9aa9f5fbd
 ## Catalogue structure and typography · 2026-10-05
 
 Owner explicitly requested deployment. Source `aadbe1220058c2f4eb5d212258488adecf690974` published through the existing Hostinger source-archive workflow; deployment `01a10b4b-9237-732b-9d57-9bcc650a6d42` completed 09:01:56 UTC. Public fingerprint `f35639b9bf3f310e4a9079a061d684623fae989f75c134648ced776f6d7e3c43`. 21 HTTP + 78 browser checks passed, zero page errors; downloads match source exactly. [Release evidence](release-2026-10-05-consistency/RELEASE.md).
+
+
+## Shared numeric axes · 2026-10-05
+
+Owner requested deployment and GitHub publication. Source `194bb07159770df7c2434e11126eabf2c4ad17dd` pushed to GitHub main and published through the existing official Hostinger source-archive API. Deployment `01a10b6b-3705-7026-8bae-88d823eec0d6` completed 09:36:19 UTC. Public fingerprint `5cec81bee32d2fa47a5a1c96d7b49545cbfd9d1ec86d41f65641ca2029cdd5d4`. Updated chart scales, developer policy and source ZIP publicly verified: 23 HTTP + 171 browser assertions, zero page errors. [Release evidence](release-2026-10-05-axis-rules/RELEASE.md). No other sites, hosting settings or DNS changed.
