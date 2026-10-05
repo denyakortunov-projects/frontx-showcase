@@ -1,3 +1,4 @@
+import { PageHeader } from "./showcase/PageHeader";
 import { DateFormatSettings } from "./showcase/DateFormatSettings";
 import { preferencesFromQuery, type DatePreferences } from "./date-picker/date-preferences";
 import { SectionTabs } from "./showcase/SectionTabs";
@@ -47,7 +48,7 @@ function Embedded({ compact, preferences }: { compact: boolean; preferences: Dat
   });
   return (
     <div className="cal-embed-cell" style={{ width: compact ? 360 : 640 }}>
-      <h2>{compact ? "Compact · 360 × 360" : "Month · 640 × 640"}</h2>
+      <h2 className="showcase-card-title">{compact ? "Compact · 360 × 360" : "Month · 640 × 640"}</h2>
       <EventCalendar
         {...preferences}
         events={events}
@@ -181,11 +182,7 @@ export function CalendarShowcase({
   ] as const;
   return (
     <div className="calendar-showcase">
-      <div className="cal-showcase-heading">
-        <div>
-          <h1>Event calendar</h1>
-        </div>
-        <div className="date-heading-actions"><DateFormatSettings query={q} update={update}/>
+      <PageHeader title="Event calendar" actions={<><DateFormatSettings query={q} update={update}/>
         <Tabs
           value={tab}
           onValueChange={(v) => update({ calTab: String(v), calEvent: "" })}
@@ -195,8 +192,7 @@ export function CalendarShowcase({
             <TabsTrigger value="playground">Playground</TabsTrigger>
             <TabsTrigger value="integration">Integration</TabsTrigger>
           </SectionTabs>
-        </Tabs></div>
-      </div>
+        </Tabs></>} />
       {tab === "embedded" ? (
         <>
           <div className="cal-embed-grid">

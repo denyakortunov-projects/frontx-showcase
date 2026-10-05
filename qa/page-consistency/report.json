@@ -1,0 +1,671 @@
+{
+  "checks": [
+    {
+      "name": "gallery/1440 one heading",
+      "passed": true
+    },
+    {
+      "name": "gallery/1440 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "event-calendar/1440 one heading",
+      "passed": true
+    },
+    {
+      "name": "event-calendar/1440 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "date-picker/1440 one heading",
+      "passed": true
+    },
+    {
+      "name": "date-picker/1440 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "elements/1440 one heading",
+      "passed": true
+    },
+    {
+      "name": "elements/1440 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "layouts/1440 one heading",
+      "passed": true
+    },
+    {
+      "name": "layouts/1440 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "modularity/1440 one heading",
+      "passed": true
+    },
+    {
+      "name": "modularity/1440 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "themes/1440 one heading",
+      "passed": true
+    },
+    {
+      "name": "themes/1440 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "handoff/1440 one heading",
+      "passed": true
+    },
+    {
+      "name": "handoff/1440 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 identical page typography and origin",
+      "passed": true
+    },
+    {
+      "name": "gallery/1920 one heading",
+      "passed": true
+    },
+    {
+      "name": "gallery/1920 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "event-calendar/1920 one heading",
+      "passed": true
+    },
+    {
+      "name": "event-calendar/1920 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "date-picker/1920 one heading",
+      "passed": true
+    },
+    {
+      "name": "date-picker/1920 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "elements/1920 one heading",
+      "passed": true
+    },
+    {
+      "name": "elements/1920 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "layouts/1920 one heading",
+      "passed": true
+    },
+    {
+      "name": "layouts/1920 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "modularity/1920 one heading",
+      "passed": true
+    },
+    {
+      "name": "modularity/1920 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "themes/1920 one heading",
+      "passed": true
+    },
+    {
+      "name": "themes/1920 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "handoff/1920 one heading",
+      "passed": true
+    },
+    {
+      "name": "handoff/1920 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "1920 identical page typography and origin",
+      "passed": true
+    },
+    {
+      "name": "gallery/390 one heading",
+      "passed": true
+    },
+    {
+      "name": "gallery/390 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "event-calendar/390 one heading",
+      "passed": true
+    },
+    {
+      "name": "event-calendar/390 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "date-picker/390 one heading",
+      "passed": true
+    },
+    {
+      "name": "date-picker/390 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "elements/390 one heading",
+      "passed": true
+    },
+    {
+      "name": "elements/390 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "layouts/390 one heading",
+      "passed": true
+    },
+    {
+      "name": "layouts/390 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "modularity/390 one heading",
+      "passed": true
+    },
+    {
+      "name": "modularity/390 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "themes/390 one heading",
+      "passed": true
+    },
+    {
+      "name": "themes/390 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "handoff/390 one heading",
+      "passed": true
+    },
+    {
+      "name": "handoff/390 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "390 identical page typography and origin",
+      "passed": true
+    },
+    {
+      "name": "gallery/320 one heading",
+      "passed": true
+    },
+    {
+      "name": "gallery/320 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "event-calendar/320 one heading",
+      "passed": true
+    },
+    {
+      "name": "event-calendar/320 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "date-picker/320 one heading",
+      "passed": true
+    },
+    {
+      "name": "date-picker/320 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "elements/320 one heading",
+      "passed": true
+    },
+    {
+      "name": "elements/320 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "layouts/320 one heading",
+      "passed": true
+    },
+    {
+      "name": "layouts/320 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "modularity/320 one heading",
+      "passed": true
+    },
+    {
+      "name": "modularity/320 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "themes/320 one heading",
+      "passed": true
+    },
+    {
+      "name": "themes/320 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "handoff/320 one heading",
+      "passed": true
+    },
+    {
+      "name": "handoff/320 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "320 identical page typography and origin",
+      "passed": true
+    },
+    {
+      "name": "integration URL addressable",
+      "passed": true
+    },
+    {
+      "name": "documentation separated from previews",
+      "passed": true
+    },
+    {
+      "name": "Back restores preview",
+      "passed": true
+    },
+    {
+      "name": "tabs keyboard navigation",
+      "passed": true
+    },
+    {
+      "name": "fabric dark header",
+      "passed": true
+    },
+    {
+      "name": "editorial dark header",
+      "passed": true
+    },
+    {
+      "name": "terminal dark header",
+      "passed": true
+    },
+    {
+      "name": "iris dark header",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark header",
+      "passed": true
+    },
+    {
+      "name": "zero browser errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "metrics": [
+    {
+      "width": 1440,
+      "route": "gallery",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 268,
+      "y": 157,
+      "text": "Charts & widgets"
+    },
+    {
+      "width": 1440,
+      "route": "event-calendar",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 268,
+      "y": 157,
+      "text": "Event calendar"
+    },
+    {
+      "width": 1440,
+      "route": "date-picker",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 268,
+      "y": 157,
+      "text": "Date picker"
+    },
+    {
+      "width": 1440,
+      "route": "elements",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 268,
+      "y": 157,
+      "text": "UI elements"
+    },
+    {
+      "width": 1440,
+      "route": "layouts",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 268,
+      "y": 157,
+      "text": "Compositions"
+    },
+    {
+      "width": 1440,
+      "route": "modularity",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 268,
+      "y": 157,
+      "text": "Sizing & density"
+    },
+    {
+      "width": 1440,
+      "route": "themes",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 268,
+      "y": 157,
+      "text": "Color & themes"
+    },
+    {
+      "width": 1440,
+      "route": "handoff",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 268,
+      "y": 157,
+      "text": "Developer handoff"
+    },
+    {
+      "width": 1920,
+      "route": "gallery",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 280,
+      "y": 157,
+      "text": "Charts & widgets"
+    },
+    {
+      "width": 1920,
+      "route": "event-calendar",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 280,
+      "y": 157,
+      "text": "Event calendar"
+    },
+    {
+      "width": 1920,
+      "route": "date-picker",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 280,
+      "y": 157,
+      "text": "Date picker"
+    },
+    {
+      "width": 1920,
+      "route": "elements",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 280,
+      "y": 157,
+      "text": "UI elements"
+    },
+    {
+      "width": 1920,
+      "route": "layouts",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 280,
+      "y": 157,
+      "text": "Compositions"
+    },
+    {
+      "width": 1920,
+      "route": "modularity",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 280,
+      "y": 157,
+      "text": "Sizing & density"
+    },
+    {
+      "width": 1920,
+      "route": "themes",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 280,
+      "y": 157,
+      "text": "Color & themes"
+    },
+    {
+      "width": 1920,
+      "route": "handoff",
+      "font": "32px",
+      "weight": "600",
+      "tracking": "-0.8px",
+      "line": "40px",
+      "x": 280,
+      "y": 157,
+      "text": "Developer handoff"
+    },
+    {
+      "width": 390,
+      "route": "gallery",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Charts & widgets"
+    },
+    {
+      "width": 390,
+      "route": "event-calendar",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Event calendar"
+    },
+    {
+      "width": 390,
+      "route": "date-picker",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Date picker"
+    },
+    {
+      "width": 390,
+      "route": "elements",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "UI elements"
+    },
+    {
+      "width": 390,
+      "route": "layouts",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Compositions"
+    },
+    {
+      "width": 390,
+      "route": "modularity",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Sizing & density"
+    },
+    {
+      "width": 390,
+      "route": "themes",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Color & themes"
+    },
+    {
+      "width": 390,
+      "route": "handoff",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Developer handoff"
+    },
+    {
+      "width": 320,
+      "route": "gallery",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Charts & widgets"
+    },
+    {
+      "width": 320,
+      "route": "event-calendar",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Event calendar"
+    },
+    {
+      "width": 320,
+      "route": "date-picker",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Date picker"
+    },
+    {
+      "width": 320,
+      "route": "elements",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "UI elements"
+    },
+    {
+      "width": 320,
+      "route": "layouts",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Compositions"
+    },
+    {
+      "width": 320,
+      "route": "modularity",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Sizing & density"
+    },
+    {
+      "width": 320,
+      "route": "themes",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Color & themes"
+    },
+    {
+      "width": 320,
+      "route": "handoff",
+      "font": "28px",
+      "weight": "600",
+      "tracking": "-0.7px",
+      "line": "35px",
+      "x": 16,
+      "y": 188,
+      "text": "Developer handoff"
+    }
+  ]
+}

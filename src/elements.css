@@ -1,29 +1,7 @@
 .elements-page {
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 12px 0 34px;
+  padding: 0;
   color: var(--foreground);
-}
-.elements-intro {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 0 0 21px;
-  margin-bottom: 18px;
-  border-bottom: 1px solid var(--border);
-}
-.elements-intro-meta {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  color: var(--muted-foreground);
-  font-size: 12px;
-  white-space: nowrap;
-}
-.elements-meta-dot {
-  opacity: 0.55;
 }
 .elements-grid {
   display: grid;
@@ -61,13 +39,6 @@
 .elements-card-copy {
   min-width: 0;
   flex: 1;
-}
-.elements-card-copy h2 {
-  color: var(--card-foreground);
-  font-size: 14px;
-  font-weight: 650;
-  letter-spacing: -0.01em;
-  line-height: 1.4;
 }
 .elements-card-copy p {
   margin-top: 3px;

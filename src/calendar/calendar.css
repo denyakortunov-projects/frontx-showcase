@@ -693,23 +693,6 @@
   max-width: 100%;
   min-width: 0;
 }
-.calendar-showcase h1 {
-  font-size: 32px;
-  letter-spacing: -1px;
-  margin: 4px 0 8px;
-}
-.cal-showcase-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 22px;
-}
-.cal-showcase-heading p {
-  font-size: 13px;
-  color: var(--muted-foreground);
-  margin: 0;
-}
 .cal-playground-controls {
   display: flex;
   gap: 16px;
@@ -746,8 +729,6 @@
   max-width: 100%;
 }
 .cal-embed-cell h2 {
-  font-size: 14px;
-  font-weight: 600;
   margin: 0 0 12px;
 }
 .cal-guide {
@@ -796,10 +777,7 @@
   .cal-form-grid {
     grid-template-columns: minmax(0, 1fr);
   }
-  .cal-showcase-heading {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+
   .cal-playground-controls {
     gap: 10px;
   }

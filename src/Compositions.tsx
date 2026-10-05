@@ -1,3 +1,4 @@
+import { PageHeader } from "./showcase/PageHeader";
 import { SegmentedControl } from "./showcase/SegmentedControl";
 import { useState, type ReactNode } from "react";
 import { Button } from "@gears-frontx/ui-kit/button";
@@ -218,15 +219,8 @@ export function Compositions({
   }
   return (
     <>
-      <div className="detail-heading">
-        <div>
-          <h1>Compositions</h1>
-          <p>
-            Complete screen recipes built from the same widgets and UI elements.
-          </p>
-        </div>
+      <PageHeader title="Compositions" actions={
         <label className="control">
-          <span>Composition</span>
           <NativeSelect
             aria-label="Composition"
             value={view}
@@ -240,7 +234,7 @@ export function Compositions({
             <option value="polar">Audience insights</option>
           </NativeSelect>
         </label>
-      </div>
+      } />
       <div className="recipe-heading">
         <div>
           <h2>{title}</h2>

@@ -1,3 +1,6 @@
+import { Tabs, TabsTrigger, TabsContent } from "@gears-frontx/ui-kit/tabs";
+import { SectionTabs } from "./showcase/SectionTabs";
+import { PageHeader } from "./showcase/PageHeader";
 import { DateFormatSettings } from "./showcase/DateFormatSettings";
 import { preferencesFromQuery, useDatePreferences } from "./date-picker/date-preferences";
 import { DateCalendar } from "./date-picker/DateCalendar";
@@ -22,6 +25,7 @@ export function DatePickerShowcase({
   query: URLSearchParams;
   update: (v: Record<string, string>) => unknown;
 }) {
+  const tab = query.get("pickTab") === "integration" ? "integration" : "preview";
   const preferences = useDatePreferences(preferencesFromQuery(query));
   const selected = parse(query.get("pickDate") ?? "2026-10-05");
   const from = parse(query.get("pickFrom") ?? "2026-10-05");
@@ -32,17 +36,18 @@ export function DatePickerShowcase({
   const setDate = (d: Date | undefined) =>
     update({ pickDate: serialize(d) || "none" });
   return (
-    <div className="date-picker-showcase">
-      <div className="date-picker-heading">
-        <h1>Date picker</h1>
-        <div className="date-heading-actions"><DateFormatSettings query={query} update={update}/>
-        <a href="/handoff/DATE-PICKER.md" download>
-          Integration guide ↓
-        </a></div>
-      </div>
+    <Tabs className="date-picker-showcase" value={tab} onValueChange={v => update({ pickTab: String(v) })}>
+      <PageHeader title="Date picker" actions={<>
+        <DateFormatSettings query={query} update={update}/>
+        <SectionTabs aria-label="Date picker examples">
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="integration">Integration</TabsTrigger>
+        </SectionTabs>
+      </>} />
+      <TabsContent value="preview">
       <div className="date-picker-examples">
         <section className="date-picker-example">
-          <h2>Single date</h2>
+          <h2 className="showcase-card-title">Single date</h2>
           <label htmlFor="example-date">Date</label>
           <ResponsiveDatePicker
             localeCode={preferences.locale}
@@ -65,7 +70,7 @@ export function DatePickerShowcase({
           </div>
         </section>
         <section className="date-picker-example">
-          <h2>Round trip</h2>
+          <h2 className="showcase-card-title">Round trip</h2>
           <label htmlFor="example-range">Departure — Return</label>
           <ResponsiveDatePicker
             localeCode={preferences.locale}
@@ -98,7 +103,7 @@ export function DatePickerShowcase({
           </div>
         </section>
         <section className="date-picker-example date-picker-inline">
-          <h2>Inline calendar</h2>
+          <h2 className="showcase-card-title">Inline calendar</h2>
           <DateCalendar
             mode="single"
             selected={selected}
@@ -110,8 +115,14 @@ export function DatePickerShowcase({
           />
         </section>
       </div>
-      <div className="date-picker-guide">
-        <h2>Choose the right component</h2>
+      </TabsContent>
+      <TabsContent value="integration" className="date-picker-guide">
+        <h2>Integrate Date picker</h2>
+        <div className="cal-handoff-links">
+          <a href="/handoff/frontx-calendar-components.zip" download>Download components</a>
+          <a href="/handoff/DATE-PICKER.md" download>Integration guide</a>
+        </div>
+        <h3>Choose the right component</h3>
         <table>
           <tbody>
             <tr>
@@ -143,7 +154,7 @@ export function DatePickerShowcase({
           These examples compose installed FrontX primitives with shared date
           styling and month/year navigation. Values belong to the host form.
         </p>
-      </div>
-    </div>
+      </TabsContent>
+    </Tabs>
   );
 }

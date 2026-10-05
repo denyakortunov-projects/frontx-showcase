@@ -1,6 +1,7 @@
+import { PageHeader } from "./showcase/PageHeader";
 import { Button } from "@gears-frontx/ui-kit/button";
 import { Card } from "@gears-frontx/ui-kit/card";
-import { Check, Copy, Palette } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 import { themes, paletteFor, type ThemeName } from "./themes";
 export function Themes({
@@ -23,13 +24,7 @@ export function Themes({
   }
   return (
     <>
-      <div className="detail-heading">
-        <div>
-          <h1>Color & themes</h1>
-          <p>Five palettes. Shared components. Your product’s character.</p>
-        </div>
-        <Palette size={26} />
-      </div>
+      <PageHeader title="Color & themes" />
       <div className="palette-grid">
         {themes.map((t) => (
           <Card

@@ -1,3 +1,4 @@
+import { PageHeader } from "./showcase/PageHeader";
 import { SectionTabs } from "./showcase/SectionTabs";
 import {
   WidgetFrame,
@@ -432,7 +433,7 @@ function App() {
               {page === "date-picker" ? "Date picker" : page === "event-calendar" ? "Event calendar" : page === "widget"
                 ? current.title
                 : page === "gallery"
-                  ? "Widgets"
+                  ? "Charts & widgets"
                   : page === "layouts"
                     ? "Compositions"
                     : page === "elements"
@@ -440,7 +441,7 @@ function App() {
                       : page === "themes"
                         ? "Color & themes"
                         : page === "modularity"
-                          ? "Modularity"
+                          ? "Sizing & density"
                           : "Developers"}
             </span>
             <span className="theme-choice">
@@ -464,33 +465,10 @@ function App() {
           {page === "event-calendar" && <Suspense fallback={<p role="status">Loading calendar…</p>}><CalendarShowcase query={q} update={update}/></Suspense>}
           {page === "gallery" && (
             <>
-              <div className="page-heading">
-                <div>
-                  <h1>
-                    Widgets.
-                    <br />
-                    <span className="heading-muted">Ready to compose.</span>
-                  </h1>
-                  <p className="intro">
-                    Charts, building blocks and a grid that brings them
-                    together.
-                  </p>
-                </div>
-                <div className="heading-side">
-                  <span className="count-label">THE COLLECTION</span>
-                  <strong>
-                    {widgets.length}
-                    <span> widgets</span>
-                  </strong>
-                  <Button
-                    variant="outline"
-                    onClick={() => go("layouts")}
-                    icon={<ArrowUpRight />}
-                  >
-                    Explore compositions
-                  </Button>
-                </div>
-              </div>
+              <PageHeader title="Charts & widgets" actions={<>
+                <span className="showcase-page-meta">{widgets.length} widgets</span>
+                <Button variant="outline" onClick={() => go("layouts")} icon={<ArrowUpRight />}>Explore compositions</Button>
+              </>} />
               <div className="gallery-toolbar">
                 <div className="category-tabs">
                   {[
@@ -644,19 +622,9 @@ function App() {
                 <ArrowLeft size={15} />
                 All widgets
               </button>
-              <div className="detail-heading">
-                <div>
-                  <h1>{current.title}</h1>
-                  <p>{current.description}</p>
-                </div>
-                <Button
-                  variant="outline"
-                  icon={<Download />}
-                  onClick={download}
-                >
-                  Get configuration
-                </Button>
-              </div>
+              <PageHeader title={current.title} description={current.description} actions={
+                <Button variant="outline" icon={<Download />} onClick={download}>Get configuration</Button>
+              } />
               <div className="playground-controls">
                 <div className="density-control">
                   <span>Widget height</span>
@@ -836,36 +804,15 @@ function App() {
           )}
           {page === "elements" && (
             <>
-              <div className="detail-heading">
-                <div>
-                  <h1>UI elements</h1>
-                  <p>
-                    20 interactive examples from the FrontX UI Kit · shadcn +
-                    Base UI.
-                  </p>
-                </div>
-              </div>
+              <PageHeader title="UI elements" actions={<span className="showcase-page-meta">20 components</span>} />
               <Elements />
             </>
           )}
           {page === "handoff" && (
             <>
-              <div className="detail-heading">
-                <div>
-                  <h1>Developer handoff</h1>
-                  <p>
-                    Real components, explicit contracts and runnable examples.
-                  </p>
-                </div>
-                <a
-                  className="download-link"
-                  href="/handoff/frontx-showcase-source.zip"
-                  download
-                >
-                  <Download size={17} />
-                  Download source
-                </a>
-              </div>
+              <PageHeader title="Developer handoff" actions={
+                <a className="download-link" href="/handoff/frontx-showcase-source.zip" download><Download size={17} />Download source</a>
+              } />
               <section className="handoff-summary">
                 <div><h2>Calendar components</h2><p>Event scheduling and date selection have separate APIs. The source bundle includes both, their dependencies and a working React example.</p></div>
                 <ul>

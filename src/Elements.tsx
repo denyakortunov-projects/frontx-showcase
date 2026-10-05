@@ -103,7 +103,7 @@ function Example({
       <header className="elements-card-head">
         <span className="elements-number">{number}</span>
         <div className="elements-card-copy">
-          <h2>{title}</h2>
+          <h2 className="showcase-card-title">{title}</h2>
           <p>{description}</p>
         </div>
       </header>
@@ -913,13 +913,6 @@ export function Elements() {
 
   return (
     <section className="elements-page" aria-label="Component examples">
-      <div className="elements-intro">
-        <div className="elements-intro-meta">
-          <span>20 components</span>
-          <span className="elements-meta-dot">·</span>
-          <span>Interactive examples</span>
-        </div>
-      </div>
       <div className="elements-grid">
         {examples.map((example, index) => (
           <div className="elements-grid-item" key={index}>

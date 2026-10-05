@@ -1,8 +1,9 @@
+import { PageHeader } from "./showcase/PageHeader";
 import { SegmentedControl } from "./showcase/SegmentedControl";
 import { useState, type CSSProperties } from "react";
 import { Button } from "@gears-frontx/ui-kit/button";
 import { NativeSelect } from "@gears-frontx/ui-kit/native-select";
-import { Plus, Check, Trash2, Copy, Grid2X2, Code2 } from "lucide-react";
+import { Plus, Check, Trash2, Copy, Code2 } from "lucide-react";
 import {
   WidgetFrame,
   WidgetDensitySwitch,
@@ -94,13 +95,7 @@ export function Modularity({
   }
   return (
     <>
-      <div className="detail-heading">
-        <div>
-          <h1>Modularity</h1>
-          <p>One block, two, three or four. Height is a separate choice.</p>
-        </div>
-        <Grid2X2 size={26} />
-      </div>
+      <PageHeader title="Sizing & density" />
       <div className="module-presets">
         <span>Start with</span>
         {Object.keys(presets).map((name) => (
