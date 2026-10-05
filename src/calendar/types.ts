@@ -1,3 +1,4 @@
+import type { TimeFormat, WeekStart } from "../date-picker/date-preferences";
 import type { ReactNode } from "react";
 export type CalendarView = "day" | "week" | "month" | "year" | "agenda";
 export type CalendarDensity = "standard" | "compact";
@@ -45,7 +46,11 @@ export type EventCalendarProps = {
   density?: CalendarDensity;
   height?: number;
   timeZone?: string;
+  /** Available event-editor zones. Current event zone is always retained. */
+  timeZones?: readonly string[];
   locale?: string;
+  timeFormat?: TimeFormat;
+  weekStartsOn?: WeekStart;
   adaptive?: boolean;
   readOnly?: boolean;
   state?: "ready" | "loading" | "empty" | "error";

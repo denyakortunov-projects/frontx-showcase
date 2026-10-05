@@ -4,7 +4,7 @@ import json,hashlib,zipfile,shutil
 base=Path(__file__).resolve().parent.parent
 names=['index.ts','EventCalendar.tsx','CalendarGrid.tsx','CalendarToolbar.tsx','CalendarYear.tsx','EventEditor.tsx','appearance.tsx','model.ts','types.ts','calendar.css','examples/ControlledCalendar.tsx']
 files={'calendar/'+n:base/'src/calendar'/n for n in names}
-files.update({'date-picker/'+n:base/'src/date-picker'/n for n in ['ResponsiveDatePicker.tsx','date-picker.css']})
+files.update({'date-picker/'+n:base/'src/date-picker'/n for n in ['ResponsiveDatePicker.tsx','DateCalendar.tsx','date-preferences.ts','date-picker.css']})
 files.update({n:base/'public/handoff'/n for n in ['EVENT-CALENDAR.md','DATE-PICKER.md']})
 content={name:p.read_bytes() for name,p in files.items()}
 deps=json.loads((base/'package.json').read_text())['dependencies']

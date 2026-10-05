@@ -7,12 +7,16 @@ export function CalendarYear({
   events,
   timeZone,
   now,
+  locale,
+  weekStartsOn,
   onSelectDate,
 }: {
   date: string;
   events: CalendarEvent[];
   timeZone: string;
   now: string;
+  locale: string;
+  weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
   onSelectDate: (date: string) => void;
 }) {
   const year = Number(date.slice(0, 4));
@@ -40,7 +44,7 @@ export function CalendarYear({
           <section
             className="cal-year-month"
             key={i}
-            aria-label={month.toLocaleDateString("en-GB", {
+            aria-label={month.toLocaleDateString(locale, {
               month: "long",
               year: "numeric",
             })}
@@ -55,15 +59,16 @@ export function CalendarYear({
                 weekday: "cal-mini-weekday",
               }}
               formatters={{
+                formatWeekdayName: (d) => d.toLocaleDateString(locale, {weekday:"short"}),
                 formatCaption: (d) =>
-                  d.toLocaleDateString("en-GB", { month: "long" }),
+                  d.toLocaleDateString(locale, { month: "long" }),
               }}
               mode="single"
               month={month}
               hideNavigation
               showOutsideDays={false}
               fixedWeeks
-              weekStartsOn={1}
+              weekStartsOn={weekStartsOn}
               today={new Date(`${today}T12:00:00`)}
               selected={new Date(`${date}T12:00:00`)}
               onSelect={(d) => {

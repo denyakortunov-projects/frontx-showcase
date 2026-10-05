@@ -1,0 +1,24 @@
+
+> frontx-showcase@0.2.3 build
+> tsc --noEmit && vite build
+
+vite v6.4.3 building for production...
+transforming...
+✓ 4310 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                  0.64 kB │ gzip:   0.38 kB
+dist/assets/DatePickerShowcase-B-zdJ55d.css      2.34 kB │ gzip:   0.78 kB
+dist/assets/DateCalendar-Cmsy8smF.css           12.26 kB │ gzip:   2.49 kB
+dist/assets/CalendarShowcase-CPxut5MQ.css       27.03 kB │ gzip:   5.53 kB
+dist/assets/index-BFORJWEi.css                 117.44 kB │ gzip:  19.68 kB
+dist/assets/DatePickerShowcase-Dr5sSGBr.js      32.11 kB │ gzip:   7.88 kB
+dist/assets/DateCalendar-BkZuLrov.js            80.24 kB │ gzip:  23.48 kB
+dist/assets/CalendarShowcase-Dbccjt4R.js       434.81 kB │ gzip: 132.26 kB
+dist/assets/index-B1hY1UZp.js                1,111.03 kB │ gzip: 331.79 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.42s

@@ -1,3 +1,5 @@
+import { DateFormatSettings } from "./showcase/DateFormatSettings";
+import { preferencesFromQuery, type DatePreferences } from "./date-picker/date-preferences";
 import { SectionTabs } from "./showcase/SectionTabs";
 import { useState } from "react";
 import { Tabs, TabsTrigger } from "@gears-frontx/ui-kit/tabs";
@@ -34,7 +36,7 @@ const demoStore = {
   deleted: new Set<string>(),
   scrollPositions: new Map<string, number>(),
 };
-function Embedded({ compact }: { compact: boolean }) {
+function Embedded({ compact, preferences }: { compact: boolean; preferences: DatePreferences }) {
   const registerGuard = useCalendarNavigationRegistration();
   const [events, setEvents] = useState([...INITIAL_EVENTS]);
   const [position, setPosition] = useState<CalendarPosition>({
@@ -47,6 +49,7 @@ function Embedded({ compact }: { compact: boolean }) {
     <div className="cal-embed-cell" style={{ width: compact ? 360 : 640 }}>
       <h2>{compact ? "Compact · 360 × 360" : "Month · 640 × 640"}</h2>
       <EventCalendar
+        {...preferences}
         events={events}
         position={position}
         onPositionChange={setPosition}
@@ -72,7 +75,8 @@ export function CalendarShowcase({
 }) {
   const registerGuard = useCalendarNavigationRegistration();
   const [events, setEvents] = useState<CalendarEvent[]>(demoStore.events);
-  const tab = q.get("calTab") || "preview";
+  const preferences = preferencesFromQuery(q);
+  const tab = q.get("calTab") === "usage" ? "integration" : q.get("calTab") || "preview";
   const date = validDate(q.get("calDate") || "")
     ? q.get("calDate")!
     : DEMO_DATE;
@@ -181,6 +185,7 @@ export function CalendarShowcase({
         <div>
           <h1>Event calendar</h1>
         </div>
+        <div className="date-heading-actions"><DateFormatSettings query={q} update={update}/>
         <Tabs
           value={tab}
           onValueChange={(v) => update({ calTab: String(v), calEvent: "" })}
@@ -188,22 +193,22 @@ export function CalendarShowcase({
           <SectionTabs aria-label="Calendar examples">
             <TabsTrigger value="preview">Preview</TabsTrigger>
             <TabsTrigger value="playground">Playground</TabsTrigger>
-            <TabsTrigger value="usage">Integration</TabsTrigger>
+            <TabsTrigger value="integration">Integration</TabsTrigger>
           </SectionTabs>
-        </Tabs>
+        </Tabs></div>
       </div>
       {tab === "embedded" ? (
         <>
           <div className="cal-embed-grid">
-            <Embedded compact />
-            <Embedded compact={false} />
+            <Embedded compact preferences={preferences}/>
+            <Embedded compact={false} preferences={preferences}/>
           </div>
           <p className="cal-demo-note">
             Independent instances with their own events and selection. Synthetic
             data; reload resets edits.
           </p>
         </>
-      ) : tab === "usage" ? (
+      ) : tab === "integration" ? (
         <div className="cal-guide">
           <h2>Integrate EventCalendar</h2>
           <div className="cal-handoff-links">
@@ -307,6 +312,7 @@ export function CalendarShowcase({
           )}
           <div className="cal-demo-stage" style={{ width: width || "100%" }}>
             <EventCalendar
+        {...preferences}
               scrollPositions={demoStore.scrollPositions}
               events={
                 fixture === "overlaps"
@@ -349,8 +355,8 @@ export function CalendarShowcase({
           </div>
           {tab === "preview" && (
             <div className="cal-embed-grid cal-preview-variants">
-              <Embedded compact />
-              <Embedded compact={false} />
+              <Embedded compact preferences={preferences}/>
+              <Embedded compact={false} preferences={preferences}/>
             </div>
           )}
           <p className="cal-demo-note">

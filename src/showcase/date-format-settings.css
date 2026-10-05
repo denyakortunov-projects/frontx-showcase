@@ -1,0 +1,6 @@
+.date-format-settings { width: 280px; max-width: calc(100vw - 24px); padding: 18px; border-radius: 18px; }
+.date-format-settings label { display: block; margin: 12px 0 6px; font-size: 12px; font-weight: 500; }
+.date-format-settings label:first-child { margin-top: 0; }
+.date-format-settings output { display: block; padding: 14px 0 0; margin-top: 14px; border-top: 1px solid var(--border); font-size: 14px; }
+.date-format-settings output small { display: block; color: var(--muted-foreground); margin-top: 6px; font-size: 11px; }
+.date-heading-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }

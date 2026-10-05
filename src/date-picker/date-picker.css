@@ -1,5 +1,70 @@
+/* Shared date-selection composition. Only FrontX semantic tokens; no Showcase dependency. */
+:where(.frontx-date-calendar, .frontx-date-popup),
+:where(.frontx-date-calendar, .frontx-date-popup) * { box-sizing: border-box; }
 .frontx-date-picker {
-  max-width: 100%;
-  width: 100%;
-  min-width: 0;
+  width: 100%; max-width: 100%; min-width: 0; min-height: 44px;
+  justify-content: flex-start; gap: 10px; padding-inline: 14px;
+  border-radius: 12px; background: var(--card); border-color: var(--border);
+  box-shadow: 0 2px 5px -3px color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+.frontx-date-picker > span:last-child { display: flex; align-items: center; flex: 1; gap: 8px; min-width: 0; }
+.frontx-date-picker > span:last-child > span { overflow: hidden; text-overflow: ellipsis; }
+.frontx-date-picker[data-empty] { color: var(--muted-foreground); }
+.date-trigger-chevron { margin-inline-start: auto; flex-shrink: 0; color: var(--muted-foreground); }
+.frontx-date-popup {
+  width: auto; max-width: calc(100vw - 24px); padding: 8px; border-radius: 22px;
+  background: var(--card); max-height: calc(100dvh - 32px); overflow: auto;
+  box-shadow: 0 20px 65px -22px color-mix(in srgb, var(--foreground) 28%, transparent), 0 4px 12px -6px color-mix(in srgb, var(--foreground) 18%, transparent);
+}
+.frontx-date-calendar {
+  --date-cell: 40px;
+  width: fit-content; max-width: 100%; padding: 14px; border-radius: 18px;
+  background: var(--card); color: var(--foreground);
+}
+.frontx-date-calendar .date-months { display: flex; position: relative; flex-direction: row; gap: 24px; }
+.frontx-date-calendar .date-month { display: flex; position: relative; flex-direction: column; gap: 18px; width: calc(var(--date-cell) * 7); min-width: 0; }
+.frontx-date-calendar .date-caption { display: flex; align-items: center; height: 40px; padding-inline-end: 76px; }
+.frontx-date-calendar .date-dropdowns { display: flex; gap: 6px; align-items: center; }
+.frontx-date-calendar .date-dropdown-root { position: relative; display: inline-flex; border-radius: 10px; background: color-mix(in srgb, var(--primary) 6%, var(--card)); }
+.frontx-date-calendar .date-dropdown { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; }
+.frontx-date-calendar .date-dropdown-root:has(.date-dropdown:focus-visible) { outline: 2px solid var(--ring); outline-offset: 2px; }
+.frontx-date-calendar .date-caption-label { display: flex; gap: 5px; align-items: center; padding: 9px 8px; font-weight: 600; font-size: 13px; white-space: nowrap; }
+.frontx-date-calendar .date-nav { position: absolute; inset-inline-end: 0; top: 0; display: flex; gap: 4px; }
+.frontx-date-calendar .date-nav-button { display: grid; place-items: center; width: 34px; height: 40px; background: transparent; color: var(--muted-foreground); border: 0; border-radius: 10px; cursor: pointer; }
+.frontx-date-calendar .date-nav-button:hover:not(:disabled) { background: var(--accent); color: var(--accent-foreground); }
+.frontx-date-calendar .date-nav-button:disabled { opacity: .4; cursor: not-allowed; }
+.frontx-date-calendar .date-nav-button:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }
+.frontx-date-calendar .date-grid { width: 100%; border-collapse: collapse; }
+.frontx-date-calendar .date-weekdays, .frontx-date-calendar .date-week { display: flex; width: 100%; }
+.frontx-date-calendar .date-week { margin-top: 4px; }
+.frontx-date-calendar .date-weekday { width: var(--date-cell); padding-block: 0 8px; color: var(--muted-foreground); font-size: 11px; font-weight: 500; text-align: center; }
+.frontx-date-calendar .date-day { position: relative; width: var(--date-cell); height: var(--date-cell); padding: 0; text-align: center; }
+.frontx-date-calendar .date-day button { min-width: 0; width: 100%; height: 100%; border-radius: 50%; font-size: 13px; font-weight: 500; }
+.frontx-date-calendar .date-today button { background: color-mix(in srgb, var(--primary) 10%, var(--card)); color: var(--primary); font-weight: 700; }
+.frontx-date-calendar .date-outside { color: var(--muted-foreground); }
+.frontx-date-calendar .date-disabled { opacity: .45; }
+.frontx-date-calendar .date-hidden { visibility: hidden; }
+.frontx-date-calendar .date-day button[data-selected-single],
+.frontx-date-calendar .date-day button[data-range-start],
+.frontx-date-calendar .date-day button[data-range-end] {
+  background: var(--primary); color: var(--primary-foreground); border-radius: 50%;
+  box-shadow: 0 3px 9px -2px color-mix(in srgb, var(--primary) 42%, transparent);
+}
+.frontx-date-calendar :is(.date-range-start, .date-range-middle, .date-range-end) { background: color-mix(in srgb, var(--primary) 11%, var(--card)); }
+.frontx-date-calendar .date-range-start { border-start-start-radius: 50%; border-end-start-radius: 50%; }
+.frontx-date-calendar .date-range-end { border-start-end-radius: 50%; border-end-end-radius: 50%; }
+.frontx-date-calendar .date-range-start.date-range-end { border-radius: 50%; }
+.frontx-date-calendar .date-day button[data-range-middle] { border-radius: 0; }
+.frontx-date-calendar .date-day[data-focused] button { outline: 2px solid var(--ring); outline-offset: 2px; }
+.date-popup-footer { display: flex; gap: 14px; align-items: center; justify-content: space-between; padding: 12px 14px 6px; border-top: 1px solid var(--border); }
+.date-popup-footer output { flex: 1; text-align: center; color: var(--muted-foreground); font-size: 12px; }
+@media (max-width: 640px) {
+  .frontx-date-calendar { --date-cell: 36px; padding: 10px; }
+  .frontx-date-calendar .date-months { gap: 12px; }
+  .frontx-date-popup { padding: 6px; }
+  .frontx-date-calendar .date-day { height: 40px; }
+  .date-popup-footer { flex-wrap: wrap; padding: 12px 10px 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .frontx-date-calendar *, .frontx-date-picker { transition: none; }
 }

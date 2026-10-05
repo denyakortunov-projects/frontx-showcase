@@ -7,3 +7,6 @@ Consumers: CalendarShowcase (Preview / Playground / Integration), chart playgrou
 Calendar Day/Week/Month/Year and event-colour ToggleGroups retain their separately accepted component variants. Filters, navigation links and standalone actions do not become tabs merely because they use buttons.
 
 SegmentedControl uses the same visual states over FrontX ToggleGroup for non-tab choices: WidgetDensitySwitch (all chart/gallery/composition consumers), module width/height, and composition period. It ignores an empty single-choice selection. Keyboard navigation comes from Base UI. No hand-rolled pressed state remains in these grouped selectors.
+
+
+DateFormatSettings is a catalogue control composed from installed Popover, Button and NativeSelect. It writes dateLocale/timeFormat/weekStart URL preferences for both date-picker and event-calendar routes. Reusable date-preferences.ts contains only host settings resolution; it does not depend on this control, router or Showcase CSS. Keep localization of control copy separate from date/time formatting.

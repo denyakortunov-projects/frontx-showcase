@@ -27,15 +27,16 @@ export function addDays(date: string, days: number): string {
   return Temporal.PlainDate.from(date).add({ days }).toString();
 }
 
-export function weekStart(date: string): string {
+export function weekStart(date: string, firstDay = 1): string {
   const d = Temporal.PlainDate.from(date);
   const dow = d.dayOfWeek;
-  return d.subtract({ days: dow - 1 }).toString();
+  return d.subtract({ days: (dow - firstDay + 7) % 7 }).toString();
 }
 
 export function rangeFor(
   date: string,
   span: "day" | "week" | "month" | "year",
+  firstDay = 1,
 ): { start: string; end: string } {
   if (span === "month" || span === "year") {
     const start = Temporal.PlainDate.from(date).with(
@@ -51,7 +52,7 @@ export function rangeFor(
   if (span === "day") {
     return { start: date, end: addDays(date, 1) };
   }
-  const start = weekStart(date);
+  const start = weekStart(date, firstDay);
   return { start, end: addDays(start, 7) };
 }
 
@@ -342,6 +343,7 @@ export function formatEventTime(
   event: CalendarEvent,
   zone: string,
   locale = "en-GB",
+  hour12 = false,
 ): string {
   if (event.allDay) {
     const start = Temporal.PlainDate.from(event.startDate);
@@ -369,7 +371,7 @@ export function formatEventTime(
     zdt.toPlainTime().toLocaleString(locale, {
       hour: "2-digit",
       minute: "2-digit",
-      hour12: false,
+      hourCycle: hour12 ? "h12" : "h23",
     });
   const sameDay = startZdt.toPlainDate().equals(endZdt.toPlainDate());
   const tzName = zone;
@@ -433,6 +435,8 @@ export function formatAgendaTime(
   event: CalendarEvent,
   day: string,
   zone: string,
+  locale = "en-GB",
+  hour12 = false,
 ): string {
   if (event.allDay) return "All day";
   const start = localParts(event.start, zone);
@@ -440,5 +444,10 @@ export function formatAgendaTime(
   const continuesBefore = start.date < day;
   const continuesAfter =
     end.date > addDays(day, 1) || (end.date > day && end.time !== "00:00");
-  return `${continuesBefore ? "↳ " : ""}${continuesBefore ? "00:00" : start.time} – ${end.date > day ? "24:00" : end.time}${continuesAfter ? " ↗" : ""}`;
+  const time = (value: string) => {
+    if (value === "24:00" && !hour12) return "24:00";
+    const [h, m] = value.split(":").map(Number);
+    return new Date(2000, 0, 1, h % 24, m).toLocaleTimeString(locale, {hour:"2-digit", minute:"2-digit", hourCycle:hour12 ? "h12" : "h23"});
+  };
+  return `${continuesBefore ? "↳ " : ""}${time(continuesBefore ? "00:00" : start.time)} – ${time(end.date > day ? "24:00" : end.time)}${continuesAfter ? " ↗" : ""}`;
 }

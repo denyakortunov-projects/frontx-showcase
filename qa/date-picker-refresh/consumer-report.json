@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "name": "no Showcase CSS/router imported",
+      "passed": true
+    },
+    {
+      "name": "year caption follows locale",
+      "passed": true
+    },
+    {
+      "name": "host year bounds",
+      "passed": true
+    },
+    {
+      "name": "localized months",
+      "passed": true
+    },
+    {
+      "name": "disabled weekend cannot select",
+      "passed": true
+    },
+    {
+      "name": "closeOnSelect does not close incomplete range",
+      "passed": true
+    },
+    {
+      "name": "same-day range supported and closes on completion",
+      "passed": true
+    },
+    {
+      "name": "host time zone choices and current zone",
+      "passed": true
+    },
+    {
+      "name": "independent host event create",
+      "passed": true
+    },
+    {
+      "name": "independent host event edit",
+      "passed": true
+    },
+    {
+      "name": "independent host event delete",
+      "passed": true
+    },
+    {
+      "name": "no consumer errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "at": "2026-10-05T07:45:07.237Z"
+}

@@ -1,0 +1,494 @@
+{
+  "sourceFingerprint": "f7b35f6d740118469ad1593a74c91b6b23d2bb5ea03dccb87e4e2c3ed6469af8",
+  "runtimeFingerprint": "b0345feff4b1642ccceefabe0a403cf0a227b8577bd281ba196a9ef5a9c9c898",
+  "checks": [
+    {
+      "name": "exact full archive allowlist",
+      "passed": true
+    },
+    {
+      "name": "source parity package.json",
+      "passed": true
+    },
+    {
+      "name": "source parity package-lock.json",
+      "passed": true
+    },
+    {
+      "name": "source parity tsconfig.json",
+      "passed": true
+    },
+    {
+      "name": "source parity vite.config.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity index.html",
+      "passed": true
+    },
+    {
+      "name": "source parity README.md",
+      "passed": true
+    },
+    {
+      "name": "source parity .gitignore",
+      "passed": true
+    },
+    {
+      "name": "source parity src/CalendarShowcase.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/Compositions.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/DatePickerShowcase.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/Elements.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/Modularity.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/ThemeGallery.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/TokenActivity.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/UtilityWidgets.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/WidgetFrame.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/CalendarGrid.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/CalendarToolbar.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/CalendarYear.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/EventCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/EventEditor.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/appearance.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/calendar.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/examples/ControlledCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/fixtures.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/index.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/model.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/navigation.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity src/calendar/types.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity src/compositions.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/data.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity src/date-picker/DateCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/date-picker/ResponsiveDatePicker.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/date-picker/date-picker.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/date-picker/date-preferences.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity src/elements.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/main.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/modularity.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/showcase/DateFormatSettings.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/showcase/README.md",
+      "passed": true
+    },
+    {
+      "name": "source parity src/showcase/SectionTabs.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/showcase/SegmentedControl.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity src/showcase/date-format-settings.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/showcase/date-picker-showcase.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/showcase/section-tabs.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/style.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/themes.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity src/token-activity.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/utility-widgets.css",
+      "passed": true
+    },
+    {
+      "name": "source parity src/widgets.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity docs/calendar/ACCEPTANCE.md",
+      "passed": true
+    },
+    {
+      "name": "source parity docs/calendar/DESIGN-2026-10-05.md",
+      "passed": true
+    },
+    {
+      "name": "source parity docs/calendar/ENGINE-DECISION.md",
+      "passed": true
+    },
+    {
+      "name": "source parity docs/calendar/IMPLEMENTATION-PLAN.md",
+      "passed": true
+    },
+    {
+      "name": "source parity docs/calendar/README.md",
+      "passed": true
+    },
+    {
+      "name": "source parity docs/calendar/VISUAL-REFRESH.md",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/verify-event-calendar.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/verify-calendar-accessibility.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/event-calendar/model.test.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/event-calendar/async.html",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/event-calendar/async.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/event-calendar/verify-async.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/event-calendar/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/verify-calendar-refresh.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/calendar-refresh/model.test.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/calendar-refresh/verify-async.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/calendar-refresh/verify-accessibility.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/calendar-refresh/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/calendar-refresh/verify-final-layout.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/calendar-polish/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/calendar-polish/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity scripts/package-calendar-components.py",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/component-handoff/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/component-handoff/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/component-handoff/verify-segments.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/component-handoff/consumer.html",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/component-handoff/consumer.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity public/handoff/EVENT-CALENDAR.md",
+      "passed": true
+    },
+    {
+      "name": "source parity public/handoff/DATE-PICKER.md",
+      "passed": true
+    },
+    {
+      "name": "source parity public/handoff/ControlledCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity public/handoff/frontx-calendar-components.zip",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/ACCEPTANCE.md",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/check-editor.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/check-focus.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/inspect.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/verify-consumer.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/verify-formats.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/verify-visual.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/verify-archive.py",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/consumer.tsx",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/consumer.html",
+      "passed": true
+    },
+    {
+      "name": "source parity qa/date-picker-refresh/model.test.ts",
+      "passed": true
+    },
+    {
+      "name": "source parity public/favicon.svg",
+      "passed": true
+    },
+    {
+      "name": "source parity public/handoff/README.md",
+      "passed": true
+    },
+    {
+      "name": "source parity public/handoff/CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "tested runtime unchanged",
+      "passed": true
+    },
+    {
+      "name": "source archive hash",
+      "passed": true
+    },
+    {
+      "name": "component archive exact contents",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/index.ts",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/EventCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/CalendarGrid.tsx",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/CalendarToolbar.tsx",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/CalendarYear.tsx",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/EventEditor.tsx",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/appearance.tsx",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/model.ts",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/types.ts",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/calendar.css",
+      "passed": true
+    },
+    {
+      "name": "component hash calendar/examples/ControlledCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "component hash date-picker/ResponsiveDatePicker.tsx",
+      "passed": true
+    },
+    {
+      "name": "component hash date-picker/DateCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "component hash date-picker/date-preferences.ts",
+      "passed": true
+    },
+    {
+      "name": "component hash date-picker/date-picker.css",
+      "passed": true
+    },
+    {
+      "name": "component hash EVENT-CALENDAR.md",
+      "passed": true
+    },
+    {
+      "name": "component hash DATE-PICKER.md",
+      "passed": true
+    },
+    {
+      "name": "component hash dependencies.json",
+      "passed": true
+    },
+    {
+      "name": "shared dependency bundled date-picker/DateCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "shared dependency bundled date-picker/date-preferences.ts",
+      "passed": true
+    },
+    {
+      "name": "no private paths",
+      "passed": true
+    }
+  ]
+}

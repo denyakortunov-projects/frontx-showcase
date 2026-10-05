@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "name": "accepted public baseline remains exact source",
+      "passed": true
+    },
+    {
+      "name": "1280 page fits",
+      "passed": true
+    },
+    {
+      "name": "1280 inline surface fits parent",
+      "passed": true
+    },
+    {
+      "name": "1600 page fits",
+      "passed": true
+    },
+    {
+      "name": "1600 inline surface fits parent",
+      "passed": true
+    },
+    {
+      "name": "1920 page fits",
+      "passed": true
+    },
+    {
+      "name": "1920 inline surface fits parent",
+      "passed": true
+    },
+    {
+      "name": "320 page fits",
+      "passed": true
+    },
+    {
+      "name": "320 inline surface fits parent",
+      "passed": true
+    },
+    {
+      "name": "390 page fits",
+      "passed": true
+    },
+    {
+      "name": "390 inline surface fits parent",
+      "passed": true
+    },
+    {
+      "name": "fabric/light date text contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric/dark date text contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial/light date text contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial/dark date text contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal/light date text contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal/dark date text contrast",
+      "passed": true
+    },
+    {
+      "name": "iris/light date text contrast",
+      "passed": true
+    },
+    {
+      "name": "iris/dark date text contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon/light date text contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon/dark date text contrast",
+      "passed": true
+    }
+  ],
+  "at": "2026-10-05T07:49:06.361Z"
+}

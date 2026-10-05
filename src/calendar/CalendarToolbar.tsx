@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Temporal } from "temporal-polyfill";
 import { Button } from "@gears-frontx/ui-kit/button";
-import { Calendar } from "@gears-frontx/ui-kit/calendar";
+import { DateCalendar } from "../date-picker/DateCalendar";
 import {
   Popover,
   PopoverTrigger,
@@ -15,6 +15,7 @@ export function CalendarToolbar({
   date,
   view,
   locale,
+  weekStartsOn,
   onDate,
   onShift,
   onToday,
@@ -26,6 +27,7 @@ export function CalendarToolbar({
   date: string;
   view: CalendarView;
   locale: string;
+  weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
   onDate: (date: string) => void;
   onShift: (direction: number) => void;
   onToday: () => void;
@@ -53,11 +55,12 @@ export function CalendarToolbar({
           className="cal-date-picker"
           aria-label="Choose calendar date"
         >
-          <Calendar
+          <DateCalendar
+            localeCode={locale}
             mode="single"
             selected={new Date(`${date}T12:00:00`)}
             defaultMonth={new Date(`${date}T12:00:00`)}
-            weekStartsOn={1}
+            weekStartsOn={weekStartsOn}
             onSelect={(d) => {
               if (d) {
                 onDate(

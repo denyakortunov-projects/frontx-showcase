@@ -36,6 +36,8 @@ export function CalendarGrid({
   readOnly,
   now,
   locale,
+  hour12,
+  weekStartsOn,
   scrollStore,
 }: {
   events: CalendarEvent[];
@@ -50,6 +52,8 @@ export function CalendarGrid({
   readOnly: boolean;
   now: string;
   locale: string;
+  hour12: boolean;
+  weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
   scrollStore: Map<string, number>;
 }) {
   const helpId = useId();
@@ -180,7 +184,7 @@ export function CalendarGrid({
         </span>
         {keyboard && (
           <div className="cal-slot-status" role="status">
-            {slot.date} · {slot.allDay ? "All day" : slot.time} ·{" "}
+            {Temporal.PlainDate.from(slot.date).toLocaleString(locale, {day:"numeric",month:"short",year:"numeric"})} · {slot.allDay ? "All day" : Temporal.PlainTime.from(slot.time).toLocaleString(locale, {hour:"2-digit",minute:"2-digit",hourCycle:hour12 ? "h12" : "h23"})} ·{" "}
             {readOnly ? "Read only" : "Enter to create"}
           </div>
         )}
@@ -201,7 +205,7 @@ export function CalendarGrid({
           now={now}
           headerToolbar={false}
           height={height}
-          firstDay={1}
+          firstDay={weekStartsOn}
           allDaySlot
           slotDuration="00:30:00"
           scrollTime={
@@ -232,12 +236,12 @@ export function CalendarGrid({
           slotLabelFormat={{
             hour: "2-digit",
             minute: "2-digit",
-            hour12: false,
+            hour12,
           }}
           eventTimeFormat={{
             hour: "2-digit",
             minute: "2-digit",
-            hour12: false,
+            hour12,
           }}
           dayHeaderContent={(info) => (
             <span className="cal-day-heading">
@@ -309,7 +313,7 @@ export function CalendarGrid({
       >
         <DialogContent className="cal-overflow">
           <DialogHeader>
-            <DialogTitle>Events on {overflowDate}</DialogTitle>
+            <DialogTitle>Events on {overflowDate && Temporal.PlainDate.from(overflowDate).toLocaleString(locale, {day:"numeric",month:"short",year:"numeric"})}</DialogTitle>
             <DialogDescription>All events for this date.</DialogDescription>
           </DialogHeader>
           <div className="cal-overflow-list">
@@ -337,7 +341,7 @@ export function CalendarGrid({
                   >
                     <span>
                       <strong>{event.title}</strong>
-                      <small>{formatEventTime(event, timeZone, locale)}</small>
+                      <small>{formatEventTime(event, timeZone, locale, hour12)}</small>
                     </span>
                   </Button>
                 ))}

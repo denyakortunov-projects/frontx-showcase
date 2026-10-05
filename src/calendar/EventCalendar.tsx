@@ -1,5 +1,6 @@
 "use client";
 
+import { useDatePreferences } from "../date-picker/date-preferences";
 import { CalendarToolbar } from "./CalendarToolbar";
 import { CalendarYear } from "./CalendarYear";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -46,7 +47,10 @@ export function EventCalendar({
   density = "standard",
   height = 640,
   timeZone = "UTC",
-  locale = "en-GB",
+  timeZones,
+  locale: requestedLocale,
+  timeFormat = "system",
+  weekStartsOn: requestedWeekStart,
   adaptive = true,
   readOnly = false,
   state = "ready",
@@ -57,6 +61,7 @@ export function EventCalendar({
   renderEventExtra,
   scrollPositions,
 }: EventCalendarProps) {
+  const {locale, hour12, weekStartsOn} = useDatePreferences({locale:requestedLocale, timeFormat, weekStartsOn:requestedWeekStart});
   const root = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(1000);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -82,8 +87,8 @@ export function EventCalendar({
     narrow && position.view !== "year" ? "agenda" : position.view;
   const span = position.view === "agenda" ? position.agendaSpan : position.view;
   const range = useMemo(
-    () => rangeFor(position.date, span),
-    [position.date, span],
+    () => rangeFor(position.date, span, weekStartsOn),
+    [position.date, span, weekStartsOn],
   );
   const shown = useMemo(
     () =>
@@ -220,6 +225,7 @@ export function EventCalendar({
         date={position.date}
         view={position.view}
         locale={locale}
+        weekStartsOn={weekStartsOn}
         todayRef={fallbackFocus}
         onView={changeView}
         onShift={shift}
@@ -266,6 +272,8 @@ export function EventCalendar({
             events={shown}
             timeZone={timeZone}
             now={now}
+            locale={locale}
+            weekStartsOn={weekStartsOn}
             onSelectDate={(date) =>
               onPositionChange({
                 ...position,
@@ -323,7 +331,7 @@ export function EventCalendar({
                         <span className="cal-agenda-row">
                           <i className="cal-agenda-dot" aria-hidden="true" />
                           <span className="cal-agenda-time">
-                            {formatAgendaTime(event, day, timeZone)}
+                            {formatAgendaTime(event, day, timeZone, locale, hour12)}
                           </span>
                           <span className="cal-agenda-title">
                             {event.title}
@@ -345,6 +353,8 @@ export function EventCalendar({
               view={view}
               timeZone={timeZone}
               locale={locale}
+              hour12={hour12}
+              weekStartsOn={weekStartsOn}
               density={density}
               height={Math.max(180, bodyHeight)}
               selectedId={position.selectedId}
@@ -388,7 +398,7 @@ export function EventCalendar({
             </SheetTitle>
             <SheetDescription>
               {selected
-                ? formatEventTime(selected, timeZone, locale)
+                ? formatEventTime(selected, timeZone, locale, hour12)
                 : "This event is no longer available in the local dataset."}
             </SheetDescription>
           </SheetHeader>
@@ -402,7 +412,7 @@ export function EventCalendar({
                     : `Event timezone: ${selected.timeZone}`}{" "}
                   {!selected.allDay && (
                     <small>
-                      {formatEventTime(selected, selected.timeZone, locale)} ·
+                      {formatEventTime(selected, selected.timeZone, locale, hour12)} ·
                       UTC
                       {
                         Temporal.Instant.from(
@@ -456,6 +466,7 @@ export function EventCalendar({
       </Sheet>
       {draft && (
         <EventEditor
+          timeZones={timeZones}
           key={draft.id}
           initialDraft={draft}
           isNew={isNew}

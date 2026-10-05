@@ -1,0 +1,19 @@
+✔ leap February month range is half-open (2.052291ms)
+✔ December range rolls into next year (0.255334ms)
+✔ year range starts in January and ends next January (0.125333ms)
+✔ timed event colour survives editing and zone conversion (16.727041ms)
+✔ all-day colour survives inclusive editor and exclusive model (0.145041ms)
+✔ new and legacy events default to theme colour (1.109167ms)
+✔ Sunday-first week includes Sunday across a month/year boundary (2.297208ms)
+✔ Saturday-first calendar and Monday-first calendar retain correct week boundary (0.199083ms)
+✔ regions determine week and clock while explicit host settings win (11.213333ms)
+✔ 12h continuation respects local segment midnight and preserves arrows (1.792292ms)
+✔ changing format does not change event instants (0.755167ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 112.347625

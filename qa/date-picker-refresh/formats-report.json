@@ -1,0 +1,98 @@
+{
+  "checks": [
+    {
+      "name": "browser en-US gives Sunday-first",
+      "passed": true
+    },
+    {
+      "name": "system preference resolves browser region",
+      "passed": true
+    },
+    {
+      "name": "US default time is 12-hour",
+      "passed": true
+    },
+    {
+      "name": "Russian region sample uses day-first date",
+      "passed": true
+    },
+    {
+      "name": "date header localizes month",
+      "passed": true
+    },
+    {
+      "name": "regional week starts Monday",
+      "passed": true
+    },
+    {
+      "name": "URL retains selected day across region changes",
+      "passed": true
+    },
+    {
+      "name": "Back restores regional preference",
+      "passed": true
+    },
+    {
+      "name": "en-US month formatting",
+      "passed": true
+    },
+    {
+      "name": "en-GB month formatting",
+      "passed": true
+    },
+    {
+      "name": "de-DE month formatting",
+      "passed": true
+    },
+    {
+      "name": "fr-FR month formatting",
+      "passed": true
+    },
+    {
+      "name": "ja-JP month formatting",
+      "passed": true
+    },
+    {
+      "name": "US event grid shows AM/PM",
+      "passed": true
+    },
+    {
+      "name": "keyboard slot uses regional time",
+      "passed": true
+    },
+    {
+      "name": "US week starts Sunday",
+      "passed": true
+    },
+    {
+      "name": "explicit 24-hour override",
+      "passed": true
+    },
+    {
+      "name": "explicit Monday override",
+      "passed": true
+    },
+    {
+      "name": "mobile agenda honors 12-hour format",
+      "passed": true
+    },
+    {
+      "name": "mobile format settings fit",
+      "passed": true
+    },
+    {
+      "name": "emailed integration URL opens integration",
+      "passed": true
+    },
+    {
+      "name": "legacy integration URL retained",
+      "passed": true
+    },
+    {
+      "name": "no formatting errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "at": "2026-10-05T07:53:59.673Z"
+}

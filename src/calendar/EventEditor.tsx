@@ -28,12 +28,14 @@ const BASE_ZONES = [
 
 export function EventEditor({
   initialDraft,
+  timeZones,
   isNew,
   onSave,
   onRequestClose,
   onDirtyChange,
 }: {
   initialDraft: EventDraft;
+  timeZones?: readonly string[];
   isNew: boolean;
   onSave: (event: CalendarEvent) => void | Promise<void>;
   onRequestClose: () => void;
@@ -98,9 +100,9 @@ export function EventEditor({
     draft.allDay,
   ]);
 
-  const zones = BASE_ZONES.includes(draft.timeZone)
-    ? BASE_ZONES
-    : [...BASE_ZONES, draft.timeZone];
+  const [localZone, setLocalZone] = useState<string>();
+  useEffect(() => { setLocalZone(Intl.DateTimeFormat().resolvedOptions().timeZone); }, []);
+  const zones = [...new Set([...(timeZones ?? [...BASE_ZONES, ...(localZone ? [localZone] : [])]), draft.timeZone])];
 
   const updateDraft = (updates: Partial<EventDraft>) => {
     setDraft((prev) => ({ ...prev, ...updates }));
