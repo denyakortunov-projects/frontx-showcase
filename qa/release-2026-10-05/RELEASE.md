@@ -1,6 +1,6 @@
 # FrontX calendar release · 2026-10-05
 
-Status: preparing the user-authorized release to https://frontx.constructor.rocks only.
+Status: deployed and publicly verified at https://frontx.constructor.rocks.
 Authorization: “Ну всё тогда, всё публикуй, делай деплой.”
 
 Scope: EventCalendar, DatePicker with single/range/mobile variants, shared section and segmented controls, component download and integration documentation. All are prototype compositions of the installed FrontX UI Kit, not new published kit exports.
@@ -14,4 +14,12 @@ Local verification reused for the unchanged runtime: TypeScript/Vite build; 43 c
 
 Transport: official @hostinger/mcp 2.4.0 hosting_deploy-js-application with the allowlisted source archive. Existing origin powderblue-skunk-609923.hostingersite.com, custom alias frontx.constructor.rocks. No DNS, account, or other site changes. Prior release deployment 01a0dc04-2708-734d-abcc-be917930a0d8 remains the rollback reference. No dependency or application edits are introduced for this deployment.
 
-Public verification and exact release commit will be recorded after deployment.
+Release source commit: `4d8f7532b14d37a92abdf4e6afe0443981f851cb`, pushed to existing origin/main before deployment. Subsequent release-record commits change only QA documentation and evidence, not deployed application sources.
+
+Hostinger deployment: `01a10ade-fcc8-7179-b0b3-f759236f14ba`, completed 2026-10-05 07:03:09 UTC. Source archive SHA-256: `63512514850226252a3a29d1ca7c8392d98286b0ec6a620156fad39aa4bb92a3`.
+
+Public verification: 21 HTTP checks passed (exact release fingerprint, entry assets, byte-for-byte matching source/component archives and integration guides); 39 Chrome browser checks passed with zero page errors. Covered single-date keyboard/Back/clear, inline selection, date range, responsive popup at 320/390px, 5 themes × light/dark, shared tab keyboard interaction, download links, chart Data/React, activity/Elements, mobile calendar tabs, and mock event creation. Reviewed public desktop calendar and mobile picker screenshots. Test-created events existed only in the isolated browser's local mock state.
+
+Verification harness corrections: changed Fetch Response.ok from method to property; narrowed tab count to role=tablist because the final shared styling also includes segmented button groups. Both checks were rerun successfully; no application code was changed.
+
+Limits: this publishes a prototype and integration source, not production persistence, real booking/calendar services, or stakeholder approval of the platform API/scope.

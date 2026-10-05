@@ -1,0 +1,12 @@
+{
+  "sourceCommit": "4d8f7532b14d37a92abdf4e6afe0443981f851cb",
+  "sourceFingerprint": "ac222b0201b4dec2b8af13be8cf5e1dbe580a59c1041b6042b14930ca4266b84",
+  "runtimeFingerprint": "440c8188b0b21c6b332107fb98da20e8f4672027f8ce5059778ef230123fe0ab",
+  "deploymentId": "01a10ade-fcc8-7179-b0b3-f759236f14ba",
+  "deploymentArchiveSha256": "63512514850226252a3a29d1ca7c8392d98286b0ec6a620156fad39aa4bb92a3",
+  "deploymentCreatedAt": "2026-10-05T07:02:28Z",
+  "publicUrl": "https://frontx.constructor.rocks",
+  "transport": "@hostinger/mcp 2.4.0 hosting_deploy-js-application",
+  "deploymentState": "completed",
+  "deploymentCompletedAt": "2026-10-05T07:03:09Z"
+}

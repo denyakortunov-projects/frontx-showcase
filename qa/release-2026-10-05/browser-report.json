@@ -1,0 +1,162 @@
+{
+  "checks": [
+    {
+      "name": "nav order",
+      "passed": true
+    },
+    {
+      "name": "single keyboard selection",
+      "passed": true
+    },
+    {
+      "name": "popup returns focus",
+      "passed": true
+    },
+    {
+      "name": "Back restores date",
+      "passed": true
+    },
+    {
+      "name": "clear single",
+      "passed": true
+    },
+    {
+      "name": "inline date updates field",
+      "passed": true
+    },
+    {
+      "name": "desktop has two months",
+      "passed": true
+    },
+    {
+      "name": "trip range selected",
+      "passed": true
+    },
+    {
+      "name": "open range adapts without losing dates",
+      "passed": true
+    },
+    {
+      "name": "mobile popup fits",
+      "passed": true
+    },
+    {
+      "name": "mobile browses next month",
+      "passed": true
+    },
+    {
+      "name": "mobile page fits",
+      "passed": true
+    },
+    {
+      "name": "320px popup fits",
+      "passed": true
+    },
+    {
+      "name": "fabric light range selection present",
+      "passed": true
+    },
+    {
+      "name": "fabric dark range selection present",
+      "passed": true
+    },
+    {
+      "name": "editorial light range selection present",
+      "passed": true
+    },
+    {
+      "name": "editorial dark range selection present",
+      "passed": true
+    },
+    {
+      "name": "terminal light range selection present",
+      "passed": true
+    },
+    {
+      "name": "terminal dark range selection present",
+      "passed": true
+    },
+    {
+      "name": "iris light range selection present",
+      "passed": true
+    },
+    {
+      "name": "iris dark range selection present",
+      "passed": true
+    },
+    {
+      "name": "lagoon light range selection present",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark range selection present",
+      "passed": true
+    },
+    {
+      "name": "calendar uses shared tabs",
+      "passed": true
+    },
+    {
+      "name": "tabs keyboard controls URL",
+      "passed": true
+    },
+    {
+      "name": "handoff has archive and guide",
+      "passed": true
+    },
+    {
+      "name": "download frontx-calendar-components.zip",
+      "passed": true
+    },
+    {
+      "name": "download EVENT-CALENDAR.md",
+      "passed": true
+    },
+    {
+      "name": "download DATE-PICKER.md",
+      "passed": true
+    },
+    {
+      "name": "download ControlledCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "chart uses shared tabs",
+      "passed": true
+    },
+    {
+      "name": "chart data opens",
+      "passed": true
+    },
+    {
+      "name": "chart React opens",
+      "passed": true
+    },
+    {
+      "name": "token activity uses shared tabs",
+      "passed": true
+    },
+    {
+      "name": "activity selection retained",
+      "passed": true
+    },
+    {
+      "name": "Elements example uses shared tabs",
+      "passed": true
+    },
+    {
+      "name": "mobile tabs fit",
+      "passed": true
+    },
+    {
+      "name": "public mock event creation",
+      "passed": true
+    },
+    {
+      "name": "no page errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "at": "2026-10-05T07:04:42.972Z"
+}

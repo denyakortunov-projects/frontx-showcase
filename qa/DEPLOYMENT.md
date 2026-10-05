@@ -73,3 +73,10 @@ This is a reviewable demo and proposed integration contract. It does not claim p
 - Hostinger deployment `01a0dc04-2708-734d-abcc-be917930a0d8`, completed 04:40:54–04:41:47 UTC (53 seconds). Same existing FrontX site and source-archive API transport; no other site or DNS change.
 - Public HTTPS verification at 04:42:25 UTC confirmed exact source fingerprint, JS/CSS assets, handoff documents and archive checksum. Twenty-two public browser checks passed at 04:42 UTC: all 18 widgets in both sizes, URL and Back behavior, light/dark funnel, Token activity, revenue metric, compact compositions and modular grid, and mobile width. No runtime errors. Local visual review and overflow inspection covered all three compositions and default modular layout.
 - Evidence: `DENSITY-2026-09-26.md`, `density-report.json`, `public-expansion-report.json` and reviewed screenshots. This documentation-only commit follows the deployed source and does not change its public fingerprint.
+
+
+## Calendar and Date picker release · 2026-10-05
+
+User explicitly requested full publication in the FrontX task. Released source commit `4d8f7532b14d37a92abdf4e6afe0443981f851cb` from `origin/main` to the unchanged FrontX origin/alias above using official `@hostinger/mcp` 2.4.0 `hosting_deploy-js-application` (renamed from the old camelCase command).
+
+Deployment `01a10ade-fcc8-7179-b0b3-f759236f14ba` completed at 07:03:09 UTC. Public release fingerprint `ac222b0201b4dec2b8af13be8cf5e1dbe580a59c1041b6042b14930ca4266b84`. Exact source/archives and live browser interactions verified: 21 HTTP + 39 browser checks, zero browser errors. Full source identity and evidence: [release record](release-2026-10-05/RELEASE.md). Package version remains 0.2.3; the unique fingerprint and Git commit identify this release. No DNS/build settings/other sites changed.
