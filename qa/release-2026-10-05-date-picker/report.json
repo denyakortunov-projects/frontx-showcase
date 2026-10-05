@@ -1,0 +1,170 @@
+{
+  "checks": [
+    {
+      "name": "far-past inline date takes direct year/month/day selections",
+      "passed": true
+    },
+    {
+      "name": "single popup opens at selected date",
+      "passed": true
+    },
+    {
+      "name": "future year available without month paging",
+      "passed": true
+    },
+    {
+      "name": "inline follows external selection month",
+      "passed": true
+    },
+    {
+      "name": "single selection returns focus",
+      "passed": true
+    },
+    {
+      "name": "Back restores inline month and value",
+      "passed": true
+    },
+    {
+      "name": "popup focuses selected day",
+      "passed": true
+    },
+    {
+      "name": "date grid keyboard selects next day",
+      "passed": true
+    },
+    {
+      "name": "desktop range shows two months",
+      "passed": true
+    },
+    {
+      "name": "clear inside popup resets host range",
+      "passed": true
+    },
+    {
+      "name": "empty range cannot finish",
+      "passed": true
+    },
+    {
+      "name": "range start remains open and incomplete",
+      "passed": true
+    },
+    {
+      "name": "range selection retained",
+      "passed": true
+    },
+    {
+      "name": "Done returns focus to range field",
+      "passed": true
+    },
+    {
+      "name": "live resize preserves complete range",
+      "passed": true
+    },
+    {
+      "name": "320 popup bounds",
+      "passed": true
+    },
+    {
+      "name": "320 date targets meet 24px minimum",
+      "passed": true
+    },
+    {
+      "name": "390 popup bounds",
+      "passed": true
+    },
+    {
+      "name": "390 date targets meet 24px minimum",
+      "passed": true
+    },
+    {
+      "name": "320 page bounds",
+      "passed": true
+    },
+    {
+      "name": "fabric/light selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "fabric/dark selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "editorial/light selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "editorial/dark selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "terminal/light selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "terminal/dark selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "iris/light selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "iris/dark selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "lagoon/light selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "lagoon/dark selection and year controls",
+      "passed": true
+    },
+    {
+      "name": "event calendar direct year/month/day jump",
+      "passed": true
+    },
+    {
+      "name": "mobile populated agenda has visible creation action",
+      "passed": true
+    },
+    {
+      "name": "editor includes browser local timezone",
+      "passed": true
+    },
+    {
+      "name": "discard focuses safe Keep editing action",
+      "passed": true
+    },
+    {
+      "name": "discard focus trapped 1",
+      "passed": true
+    },
+    {
+      "name": "discard focus trapped 2",
+      "passed": true
+    },
+    {
+      "name": "discard focus trapped 3",
+      "passed": true
+    },
+    {
+      "name": "discard focus trapped 4",
+      "passed": true
+    },
+    {
+      "name": "discard focus trapped 5",
+      "passed": true
+    },
+    {
+      "name": "keep editing retains draft",
+      "passed": true
+    },
+    {
+      "name": "no browser errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "at": "2026-10-05T08:25:10.084Z"
+}

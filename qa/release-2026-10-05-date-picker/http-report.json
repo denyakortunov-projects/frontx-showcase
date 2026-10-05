@@ -1,0 +1,96 @@
+{
+  "base": "https://frontx.constructor.rocks",
+  "verifiedAt": "2026-10-05T08:24:41.622Z",
+  "sourceFingerprint": "f7b35f6d740118469ad1593a74c91b6b23d2bb5ea03dccb87e4e2c3ed6469af8",
+  "archiveSha256": "2a46181c313cd6dda3efc1f1e072268f8bb43172d07d86196d46717e4c2b5d68",
+  "assets": [
+    "/assets/index-B1hY1UZp.js",
+    "/assets/index-BFORJWEi.css"
+  ],
+  "checks": [
+    {
+      "name": "HTTP /release.json",
+      "passed": true
+    },
+    {
+      "name": "exact release fingerprint",
+      "passed": true
+    },
+    {
+      "name": "HTTP /",
+      "passed": true
+    },
+    {
+      "name": "HTTP /assets/index-B1hY1UZp.js",
+      "passed": true
+    },
+    {
+      "name": "asset type /assets/index-B1hY1UZp.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP /assets/index-BFORJWEi.css",
+      "passed": true
+    },
+    {
+      "name": "asset type /assets/index-BFORJWEi.css",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/frontx-showcase-source.zip",
+      "passed": true
+    },
+    {
+      "name": "exact bytes frontx-showcase-source.zip",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/frontx-calendar-components.zip",
+      "passed": true
+    },
+    {
+      "name": "exact bytes frontx-calendar-components.zip",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/EVENT-CALENDAR.md",
+      "passed": true
+    },
+    {
+      "name": "exact bytes EVENT-CALENDAR.md",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/DATE-PICKER.md",
+      "passed": true
+    },
+    {
+      "name": "exact bytes DATE-PICKER.md",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/README.md",
+      "passed": true
+    },
+    {
+      "name": "exact bytes README.md",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "exact bytes CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "HTTP /handoff/ControlledCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "exact bytes ControlledCalendar.tsx",
+      "passed": true
+    }
+  ]
+}

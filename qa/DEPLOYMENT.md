@@ -80,3 +80,8 @@ This is a reviewable demo and proposed integration contract. It does not claim p
 User explicitly requested full publication in the FrontX task. Released source commit `4d8f7532b14d37a92abdf4e6afe0443981f851cb` from `origin/main` to the unchanged FrontX origin/alias above using official `@hostinger/mcp` 2.4.0 `hosting_deploy-js-application` (renamed from the old camelCase command).
 
 Deployment `01a10ade-fcc8-7179-b0b3-f759236f14ba` completed at 07:03:09 UTC. Public release fingerprint `ac222b0201b4dec2b8af13be8cf5e1dbe580a59c1041b6042b14930ca4266b84`. Exact source/archives and live browser interactions verified: 21 HTTP + 39 browser checks, zero browser errors. Full source identity and evidence: [release record](release-2026-10-05/RELEASE.md). Package version remains 0.2.3; the unique fingerprint and Git commit identify this release. No DNS/build settings/other sites changed.
+
+
+## Date picker and international formats · 2026-10-05
+
+Explicit owner request: “делай деплой”. Released `f834ac9aa9f5fbd73f436bb4281c76ef8abd0ab8` through the existing official Hostinger source-archive workflow. Deployment `01a10b29-3303-7294-9ccc-45f08eacedfd` completed at 08:24:23 UTC. Public fingerprint `f7b35f6d740118469ad1593a74c91b6b23d2bb5ea03dccb87e4e2c3ed6469af8`. 21 HTTP + 64 browser checks passed, zero browser errors; exact archives verified. [Release evidence](release-2026-10-05-date-picker/RELEASE.md). Other sites, DNS and hosting configuration unchanged.
