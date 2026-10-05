@@ -1,3 +1,4 @@
+import { SectionTabs } from "./showcase/SectionTabs";
 import {
   useEffect,
   useId,
@@ -12,7 +13,7 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@gears-frontx/ui-kit/chart";
-import { Tabs, TabsList, TabsTrigger } from "@gears-frontx/ui-kit/tabs";
+import { Tabs, TabsTrigger } from "@gears-frontx/ui-kit/tabs";
 import { Scatter, ScatterChart, Tooltip, XAxis, YAxis } from "recharts";
 import type { ComponentProps } from "react";
 import { chartData } from "./data";
@@ -320,7 +321,7 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
           value={mode}
           onValueChange={(value) => setMode(value as ActivityMode)}
         >
-          <TabsList
+          <SectionTabs
             className="token-activity__tabs-list"
             size="sm"
             aria-label="Activity period"
@@ -328,7 +329,7 @@ export default function TokenActivity({ period = 365 }: { period?: number }) {
             <TabsTrigger value="daily">Daily</TabsTrigger>
             <TabsTrigger value="weekly">Weekly</TabsTrigger>
             <TabsTrigger value="cumulative">Cumulative</TabsTrigger>
-          </TabsList>
+          </SectionTabs>
         </Tabs>
         <p
           className="token-activity__selected"

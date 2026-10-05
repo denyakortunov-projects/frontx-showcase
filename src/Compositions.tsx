@@ -1,3 +1,4 @@
+import { SegmentedControl } from "./showcase/SegmentedControl";
 import { useState, type ReactNode } from "react";
 import { Button } from "@gears-frontx/ui-kit/button";
 import { Card } from "@gears-frontx/ui-kit/card";
@@ -250,19 +251,15 @@ export function Compositions({
             value={density}
             onChange={(value) => update({ density: value })}
           />
-          <div className="recipe-period" aria-label="Composition period">
-            {[7, 30].map((n) => (
-              <Button
-                key={n}
-                variant={period === n ? "secondary" : "ghost"}
-                size="sm"
-                aria-pressed={period === n}
-                onClick={() => update({ period: String(n) })}
-              >
-                Last {n} days
-              </Button>
-            ))}
-          </div>
+          <SegmentedControl
+            label="Composition period"
+            value={String(period)}
+            onChange={(value) => update({ period: value })}
+            options={[7, 30].map((n) => ({
+              value: String(n),
+              label: `Last ${n} days`,
+            }))}
+          />
         </div>
       </div>
       <div className="metric-row">

@@ -1,3 +1,4 @@
+import { SegmentedControl } from "./showcase/SegmentedControl";
 import type { ReactNode } from "react";
 import { Card } from "@gears-frontx/ui-kit/card";
 import { Button } from "@gears-frontx/ui-kit/button";
@@ -15,18 +16,15 @@ export function WidgetDensitySwitch({
   onChange: (value: WidgetDensity) => void;
 }) {
   return (
-    <div className="density-switch" role="group" aria-label="Widget height">
-      {(["standard", "compact"] as const).map((option) => (
-        <button
-          key={option}
-          type="button"
-          aria-pressed={value === option}
-          onClick={() => onChange(option)}
-        >
-          {option === "standard" ? "Standard" : "Compact"}
-        </button>
-      ))}
-    </div>
+    <SegmentedControl
+      label="Widget height"
+      value={value}
+      onChange={(value) => onChange(value as WidgetDensity)}
+      options={[
+        { value: "standard", label: "Standard" },
+        { value: "compact", label: "Compact" },
+      ]}
+    />
   );
 }
 function StateBody({

@@ -1,0 +1,264 @@
+{
+  "sourceFingerprint": "57feeb7b78706d281bf1378bbab2f090df4a53b2395aafcc230294e4ca850560",
+  "runtimeFingerprint": "af4397bdf7efe0e88560f7e7e21c78678f016e99992b39658a4aaea80f8cacc6",
+  "archiveSha256": "5c5d87cf45237fe182a55f03e90efbfb72af63b3be3d27e573948ccad7d16940",
+  "checks": [
+    {
+      "name": "only manifest files archived",
+      "passed": true
+    },
+    {
+      "name": "matching package.json",
+      "passed": true
+    },
+    {
+      "name": "matching package-lock.json",
+      "passed": true
+    },
+    {
+      "name": "matching tsconfig.json",
+      "passed": true
+    },
+    {
+      "name": "matching vite.config.ts",
+      "passed": true
+    },
+    {
+      "name": "matching index.html",
+      "passed": true
+    },
+    {
+      "name": "matching README.md",
+      "passed": true
+    },
+    {
+      "name": "matching .gitignore",
+      "passed": true
+    },
+    {
+      "name": "matching src/CalendarShowcase.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/Compositions.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/Elements.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/Modularity.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/ThemeGallery.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/TokenActivity.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/UtilityWidgets.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/WidgetFrame.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/CalendarGrid.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/CalendarToolbar.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/CalendarYear.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/EventCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/EventEditor.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/appearance.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/calendar.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/fixtures.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/model.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/navigation.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/types.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/compositions.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/data.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/elements.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/main.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/modularity.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/style.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/themes.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/token-activity.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/utility-widgets.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/widgets.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/ACCEPTANCE.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/DESIGN-2026-10-05.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/ENGINE-DECISION.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/IMPLEMENTATION-PLAN.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/README.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/VISUAL-REFRESH.md",
+      "passed": true
+    },
+    {
+      "name": "matching qa/verify-event-calendar.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/verify-calendar-accessibility.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/model.test.ts",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/async.html",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/async.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/verify-async.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "matching qa/verify-calendar-refresh.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/model.test.ts",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/verify-async.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/verify-accessibility.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/verify-final-layout.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching public/favicon.svg",
+      "passed": true
+    },
+    {
+      "name": "matching public/handoff/README.md",
+      "passed": true
+    },
+    {
+      "name": "matching public/handoff/CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "no private configuration or repository state",
+      "passed": true
+    },
+    {
+      "name": "calendar implementation included",
+      "passed": true
+    },
+    {
+      "name": "archive hash matches",
+      "passed": true
+    },
+    {
+      "name": "source fingerprint matches",
+      "passed": true
+    },
+    {
+      "name": "tested runtime files unchanged",
+      "passed": true
+    }
+  ],
+  "publication": "none; local preview only"
+}

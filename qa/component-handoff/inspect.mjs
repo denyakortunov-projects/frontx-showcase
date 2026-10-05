@@ -1,0 +1,3 @@
+import {chromium} from 'playwright';
+const b=await chromium.launch({channel:'chrome',headless:true});const p=await b.newPage({viewport:{width:1440,height:1000}});
+await p.goto('http://127.0.0.1:5202/?page=date-picker');await p.getByRole('button',{name:'Choose date range',exact:true}).click();console.log(await p.locator('body').ariaSnapshot());await p.screenshot({path:'qa/component-handoff/date-desktop.png'});await p.setViewportSize({width:390,height:844});await p.screenshot({path:'qa/component-handoff/date-mobile.png'});await p.goto('http://127.0.0.1:5202/?page=event-calendar');await p.locator('.event-calendar').first().waitFor();await p.screenshot({path:'qa/component-handoff/tabs.png'});await b.close();

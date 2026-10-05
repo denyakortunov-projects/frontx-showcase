@@ -1,0 +1,905 @@
+{
+  "base": "http://127.0.0.1:5202",
+  "at": "2026-10-05T06:00:07.885Z",
+  "checks": [
+    {
+      "name": "Charts first Calendar second",
+      "passed": true
+    },
+    {
+      "name": "Components lands on charts",
+      "passed": true
+    },
+    {
+      "name": "four view modes",
+      "passed": true
+    },
+    {
+      "name": "no Agenda switch",
+      "passed": true
+    },
+    {
+      "name": "coloured fixtures",
+      "passed": true
+    },
+    {
+      "name": "desktop controls share centre line",
+      "passed": true
+    },
+    {
+      "name": "month grid",
+      "passed": true
+    },
+    {
+      "name": "existing colour in editor",
+      "passed": true
+    },
+    {
+      "name": "saved colour in month",
+      "passed": true
+    },
+    {
+      "name": "saved colour across views",
+      "passed": true
+    },
+    {
+      "name": "create colour saved",
+      "passed": true
+    },
+    {
+      "name": "colour changes are dirty",
+      "passed": true
+    },
+    {
+      "name": "discard restores colour",
+      "passed": true
+    },
+    {
+      "name": "twelve reused mini calendars",
+      "passed": true
+    },
+    {
+      "name": "year marks busy days",
+      "passed": true
+    },
+    {
+      "name": "year day drills into selected date",
+      "passed": true
+    },
+    {
+      "name": "Back restores Year",
+      "passed": true
+    },
+    {
+      "name": "month navigation clamps end of month",
+      "passed": true
+    },
+    {
+      "name": "Today injected clock",
+      "passed": true
+    },
+    {
+      "name": "month slot creates all-day draft",
+      "passed": true
+    },
+    {
+      "name": "month slot date",
+      "passed": true
+    },
+    {
+      "name": "view switch keyboard",
+      "passed": true
+    },
+    {
+      "name": "Back keeps colour draft",
+      "passed": true
+    },
+    {
+      "name": "1120 standard fits page",
+      "passed": true
+    },
+    {
+      "name": "1120 standard toolbar contained",
+      "passed": true
+    },
+    {
+      "name": "1120 standard adapts",
+      "passed": true
+    },
+    {
+      "name": "1120 compact fits page",
+      "passed": true
+    },
+    {
+      "name": "1120 compact toolbar contained",
+      "passed": true
+    },
+    {
+      "name": "1120 compact adapts",
+      "passed": true
+    },
+    {
+      "name": "640 standard fits page",
+      "passed": true
+    },
+    {
+      "name": "640 standard toolbar contained",
+      "passed": true
+    },
+    {
+      "name": "640 standard adapts",
+      "passed": true
+    },
+    {
+      "name": "640 compact fits page",
+      "passed": true
+    },
+    {
+      "name": "640 compact toolbar contained",
+      "passed": true
+    },
+    {
+      "name": "640 compact adapts",
+      "passed": true
+    },
+    {
+      "name": "360 standard fits page",
+      "passed": true
+    },
+    {
+      "name": "360 standard toolbar contained",
+      "passed": true
+    },
+    {
+      "name": "360 standard adapts",
+      "passed": true
+    },
+    {
+      "name": "360 compact fits page",
+      "passed": true
+    },
+    {
+      "name": "360 compact toolbar contained",
+      "passed": true
+    },
+    {
+      "name": "360 compact adapts",
+      "passed": true
+    },
+    {
+      "name": "280 standard fits page",
+      "passed": true
+    },
+    {
+      "name": "280 standard toolbar contained",
+      "passed": true
+    },
+    {
+      "name": "280 standard adapts",
+      "passed": true
+    },
+    {
+      "name": "280 compact fits page",
+      "passed": true
+    },
+    {
+      "name": "280 compact toolbar contained",
+      "passed": true
+    },
+    {
+      "name": "280 compact adapts",
+      "passed": true
+    },
+    {
+      "name": "preview has three live sizes",
+      "passed": true
+    },
+    {
+      "name": "compact preview has colourful events",
+      "passed": true
+    },
+    {
+      "name": "month preview width is 640",
+      "passed": true
+    },
+    {
+      "name": "independent instances",
+      "passed": true
+    },
+    {
+      "name": "FrontX Select changes width",
+      "passed": true
+    },
+    {
+      "name": "fabric light accent contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light blue contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light teal contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light violet contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light amber contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light rose contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "fabric dark accent contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark blue contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark teal contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark violet contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark amber contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark rose contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "editorial light accent contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light blue contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light teal contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light violet contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light amber contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light rose contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "editorial dark accent contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark blue contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark teal contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark violet contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark amber contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark rose contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "terminal light accent contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light blue contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light teal contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light violet contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light amber contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light rose contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "terminal dark accent contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark blue contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark teal contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark violet contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark amber contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark rose contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "iris light accent contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light blue contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light teal contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light violet contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light amber contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light rose contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "iris dark accent contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark blue contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark teal contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark violet contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark amber contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark rose contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "lagoon light accent contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light blue contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light teal contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light violet contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light amber contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light rose contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark accent contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark blue contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark teal contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark violet contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark amber contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark rose contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark colour selection visible",
+      "passed": true
+    },
+    {
+      "name": "viewport 1280 no overflow",
+      "passed": true
+    },
+    {
+      "name": "year 1280 contained",
+      "passed": true
+    },
+    {
+      "name": "viewport 390 no overflow",
+      "passed": true
+    },
+    {
+      "name": "year 390 contained",
+      "passed": true
+    },
+    {
+      "name": "empty renders",
+      "passed": true
+    },
+    {
+      "name": "loading renders",
+      "passed": true
+    },
+    {
+      "name": "error renders",
+      "passed": true
+    },
+    {
+      "name": "read-only renders",
+      "passed": true
+    },
+    {
+      "name": "save-error renders",
+      "passed": true
+    },
+    {
+      "name": "overlaps renders",
+      "passed": true
+    },
+    {
+      "name": "coloured overflow keyboard",
+      "passed": true
+    },
+    {
+      "name": "no page or asset errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "contrast": [
+    {
+      "theme": "fabric",
+      "mode": "light",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 8.87286546967613,
+          "background": "color(srgb 0.862667 0.890667 0.978667)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.476908588697222,
+          "background": "color(srgb 0.886 0.921333 0.993333)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.344282989120184,
+          "background": "color(srgb 0.854 0.94 0.922)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.709406178740071,
+          "background": "color(srgb 0.934 0.906 0.978667)"
+        },
+        {
+          "color": "amber",
+          "ratio": 6.537593781147452,
+          "background": "color(srgb 0.984667 0.939333 0.867333)"
+        },
+        {
+          "color": "rose",
+          "ratio": 7.325503676744265,
+          "background": "color(srgb 0.980667 0.908667 0.934)"
+        }
+      ]
+    },
+    {
+      "theme": "fabric",
+      "mode": "dark",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 7.961916219529557,
+          "background": "color(srgb 0.147686 0.19898 0.306706)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.758238586618727,
+          "background": "color(srgb 0.124353 0.18898 0.300039)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.801512121059561,
+          "background": "color(srgb 0.0923529 0.207647 0.228706)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.756306866668248,
+          "background": "color(srgb 0.172353 0.173647 0.285373)"
+        },
+        {
+          "color": "amber",
+          "ratio": 8.236037298694121,
+          "background": "color(srgb 0.22302 0.20698 0.174039)"
+        },
+        {
+          "color": "rose",
+          "ratio": 7.980154761979353,
+          "background": "color(srgb 0.21902 0.176314 0.240706)"
+        }
+      ]
+    },
+    {
+      "theme": "editorial",
+      "mode": "light",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 9.528773770131737,
+          "background": "color(srgb 0.937333 0.870667 0.854)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.476908588697222,
+          "background": "color(srgb 0.886 0.921333 0.993333)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.344282989120184,
+          "background": "color(srgb 0.854 0.94 0.922)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.709406178740071,
+          "background": "color(srgb 0.934 0.906 0.978667)"
+        },
+        {
+          "color": "amber",
+          "ratio": 6.537593781147452,
+          "background": "color(srgb 0.984667 0.939333 0.867333)"
+        },
+        {
+          "color": "rose",
+          "ratio": 7.325503676744265,
+          "background": "color(srgb 0.980667 0.908667 0.934)"
+        }
+      ]
+    },
+    {
+      "theme": "editorial",
+      "mode": "dark",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 7.395699320241931,
+          "background": "color(srgb 0.304627 0.222588 0.18098)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.109794545763916,
+          "background": "color(srgb 0.195961 0.205255 0.26098)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.101464679193082,
+          "background": "color(srgb 0.163961 0.223922 0.189647)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.0718867086659545,
+          "background": "color(srgb 0.243961 0.189922 0.246314)"
+        },
+        {
+          "color": "amber",
+          "ratio": 7.386026252001666,
+          "background": "color(srgb 0.294627 0.223255 0.13498)"
+        },
+        {
+          "color": "rose",
+          "ratio": 7.128755131280658,
+          "background": "color(srgb 0.290627 0.192588 0.201647)"
+        }
+      ]
+    },
+    {
+      "theme": "terminal",
+      "mode": "light",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 9.126885260986176,
+          "background": "color(srgb 0.867333 0.902667 0.854667)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.476908588697222,
+          "background": "color(srgb 0.886 0.921333 0.993333)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.344282989120184,
+          "background": "color(srgb 0.854 0.94 0.922)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.709406178740071,
+          "background": "color(srgb 0.934 0.906 0.978667)"
+        },
+        {
+          "color": "amber",
+          "ratio": 6.537593781147452,
+          "background": "color(srgb 0.984667 0.939333 0.867333)"
+        },
+        {
+          "color": "rose",
+          "ratio": 7.325503676744265,
+          "background": "color(srgb 0.980667 0.908667 0.934)"
+        }
+      ]
+    },
+    {
+      "theme": "terminal",
+      "mode": "dark",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 8.783514164951242,
+          "background": "color(srgb 0.179922 0.262314 0.157451)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.893690749341936,
+          "background": "color(srgb 0.114588 0.18898 0.241451)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.895903666203191,
+          "background": "color(srgb 0.0825882 0.207647 0.170118)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.9000460052971135,
+          "background": "color(srgb 0.162588 0.173647 0.226784)"
+        },
+        {
+          "color": "amber",
+          "ratio": 8.348702675932376,
+          "background": "color(srgb 0.213255 0.20698 0.115451)"
+        },
+        {
+          "color": "rose",
+          "ratio": 8.115022989557282,
+          "background": "color(srgb 0.209255 0.176314 0.182118)"
+        }
+      ]
+    },
+    {
+      "theme": "iris",
+      "mode": "light",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 9.304990195144939,
+          "background": "color(srgb 0.902 0.874 0.960667)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.476908588697222,
+          "background": "color(srgb 0.886 0.921333 0.993333)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.344282989120184,
+          "background": "color(srgb 0.854 0.94 0.922)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.709406178740071,
+          "background": "color(srgb 0.934 0.906 0.978667)"
+        },
+        {
+          "color": "amber",
+          "ratio": 6.537593781147452,
+          "background": "color(srgb 0.984667 0.939333 0.867333)"
+        },
+        {
+          "color": "rose",
+          "ratio": 7.325503676744265,
+          "background": "color(srgb 0.980667 0.908667 0.934)"
+        }
+      ]
+    },
+    {
+      "theme": "iris",
+      "mode": "dark",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 8.150948708320032,
+          "background": "color(srgb 0.235412 0.196549 0.313216)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.664758311147143,
+          "background": "color(srgb 0.163412 0.179216 0.306549)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.832542295019537,
+          "background": "color(srgb 0.131412 0.197882 0.235216)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.612835105781274,
+          "background": "color(srgb 0.211412 0.163882 0.291882)"
+        },
+        {
+          "color": "amber",
+          "ratio": 8.131517148980775,
+          "background": "color(srgb 0.262078 0.197216 0.180549)"
+        },
+        {
+          "color": "rose",
+          "ratio": 7.839511299260952,
+          "background": "color(srgb 0.258078 0.166549 0.247216)"
+        }
+      ]
+    },
+    {
+      "theme": "lagoon",
+      "mode": "light",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 8.722663144153366,
+          "background": "color(srgb 0.835333 0.907333 0.914)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.476908588697222,
+          "background": "color(srgb 0.886 0.921333 0.993333)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.344282989120184,
+          "background": "color(srgb 0.854 0.94 0.922)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.709406178740071,
+          "background": "color(srgb 0.934 0.906 0.978667)"
+        },
+        {
+          "color": "amber",
+          "ratio": 6.537593781147452,
+          "background": "color(srgb 0.984667 0.939333 0.867333)"
+        },
+        {
+          "color": "rose",
+          "ratio": 7.325503676744265,
+          "background": "color(srgb 0.980667 0.908667 0.934)"
+        }
+      ]
+    },
+    {
+      "theme": "lagoon",
+      "mode": "dark",
+      "samples": [
+        {
+          "color": "accent",
+          "ratio": 7.753883783464265,
+          "background": "color(srgb 0.134431 0.26302 0.283216)"
+        },
+        {
+          "color": "blue",
+          "ratio": 7.219984511092019,
+          "background": "color(srgb 0.121098 0.21502 0.306549)"
+        },
+        {
+          "color": "teal",
+          "ratio": 7.2222737055969,
+          "background": "color(srgb 0.089098 0.233686 0.235216)"
+        },
+        {
+          "color": "violet",
+          "ratio": 7.29330384490912,
+          "background": "color(srgb 0.169098 0.199686 0.291882)"
+        },
+        {
+          "color": "amber",
+          "ratio": 7.785141700747998,
+          "background": "color(srgb 0.219765 0.23302 0.180549)"
+        },
+        {
+          "color": "rose",
+          "ratio": 7.44104663361773,
+          "background": "color(srgb 0.215765 0.202353 0.247216)"
+        }
+      ]
+    }
+  ]
+}

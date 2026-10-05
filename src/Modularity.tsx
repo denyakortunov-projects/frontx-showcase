@@ -1,3 +1,4 @@
+import { SegmentedControl } from "./showcase/SegmentedControl";
 import { useState, type CSSProperties } from "react";
 import { Button } from "@gears-frontx/ui-kit/button";
 import { NativeSelect } from "@gears-frontx/ui-kit/native-select";
@@ -136,37 +137,31 @@ export function Modularity({
         </label>
         <fieldset>
           <legend>Width in blocks</legend>
-          <div className="module-segments">
-            {[1, 2, 3, 4].map((n) => (
-              <Button
-                key={n}
-                size="sm"
-                variant={selected.width === n ? "default" : "outline"}
-                aria-pressed={selected.width === n}
-                aria-label={`${n} ${n === 1 ? "block" : "blocks"} wide`}
-                onClick={() => change({ width: n })}
-              >
-                {n}
-              </Button>
-            ))}
-          </div>
+          <SegmentedControl
+            label="Width in blocks"
+            value={String(selected.width)}
+            onChange={(value) =>
+              change({ width: Number(value) as 1 | 2 | 3 | 4 })
+            }
+            options={[1, 2, 3, 4].map((n) => ({
+              value: String(n),
+              label: n,
+              name: `${n} ${n === 1 ? "block" : "blocks"} wide`,
+            }))}
+          />
         </fieldset>
         <fieldset>
           <legend>Height in rows</legend>
-          <div className="module-segments">
-            {[2, 3, 4].map((n) => (
-              <Button
-                key={n}
-                size="sm"
-                variant={selected.rows === n ? "default" : "outline"}
-                aria-pressed={selected.rows === n}
-                aria-label={`${n} rows tall`}
-                onClick={() => change({ rows: n })}
-              >
-                {n}
-              </Button>
-            ))}
-          </div>
+          <SegmentedControl
+            label="Height in rows"
+            value={String(selected.rows)}
+            onChange={(value) => change({ rows: Number(value) as 2 | 3 | 4 })}
+            options={[2, 3, 4].map((n) => ({
+              value: String(n),
+              label: n,
+              name: `${n} rows tall`,
+            }))}
+          />
         </fieldset>
         <div className="module-actions">
           <Button

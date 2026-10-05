@@ -42,3 +42,13 @@ Compositions expose reproducible recipe JSON and the installed primitives they u
 Series palette tokens --viz-1 through --viz-6 are separate from semantic success/warning/danger tokens. Preserve category-to-color mapping across views and provide labels, tooltips and a data view. Theme swaps must not change data meaning.
 
 Revenue pulse replaces the release calendar with a large USD metric, period comparison and a data-driven sparkline. The legacy `calendar` kind remains URL-compatible and now resolves to Revenue pulse. Its Data view exposes the same 25 dated revenue values. Token Activity selected mode uses a contrasting primary fill in both display modes.
+
+## EventCalendar composition boundary — 2026-10-05
+
+EventCalendar is a local React composition, not a kit export or accepted platform schema. Use the types in `src/calendar/types.ts`; do not treat its callbacks as a serializable runtime JSON contract. The host retains ownership of event storage, authorization and routing. Display-zone changes preserve instants; all-day dates do not shift with timezone. Form gap/fold validation is explicit. Product entities, invitations, recurring series, attachment services and resource booking remain outside this contract.
+
+Calendar parameters are `calDate`, `calView`, `calSpan`, `calEvent`, `calDensity`, `calWidth`, `calHeight`, `calZone`, `calState`, `calAdaptive` and `calTab`. They do not reinterpret chart width/height/period/widget values. A local event id is not durable across reload. Unknown ids show Event unavailable. The fixed demo date/clock and reset behavior are visible in the catalogue.
+
+The navigation groups existing routes under Components, Examples and Foundations; old query routes are preserved. There is no migration of either hosting or the published UI Kit. Local tests and source downloads do not constitute public release approval.
+
+Visual refresh: views are Day / Week / Month / Year; `agenda` remains a backwards-compatible internal list view. Optional event `color` uses `accent | blue | teal | violet | amber | rose` and has no product/category meaning. Theme colour follows FrontX primary; the other families remain identifiable across themes while surfaces and text adapt to their tokens. Preview hosts three live sizes; Playground uses existing FrontX Select; view/colour selectors use FrontX ToggleGroup. Components starts with Charts & widgets, then Calendar. Local verification is recorded separately in `qa/calendar-refresh/REPORT.md`.

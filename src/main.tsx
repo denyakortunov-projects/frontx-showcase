@@ -1,3 +1,4 @@
+import { SectionTabs } from "./showcase/SectionTabs";
 import {
   WidgetFrame,
   WidgetDensitySwitch,
@@ -9,13 +10,14 @@ import React, {
   useState,
   type CSSProperties,
   type ReactNode,
+  lazy,
+  Suspense,
 } from "react";
 import { createRoot } from "react-dom/client";
 import { Button } from "@gears-frontx/ui-kit/button";
 import { Card } from "@gears-frontx/ui-kit/card";
 import {
   Tabs,
-  TabsList,
   TabsTrigger,
   TabsContent,
 } from "@gears-frontx/ui-kit/tabs";
@@ -32,6 +34,7 @@ import {
   TableCell,
 } from "@gears-frontx/ui-kit/table";
 import {
+  CalendarDays,
   ArrowUpRight,
   ArrowUpDown,
   ArrowLeft,
@@ -68,9 +71,14 @@ import { Themes } from "./ThemeGallery";
 import { Modularity } from "./Modularity";
 import { Compositions } from "./Compositions";
 import { themes, paletteFor } from "./themes";
+import { useShowcaseQuery } from "./calendar/navigation";
+const DatePickerShowcase = lazy(() => import("./DatePickerShowcase").then(m => ({ default: m.DatePickerShowcase })));
+const CalendarShowcase = lazy(() => import("./CalendarShowcase").then(m => ({ default: m.CalendarShowcase })));
 import { utilityRows } from "./UtilityWidgets";
 
 type Route =
+  | "date-picker"
+  | "event-calendar"
   | "gallery"
   | "layouts"
   | "elements"
@@ -79,23 +87,6 @@ type Route =
   | "themes"
   | "modularity";
 type LoadState = "ready" | "loading" | "empty" | "error";
-function useQuery() {
-  const [query, setQuery] = useState(
-    () => new URLSearchParams(location.search),
-  );
-  useEffect(() => {
-    const cb = () => setQuery(new URLSearchParams(location.search));
-    window.addEventListener("popstate", cb);
-    return () => window.removeEventListener("popstate", cb);
-  }, []);
-  const update = (values: Record<string, string>) => {
-    const p = new URLSearchParams(location.search);
-    Object.entries(values).forEach(([k, v]) => (v ? p.set(k, v) : p.delete(k)));
-    history.pushState({}, "", `${location.pathname}?${p}`);
-    setQuery(p);
-  };
-  return [query, update] as const;
-}
 function Control({
   label,
   value,
@@ -261,10 +252,15 @@ function ChartIcon({ kind }: { kind: WidgetKind }) {
   }[kind];
   return <Icon size={16} />;
 }
+function SidebarLink({active,label,icon,onClick}:{active:boolean;label:string;icon:ReactNode;onClick:()=>void}) {
+ return <Button variant="navigation" className="site-side-link" data-active={active || undefined} aria-current={active ? "page" : undefined} icon={icon} onClick={onClick}>{label}</Button>;
+}
 function App() {
-  const [q, update] = useQuery();
+  const [q, update] = useShowcaseQuery();
   const page = (
     [
+      "date-picker",
+      "event-calendar",
       "gallery",
       "layouts",
       "elements",
@@ -377,41 +373,13 @@ function App() {
           <span className="collection-label">collection</span>
         </a>
         <nav className="main-nav" aria-label="Main navigation">
-          {(
-            [
-              "gallery",
-              "layouts",
-              "modularity",
-              "elements",
-              "themes",
-              "handoff",
-            ] as Route[]
-          ).map((p) => (
-            <a
-              key={p}
-              href={`?page=${p}`}
-              aria-current={
-                page === p || (p === "gallery" && page === "widget")
-                  ? "page"
-                  : undefined
-              }
-              onClick={(e) => {
-                e.preventDefault();
-                go(p);
-              }}
-            >
-              {
-                {
-                  gallery: "Widgets",
-                  layouts: "Compositions",
-                  elements: "Elements",
-                  handoff: "Developers",
-                  widget: "",
-                  themes: "Colors",
-                  modularity: "Modularity",
-                }[p]
-              }
-            </a>
+          {([
+            ["gallery", "Components", ["event-calendar", "date-picker", "gallery", "widget", "elements"]],
+            ["layouts", "Examples", ["layouts", "modularity"]],
+            ["themes", "Foundations", ["themes", "handoff"]],
+          ] as [Route, string, string[]][]).map(([route, label, pages]) => (
+            <a key={route} href={`?page=${route}`} aria-current={pages.includes(page) ? "page" : undefined}
+              onClick={e => {e.preventDefault();go(route)}}>{label}</a>
           ))}
         </nav>
         <div className="top-actions">
@@ -438,61 +406,19 @@ function App() {
       </header>
       <div className="workspace">
         <aside className="sidebar">
-          <div className="sidebar-label">EXPLORE</div>
-          <button
-            className={`side-link ${page === "gallery" ? "active" : ""}`}
-            onClick={() => go("gallery")}
-          >
-            <Grid2X2 size={17} />
-            All widgets<span>{widgets.length}</span>
-          </button>
-          <button
-            className={`side-link ${page === "layouts" ? "active" : ""}`}
-            onClick={() => go("layouts")}
-          >
-            <Layers size={17} />
-            Compositions
-          </button>
-          <div className="sidebar-label">CHARTS</div>
-          {widgets.map((w) => (
-            <button
-              key={w.id}
-              className={`side-link ${page === "widget" && kind === w.id ? "active" : ""}`}
-              onClick={() => go("widget", w.id)}
-            >
-              <ChartIcon kind={w.id} />
-              {w.title}
-            </button>
-          ))}
-          <button
-            className={`side-link ${page === "modularity" ? "active" : ""}`}
-            onClick={() => go("modularity")}
-          >
-            <Grid2X2 size={17} />
-            Modularity
-          </button>
+          <div className="sidebar-label">COMPONENTS</div>
+          <SidebarLink active={page === "gallery" || page === "widget"} label="Charts & widgets" icon={<ChartArea size={17}/>} onClick={() => go("gallery")}/>
+          <SidebarLink active={page === "event-calendar"} label="Event calendar" icon={<CalendarDays size={17}/>} onClick={() => go("event-calendar")}/>
+          <SidebarLink active={page === "date-picker"} label="Date picker" icon={<CalendarDays size={17}/>} onClick={() => go("date-picker")}/>
+          <SidebarLink active={page === "elements"} label="Elements" icon={<Component size={17}/>} onClick={() => go("elements")}/>
+          {(page === "gallery" || page === "widget") && <details className="chart-navigation" open={page === "widget"}><summary>Browse charts</summary>
+            {widgets.map(w => <SidebarLink key={w.id} active={page === "widget" && kind === w.id} label={w.title} icon={<ChartIcon kind={w.id}/>} onClick={() => go("widget", w.id)}/>)}</details>}
+          <div className="sidebar-label">EXAMPLES</div>
+          <SidebarLink active={page === "layouts"} label="Compositions" icon={<Layers size={17}/>} onClick={() => go("layouts")}/>
+          <SidebarLink active={page === "modularity"} label="Sizing & density" icon={<Grid2X2 size={17}/>} onClick={() => go("modularity")}/>
           <div className="sidebar-label">FOUNDATIONS</div>
-          <button
-            className={`side-link ${page === "themes" ? "active" : ""}`}
-            onClick={() => go("themes")}
-          >
-            <CircleDashed size={17} />
-            Color & themes
-          </button>
-          <button
-            className={`side-link ${page === "elements" ? "active" : ""}`}
-            onClick={() => go("elements")}
-          >
-            <Component size={17} />
-            UI elements
-          </button>
-          <button
-            className={`side-link ${page === "handoff" ? "active" : ""}`}
-            onClick={() => go("handoff")}
-          >
-            <Code2 size={17} />
-            Developer handoff
-          </button>
+          <SidebarLink active={page === "themes"} label="Themes" icon={<CircleDashed size={17}/>} onClick={() => go("themes")}/>
+          <SidebarLink active={page === "handoff"} label="Developer handoff" icon={<Code2 size={17}/>} onClick={() => go("handoff")}/>
           <div className="sidebar-foot">
             <span>Built with FrontX UI Kit</span>
             <code>0.4.0-alpha.5</code>
@@ -503,7 +429,7 @@ function App() {
           <div className="page-topline">
             <span>
               Collection <ChevronRight size={13} />{" "}
-              {page === "widget"
+              {page === "date-picker" ? "Date picker" : page === "event-calendar" ? "Event calendar" : page === "widget"
                 ? current.title
                 : page === "gallery"
                   ? "Widgets"
@@ -534,6 +460,8 @@ function App() {
               ))}
             </span>
           </div>
+          {page === "date-picker" && <Suspense fallback={<p role="status">Loading date picker…</p>}><DatePickerShowcase query={q} update={update}/></Suspense>}
+          {page === "event-calendar" && <Suspense fallback={<p role="status">Loading calendar…</p>}><CalendarShowcase query={q} update={update}/></Suspense>}
           {page === "gallery" && (
             <>
               <div className="page-heading">
@@ -792,12 +720,12 @@ function App() {
                 value={tab}
                 onValueChange={(v) => update({ tab: String(v) })}
               >
-                <TabsList variant="line">
+                <SectionTabs>
                   <TabsTrigger value="preview">Preview</TabsTrigger>
                   <TabsTrigger value="code">React</TabsTrigger>
                   <TabsTrigger value="config">Configuration</TabsTrigger>
                   <TabsTrigger value="data">Data</TabsTrigger>
-                </TabsList>
+                </SectionTabs>
                 <TabsContent value="preview">
                   <div className="playground-grid">
                     <div
@@ -938,6 +866,14 @@ function App() {
                   Download source
                 </a>
               </div>
+              <section className="handoff-summary">
+                <div><h2>Calendar components</h2><p>Event scheduling and date selection have separate APIs. The source bundle includes both, their dependencies and a working React example.</p></div>
+                <ul>
+                  <li><a href="/handoff/frontx-calendar-components.zip" download>Download calendar components</a></li>
+                  <li><a href="/handoff/EVENT-CALENDAR.md" download>EventCalendar integration</a></li>
+                  <li><a href="/handoff/DATE-PICKER.md" download>DatePicker and ranges</a></li>
+                </ul>
+              </section>
               <div className="handoff-grid">
                 <section>
                   <span className="step-number">01</span>

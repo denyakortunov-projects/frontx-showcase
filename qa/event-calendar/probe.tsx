@@ -1,0 +1,11 @@
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import FullCalendar from '@fullcalendar/react';
+import timeGrid from '@fullcalendar/timegrid';
+import interaction from '@fullcalendar/interaction';
+import luxon from '@fullcalendar/luxon3';
+import {Temporal} from 'temporal-polyfill';
+const events=[...Array.from({length:5},(_,i)=>({id:String(i),title:`Concurrent ${i}`,start:'2026-10-05T09:00:00+08:00',end:'2026-10-05T10:00:00+08:00'})),{id:'all',title:'All day',start:'2026-10-05',end:'2026-10-07',allDay:true}];
+(window as any).probe=[];
+createRoot(document.getElementById('root')!).render(<FullCalendar plugins={[timeGrid,interaction,luxon]} initialView="timeGridWeek" initialDate="2026-10-05" timeZone="Asia/Singapore" firstDay={1} slotDuration="00:30" slotEventOverlap={false} scrollTime="08:00" height={640} events={events} eventClick={e=>(window as any).probe.push(e.event.id)} dateClick={e=>(window as any).probe.push(e.dateStr)} headerToolbar={{left:'prev,next',center:'title',right:'timeGridDay,timeGridWeek'}}/>);
+console.log(Temporal.ZonedDateTime.from('2026-10-05T09:00[Asia/Singapore]').toInstant().toString());

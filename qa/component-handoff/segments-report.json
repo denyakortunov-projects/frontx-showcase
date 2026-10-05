@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "name": "density changes URL",
+      "passed": true
+    },
+    {
+      "name": "density retains pressed state",
+      "passed": true
+    },
+    {
+      "name": "density keyboard",
+      "passed": true
+    },
+    {
+      "name": "module width",
+      "passed": true
+    },
+    {
+      "name": "module height",
+      "passed": true
+    },
+    {
+      "name": "composition period",
+      "passed": true
+    },
+    {
+      "name": "composition density",
+      "passed": true
+    },
+    {
+      "name": "fabric light active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "fabric dark active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "editorial light active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "editorial dark active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "terminal light active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "terminal dark active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "iris light active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "iris dark active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "lagoon light active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark active tab uses theme",
+      "passed": true
+    },
+    {
+      "name": "mobile density fits",
+      "passed": true
+    },
+    {
+      "name": "mobile tabs fit",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "at": "2026-10-05T06:32:04.227Z"
+}

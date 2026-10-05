@@ -1,0 +1,11 @@
+{
+  "commit": "67605262247b8ca418139f4aaccdd9fff1101d12",
+  "files": {
+    "src/main.tsx": "820037fe1c5c7043e26d7f7579c0efe560c541db983dc58e13d2771d22613340",
+    "src/style.css": "364971889935845f8616299ffecfb4d88a07ebefc58d84088989b521d684a211",
+    "src/themes.ts": "77be1eebe961fe59454354252f9cefd98356358a027802fc06124a7e28d7eae3",
+    "package.json": "03177b503cb9aec13f8ac9af9dc470507671694f727d8303b34c6fdcfac52d7d",
+    "package-lock.json": "77a3cc9001ea604376a7bf321440e3cf4edb7d96541bae48d073132666068882",
+    "scripts/package-handoff.py": "ffc7a7c373e634a448d803cf26956d79e52f1ccfcf92593348c60b8cc15c1153"
+  }
+}

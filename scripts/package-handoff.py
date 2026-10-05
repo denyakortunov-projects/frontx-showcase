@@ -4,8 +4,13 @@ import hashlib,json,zipfile
 base=Path(__file__).resolve().parent.parent
 files=[base/p for p in ['package.json','package-lock.json','tsconfig.json','vite.config.ts','index.html','README.md','.gitignore']]
 files += sorted((base/'src').rglob('*'))
+files += sorted((base/'docs'/'calendar').glob('*.md'))
+files += [base/p for p in ['qa/verify-event-calendar.mjs','qa/verify-calendar-accessibility.mjs','qa/event-calendar/model.test.ts','qa/event-calendar/async.html','qa/event-calendar/async.tsx','qa/event-calendar/verify-async.mjs','qa/event-calendar/REPORT.md']]
+files += [base/p for p in ['qa/verify-calendar-refresh.mjs','qa/calendar-refresh/model.test.ts','qa/calendar-refresh/verify-async.mjs','qa/calendar-refresh/verify-accessibility.mjs','qa/calendar-refresh/REPORT.md','qa/calendar-refresh/verify-final-layout.mjs']]
+files += [base/p for p in ['qa/calendar-polish/REPORT.md','qa/calendar-polish/verify.mjs']]
+files += [base/p for p in ['src/showcase/README.md','scripts/package-calendar-components.py','qa/component-handoff/REPORT.md','qa/component-handoff/verify.mjs','qa/component-handoff/verify-segments.mjs','qa/component-handoff/consumer.html','qa/component-handoff/consumer.tsx','public/handoff/EVENT-CALENDAR.md','public/handoff/DATE-PICKER.md','public/handoff/ControlledCalendar.tsx','public/handoff/frontx-calendar-components.zip']]
 files += [base/'public/favicon.svg',base/'public/handoff/README.md',base/'public/handoff/CONTRACT.md']
-files=[p for p in files if p.is_file()]
+files=list(dict.fromkeys(p for p in files if p.is_file()))
 manifest={str(p.relative_to(base)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 fingerprint=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest()
 out=base/'public/handoff/frontx-showcase-source.zip'

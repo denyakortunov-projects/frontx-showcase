@@ -43,3 +43,26 @@ Token activity adapts its visible date window to its rendered width: below 360 p
 Audience by channel is a horizontal 100% stacked comparison with a fixed illustrative audience mix.
 
 Revenue pulse replaces the release calendar with a large USD metric, period comparison and a data-driven sparkline. The legacy `calendar` kind remains URL-compatible and now resolves to Revenue pulse. Its Data view exposes the same 25 dated revenue values. Token Activity selected mode uses a contrasting primary fill in both display modes.
+
+## Event calendar (local implementation, 2026-10-05)
+
+The `?page=event-calendar` route demonstrates a reusable event-calendar composition. This addition is not a published `@gears-frontx/ui-kit` export. Source: `src/calendar/EventCalendar.tsx`, `types.ts`, `model.ts`, `CalendarGrid.tsx`, `EventEditor.tsx`, `calendar.css`; host example in `src/CalendarShowcase.tsx`.
+
+- Day, Week, Month and Year share one event model and editor. Standard/Compact density is independent of container size; it does not use the chart height multiplier.
+- The host supplies controlled `events` and `position: { date, view, agendaSpan, selectedId }`, `onPositionChange`, and optional async `onSave`/`onDelete`. Omitting mutation handlers or setting `readOnly` prevents their respective actions.
+- Timed events contain `id`, `title`, `allDay:false`, `start`/`end` instants and an IANA `timeZone`. All-day events use `allDay:true`, `startDate` and exclusive `endDate`. `description` and `color` are optional. Colours: accent (theme), blue, teal, violet, amber, rose. The form presents an inclusive final all-day date.
+- `timeZone`, `locale`, `now`, `height`, `density`, `adaptive`, `state`, `onRetry`, `onDirtyChange`, `registerNavigationGuard`, and `renderEventExtra` configure rendering and host integration. UI labels are currently English; `locale` controls date formatting.
+- `adaptive` defaults to true: below 620px container width, Day/Week/Month present a list of the same range; Year retains a responsive month overview. With adaptive=false, Week retains a readable grid and local horizontal scrolling.
+- State can be ready/loading/empty/error; Showcase also exercises read-only, overlaps and a simulated save rejection. The adapter retains the editor draft when saving rejects.
+- The host must integrate `registerNavigationGuard` with its router to preserve unsaved changes. The generic component owns no query string or persistence. The Showcase adapter uses separate `cal*` query parameters and guards Back/Forward.
+- FullCalendar 6.1.21 handles time-grid layout, Luxon 3.7.2 handles named display zones, and Temporal 1.0.5 validates local time gaps/folds. FrontX UI Kit provides controls and overlays. No premium scheduler modules or second UI kit are included.
+
+The Showcase clock is fixed to 5 October 2026. Synthetic edits remain during in-app page navigation and reset on reload; new local IDs will then be unavailable. No external event services, invitations, permissions or real calendar writes are implemented. Preview combines a full-size calendar with independent Compact (360×360) and Month (640×640) instances. Playground exposes size, density, timezone and state controls through FrontX Select.
+
+See `docs/calendar/IMPLEMENTATION-PLAN.md`, `DESIGN-2026-10-05.md`, `ACCEPTANCE.md` and `ENGINE-DECISION.md` in the source download. Existing chart URLs, including `page=widget&widget=calendar` (Revenue pulse), remain valid.
+
+A host may pass a stable `scrollPositions: Map<string, number>` to retain grid scroll across route remounts. Without it, each instance keeps its own cache for its mounted lifetime. `registerNavigationGuard` must be stable; do not force-unmount dirty editors before its Promise resolves. Pending saves/deletes reject guarded navigation until the adapter settles.
+
+## Calendar component downloads
+
+Use [calendar components](frontx-calendar-components.zip) with [EventCalendar integration](EVENT-CALENDAR.md) and [DatePicker / range integration](DATE-PICKER.md). This source-only bundle includes a typed entry point, controlled host recipe, responsive range wrapper, exact dependency versions and a file hash manifest. EventCalendar remains a local proposed composition. Calendar and DatePicker are existing kit exports. See the separate Date picker catalogue route for a round-trip range, single date and inline calendar.

@@ -1,0 +1,158 @@
+{
+  "checks": [
+    {
+      "name": "standard week date is inline",
+      "passed": true
+    },
+    {
+      "name": "standard week header at most 48px",
+      "passed": true
+    },
+    {
+      "name": "standard week short event hides time",
+      "passed": true
+    },
+    {
+      "name": "standard week short title fits height",
+      "passed": true
+    },
+    {
+      "name": "standard week retains accessible time",
+      "passed": true
+    },
+    {
+      "name": "standard week details retain time",
+      "passed": true
+    },
+    {
+      "name": "standard week tall event keeps time",
+      "passed": true
+    },
+    {
+      "name": "standard week tall event text fits",
+      "passed": true
+    },
+    {
+      "name": "standard day date is inline",
+      "passed": true
+    },
+    {
+      "name": "standard day header at most 48px",
+      "passed": true
+    },
+    {
+      "name": "standard day short event hides time",
+      "passed": true
+    },
+    {
+      "name": "standard day short title fits height",
+      "passed": true
+    },
+    {
+      "name": "standard day retains accessible time",
+      "passed": true
+    },
+    {
+      "name": "standard day details retain time",
+      "passed": true
+    },
+    {
+      "name": "standard day tall event keeps time",
+      "passed": true
+    },
+    {
+      "name": "standard day tall event text fits",
+      "passed": true
+    },
+    {
+      "name": "compact week date is inline",
+      "passed": true
+    },
+    {
+      "name": "compact week header at most 48px",
+      "passed": true
+    },
+    {
+      "name": "compact week short event hides time",
+      "passed": true
+    },
+    {
+      "name": "compact week short title fits height",
+      "passed": true
+    },
+    {
+      "name": "compact week retains accessible time",
+      "passed": true
+    },
+    {
+      "name": "compact week details retain time",
+      "passed": true
+    },
+    {
+      "name": "compact week tall event keeps time",
+      "passed": true
+    },
+    {
+      "name": "compact week tall event text fits",
+      "passed": true
+    },
+    {
+      "name": "compact day date is inline",
+      "passed": true
+    },
+    {
+      "name": "compact day header at most 48px",
+      "passed": true
+    },
+    {
+      "name": "compact day short event hides time",
+      "passed": true
+    },
+    {
+      "name": "compact day short title fits height",
+      "passed": true
+    },
+    {
+      "name": "compact day retains accessible time",
+      "passed": true
+    },
+    {
+      "name": "compact day details retain time",
+      "passed": true
+    },
+    {
+      "name": "compact day tall event keeps time",
+      "passed": true
+    },
+    {
+      "name": "compact day tall event text fits",
+      "passed": true
+    },
+    {
+      "name": "compact persistent lower inset",
+      "passed": true
+    },
+    {
+      "name": "compact last event clears bottom edge",
+      "passed": true
+    },
+    {
+      "name": "compact last event opens",
+      "passed": true
+    },
+    {
+      "name": "mobile no page overflow",
+      "passed": true
+    },
+    {
+      "name": "month retains time",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "at": "2026-10-05T06:09:25.964Z"
+}

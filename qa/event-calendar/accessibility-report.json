@@ -1,0 +1,565 @@
+{
+  "base": "http://127.0.0.1:5202",
+  "at": "2026-10-05T05:28:12.061Z",
+  "checks": [
+    {
+      "name": "keyboard overflow full day",
+      "passed": true
+    },
+    {
+      "name": "overflow event opens correct details",
+      "passed": true
+    },
+    {
+      "name": "keyboard event opens details",
+      "passed": true
+    },
+    {
+      "name": "details returns focus to event",
+      "passed": true
+    },
+    {
+      "name": "editor contains reverse Tab focus",
+      "passed": true
+    },
+    {
+      "name": "editor contains Tab focus",
+      "passed": true
+    },
+    {
+      "name": "resize preserves draft",
+      "passed": true
+    },
+    {
+      "name": "outside click protects draft",
+      "passed": true
+    },
+    {
+      "name": "grid scroll restored across views",
+      "passed": true
+    },
+    {
+      "name": "route Back restores grid scroll within 3px",
+      "passed": true
+    },
+    {
+      "name": "night segments retain id",
+      "passed": true
+    },
+    {
+      "name": "night spans two dates",
+      "passed": true
+    },
+    {
+      "name": "display zone changes time only",
+      "passed": true
+    },
+    {
+      "name": "source timezone retained",
+      "passed": true
+    },
+    {
+      "name": "Today uses injected demo date",
+      "passed": true
+    },
+    {
+      "name": "empty fixture accepts first event",
+      "passed": true
+    },
+    {
+      "name": "repeated Back keeps actual history anchored",
+      "passed": true
+    },
+    {
+      "name": "repeated Back retains draft",
+      "passed": true
+    },
+    {
+      "name": "same event reopens and saves again",
+      "passed": true
+    },
+    {
+      "name": "delete returns focus to Today",
+      "passed": true
+    },
+    {
+      "name": "embedded dirty guard",
+      "passed": true
+    },
+    {
+      "name": "200 percent layout all editor actions reachable",
+      "passed": true
+    },
+    {
+      "name": "fabric light text contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light muted contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light event contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light selected contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric light focus contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark text contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark muted contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark event contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark selected contrast",
+      "passed": true
+    },
+    {
+      "name": "fabric dark focus contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light text contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light muted contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light event contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light selected contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial light focus contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark text contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark muted contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark event contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark selected contrast",
+      "passed": true
+    },
+    {
+      "name": "editorial dark focus contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light text contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light muted contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light event contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light selected contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal light focus contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark text contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark muted contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark event contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark selected contrast",
+      "passed": true
+    },
+    {
+      "name": "terminal dark focus contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light text contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light muted contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light event contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light selected contrast",
+      "passed": true
+    },
+    {
+      "name": "iris light focus contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark text contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark muted contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark event contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark selected contrast",
+      "passed": true
+    },
+    {
+      "name": "iris dark focus contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light text contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light muted contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light event contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light selected contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon light focus contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark text contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark muted contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark event contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark selected contrast",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark focus contrast",
+      "passed": true
+    },
+    {
+      "name": "reduced motion editor",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "colors": [
+    {
+      "theme": "fabric",
+      "mode": "light",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 16.255548557628998
+        },
+        {
+          "name": "muted",
+          "ratio": 4.788888870847649
+        },
+        {
+          "name": "event",
+          "ratio": 14.350155159029685
+        },
+        {
+          "name": "selected",
+          "ratio": 5.0766147485463495
+        },
+        {
+          "name": "focus",
+          "ratio": 5.687095391719721
+        }
+      ]
+    },
+    {
+      "theme": "fabric",
+      "mode": "dark",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 14.28872156664411
+        },
+        {
+          "name": "muted",
+          "ratio": 7.525592381029287
+        },
+        {
+          "name": "event",
+          "ratio": 11.831855481411424
+        },
+        {
+          "name": "selected",
+          "ratio": 6.402123875854269
+        },
+        {
+          "name": "focus",
+          "ratio": 6.170667871373792
+        }
+      ]
+    },
+    {
+      "theme": "editorial",
+      "mode": "light",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 16.255548557628998
+        },
+        {
+          "name": "muted",
+          "ratio": 4.788888870847649
+        },
+        {
+          "name": "event",
+          "ratio": 14.350155159029685
+        },
+        {
+          "name": "selected",
+          "ratio": 6.709683487277661
+        },
+        {
+          "name": "focus",
+          "ratio": 6.5453475278612805
+        }
+      ]
+    },
+    {
+      "theme": "editorial",
+      "mode": "dark",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 12.883878314427369
+        },
+        {
+          "name": "muted",
+          "ratio": 6.913048346397079
+        },
+        {
+          "name": "event",
+          "ratio": 11.613876256122685
+        },
+        {
+          "name": "selected",
+          "ratio": 8.548879198700877
+        },
+        {
+          "name": "focus",
+          "ratio": 7.702480465013164
+        }
+      ]
+    },
+    {
+      "theme": "terminal",
+      "mode": "light",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 16.255548557628998
+        },
+        {
+          "name": "muted",
+          "ratio": 5.351660800609346
+        },
+        {
+          "name": "event",
+          "ratio": 14.488970524251942
+        },
+        {
+          "name": "selected",
+          "ratio": 5.487074706342808
+        },
+        {
+          "name": "focus",
+          "ratio": 6.208755039935761
+        }
+      ]
+    },
+    {
+      "theme": "terminal",
+      "mode": "dark",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 14.435778894528069
+        },
+        {
+          "name": "muted",
+          "ratio": 7.964506964059323
+        },
+        {
+          "name": "event",
+          "ratio": 11.30152275834113
+        },
+        {
+          "name": "selected",
+          "ratio": 10.506779206564026
+        },
+        {
+          "name": "focus",
+          "ratio": 13.52233706261022
+        }
+      ]
+    },
+    {
+      "theme": "iris",
+      "mode": "light",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 16.255548557628998
+        },
+        {
+          "name": "muted",
+          "ratio": 4.788888870847649
+        },
+        {
+          "name": "event",
+          "ratio": 14.068163151971468
+        },
+        {
+          "name": "selected",
+          "ratio": 6.364859105885276
+        },
+        {
+          "name": "focus",
+          "ratio": 6.533874759225128
+        }
+      ]
+    },
+    {
+      "theme": "iris",
+      "mode": "dark",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 14.13755451858464
+        },
+        {
+          "name": "muted",
+          "ratio": 7.485021182325081
+        },
+        {
+          "name": "event",
+          "ratio": 12.076455446892219
+        },
+        {
+          "name": "selected",
+          "ratio": 7.738984521034613
+        },
+        {
+          "name": "focus",
+          "ratio": 7.890041972197921
+        }
+      ]
+    },
+    {
+      "theme": "lagoon",
+      "mode": "light",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 16.255548557628998
+        },
+        {
+          "name": "muted",
+          "ratio": 4.788888870847649
+        },
+        {
+          "name": "event",
+          "ratio": 14.426595230589434
+        },
+        {
+          "name": "selected",
+          "ratio": 5.876805356369083
+        },
+        {
+          "name": "focus",
+          "ratio": 5.5121685532164015
+        }
+      ]
+    },
+    {
+      "theme": "lagoon",
+      "mode": "dark",
+      "samples": [
+        {
+          "name": "text",
+          "ratio": 13.415434108505405
+        },
+        {
+          "name": "muted",
+          "ratio": 7.008348021655541
+        },
+        {
+          "name": "event",
+          "ratio": 10.587875373378607
+        },
+        {
+          "name": "selected",
+          "ratio": 7.624620966535643
+        },
+        {
+          "name": "focus",
+          "ratio": 8.664415372296364
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

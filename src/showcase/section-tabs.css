@@ -1,0 +1,76 @@
+.section-tabs:is(
+    [role="tablist"],
+    [data-segments]
+  )[data-orientation="horizontal"] {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  height: auto;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 2px 5px -3px
+    color-mix(in srgb, var(--foreground) 20%, transparent);
+  overflow-x: auto;
+}
+.section-tabs:is([role="tablist"], [data-segments])
+  > :is([role="tab"], [aria-pressed]) {
+  flex: 0 0 auto;
+  min-height: 34px;
+  height: auto;
+  padding: 7px 13px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--muted-foreground);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 18px;
+  box-shadow: none;
+}
+.section-tabs:is([role="tablist"], [data-segments])
+  > :is([role="tab"], [aria-pressed]):hover {
+  color: var(--foreground);
+  background: var(--muted);
+}
+.section-tabs:is([role="tablist"], [data-segments])
+  > :is([role="tab"], [aria-pressed]):is(
+    [aria-selected="true"],
+    [aria-pressed="true"]
+  ) {
+  color: var(--primary-foreground);
+  background: var(--primary);
+  box-shadow: 0 2px 4px -2px color-mix(in srgb, var(--primary) 50%, transparent);
+}
+.section-tabs:is([role="tablist"], [data-segments])
+  > :is([role="tab"], [aria-pressed]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+.section-tabs:is([role="tablist"], [data-segments])
+  > :is([role="tab"], [aria-pressed]):is(
+    [aria-selected="true"],
+    [aria-pressed="true"]
+  ):focus-visible {
+  outline-color: var(--primary-foreground);
+  outline-offset: -4px;
+}
+.section-tabs:is([role="tablist"], [data-segments])
+  > :is([role="tab"], [aria-pressed])[data-disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.section-tabs:is([role="tablist"], [data-segments])[data-size="sm"]
+  > :is([role="tab"], [aria-pressed]) {
+  min-height: 26px;
+  padding: 3px 8px;
+  font-size: 11px;
+}
+@media (max-width: 480px) {
+  .section-tabs:is([role="tablist"], [data-segments])
+    > :is([role="tab"], [aria-pressed]) {
+    padding-inline: 10px;
+  }
+}

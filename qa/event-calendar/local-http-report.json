@@ -1,0 +1,8 @@
+{
+  "base": "http://127.0.0.1:5202",
+  "routeStatus": 200,
+  "sourceFingerprint": "4c9f8b3a9c1ed29a945d3ec5ce5210a1f12713ba1d60a2d35565a5ac5507cf1e",
+  "archiveSha256": "115b593b625fbebd1f6be9a8e411fd5a6a9a44299fbbe8acea2a1d8b9ba75a04",
+  "matchesLocal": true,
+  "published": false
+}

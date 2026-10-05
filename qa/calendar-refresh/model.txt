@@ -1,0 +1,62 @@
+✔ leap February month range is half-open (2.175208ms)
+✔ December range rolls into next year (0.339208ms)
+✔ year range starts in January and ends next January (0.188917ms)
+✔ timed event colour survives editing and zone conversion (14.149333ms)
+✔ all-day colour survives inclusive editor and exclusive model (0.140625ms)
+✔ new and legacy events default to theme colour (1.328959ms)
+▶ validDate
+  ✔ accepts valid date (1.102708ms)
+  ✔ rejects invalid format (0.079ms)
+  ✔ rejects impossible date (0.232709ms)
+✔ validDate (1.802084ms)
+▶ validZone
+  ✔ accepts IANA zone (12.939584ms)
+  ✔ rejects invalid (0.165625ms)
+✔ validZone (13.216125ms)
+▶ addDays/weekStart/rangeFor
+  ✔ addDays works (0.318209ms)
+  ✔ weekStart Monday (0.160834ms)
+  ✔ rangeFor week (0.472291ms)
+✔ addDays/weekStart/rangeFor (1.195208ms)
+▶ resolveLocal DST gap
+  ✔ rejects spring gap (0.777083ms)
+  ✔ rejects gap even with choice (0.23825ms)
+✔ resolveLocal DST gap (1.067833ms)
+▶ resolveLocal DST fold
+  ✔ requires choice for fold (0.521333ms)
+  ✔ earlier/later produce distinct instants (0.282375ms)
+✔ resolveLocal DST fold (0.84ms)
+▶ validateDraft
+  ✔ requires title (0.110375ms)
+  ✔ end before start timed (0.284792ms)
+  ✔ all-day exclusive end (0.070542ms)
+✔ validateDraft (0.582708ms)
+▶ eventInRange
+  ✔ all-day zone invariant (0.075833ms)
+  ✔ timed midnight boundary half-open (0.616542ms)
+✔ eventInRange (0.747292ms)
+▶ draftFromEvent fold detection
+  ✔ sets startChoice for fold event (0.464958ms)
+✔ draftFromEvent fold detection (0.493ms)
+▶ changeDraftZone preserves instant
+  ✔ converts and preserves (1.57ms)
+✔ changeDraftZone preserves instant (1.600625ms)
+▶ newDraft late night rollover
+  ✔ rolls next half-hour forward across midnight (1.225125ms)
+✔ newDraft late night rollover (1.261708ms)
+▶ formatEventTime
+  ✔ formats all-day single (1.16525ms)
+✔ formatEventTime (1.254958ms)
+▶ agenda midnight segments
+  ✔ clips first day and indicates continuation (0.299166ms)
+  ✔ clips continuation start to midnight (0.129209ms)
+  ✔ does not claim continuation when ending at midnight (0.185708ms)
+✔ agenda midnight segments (0.695875ms)
+ℹ tests 30
+ℹ suites 12
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 136.400292

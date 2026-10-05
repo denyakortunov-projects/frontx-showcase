@@ -1,0 +1,14 @@
+{
+  "src/calendar/fixtures.ts": "8a07597b1d7f3f925430036f18e75717c90747067301b068ada0d1dae485578c",
+  "src/calendar/navigation.ts": "ad6420e1680a6c047c6751a4d7fea33a0905e35d20ccd6e976f155bf8385250b",
+  "src/calendar/EventEditor.tsx": "57dd48ec2d32d8f50a77f6fa11a575d053173a350719b9814c7ae0d4eba10946",
+  "src/calendar/model.ts": "f0317a6578e7d4cd5de7fa3e0d2365b0277f1a2ab1060a6ad760e7f365e9dc33",
+  "src/calendar/CalendarGrid.tsx": "4b88b6751ae312a337b44970faff37f2cc2f63bbcae921468ee7fb9b9bc9b49a",
+  "src/calendar/types.ts": "e15949934f5512b89dab7d9ed02792446b585cca99c100085cc79339e6ac656f",
+  "src/calendar/EventCalendar.tsx": "3524d9ca8597335549446d22ebbceb1e8faf864fc1159c17f9754f51d72502bf",
+  "src/calendar/calendar.css": "0560c490755a62a509c51faf0cb54966e81690cf0d2fe1c8886f34a905c9cb3f",
+  "src/CalendarShowcase.tsx": "e83612b12de2f9000ee57742214d761fa77c184bbdaf8f4b9663a43314041b6a",
+  "src/main.tsx": "efefcf598fbf0128582c5616732ddb3814e41769689e7826f7c8ec4c200c9204",
+  "package.json": "7c90dc901e39d1252d6531ac931e7f46e9ff4afbe2569d84593c8339c7bddc2a",
+  "package-lock.json": "172533436034696521fef4b285077696c482fb62ef4e7a9b1176bcca90596bbe"
+}

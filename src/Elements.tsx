@@ -1,3 +1,4 @@
+import { SectionTabs } from "./showcase/SectionTabs";
 import { useState, type ReactNode } from "react";
 import {
   Accordion,
@@ -54,7 +55,6 @@ import {
   TableRow,
   Tabs,
   TabsContent,
-  TabsList,
   TabsTrigger,
   Textarea,
   Tooltip,
@@ -291,13 +291,13 @@ export function Elements() {
         value={activeTab}
         onValueChange={(value) => setActiveTab(String(value))}
       >
-        <TabsList aria-label="Report views" variant="line">
+        <SectionTabs aria-label="Report views">
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="activity">
             Activity <span className="elements-tab-count">8</span>
           </TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
-        </TabsList>
+        </SectionTabs>
         <TabsContent value="overview">
           <div className="elements-tab-panel">
             <span className="elements-spark">

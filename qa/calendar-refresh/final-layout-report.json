@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-05T06:02:54.108Z",
+  "checks": [
+    {
+      "name": "preview month has visible coloured event",
+      "passed": true
+    },
+    {
+      "name": "preview month fits horizontally",
+      "passed": true
+    },
+    {
+      "name": "preview month fits full vertical month",
+      "passed": true
+    },
+    {
+      "name": "month overflow includes all events",
+      "passed": true
+    },
+    {
+      "name": "preview reflows at mobile",
+      "passed": true
+    },
+    {
+      "name": "short month uses local vertical scrolling",
+      "passed": true
+    },
+    {
+      "name": "short month retains visible event and overflow",
+      "passed": true
+    }
+  ]
+}

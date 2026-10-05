@@ -1,0 +1,56 @@
+▶ validDate
+  ✔ accepts valid date (0.883667ms)
+  ✔ rejects invalid format (0.062583ms)
+  ✔ rejects impossible date (0.190625ms)
+✔ validDate (1.494708ms)
+▶ validZone
+  ✔ accepts IANA zone (11.908208ms)
+  ✔ rejects invalid (0.155084ms)
+✔ validZone (12.133333ms)
+▶ addDays/weekStart/rangeFor
+  ✔ addDays works (0.284834ms)
+  ✔ weekStart Monday (0.145292ms)
+  ✔ rangeFor week (0.60475ms)
+✔ addDays/weekStart/rangeFor (1.128ms)
+▶ resolveLocal DST gap
+  ✔ rejects spring gap (0.785458ms)
+  ✔ rejects gap even with choice (0.231ms)
+✔ resolveLocal DST gap (1.075875ms)
+▶ resolveLocal DST fold
+  ✔ requires choice for fold (0.461ms)
+  ✔ earlier/later produce distinct instants (0.26075ms)
+✔ resolveLocal DST fold (0.755042ms)
+▶ validateDraft
+  ✔ requires title (0.126334ms)
+  ✔ end before start timed (0.288417ms)
+  ✔ all-day exclusive end (0.072833ms)
+✔ validateDraft (0.534125ms)
+▶ eventInRange
+  ✔ all-day zone invariant (0.051375ms)
+  ✔ timed midnight boundary half-open (0.420667ms)
+✔ eventInRange (0.50025ms)
+▶ draftFromEvent fold detection
+  ✔ sets startChoice for fold event (0.377875ms)
+✔ draftFromEvent fold detection (0.399625ms)
+▶ changeDraftZone preserves instant
+  ✔ converts and preserves (0.937667ms)
+✔ changeDraftZone preserves instant (0.959417ms)
+▶ newDraft late night rollover
+  ✔ rolls next half-hour forward across midnight (0.998042ms)
+✔ newDraft late night rollover (1.027041ms)
+▶ formatEventTime
+  ✔ formats all-day single (0.866917ms)
+✔ formatEventTime (0.89ms)
+▶ agenda midnight segments
+  ✔ clips first day and indicates continuation (0.199208ms)
+  ✔ clips continuation start to midnight (0.086291ms)
+  ✔ does not claim continuation when ending at midnight (0.084875ms)
+✔ agenda midnight segments (0.405542ms)
+ℹ tests 24
+ℹ suites 12
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 107.864083

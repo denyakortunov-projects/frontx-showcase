@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-05T05:58:21.249Z",
+  "checks": [
+    {
+      "name": "pending save prevents host navigation",
+      "passed": true
+    },
+    {
+      "name": "pending save retains editor",
+      "passed": true
+    },
+    {
+      "name": "no duplicate submit",
+      "passed": true
+    },
+    {
+      "name": "async rejection retains draft",
+      "passed": true
+    },
+    {
+      "name": "async retry saves event",
+      "passed": true
+    },
+    {
+      "name": "successful editor remount is not pending",
+      "passed": true
+    }
+  ]
+}

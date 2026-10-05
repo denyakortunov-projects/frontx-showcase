@@ -1,0 +1,133 @@
+{
+  "archiveSha256": "67a1e9b44aee8920cad1943727aa01925a1d37db2af9ea4cba8504eb7e3c3a3f",
+  "checks": [
+    {
+      "name": "exact source-only contents",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/index.ts",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/index.ts",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/EventCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/EventCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/CalendarGrid.tsx",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/CalendarGrid.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/CalendarToolbar.tsx",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/CalendarToolbar.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/CalendarYear.tsx",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/CalendarYear.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/EventEditor.tsx",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/EventEditor.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/appearance.tsx",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/appearance.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/model.ts",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/model.ts",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/types.ts",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/types.ts",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/calendar.css",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/calendar.css",
+      "passed": true
+    },
+    {
+      "name": "hash calendar/examples/ControlledCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "matches runtime calendar/examples/ControlledCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash date-picker/ResponsiveDatePicker.tsx",
+      "passed": true
+    },
+    {
+      "name": "matches runtime date-picker/ResponsiveDatePicker.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash date-picker/date-picker.css",
+      "passed": true
+    },
+    {
+      "name": "matches runtime date-picker/date-picker.css",
+      "passed": true
+    },
+    {
+      "name": "hash EVENT-CALENDAR.md",
+      "passed": true
+    },
+    {
+      "name": "hash DATE-PICKER.md",
+      "passed": true
+    },
+    {
+      "name": "hash dependencies.json",
+      "passed": true
+    },
+    {
+      "name": "no Showcase shell or routing in bundle",
+      "passed": true
+    },
+    {
+      "name": "extracted components and host example compile",
+      "passed": true
+    }
+  ]
+}

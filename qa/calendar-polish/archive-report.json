@@ -1,0 +1,272 @@
+{
+  "sourceFingerprint": "4bee5a2779a2a412af974864c413e841b54656bb7e436885357ed9d03bc76db1",
+  "runtimeFingerprint": "7d609fefc71fd29381d3bfe625914da48f1703d960caf48ed32e9cf0789edb3e",
+  "archiveSha256": "c0b5f244da7014f08cc0360dfc2ca03f9ad2f953eff3641ff2d58e124c029c8f",
+  "checks": [
+    {
+      "name": "only manifest files archived",
+      "passed": true
+    },
+    {
+      "name": "matching package.json",
+      "passed": true
+    },
+    {
+      "name": "matching package-lock.json",
+      "passed": true
+    },
+    {
+      "name": "matching tsconfig.json",
+      "passed": true
+    },
+    {
+      "name": "matching vite.config.ts",
+      "passed": true
+    },
+    {
+      "name": "matching index.html",
+      "passed": true
+    },
+    {
+      "name": "matching README.md",
+      "passed": true
+    },
+    {
+      "name": "matching .gitignore",
+      "passed": true
+    },
+    {
+      "name": "matching src/CalendarShowcase.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/Compositions.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/Elements.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/Modularity.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/ThemeGallery.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/TokenActivity.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/UtilityWidgets.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/WidgetFrame.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/CalendarGrid.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/CalendarToolbar.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/CalendarYear.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/EventCalendar.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/EventEditor.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/appearance.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/calendar.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/fixtures.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/model.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/navigation.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/calendar/types.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/compositions.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/data.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/elements.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/main.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching src/modularity.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/style.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/themes.ts",
+      "passed": true
+    },
+    {
+      "name": "matching src/token-activity.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/utility-widgets.css",
+      "passed": true
+    },
+    {
+      "name": "matching src/widgets.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/ACCEPTANCE.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/DESIGN-2026-10-05.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/ENGINE-DECISION.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/IMPLEMENTATION-PLAN.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/README.md",
+      "passed": true
+    },
+    {
+      "name": "matching docs/calendar/VISUAL-REFRESH.md",
+      "passed": true
+    },
+    {
+      "name": "matching qa/verify-event-calendar.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/verify-calendar-accessibility.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/model.test.ts",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/async.html",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/async.tsx",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/verify-async.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/event-calendar/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "matching qa/verify-calendar-refresh.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/model.test.ts",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/verify-async.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/verify-accessibility.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-refresh/verify-final-layout.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-polish/REPORT.md",
+      "passed": true
+    },
+    {
+      "name": "matching qa/calendar-polish/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "matching public/favicon.svg",
+      "passed": true
+    },
+    {
+      "name": "matching public/handoff/README.md",
+      "passed": true
+    },
+    {
+      "name": "matching public/handoff/CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "no private configuration or repository state",
+      "passed": true
+    },
+    {
+      "name": "calendar implementation included",
+      "passed": true
+    },
+    {
+      "name": "archive hash matches",
+      "passed": true
+    },
+    {
+      "name": "source fingerprint matches",
+      "passed": true
+    },
+    {
+      "name": "tested runtime files unchanged",
+      "passed": true
+    }
+  ],
+  "publication": "none; local preview only"
+}

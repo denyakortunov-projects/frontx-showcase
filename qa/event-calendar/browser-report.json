@@ -1,0 +1,339 @@
+{
+  "base": "http://127.0.0.1:5202",
+  "at": "2026-10-05T05:30:27.069Z",
+  "checks": [
+    {
+      "name": "week default",
+      "passed": true
+    },
+    {
+      "name": "shared grid all-day fixture",
+      "passed": true
+    },
+    {
+      "name": "blank title validation",
+      "passed": true
+    },
+    {
+      "name": "created event has URL",
+      "passed": true
+    },
+    {
+      "name": "keep draft",
+      "passed": true
+    },
+    {
+      "name": "discard preserves saved title",
+      "passed": true
+    },
+    {
+      "name": "save edit",
+      "passed": true
+    },
+    {
+      "name": "agenda range inherited day",
+      "passed": true
+    },
+    {
+      "name": "same event across views",
+      "passed": true
+    },
+    {
+      "name": "edits survive route changes",
+      "passed": true
+    },
+    {
+      "name": "delete cancel retains event",
+      "passed": true
+    },
+    {
+      "name": "delete clears URL",
+      "passed": true
+    },
+    {
+      "name": "delete removes row",
+      "passed": true
+    },
+    {
+      "name": "Back restores guarded entry",
+      "passed": true
+    },
+    {
+      "name": "Back keep retains draft",
+      "passed": true
+    },
+    {
+      "name": "Back discard replays target",
+      "passed": true
+    },
+    {
+      "name": "Forward restores selection",
+      "passed": true
+    },
+    {
+      "name": "all-day keyboard prefilled",
+      "passed": true
+    },
+    {
+      "name": "keyboard timed slot",
+      "passed": true
+    },
+    {
+      "name": "pointer time slot",
+      "passed": true
+    },
+    {
+      "name": "pointer all-day lane",
+      "passed": true
+    },
+    {
+      "name": "all-day save",
+      "passed": true
+    },
+    {
+      "name": "timed values retained through toggle",
+      "passed": true
+    },
+    {
+      "name": "negative duration rejected",
+      "passed": true
+    },
+    {
+      "name": "fold choice remains visible",
+      "passed": true
+    },
+    {
+      "name": "fold resolved save",
+      "passed": true
+    },
+    {
+      "name": "gap rejected in form",
+      "passed": true
+    },
+    {
+      "name": "save failure retains draft",
+      "passed": true
+    },
+    {
+      "name": "save error feedback",
+      "passed": true
+    },
+    {
+      "name": "state empty",
+      "passed": true
+    },
+    {
+      "name": "state loading",
+      "passed": true
+    },
+    {
+      "name": "state error",
+      "passed": true
+    },
+    {
+      "name": "retry recovers",
+      "passed": true
+    },
+    {
+      "name": "state read-only",
+      "passed": true
+    },
+    {
+      "name": "readonly no create",
+      "passed": true
+    },
+    {
+      "name": "overflow opens all five",
+      "passed": true
+    },
+    {
+      "name": "container 1120 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "view for 1120",
+      "passed": true
+    },
+    {
+      "name": "container 640 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "view for 640",
+      "passed": true
+    },
+    {
+      "name": "container 360 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "view for 360",
+      "passed": true
+    },
+    {
+      "name": "container 280 no page overflow",
+      "passed": true
+    },
+    {
+      "name": "view for 280",
+      "passed": true
+    },
+    {
+      "name": "forced week remains week",
+      "passed": true
+    },
+    {
+      "name": "forced week scroll is local",
+      "passed": true
+    },
+    {
+      "name": "two instances",
+      "passed": true
+    },
+    {
+      "name": "instances independent",
+      "passed": true
+    },
+    {
+      "name": "fabric light root",
+      "passed": true
+    },
+    {
+      "name": "fabric light editor",
+      "passed": true
+    },
+    {
+      "name": "fabric dark root",
+      "passed": true
+    },
+    {
+      "name": "fabric dark editor",
+      "passed": true
+    },
+    {
+      "name": "editorial light root",
+      "passed": true
+    },
+    {
+      "name": "editorial light editor",
+      "passed": true
+    },
+    {
+      "name": "editorial dark root",
+      "passed": true
+    },
+    {
+      "name": "editorial dark editor",
+      "passed": true
+    },
+    {
+      "name": "terminal light root",
+      "passed": true
+    },
+    {
+      "name": "terminal light editor",
+      "passed": true
+    },
+    {
+      "name": "terminal dark root",
+      "passed": true
+    },
+    {
+      "name": "terminal dark editor",
+      "passed": true
+    },
+    {
+      "name": "iris light root",
+      "passed": true
+    },
+    {
+      "name": "iris light editor",
+      "passed": true
+    },
+    {
+      "name": "iris dark root",
+      "passed": true
+    },
+    {
+      "name": "iris dark editor",
+      "passed": true
+    },
+    {
+      "name": "lagoon light root",
+      "passed": true
+    },
+    {
+      "name": "lagoon light editor",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark root",
+      "passed": true
+    },
+    {
+      "name": "lagoon dark editor",
+      "passed": true
+    },
+    {
+      "name": "viewport 1280 no overflow",
+      "passed": true
+    },
+    {
+      "name": "viewport 1920 no overflow",
+      "passed": true
+    },
+    {
+      "name": "viewport 390 no overflow",
+      "passed": true
+    },
+    {
+      "name": "unknown event",
+      "passed": true
+    },
+    {
+      "name": "invalid date fallback",
+      "passed": true
+    },
+    {
+      "name": "selection reload",
+      "passed": true
+    },
+    {
+      "name": "legacy gallery renders",
+      "passed": true
+    },
+    {
+      "name": "legacy widget renders",
+      "passed": true
+    },
+    {
+      "name": "legacy calendar is revenue",
+      "passed": true
+    },
+    {
+      "name": "legacy layouts renders",
+      "passed": true
+    },
+    {
+      "name": "legacy modularity renders",
+      "passed": true
+    },
+    {
+      "name": "legacy elements renders",
+      "passed": true
+    },
+    {
+      "name": "legacy themes renders",
+      "passed": true
+    },
+    {
+      "name": "legacy handoff renders",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

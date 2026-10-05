@@ -1710,3 +1710,13 @@ footer a {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
+
+/* Shared Showcase navigation: components, examples and foundations. */
+.site-side-link{width:100%;justify-content:flex-start;min-height:36px;white-space:normal;text-align:left;font-size:13px;padding:8px 12px;color:var(--muted-foreground)}
+.site-side-link[data-active]{background:var(--accent);color:var(--accent-foreground);font-weight:600}
+.site-side-link:hover{background:var(--surface);color:var(--foreground)}
+.chart-navigation summary{font-size:12px;padding:10px 12px;color:var(--muted-foreground);cursor:pointer}
+.chart-navigation{margin-bottom:12px}
+.site-side-link{border-color:transparent;box-shadow:none;background:transparent;border-radius:var(--radius-md)}
+.site-side-link[data-active]{background:var(--accent);color:var(--accent-foreground)}
+.site-side-link:hover{background:var(--surface);color:var(--foreground)}
