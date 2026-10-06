@@ -1,0 +1,44 @@
+/* Documentation compositions; buttons and code controls retain the shared UI Kit. */
+.docs-nav { display:flex; gap:24px; flex-wrap:wrap; border-bottom:1px solid var(--border); margin-bottom:32px; }
+.docs-nav a { display:flex; align-items:center; min-height:44px; padding:10px 0; font-size:13px; color:var(--muted-foreground); border-bottom:2px solid transparent; margin-bottom:-1px; }
+.docs-nav a[aria-current=page] { color:var(--primary); border-bottom-color:var(--primary); }
+.docs-nav a:hover { color:var(--foreground); }
+.docs-paths { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.docs-path { display:flex; flex-direction:column; min-width:0; position:relative; transition:border-color 150ms,box-shadow 150ms; }
+.docs-path:hover { border-color:var(--primary); box-shadow:0 8px 24px -18px var(--primary); }
+.docs-path-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:26px; color:var(--primary); }
+.docs-path-top>span { font:12px ui-monospace,monospace; color:var(--muted-foreground); }
+.docs-path .docs-path-label { font-size:11px; margin:0 0 8px; }
+.docs-path h2 { margin-bottom:0; }
+.docs-path>p { flex:1; }
+.docs-path-arrow { color:var(--primary); }
+.docs-reference { margin-top:56px; }
+.docs-reference>h2,.docs-troubleshooting>h2 { font-size:24px; letter-spacing:-.03em; margin-bottom:24px; }
+.docs-reference h3 { font-size:18px; letter-spacing:-.025em; }
+.docs-prerequisite { margin:0 0 30px; }
+.docs-prerequisite h2 { font-size:15px; margin-bottom:8px; }
+.docs-prerequisite .text-link { margin-top:12px; }
+.docs-files { list-style:none; padding:0; margin:24px 0 0; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+.docs-files li { display:flex; align-items:flex-start; gap:14px; padding:20px; background:var(--surface); }
+.docs-files li+li { border-top:1px solid var(--border); }
+.docs-files li>svg { flex:none; color:var(--primary); margin-top:2px; }
+.docs-files li>div { min-width:0; }
+.docs-files a { display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; }
+.docs-files p { font-size:13px; color:var(--muted-foreground); line-height:1.7; margin:5px 0 8px; }
+.docs-files code { font-size:11px; color:var(--muted-foreground); overflow-wrap:anywhere; }
+.docs-result { margin:24px 0 0; border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+.docs-result figcaption { padding:12px 20px; border-bottom:1px solid var(--border); background:var(--surface); font-size:11px; color:var(--muted-foreground); }
+.docs-result-screen { display:grid; grid-template-columns:155px minmax(0,1fr); }
+.docs-result-menu { display:flex; align-items:center; gap:10px; padding:24px 18px; border-right:1px solid var(--border); font-size:12px; color:var(--primary); background:var(--accent); }
+.docs-result-screen>div:last-child { padding:28px; }
+.docs-result h3 { font-size:22px; letter-spacing:-.025em; }
+.docs-result p { font-size:13px; color:var(--muted-foreground); margin-top:10px; line-height:1.7; }
+.docs-troubleshooting { margin:24px 0 36px; }
+.docs-troubleshooting details { border-top:1px solid var(--border); padding-block:18px; font-size:14px; }
+.docs-troubleshooting details:last-child { border-bottom:1px solid var(--border); }
+.docs-troubleshooting summary { cursor:pointer; line-height:1.6; }
+.docs-troubleshooting p { font-size:13px; line-height:1.8; color:var(--muted-foreground); margin-top:12px; }
+#changes>h2 { margin-bottom:18px; }
+@media(max-width:900px) { .docs-paths { grid-template-columns:1fr; gap:18px; } .docs-path-top { margin-bottom:18px; } .docs-reference { margin-top:36px; } }
+@media(max-width:560px) { .docs-nav { gap:10px 20px; } .docs-nav a { font-size:12px; } .docs-result-screen { grid-template-columns:1fr; } .docs-result-menu { border-right:0; border-bottom:1px solid var(--border); padding:14px 20px; } .docs-result-screen>div:last-child { padding:22px 20px; } .docs-files li { padding:16px; gap:10px; } }
+@media(prefers-reduced-motion:reduce) { .docs-path { transition:none; } }

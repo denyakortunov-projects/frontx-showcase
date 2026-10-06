@@ -1,0 +1,70 @@
+{
+  "guide": [
+    {
+      "codeWidth": 273,
+      "documentWidth": 305,
+      "heading": "Make your first change.",
+      "viewport": 320
+    },
+    {
+      "codeWidth": 335,
+      "documentWidth": 375,
+      "heading": "Make your first change.",
+      "viewport": 390
+    },
+    {
+      "codeWidth": 849,
+      "documentWidth": 1265,
+      "heading": "Make your first change.",
+      "viewport": 1280
+    },
+    {
+      "codeWidth": 904,
+      "documentWidth": 1585,
+      "heading": "Make your first change.",
+      "viewport": 1600
+    },
+    {
+      "codeWidth": 904,
+      "documentWidth": 1905,
+      "heading": "Make your first change.",
+      "viewport": 1920
+    }
+  ],
+  "index": [
+    {
+      "columns": "273px",
+      "documentWidth": 305,
+      "viewport": 320
+    },
+    {
+      "columns": "335px",
+      "documentWidth": 375,
+      "viewport": 390
+    },
+    {
+      "columns": "379px 379px 379px",
+      "documentWidth": 1265,
+      "viewport": 1280
+    },
+    {
+      "columns": "397.328px 397.336px 397.336px",
+      "documentWidth": 1585,
+      "viewport": 1600
+    },
+    {
+      "columns": "397.328px 397.336px 397.336px",
+      "documentWidth": 1920,
+      "viewport": 1920
+    }
+  ],
+  "flows": [
+    "Docs → first change",
+    "Quickstart → first change",
+    "First change → existing UI Kit handoff → Back",
+    "Hash anchor → Back → Forward → reload",
+    "Copy JSON via Enter announced success; native clipboard reading did not verify webpage clipboard bytes",
+    "Troubleshooting disclosure via Enter",
+    "Documentation keyboard focus has solid outline"
+  ]
+}

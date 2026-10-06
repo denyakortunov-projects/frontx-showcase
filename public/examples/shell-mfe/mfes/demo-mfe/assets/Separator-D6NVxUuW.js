@@ -1,0 +1,1 @@
+import*as a from"react";import{j as n}from"./kitThemeScope-CyvstABI.js";const d=a.forwardRef(function(e,r){const{className:i,render:m,orientation:t="horizontal",style:l,...o}=e;return n("div",e,{state:{orientation:t},ref:r,props:[{role:"separator","aria-orientation":t},o]})});export{d as S};

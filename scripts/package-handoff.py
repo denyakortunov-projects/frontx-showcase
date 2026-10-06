@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,zipfile
 base=Path(__file__).resolve().parent.parent
-files=[base/p for p in ['package.json','package-lock.json','tsconfig.json','vite.config.ts','index.html','README.md','.gitignore']]
+files=[base/p for p in ['package.json','package-lock.json','tsconfig.json','vite.config.ts','astro.config.mjs','index.html','README.md','.gitignore']]
 files += sorted((base/'src').rglob('*'))
 files += sorted((base/'docs'/'calendar').glob('*.md'))
 files += [base/p for p in ['qa/verify-event-calendar.mjs','qa/verify-calendar-accessibility.mjs','qa/event-calendar/model.test.ts','qa/event-calendar/async.html','qa/event-calendar/async.tsx','qa/event-calendar/verify-async.mjs','qa/event-calendar/REPORT.md']]
@@ -18,6 +18,14 @@ files += [base/'public/handoff/CHART-AXES.md',base/'scripts/package-handoff.py']
 files += sorted((base/'qa/axis-rules').glob('*.ts'))
 files += sorted((base/'qa/axis-rules').glob('*.mjs'))
 files += sorted((base/'qa/axis-rules').glob('*.md'))
+# Astro build inputs and the licensed static template example, not build output.
+files += sorted((base/'scripts').glob('*.mjs'))
+files += [base/'scripts/template-example-adapter.js', base/'scripts/package-deploy.py']
+for directory in ['public/template-source', 'public/examples/shell-mfe']:
+ files += sorted((base/directory).rglob('*'))
+for directory in ['astro-site', 'quickstart-2026-10-06', 'template-explorer-2026-10-06', 'first-change-2026-10-06']:
+ files += sorted((base/'qa'/directory).glob('*.md'))
+files = [p for p in files if not p.is_symlink() and not any(part.startswith('.') for part in p.relative_to(base).parts if part != '.gitignore')]
 files=list(dict.fromkeys(p for p in files if p.is_file()))
 manifest={str(p.relative_to(base)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 fingerprint=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest()

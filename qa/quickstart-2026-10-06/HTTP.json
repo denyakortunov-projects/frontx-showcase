@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "type": "text/html",
+    "bytes": 30084
+  },
+  {
+    "path": "/get-started/",
+    "status": 200,
+    "type": "text/html",
+    "bytes": 24834
+  },
+  {
+    "path": "/get-started/shell-mfe.md",
+    "status": 200,
+    "type": "text/markdown",
+    "bytes": 3632
+  },
+  {
+    "path": "/templates/shell/",
+    "status": 200,
+    "type": "text/html",
+    "bytes": 8412
+  },
+  {
+    "path": "/templates/mfe/",
+    "status": 200,
+    "type": "text/html",
+    "bytes": 8459
+  },
+  {
+    "path": "/showcase/?page=gallery",
+    "status": 200,
+    "type": "text/html",
+    "bytes": 669
+  }
+]

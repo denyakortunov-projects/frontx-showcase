@@ -1,0 +1,26 @@
+16:31:47 [vite] Re-optimizing dependencies because vite config has changed
+16:31:47 [types] Generated 82ms
+16:31:47 [build] output: "static"
+16:31:47 [build] mode: "static"
+16:31:47 [build] directory: /Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/dist/
+16:31:47 [build] Collecting build info...
+16:31:47 [build] ✓ Completed in 111ms.
+16:31:47 [build] Building static entrypoints...
+16:31:47 [vite] ✓ built in 61ms
+16:31:48 [vite] ✓ built in 600ms
+16:31:48 [build] Rearranging server assets...
+
+ generating static routes 
+16:31:48   ├─ /get-started/shell-mfe.md (+8ms) 
+16:31:48   ├─ /get-started/index.html (+11ms) 
+16:31:48   ├─ /libraries/index.html (+2ms) 
+16:31:48   ├─ /templates/shell/index.html (+5ms) 
+16:31:48   ├─ /templates/mfe/index.html (+3ms) 
+16:31:48   ├─ /templates/guardrails/index.html (+2ms) 
+16:31:48   ├─ /templates/index.html (+2ms) 
+16:31:48   ├─ /index.html (+8ms) 
+16:31:48 ✓ Completed in 133ms.
+
+16:31:48 [build] ✓ Completed in 809ms.
+16:31:48 [build] 7 page(s) built in 997ms
+16:31:48 [build] Complete!

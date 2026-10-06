@@ -1,14 +1,17 @@
 {
   "name": "frontx-showcase",
   "private": true,
-  "version": "0.2.3",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "dev": "npm run build:showcase && astro dev --host 127.0.0.1",
+    "build": "npm run check:templates && tsc --noEmit && npm run build:showcase && astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "build:showcase": "vite build --base /showcase/ --outDir public/showcase --emptyOutDir && node scripts/prepare-showcase.mjs",
+    "check:templates": "node scripts/verify-template-explorer.mjs"
   },
   "dependencies": {
+    "@astrojs/react": "7.0.0",
     "@fullcalendar/core": "6.1.21",
     "@fullcalendar/daygrid": "6.1.21",
     "@fullcalendar/interaction": "6.1.21",
@@ -16,6 +19,7 @@
     "@fullcalendar/react": "6.1.21",
     "@fullcalendar/timegrid": "6.1.21",
     "@gears-frontx/ui-kit": "0.4.0-alpha.5",
+    "astro": "7.3.5",
     "lucide-react": "1.33.0",
     "luxon": "3.7.2",
     "react": "19.2.8",
@@ -30,5 +34,8 @@
     "playwright": "1.58.2",
     "typescript": "5.9.3",
     "vite": "6.4.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

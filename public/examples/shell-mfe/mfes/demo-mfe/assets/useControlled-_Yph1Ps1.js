@@ -1,0 +1,1 @@
+import*as e from"react";function i({controlled:t,default:s,name:c,state:f="value"}){const{current:a}=e.useRef(t!==void 0),[u,o]=e.useState(s),l=a?t:u,n=e.useCallback(r=>{a||o(r)},[]);return[l,n]}export{i as u};

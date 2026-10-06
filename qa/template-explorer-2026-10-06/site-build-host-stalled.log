@@ -1,0 +1,43 @@
+
+> frontx-showcase@0.2.3 build
+> npm run check:templates && tsc --noEmit && npm run build:showcase && astro build
+
+
+> frontx-showcase@0.2.3 check:templates
+> node scripts/verify-template-explorer.mjs
+
+PASS: 15 source hashes, pinned revision, licenses and 248 runtime asset references.
+
+> frontx-showcase@0.2.3 build:showcase
+> vite build --base /showcase/ --outDir public/showcase --emptyOutDir && node scripts/prepare-showcase.mjs
+
+vite v6.4.3 building for production...
+transforming...
+✓ 4314 modules transformed.
+rendering chunks...
+computing gzip size...
+public/showcase/index.html                                  0.67 kB │ gzip:   0.39 kB
+public/showcase/assets/DatePickerShowcase-CB4VgAJS.css      2.37 kB │ gzip:   0.84 kB
+public/showcase/assets/DateCalendar-Cmsy8smF.css           12.26 kB │ gzip:   2.49 kB
+public/showcase/assets/CalendarShowcase-Jgbq9ut_.css       26.67 kB │ gzip:   5.47 kB
+public/showcase/assets/index-DWS2NgtX.css                 116.89 kB │ gzip:  19.59 kB
+public/showcase/assets/DatePickerShowcase-D8tlgtia.js      32.68 kB │ gzip:   8.04 kB
+public/showcase/assets/DateCalendar-CBeNbFzx.js            80.24 kB │ gzip:  23.48 kB
+public/showcase/assets/CalendarShowcase-BBTi6xhn.js       434.74 kB │ gzip: 132.27 kB
+public/showcase/assets/index-DiaLoz5r.js                1,111.93 kB │ gzip: 331.66 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.84s
+16:24:31 [types] Generated 20ms
+16:24:31 [build] output: "static"
+16:24:31 [build] mode: "static"
+16:24:31 [build] directory: /Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/dist/
+16:24:31 [build] Collecting build info...
+16:24:31 [build] ✓ Completed in 45ms.
+16:24:31 [build] Building static entrypoints...
+16:24:31 [vite] ✓ built in 90ms
+sh: line 1: 67146 Killed: 9               astro build
+

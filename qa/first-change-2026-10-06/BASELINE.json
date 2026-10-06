@@ -1,0 +1,12 @@
+{
+  "baseline": "Previous local Astro and template explorer, user authorized continuation; design review pending",
+  "head": "4780fd3943af085f18a235a6455e3684b5e4d69d",
+  "hashes": {
+    "src/layouts/SiteLayout.astro": "63f7e8a760f3ec1f64696a220323732fbad3502c45b8ca9127788a306e351c91",
+    "src/pages/get-started.astro": "94dabd6ee3bab722013eeefb80adb717549c22681a5a74d47049fd114df8021b",
+    "src/pages/templates/[slug].astro": "62321797cf78e6d1b41b038cc2c210f01bea4052cab6292f24ec27a3f3079ad8",
+    "src/site/site.css": "93137f209b25bce91719d81bc5ee45aa2ba5684ec97a9b0f4e2266aaf908d59a",
+    "src/site/CodeBlock.tsx": "09d9245b3f2c93120beda7dbdebdf92056fce6a75a8c9256b26a847d7e8a1d94",
+    "src/site/content.ts": "1feea7c9be15a124c4e21c3be3ebbb5550ac94af61be24739050ebcdcf227799"
+  }
+}

@@ -1,0 +1,91 @@
+[
+  {
+    "id": "@gears-frontx/cli@0.3.0-alpha.7",
+    "name": "@gears-frontx/cli",
+    "version": "0.3.0-alpha.7",
+    "size": 559832,
+    "unpackedSize": 2395174,
+    "shasum": "5604e62727052f0e703b15b8b5673db24f4bd21d",
+    "integrity": "sha512-V5p/tpaj/eoEYNpCgaFhtWJF/WsPO9wyD5QAVUfqETwIeoPE0CqdS+jR7lLC2IjdHOmOk+9UhbfVWrzvmpLKnA==",
+    "filename": "gears-frontx-cli-0.3.0-alpha.7.tgz",
+    "files": [
+      {
+        "path": "dist/add-template-YVlrsV4Q.d.cts",
+        "size": 22623,
+        "mode": 420
+      },
+      {
+        "path": "dist/add-template-YVlrsV4Q.d.ts",
+        "size": 22623,
+        "mode": 420
+      },
+      {
+        "path": "dist/cli.cjs",
+        "size": 129471,
+        "mode": 493
+      },
+      {
+        "path": "dist/cli.cjs.map",
+        "size": 480552,
+        "mode": 420
+      },
+      {
+        "path": "dist/cli.d.cts",
+        "size": 3425,
+        "mode": 420
+      },
+      {
+        "path": "dist/cli.d.ts",
+        "size": 3424,
+        "mode": 420
+      },
+      {
+        "path": "dist/cli.js",
+        "size": 125052,
+        "mode": 493
+      },
+      {
+        "path": "dist/cli.js.map",
+        "size": 479727,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.cjs",
+        "size": 108421,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.cjs.map",
+        "size": 437592,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.d.cts",
+        "size": 23960,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.d.ts",
+        "size": 23958,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.js",
+        "size": 104244,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.js.map",
+        "size": 429172,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 930,
+        "mode": 420
+      }
+    ],
+    "entryCount": 15,
+    "bundled": []
+  }
+]

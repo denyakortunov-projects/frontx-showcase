@@ -1,0 +1,101 @@
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check
+> npm run type-check:package && npm run type-check:package:test && npm run type-check:app && npm run type-check:scripts && npm run type-check:packages && npm run type-check:mfe
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:package
+> tsc --noEmit
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:package:test
+> tsc -p tsconfig.test.json
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:app
+> tsc --noEmit -p tsconfig.app.json
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:scripts
+> tsc -p tsconfig.scripts.json
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:packages
+> npm run type-check:packages:auth && npm run type-check:packages:state && npm run type-check:packages:i18n && npm run type-check:packages:framework && npm run type-check:packages:react && npm run type-check:packages:studio
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:packages:auth
+> npm run type-check --workspace=@gears-frontx/auth
+
+
+> @gears-frontx/auth@0.2.0-alpha.2 type-check
+> tsc --noEmit
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:packages:state
+> npm run type-check --workspace=@gears-frontx/state
+
+
+> @gears-frontx/state@0.2.0-alpha.1 type-check
+> tsc --noEmit
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:packages:i18n
+> npm run type-check --workspace=@gears-frontx/i18n
+
+
+> @gears-frontx/i18n@0.2.0-alpha.1 type-check
+> tsc --noEmit
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:packages:framework
+> npm run type-check --workspace=@gears-frontx/framework
+
+
+> @gears-frontx/framework@0.2.0-alpha.10 type-check
+> tsc --noEmit
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:packages:react
+> npm run type-check --workspace=@gears-frontx/react
+
+
+> @gears-frontx/react@0.2.0-alpha.10 type-check
+> tsc --noEmit
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:packages:studio
+> npm run type-check --workspace=@gears-frontx/studio
+
+
+> @gears-frontx/studio@0.2.0-alpha.2 type-check
+> tsc --noEmit
+
+
+> @gears-frontx/frontx-template-shell@0.1.0-alpha.5 type-check:mfe
+> npx tsx scripts/run-mfe-type-checks.ts
+
+
+==> Type-checking _blank-mfe
+
+> @gears-frontx/blank-mfe@0.2.0-alpha.0 type-check
+> tsc --noEmit
+
+
+==> Type-checking demo-mfe
+npm warn config ignoring workspace config at /private/tmp/frontx-quickstart.x0H65i/consumer/src-app/mfe_packages/demo-mfe/.npmrc
+
+> @gears-frontx/demo-mfe@0.2.0-alpha.0 type-check
+> tsc --noEmit
+
+
+==> Type-checking widgets-fixture-a
+
+> @gears-frontx/widgets-fixture-a@0.1.0-alpha.1 type-check
+> tsc --noEmit
+
+
+==> Type-checking widgets-fixture-b
+
+> @gears-frontx/widgets-fixture-b@0.1.0-alpha.1 type-check
+> tsc --noEmit
+

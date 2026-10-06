@@ -1,0 +1,52 @@
+[Module Federation] Ignoring `output.manualChunks` because it conflicts with module federation. Module federation transforms shared dependency imports with async init wrappers, and grouping these transformed modules into a single chunk creates circular async dependencies that cause the application to silently hang.
+vite v6.4.3 building for production...
+transforming...
+✓ 6570 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/mf-entry-bootstrap-0-61530900.js                                                                                              1.35 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/index.html                                                                                                                           1.96 kB │ gzip:   0.58 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/index-CTrmd5al.css                                                                                                           33.56 kB │ gzip:   7.04 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/virtualExposes-_ivNhQLP.js                                                                                                    0.05 kB │ gzip:   0.07 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/vite-preload-helper-Bgtn5KoV.js                                                                                               1.13 kB │ gzip:   0.67 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/hostInit-zeanJVxc.js                                                                                                          2.34 kB │ gzip:   1.12 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/_virtual_mf-localSharedImportMap___mfe_internal__host__mf_owner__1-Blp3c6Rv.js                                                3.01 kB │ gzip:   0.69 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/_virtual_mf___mfe_internal__host__mf_owner__1__loadShare__react_mf_2_dom__loadShare__.js-Bkcq2RaK.js                          3.01 kB │ gzip:   1.26 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/_virtual_mf___mfe_internal__host__mf_owner__1__loadShare__react_mf_1_jsx_mf_2_runtime__loadShare__.js-BPH3ONZ0.js             3.40 kB │ gzip:   1.45 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/__virtual_mf___mfe_internal__host__mf_owner__1__loadShare__react__loadShare__.js_commonjs-proxy-C-4CkGv5.js                   4.43 kB │ gzip:   1.73 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/__virtual_mf___mfe_internal__host__mf_owner__1__loadShare__react_mf_2_dom__loadShare__.js_commonjs-proxy-B-mdAFty.js          7.24 kB │ gzip:   2.67 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/_virtual_mf___mfe_internal__host__mf_owner__1__loadShare__react__loadShare__.js-Cla0tab4.js                                  14.42 kB │ gzip:   5.16 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/remoteEntry-ClyYqYmS.js                                                                                                      14.59 kB │ gzip:   5.34 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/_virtual_mf___mfe_internal__host__mf_owner__1__loadShare___mf_0_tanstack_mf_1_react_mf_2_query__loadShare__.js-CNFsw9K6.js   52.14 kB │ gzip:  15.32 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/index-COpJWj9b.js                                                                                                            62.08 kB │ gzip:  18.93 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/_virtual_mf___mfe_internal__host__mf_owner__1__loadShare__react_mf_2_dom_mf_1_client__loadShare__.js-DegGGWEq.js            183.72 kB │ gzip:  57.79 kB
+../../../../Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/public/examples/shell-mfe/assets/index-CgYJHKFa.js                                                                                                           772.72 kB │ gzip: 244.01 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.92s
+{
+  "templateRef": "3b6cddb2a700ae76bc5e1991204e127de566d597",
+  "sourceFilesVerified": 596,
+  "build": "Vite production build of verified consumer; website subpath adapter",
+  "changes": [
+    "Shell manifest URL and origin resolution",
+    "Host asset base",
+    "MFE public paths",
+    "Website CSP",
+    "Initially collapsed menu at narrow widths using the existing layout event",
+    "Same six menu Lucide glyphs bundled locally instead of Iconify network requests"
+  ],
+  "verifiedScreens": [
+    "hello-world",
+    "blank-home"
+  ],
+  "limitations": [
+    "No authentication/backend",
+    "Upstream dependency audit findings remain",
+    "Other template example routes outside checked scope"
+  ],
+  "lockSha256": "b5a6ef3e29676e0d4fc69bcc6be11e8dfdb410fa184aeeb774d3bc6f3e9fd6d3"
+}

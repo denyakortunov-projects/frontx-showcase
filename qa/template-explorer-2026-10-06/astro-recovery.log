@@ -1,0 +1,11 @@
+16:28:11 [types] Generated 79ms
+16:28:11 [build] output: "static"
+16:28:11 [build] mode: "static"
+16:28:11 [build] directory: /Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/dist/
+16:28:11 [build] Collecting build info...
+16:28:11 [build] ✓ Completed in 112ms.
+16:28:11 [build] Building static entrypoints...
+TRACE before prerender
+16:28:11 [vite] ✓ built in 65ms
+TRACE after prerender
+TRACE before client

@@ -1,0 +1,57 @@
+[
+  {
+    "path": "/templates/shell/",
+    "status": 200,
+    "bytes": 60671
+  },
+  {
+    "path": "/templates/mfe/",
+    "status": 200,
+    "bytes": 55697
+  },
+  {
+    "path": "/templates/guardrails/",
+    "status": 200,
+    "bytes": 43528
+  },
+  {
+    "path": "/examples/shell-mfe/?screen=hello-world",
+    "status": 200,
+    "bytes": 2328
+  },
+  {
+    "path": "/examples/shell-mfe/generated-mfe-manifests.json",
+    "status": 200,
+    "bytes": 70899
+  },
+  {
+    "path": "/examples/shell-mfe/website-adapter.js",
+    "status": 200,
+    "bytes": 1549
+  },
+  {
+    "path": "/examples/shell-mfe/provenance.json",
+    "status": 200,
+    "bytes": 789
+  },
+  {
+    "path": "/examples/shell-mfe/LICENSE.txt",
+    "status": 200,
+    "bytes": 11357
+  },
+  {
+    "path": "/examples/shell-mfe/NOTICE.txt",
+    "status": 200,
+    "bytes": 588
+  },
+  {
+    "path": "/examples/shell-mfe/THIRD-PARTY-NOTICES.txt",
+    "status": 200,
+    "bytes": 1175366
+  },
+  {
+    "path": "/template-source/LICENSE.txt",
+    "status": 200,
+    "bytes": 11357
+  }
+]

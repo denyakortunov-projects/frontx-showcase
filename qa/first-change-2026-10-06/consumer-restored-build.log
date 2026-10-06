@@ -1,0 +1,79 @@
+
+> @gears-frontx/blank-mfe@0.2.0-alpha.0 build
+> vite build
+
+vite v6.4.3 building for production...
+transforming...
+
+warn - The `content` option in your Tailwind CSS configuration is missing or empty.
+warn - Configure your content sources or your generated CSS will be missing styles.
+warn - https://tailwindcss.com/docs/content-configuration
+✓ 4328 modules transformed.
+[frontx-mf-gts] transformed 36 dynamic import(s) in assets/lifecycle-!~{005}~.js
+rendering chunks...
+[ Module Federation DTS ] Federated types created correctly
+computing gzip size...
+dist/index.html                                                                                  0.50 kB │ gzip:  0.33 kB
+dist/mf-manifest.json                                                                            1.52 kB │ gzip:  0.45 kB
+dist/mf-stats.json                                                                               6.31 kB │ gzip:  0.93 kB
+dist/.vite/manifest.json                                                                         9.86 kB │ gzip:  1.17 kB
+dist/assets/lifecycle-CQhNG4Xf.css                                                               3.82 kB │ gzip:  1.04 kB
+dist/assets/_virtual_mf-localSharedImportMap___mfe_internal__blankMfe__mf_owner__1-CU2tP-iO.js   0.09 kB │ gzip:  0.10 kB
+dist/assets/ar-nL6_O5us.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/bn-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/cs-BBCWjOov.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/da-nL6_O5us.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/de-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/el-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/en-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/fa-nL6_O5us.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/fi-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/fr-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/he-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/hi-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/hu-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/id-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/it-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/ja-nL6_O5us.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/ko-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/ms-BBCWjOov.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/nl-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/no-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/pl-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/pt-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/ro-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/ru-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/sv-BBCWjOov.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/sw-BBCWjOov.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/ta-nL6_O5us.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/th-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/tl-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/tr-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/uk-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/ur-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/vi-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/zh-TW-D5EVqBpG.js                                                                    0.38 kB │ gzip:  0.23 kB
+dist/assets/zh-D5EVqBpG.js                                                                       0.38 kB │ gzip:  0.23 kB
+dist/assets/es-CboOVgOW.js                                                                       0.39 kB │ gzip:  0.23 kB
+dist/assets/virtualExposes-DsVTbxK5.js                                                           1.11 kB │ gzip:  0.66 kB
+dist/assets/vite-preload-helper-bFjQlsqE.js                                                      1.29 kB │ gzip:  0.73 kB
+dist/assets/hostInit-CKdbpwSs.js                                                                 2.25 kB │ gzip:  1.09 kB
+dist/remoteEntry.js                                                                             13.36 kB │ gzip:  4.75 kB
+dist/assets/lifecycle-Dl_gNwIm.js                                                               17.31 kB │ gzip:  5.53 kB
+dist/assets/index-BEDcFE4N.js                                                                   61.99 kB │ gzip: 18.88 kB
+✓ built in 4.87s
+[frontx-mf-gts] Building shared deps as standalone ESM...
+  [frontx-mf-gts] react -> react.js (standalone)
+  [frontx-mf-gts] react-dom -> react-dom.js (external: react)
+  [frontx-mf-gts] @gears-frontx/react -> gears-frontx-react.js (external: @gears-frontx/framework, @tanstack/react-query, react, react-dom, react-redux)
+  [frontx-mf-gts] @gears-frontx/framework -> gears-frontx-framework.js (external: @gears-frontx/state, @gears-frontx/mfes, @gears-frontx/gts-plugin, @gears-frontx/api, @gears-frontx/i18n, @reduxjs/toolkit)
+  [frontx-mf-gts] @gears-frontx/state -> gears-frontx-state.js (external: @reduxjs/toolkit)
+  [frontx-mf-gts] @gears-frontx/mfes -> gears-frontx-mfes.js (external: @gears-frontx/gts-plugin)
+  [frontx-mf-gts] @gears-frontx/gts-plugin -> gears-frontx-gts-plugin.js (external: @gears-frontx/mfes)
+  [frontx-mf-gts] @gears-frontx/api -> gears-frontx-api.js (standalone)
+  [frontx-mf-gts] @gears-frontx/i18n -> gears-frontx-i18n.js (standalone)
+  [frontx-mf-gts] @tanstack/react-query -> tanstack-react-query.js (external: react)
+  [frontx-mf-gts] @reduxjs/toolkit -> reduxjs-toolkit.js (external: react, react-redux)
+  [frontx-mf-gts] react-redux -> react-redux.js (external: react)
+[frontx-mf-gts] Shared deps build complete.
+[frontx-mf-gts] enriched /private/tmp/frontx-quickstart.x0H65i/consumer/src-app/mfe_packages/_blank-mfe/dist/mfe-manifest.json

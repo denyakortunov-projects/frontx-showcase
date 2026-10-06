@@ -1,0 +1,24 @@
+{
+  "templateRef": "3b6cddb2a700ae76bc5e1991204e127de566d597",
+  "sourceFilesVerified": 596,
+  "build": "Vite production build of verified consumer; website subpath adapter",
+  "changes": [
+    "Shell manifest URL and origin resolution",
+    "Host asset base",
+    "MFE public paths",
+    "Website CSP",
+    "Initially collapsed menu at narrow widths using the existing layout event",
+    "Same six menu Lucide glyphs bundled locally instead of Iconify network requests",
+    "Include existing shared UI Kit CSS omitted from demo manifest"
+  ],
+  "verifiedScreens": [
+    "hello-world",
+    "blank-home"
+  ],
+  "limitations": [
+    "No authentication/backend",
+    "Upstream dependency audit findings remain",
+    "Other template example routes outside checked scope"
+  ],
+  "lockSha256": "b5a6ef3e29676e0d4fc69bcc6be11e8dfdb410fa184aeeb774d3bc6f3e9fd6d3"
+}

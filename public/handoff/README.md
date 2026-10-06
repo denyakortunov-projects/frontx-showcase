@@ -1,14 +1,18 @@
-# FrontX Showcase developer handoff
+# FrontX website and Showcase developer handoff
 
-This is a static Vite demo of proposed reusable widget compositions built on `@gears-frontx/ui-kit` `0.4.0-alpha.5`. It demonstrates how a consumer could compose installed FrontX primitives; the showcased widgets are not published FrontX exports.
+The static Astro website presents FrontX as a Gear within Constructor Fabric, with templates, libraries and practical guides. The existing Vite Showcase at `/showcase/` contains proposed reusable widget compositions built on `@gears-frontx/ui-kit` `0.4.0-alpha.5`. It demonstrates how a consumer could compose installed FrontX primitives; the showcased widgets are not published FrontX exports.
 
 ## Start here
 
-- Install and run with the app's package manager: `npm install`, then `npm run dev`.
-- Build with `npm run build`; this runs TypeScript checking and creates the static Vite site.
+- Install and run with the app's package manager: Node.js 22.12 or newer, `npm ci`, then `npm run dev`.
+- Build with `npm run build`; this checks the template snapshot and TypeScript, builds the Vite Showcase, and creates the complete static Astro site in `dist/`.
 - The project targets React 19, Recharts 3.10.1 and the installed FrontX kit. Reuse its `ChartContainer` and other existing primitives. Do not add a parallel primitive library.
 - `WidgetChart({ kind, period })` is the chart demo entry point. Supported kinds: `area`, `line`, `bar`, `ranked`, `donut`, `pie`, `radar`, `radial`, `scatter`, `stacked`, `composed`, `waterfall`, `funnel`, `treemap`, `bubble`, `heatmap`, `calendar`, and `builds`.
 - Data is deterministic synthetic demo data from `src/data.ts`; it is not product data and has no backend, accounts, or AI requests.
+
+## Website sources
+
+`src/pages`, `src/layouts` and `src/site` contain the website. `/templates/` includes selected pinned source files and an explicitly adapted Shell/MFE example; `/get-started/` and `/docs/first-change/` provide matching browser and plain-text guides. The source archive includes the licensed example inputs and required build scripts. No server, credentials or environment variables are needed. Legacy root `?page=…` links redirect to `/showcase/` preserving query and fragment.
 
 ## Proposed composition rules
 

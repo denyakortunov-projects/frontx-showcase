@@ -1,0 +1,61 @@
+
+> frontx-showcase@0.2.3 build
+> npm run check:templates && tsc --noEmit && npm run build:showcase && astro build
+
+
+> frontx-showcase@0.2.3 check:templates
+> node scripts/verify-template-explorer.mjs
+
+PASS: 15 source hashes, pinned revision, licenses and 253 runtime asset references.
+
+> frontx-showcase@0.2.3 build:showcase
+> vite build --base /showcase/ --outDir public/showcase --emptyOutDir && node scripts/prepare-showcase.mjs
+
+vite v6.4.3 building for production...
+transforming...
+✓ 4314 modules transformed.
+rendering chunks...
+computing gzip size...
+public/showcase/index.html                                  0.67 kB │ gzip:   0.39 kB
+public/showcase/assets/DatePickerShowcase-CB4VgAJS.css      2.37 kB │ gzip:   0.84 kB
+public/showcase/assets/DateCalendar-Cmsy8smF.css           12.26 kB │ gzip:   2.49 kB
+public/showcase/assets/CalendarShowcase-Jgbq9ut_.css       26.67 kB │ gzip:   5.47 kB
+public/showcase/assets/index-DWS2NgtX.css                 116.89 kB │ gzip:  19.59 kB
+public/showcase/assets/DatePickerShowcase-D8tlgtia.js      32.68 kB │ gzip:   8.04 kB
+public/showcase/assets/DateCalendar-CBeNbFzx.js            80.24 kB │ gzip:  23.48 kB
+public/showcase/assets/CalendarShowcase-BBTi6xhn.js       434.74 kB │ gzip: 132.27 kB
+public/showcase/assets/index-DiaLoz5r.js                1,111.93 kB │ gzip: 331.66 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.66s
+17:05:40 [types] Generated 27ms
+17:05:40 [build] output: "static"
+17:05:40 [build] mode: "static"
+17:05:40 [build] directory: /Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/dist/
+17:05:40 [build] Collecting build info...
+17:05:40 [build] ✓ Completed in 60ms.
+17:05:40 [build] Building static entrypoints...
+17:05:40 [vite] ✓ built in 160ms
+17:05:40 [vite] ✓ built in 294ms
+17:05:40 [build] Rearranging server assets...
+
+ generating static routes 
+17:05:40   ├─ /docs/first-change/index.html (+16ms) 
+17:05:40   ├─ /docs/first-change.md (+1ms) 
+17:05:40   ├─ /docs/index.html (+3ms) 
+17:05:40   ├─ /get-started/shell-mfe.md (+1ms) 
+17:05:40   ├─ /get-started/index.html (+5ms) 
+17:05:40   ├─ /libraries/index.html (+3ms) 
+17:05:40   ├─ /templates/shell/index.html (+6ms) 
+17:05:40   ├─ /templates/mfe/index.html (+3ms) 
+17:05:40   ├─ /templates/guardrails/index.html (+3ms) 
+17:05:40   ├─ /templates/index.html (+2ms) 
+17:05:40   ├─ /index.html (+9ms) 
+17:05:40 ✓ Completed in 160ms.
+
+17:05:40 [build] ✓ Completed in 632ms.
+17:05:40 [build] 9 page(s) built in 776ms
+17:05:40 [build] Complete!

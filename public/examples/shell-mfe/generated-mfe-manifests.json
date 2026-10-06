@@ -1,0 +1,1856 @@
+[
+  {
+    "manifest": {
+      "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.blank.mfe.manifest.v1",
+      "name": "blankMfe",
+      "metaData": {
+        "name": "blankMfe",
+        "type": "app",
+        "buildInfo": {
+          "buildVersion": "1.0.0",
+          "buildName": "blankMfe"
+        },
+        "remoteEntry": {
+          "name": "remoteEntry.js",
+          "path": "",
+          "type": "module"
+        },
+        "globalName": "blankMfe",
+        "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/_blank-mfe/"
+      },
+      "shared": [
+        {
+          "name": "react",
+          "version": "19.2.4",
+          "chunkPath": "shared/react.js",
+          "unwrapKey": null,
+          "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+        },
+        {
+          "name": "react-dom",
+          "version": "19.2.4",
+          "chunkPath": "shared/react-dom.js",
+          "unwrapKey": null,
+          "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+        },
+        {
+          "name": "@gears-frontx/react",
+          "version": "0.2.0-alpha.10",
+          "chunkPath": "shared/gears-frontx-react.js",
+          "unwrapKey": null,
+          "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+        },
+        {
+          "name": "@gears-frontx/framework",
+          "version": "0.2.0-alpha.10",
+          "chunkPath": "shared/gears-frontx-framework.js",
+          "unwrapKey": null,
+          "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+        },
+        {
+          "name": "@gears-frontx/state",
+          "version": "0.2.0-alpha.1",
+          "chunkPath": "shared/gears-frontx-state.js",
+          "unwrapKey": null,
+          "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+        },
+        {
+          "name": "@gears-frontx/mfes",
+          "version": "0.3.0-alpha.11",
+          "chunkPath": "shared/gears-frontx-mfes.js",
+          "unwrapKey": null,
+          "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+        },
+        {
+          "name": "@gears-frontx/gts-plugin",
+          "version": "0.3.0-alpha.11",
+          "chunkPath": "shared/gears-frontx-gts-plugin.js",
+          "unwrapKey": null,
+          "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+        },
+        {
+          "name": "@gears-frontx/api",
+          "version": "0.3.0-alpha.3",
+          "chunkPath": "shared/gears-frontx-api.js",
+          "unwrapKey": null,
+          "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+        },
+        {
+          "name": "@gears-frontx/i18n",
+          "version": "0.2.0-alpha.1",
+          "chunkPath": "shared/gears-frontx-i18n.js",
+          "unwrapKey": null,
+          "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+        },
+        {
+          "name": "@tanstack/react-query",
+          "version": "5.101.4",
+          "chunkPath": "shared/tanstack-react-query.js",
+          "unwrapKey": null,
+          "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+        },
+        {
+          "name": "@reduxjs/toolkit",
+          "version": "2.12.0",
+          "chunkPath": "shared/reduxjs-toolkit.js",
+          "unwrapKey": null,
+          "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+        },
+        {
+          "name": "react-redux",
+          "version": "9.3.0",
+          "chunkPath": "shared/react-redux.js",
+          "unwrapKey": null,
+          "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+        }
+      ]
+    },
+    "entries": [
+      {
+        "id": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.blank.mfe.home.v1",
+        "requiredProperties": [
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.theme.v1~",
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.language.v1~"
+        ],
+        "actions": [],
+        "domainActions": [],
+        "manifest": {
+          "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.blank.mfe.manifest.v1",
+          "name": "blankMfe",
+          "metaData": {
+            "name": "blankMfe",
+            "type": "app",
+            "buildInfo": {
+              "buildVersion": "1.0.0",
+              "buildName": "blankMfe"
+            },
+            "remoteEntry": {
+              "name": "remoteEntry.js",
+              "path": "",
+              "type": "module"
+            },
+            "globalName": "blankMfe",
+            "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/_blank-mfe/"
+          },
+          "shared": [
+            {
+              "name": "react",
+              "version": "19.2.4",
+              "chunkPath": "shared/react.js",
+              "unwrapKey": null,
+              "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+            },
+            {
+              "name": "react-dom",
+              "version": "19.2.4",
+              "chunkPath": "shared/react-dom.js",
+              "unwrapKey": null,
+              "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+            },
+            {
+              "name": "@gears-frontx/react",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-react.js",
+              "unwrapKey": null,
+              "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+            },
+            {
+              "name": "@gears-frontx/framework",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-framework.js",
+              "unwrapKey": null,
+              "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+            },
+            {
+              "name": "@gears-frontx/state",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-state.js",
+              "unwrapKey": null,
+              "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+            },
+            {
+              "name": "@gears-frontx/mfes",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-mfes.js",
+              "unwrapKey": null,
+              "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+            },
+            {
+              "name": "@gears-frontx/gts-plugin",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-gts-plugin.js",
+              "unwrapKey": null,
+              "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+            },
+            {
+              "name": "@gears-frontx/api",
+              "version": "0.3.0-alpha.3",
+              "chunkPath": "shared/gears-frontx-api.js",
+              "unwrapKey": null,
+              "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+            },
+            {
+              "name": "@gears-frontx/i18n",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-i18n.js",
+              "unwrapKey": null,
+              "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "version": "5.101.4",
+              "chunkPath": "shared/tanstack-react-query.js",
+              "unwrapKey": null,
+              "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+            },
+            {
+              "name": "@reduxjs/toolkit",
+              "version": "2.12.0",
+              "chunkPath": "shared/reduxjs-toolkit.js",
+              "unwrapKey": null,
+              "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+            },
+            {
+              "name": "react-redux",
+              "version": "9.3.0",
+              "chunkPath": "shared/react-redux.js",
+              "unwrapKey": null,
+              "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+            }
+          ]
+        },
+        "exposedModule": "./lifecycle",
+        "exposeAssets": {
+          "js": {
+            "async": [
+              "assets/ar-nL6_O5us.js",
+              "assets/bn-D5EVqBpG.js",
+              "assets/cs-BBCWjOov.js",
+              "assets/da-nL6_O5us.js",
+              "assets/de-D5EVqBpG.js",
+              "assets/el-D5EVqBpG.js",
+              "assets/en-D5EVqBpG.js",
+              "assets/es-CboOVgOW.js",
+              "assets/fa-nL6_O5us.js",
+              "assets/fi-D5EVqBpG.js",
+              "assets/fr-D5EVqBpG.js",
+              "assets/he-D5EVqBpG.js",
+              "assets/hi-D5EVqBpG.js",
+              "assets/hu-D5EVqBpG.js",
+              "assets/id-D5EVqBpG.js",
+              "assets/it-D5EVqBpG.js",
+              "assets/ja-nL6_O5us.js",
+              "assets/ko-D5EVqBpG.js",
+              "assets/ms-BBCWjOov.js",
+              "assets/nl-D5EVqBpG.js",
+              "assets/no-D5EVqBpG.js",
+              "assets/pl-D5EVqBpG.js",
+              "assets/pt-D5EVqBpG.js",
+              "assets/ro-D5EVqBpG.js",
+              "assets/ru-D5EVqBpG.js",
+              "assets/sv-BBCWjOov.js",
+              "assets/sw-BBCWjOov.js",
+              "assets/ta-nL6_O5us.js",
+              "assets/th-D5EVqBpG.js",
+              "assets/tl-D5EVqBpG.js",
+              "assets/tr-D5EVqBpG.js",
+              "assets/uk-D5EVqBpG.js",
+              "assets/ur-D5EVqBpG.js",
+              "assets/vi-D5EVqBpG.js",
+              "assets/zh-TW-D5EVqBpG.js",
+              "assets/zh-D5EVqBpG.js"
+            ],
+            "sync": [
+              "assets/lifecycle-Dl_gNwIm.js"
+            ]
+          },
+          "css": {
+            "async": [],
+            "sync": [
+              "assets/lifecycle-CQhNG4Xf.css"
+            ]
+          }
+        }
+      }
+    ],
+    "extensions": [
+      {
+        "id": "gts.frontx.mfes.ext.extension.v1~frontx.screensets.layout.screen.v1~frontx.blank.screens.home.v1",
+        "domain": "gts.frontx.mfes.ext.domain.v1~frontx.screensets.layout.screen.v1",
+        "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.blank.mfe.home.v1",
+        "route": "/blank-home",
+        "presentation": {
+          "label": "Blank Home",
+          "icon": "lucide:home",
+          "order": 100
+        }
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.demo.mfe.manifest.v1",
+      "name": "demoMfe",
+      "metaData": {
+        "name": "demoMfe",
+        "type": "app",
+        "buildInfo": {
+          "buildVersion": "1.0.0",
+          "buildName": "demoMfe"
+        },
+        "remoteEntry": {
+          "name": "remoteEntry.js",
+          "path": "",
+          "type": "module"
+        },
+        "globalName": "demoMfe",
+        "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/demo-mfe/"
+      },
+      "shared": [
+        {
+          "name": "react",
+          "version": "19.2.4",
+          "chunkPath": "shared/react.js",
+          "unwrapKey": null,
+          "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+        },
+        {
+          "name": "react-dom",
+          "version": "19.2.4",
+          "chunkPath": "shared/react-dom.js",
+          "unwrapKey": null,
+          "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+        },
+        {
+          "name": "@gears-frontx/react",
+          "version": "0.2.0-alpha.10",
+          "chunkPath": "shared/gears-frontx-react.js",
+          "unwrapKey": null,
+          "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+        },
+        {
+          "name": "@gears-frontx/framework",
+          "version": "0.2.0-alpha.10",
+          "chunkPath": "shared/gears-frontx-framework.js",
+          "unwrapKey": null,
+          "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+        },
+        {
+          "name": "@gears-frontx/state",
+          "version": "0.2.0-alpha.1",
+          "chunkPath": "shared/gears-frontx-state.js",
+          "unwrapKey": null,
+          "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+        },
+        {
+          "name": "@gears-frontx/mfes",
+          "version": "0.3.0-alpha.11",
+          "chunkPath": "shared/gears-frontx-mfes.js",
+          "unwrapKey": null,
+          "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+        },
+        {
+          "name": "@gears-frontx/gts-plugin",
+          "version": "0.3.0-alpha.11",
+          "chunkPath": "shared/gears-frontx-gts-plugin.js",
+          "unwrapKey": null,
+          "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+        },
+        {
+          "name": "@gears-frontx/api",
+          "version": "0.3.0-alpha.3",
+          "chunkPath": "shared/gears-frontx-api.js",
+          "unwrapKey": null,
+          "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+        },
+        {
+          "name": "@gears-frontx/i18n",
+          "version": "0.2.0-alpha.1",
+          "chunkPath": "shared/gears-frontx-i18n.js",
+          "unwrapKey": null,
+          "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+        },
+        {
+          "name": "@tanstack/react-query",
+          "version": "5.101.4",
+          "chunkPath": "shared/tanstack-react-query.js",
+          "unwrapKey": null,
+          "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+        },
+        {
+          "name": "@reduxjs/toolkit",
+          "version": "2.12.0",
+          "chunkPath": "shared/reduxjs-toolkit.js",
+          "unwrapKey": null,
+          "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+        },
+        {
+          "name": "react-redux",
+          "version": "9.3.0",
+          "chunkPath": "shared/react-redux.js",
+          "unwrapKey": null,
+          "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+        }
+      ]
+    },
+    "domains": [
+      {
+        "id": "gts.frontx.mfes.ext.domain.v1~frontx.widgets.area.main.v1",
+        "route": "widgets",
+        "sharedProperties": [],
+        "actions": [
+          "gts.frontx.mfes.comm.action.v1~frontx.mfes.ext.load_ext.v1~",
+          "gts.frontx.mfes.comm.action.v1~frontx.mfes.ext.mount_ext.v1~",
+          "gts.frontx.mfes.comm.action.v1~frontx.mfes.ext.unmount_ext.v1~"
+        ],
+        "extensionsActions": [],
+        "defaultActionTimeout": 5000,
+        "lifecycleStages": [
+          "gts.frontx.mfes.lifecycle.stage.v1~frontx.mfes.lifecycle.init.v1",
+          "gts.frontx.mfes.lifecycle.stage.v1~frontx.mfes.lifecycle.activated.v1",
+          "gts.frontx.mfes.lifecycle.stage.v1~frontx.mfes.lifecycle.deactivated.v1",
+          "gts.frontx.mfes.lifecycle.stage.v1~frontx.mfes.lifecycle.destroyed.v1"
+        ],
+        "extensionsLifecycleStages": [
+          "gts.frontx.mfes.lifecycle.stage.v1~frontx.mfes.lifecycle.init.v1",
+          "gts.frontx.mfes.lifecycle.stage.v1~frontx.mfes.lifecycle.activated.v1",
+          "gts.frontx.mfes.lifecycle.stage.v1~frontx.mfes.lifecycle.deactivated.v1",
+          "gts.frontx.mfes.lifecycle.stage.v1~frontx.mfes.lifecycle.destroyed.v1"
+        ]
+      }
+    ],
+    "entries": [
+      {
+        "id": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.helloworld.v1",
+        "requiredProperties": [
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.theme.v1~",
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.language.v1~"
+        ],
+        "actions": [],
+        "domainActions": [],
+        "manifest": {
+          "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.demo.mfe.manifest.v1",
+          "name": "demoMfe",
+          "metaData": {
+            "name": "demoMfe",
+            "type": "app",
+            "buildInfo": {
+              "buildVersion": "1.0.0",
+              "buildName": "demoMfe"
+            },
+            "remoteEntry": {
+              "name": "remoteEntry.js",
+              "path": "",
+              "type": "module"
+            },
+            "globalName": "demoMfe",
+            "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/demo-mfe/"
+          },
+          "shared": [
+            {
+              "name": "react",
+              "version": "19.2.4",
+              "chunkPath": "shared/react.js",
+              "unwrapKey": null,
+              "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+            },
+            {
+              "name": "react-dom",
+              "version": "19.2.4",
+              "chunkPath": "shared/react-dom.js",
+              "unwrapKey": null,
+              "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+            },
+            {
+              "name": "@gears-frontx/react",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-react.js",
+              "unwrapKey": null,
+              "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+            },
+            {
+              "name": "@gears-frontx/framework",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-framework.js",
+              "unwrapKey": null,
+              "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+            },
+            {
+              "name": "@gears-frontx/state",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-state.js",
+              "unwrapKey": null,
+              "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+            },
+            {
+              "name": "@gears-frontx/mfes",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-mfes.js",
+              "unwrapKey": null,
+              "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+            },
+            {
+              "name": "@gears-frontx/gts-plugin",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-gts-plugin.js",
+              "unwrapKey": null,
+              "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+            },
+            {
+              "name": "@gears-frontx/api",
+              "version": "0.3.0-alpha.3",
+              "chunkPath": "shared/gears-frontx-api.js",
+              "unwrapKey": null,
+              "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+            },
+            {
+              "name": "@gears-frontx/i18n",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-i18n.js",
+              "unwrapKey": null,
+              "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "version": "5.101.4",
+              "chunkPath": "shared/tanstack-react-query.js",
+              "unwrapKey": null,
+              "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+            },
+            {
+              "name": "@reduxjs/toolkit",
+              "version": "2.12.0",
+              "chunkPath": "shared/reduxjs-toolkit.js",
+              "unwrapKey": null,
+              "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+            },
+            {
+              "name": "react-redux",
+              "version": "9.3.0",
+              "chunkPath": "shared/react-redux.js",
+              "unwrapKey": null,
+              "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+            }
+          ]
+        },
+        "exposedModule": "./lifecycle-helloworld",
+        "exposeAssets": {
+          "js": {
+            "async": [
+              "assets/ar-EWDCFe0F.js",
+              "assets/bn-DgrY3utN.js",
+              "assets/cs-BD3tecbQ.js",
+              "assets/da-Cv_8USjG.js",
+              "assets/de-Cs7LFHCQ.js",
+              "assets/el-Ca4OE4Cc.js",
+              "assets/en-DOZSkZh7.js",
+              "assets/es-C6fijouW.js",
+              "assets/fa-CR0XO_Aq.js",
+              "assets/fi-CkmQFe6U.js",
+              "assets/fr-HZknqYZq.js",
+              "assets/he-CzrU-8BU.js",
+              "assets/hi-Dkok-ePm.js",
+              "assets/hu-DKNOtbUy.js",
+              "assets/id-DcEBrx20.js",
+              "assets/it-CqHp8GA7.js",
+              "assets/ja-BDLFvzX8.js",
+              "assets/ko-BgUoGx7z.js",
+              "assets/ms-D3lccp65.js",
+              "assets/nl-BXebFbSu.js",
+              "assets/no-BfW4tPPx.js",
+              "assets/pl-BftvLKBu.js",
+              "assets/pt-CrdL-uZY.js",
+              "assets/ro-BqRFYdQz.js",
+              "assets/ru-uk_uAhvl.js",
+              "assets/sv-DdhlVotb.js",
+              "assets/sw-B_zkDsgO.js",
+              "assets/ta-CdOO6tkP.js",
+              "assets/th-B9OYRfjC.js",
+              "assets/tl-1FdDheSc.js",
+              "assets/tr-HlgEfuWV.js",
+              "assets/uk-BB1SRxeq.js",
+              "assets/ur-B9UoadsK.js",
+              "assets/vi-Dlo8igjh.js",
+              "assets/zh-TW-DN_hrcXc.js",
+              "assets/zh-BYnBrnUr.js"
+            ],
+            "sync": [
+              "assets/lifecycle-helloworld-Crtjd8Xw.js"
+            ]
+          },
+          "css": {
+            "async": [],
+            "sync": [
+              "assets/kitThemeScope-ai-MhsHR.css",
+              "assets/lifecycle-helloworld-DhDcoe92.css"
+            ]
+          }
+        }
+      },
+      {
+        "id": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.profile.v1",
+        "requiredProperties": [
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.theme.v1~",
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.language.v1~"
+        ],
+        "actions": [
+          "gts.frontx.mfes.comm.action.v1~frontx.demo.action.refresh_profile.v1~"
+        ],
+        "domainActions": [],
+        "manifest": {
+          "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.demo.mfe.manifest.v1",
+          "name": "demoMfe",
+          "metaData": {
+            "name": "demoMfe",
+            "type": "app",
+            "buildInfo": {
+              "buildVersion": "1.0.0",
+              "buildName": "demoMfe"
+            },
+            "remoteEntry": {
+              "name": "remoteEntry.js",
+              "path": "",
+              "type": "module"
+            },
+            "globalName": "demoMfe",
+            "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/demo-mfe/"
+          },
+          "shared": [
+            {
+              "name": "react",
+              "version": "19.2.4",
+              "chunkPath": "shared/react.js",
+              "unwrapKey": null,
+              "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+            },
+            {
+              "name": "react-dom",
+              "version": "19.2.4",
+              "chunkPath": "shared/react-dom.js",
+              "unwrapKey": null,
+              "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+            },
+            {
+              "name": "@gears-frontx/react",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-react.js",
+              "unwrapKey": null,
+              "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+            },
+            {
+              "name": "@gears-frontx/framework",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-framework.js",
+              "unwrapKey": null,
+              "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+            },
+            {
+              "name": "@gears-frontx/state",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-state.js",
+              "unwrapKey": null,
+              "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+            },
+            {
+              "name": "@gears-frontx/mfes",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-mfes.js",
+              "unwrapKey": null,
+              "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+            },
+            {
+              "name": "@gears-frontx/gts-plugin",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-gts-plugin.js",
+              "unwrapKey": null,
+              "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+            },
+            {
+              "name": "@gears-frontx/api",
+              "version": "0.3.0-alpha.3",
+              "chunkPath": "shared/gears-frontx-api.js",
+              "unwrapKey": null,
+              "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+            },
+            {
+              "name": "@gears-frontx/i18n",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-i18n.js",
+              "unwrapKey": null,
+              "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "version": "5.101.4",
+              "chunkPath": "shared/tanstack-react-query.js",
+              "unwrapKey": null,
+              "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+            },
+            {
+              "name": "@reduxjs/toolkit",
+              "version": "2.12.0",
+              "chunkPath": "shared/reduxjs-toolkit.js",
+              "unwrapKey": null,
+              "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+            },
+            {
+              "name": "react-redux",
+              "version": "9.3.0",
+              "chunkPath": "shared/react-redux.js",
+              "unwrapKey": null,
+              "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+            }
+          ]
+        },
+        "exposedModule": "./lifecycle-profile",
+        "exposeAssets": {
+          "js": {
+            "async": [
+              "assets/ar-CV0ZZotq.js",
+              "assets/bn-CuFsxMFd.js",
+              "assets/cs-ms5vKMkW.js",
+              "assets/da-BM9y4Jip.js",
+              "assets/de-Dn0tGpg6.js",
+              "assets/el-CHyi8y92.js",
+              "assets/en-Lwd3vUCL.js",
+              "assets/es-BWytUjam.js",
+              "assets/fa-C1R_WzZ3.js",
+              "assets/fi-BYzFgjiJ.js",
+              "assets/fr-CTlugEad.js",
+              "assets/he-ChoV4FL3.js",
+              "assets/hi-avmuwKzM.js",
+              "assets/hu-Bx8x_Xc7.js",
+              "assets/id-BQaBVdaz.js",
+              "assets/it-Bc2c0FML.js",
+              "assets/ja-OQHKxrKd.js",
+              "assets/ko-C0kupUdm.js",
+              "assets/ms-BkxTQUGT.js",
+              "assets/nl-BFg_Dii9.js",
+              "assets/no-CxZxIBSg.js",
+              "assets/pl-BYtwaLVu.js",
+              "assets/pt-DUAhvw_g.js",
+              "assets/ro-BOousE7o.js",
+              "assets/ru-Bcfi-Boc.js",
+              "assets/sv-Bcjn80NO.js",
+              "assets/sw-DTwseXDa.js",
+              "assets/ta-BWhEUFiA.js",
+              "assets/th-Cq144U0p.js",
+              "assets/tl-UWsDnIpA.js",
+              "assets/tr-c_We7dq_.js",
+              "assets/uk-C6YiMPcO.js",
+              "assets/ur-C1p53Z7l.js",
+              "assets/vi-PYwfR50d.js",
+              "assets/zh-TW-CMnHypJU.js",
+              "assets/zh-D45Q2-UJ.js"
+            ],
+            "sync": [
+              "assets/lifecycle-profile-CsVq32iu.js"
+            ]
+          },
+          "css": {
+            "async": [],
+            "sync": [
+              "assets/kitThemeScope-ai-MhsHR.css",
+              "assets/lifecycle-profile-CVruDmYN.css"
+            ]
+          }
+        }
+      },
+      {
+        "id": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.theme.v1",
+        "requiredProperties": [
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.theme.v1~",
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.language.v1~"
+        ],
+        "actions": [],
+        "domainActions": [],
+        "manifest": {
+          "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.demo.mfe.manifest.v1",
+          "name": "demoMfe",
+          "metaData": {
+            "name": "demoMfe",
+            "type": "app",
+            "buildInfo": {
+              "buildVersion": "1.0.0",
+              "buildName": "demoMfe"
+            },
+            "remoteEntry": {
+              "name": "remoteEntry.js",
+              "path": "",
+              "type": "module"
+            },
+            "globalName": "demoMfe",
+            "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/demo-mfe/"
+          },
+          "shared": [
+            {
+              "name": "react",
+              "version": "19.2.4",
+              "chunkPath": "shared/react.js",
+              "unwrapKey": null,
+              "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+            },
+            {
+              "name": "react-dom",
+              "version": "19.2.4",
+              "chunkPath": "shared/react-dom.js",
+              "unwrapKey": null,
+              "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+            },
+            {
+              "name": "@gears-frontx/react",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-react.js",
+              "unwrapKey": null,
+              "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+            },
+            {
+              "name": "@gears-frontx/framework",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-framework.js",
+              "unwrapKey": null,
+              "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+            },
+            {
+              "name": "@gears-frontx/state",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-state.js",
+              "unwrapKey": null,
+              "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+            },
+            {
+              "name": "@gears-frontx/mfes",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-mfes.js",
+              "unwrapKey": null,
+              "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+            },
+            {
+              "name": "@gears-frontx/gts-plugin",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-gts-plugin.js",
+              "unwrapKey": null,
+              "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+            },
+            {
+              "name": "@gears-frontx/api",
+              "version": "0.3.0-alpha.3",
+              "chunkPath": "shared/gears-frontx-api.js",
+              "unwrapKey": null,
+              "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+            },
+            {
+              "name": "@gears-frontx/i18n",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-i18n.js",
+              "unwrapKey": null,
+              "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "version": "5.101.4",
+              "chunkPath": "shared/tanstack-react-query.js",
+              "unwrapKey": null,
+              "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+            },
+            {
+              "name": "@reduxjs/toolkit",
+              "version": "2.12.0",
+              "chunkPath": "shared/reduxjs-toolkit.js",
+              "unwrapKey": null,
+              "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+            },
+            {
+              "name": "react-redux",
+              "version": "9.3.0",
+              "chunkPath": "shared/react-redux.js",
+              "unwrapKey": null,
+              "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+            }
+          ]
+        },
+        "exposedModule": "./lifecycle-theme",
+        "exposeAssets": {
+          "js": {
+            "async": [
+              "assets/ar-hb5GIeOK.js",
+              "assets/bn-Dktuvz5E.js",
+              "assets/cs-DVaZ8C6_.js",
+              "assets/da-BUxu7QgU.js",
+              "assets/de-BrS2Fbik.js",
+              "assets/el-CzsfrJm6.js",
+              "assets/en-a7Qh6zXS.js",
+              "assets/es-BIA-eOpy.js",
+              "assets/fa-EmFWPBNK.js",
+              "assets/fi-CZ-OyknE.js",
+              "assets/fr-Duy1S3H4.js",
+              "assets/he-DT1KqdXP.js",
+              "assets/hi-CbPv7lVJ.js",
+              "assets/hu-DCy_tbt3.js",
+              "assets/id-ZvsMwaNJ.js",
+              "assets/it-YI7DEhxk.js",
+              "assets/ja-C4s0DwXv.js",
+              "assets/ko-sU293Mm1.js",
+              "assets/ms-Bjp1Kvlh.js",
+              "assets/nl-CtFWiB0k.js",
+              "assets/no-dt8WIVRW.js",
+              "assets/pl-CAB5fqRU.js",
+              "assets/pt-CAG_n5-I.js",
+              "assets/ro-CMRKi6Gk.js",
+              "assets/ru-DZBIcAe5.js",
+              "assets/sv-DTfs2YuT.js",
+              "assets/sw-SbQboeNF.js",
+              "assets/ta-DwdjztJy.js",
+              "assets/th-uhKtnvPA.js",
+              "assets/tl-DV42YhKM.js",
+              "assets/tr-CGhlh-gH.js",
+              "assets/uk-CB-CfYKK.js",
+              "assets/ur-BmbPBluN.js",
+              "assets/vi-DUH0LrSX.js",
+              "assets/zh-TW-pApU_JdR.js",
+              "assets/zh-BLvEAXaM.js"
+            ],
+            "sync": [
+              "assets/lifecycle-theme-BUAoXtOn.js"
+            ]
+          },
+          "css": {
+            "async": [],
+            "sync": [
+              "assets/kitThemeScope-ai-MhsHR.css"
+            ]
+          }
+        }
+      },
+      {
+        "id": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.widgets_host.v1",
+        "requiredProperties": [],
+        "actions": [],
+        "domainActions": [],
+        "manifest": {
+          "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.demo.mfe.manifest.v1",
+          "name": "demoMfe",
+          "metaData": {
+            "name": "demoMfe",
+            "type": "app",
+            "buildInfo": {
+              "buildVersion": "1.0.0",
+              "buildName": "demoMfe"
+            },
+            "remoteEntry": {
+              "name": "remoteEntry.js",
+              "path": "",
+              "type": "module"
+            },
+            "globalName": "demoMfe",
+            "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/demo-mfe/"
+          },
+          "shared": [
+            {
+              "name": "react",
+              "version": "19.2.4",
+              "chunkPath": "shared/react.js",
+              "unwrapKey": null,
+              "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+            },
+            {
+              "name": "react-dom",
+              "version": "19.2.4",
+              "chunkPath": "shared/react-dom.js",
+              "unwrapKey": null,
+              "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+            },
+            {
+              "name": "@gears-frontx/react",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-react.js",
+              "unwrapKey": null,
+              "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+            },
+            {
+              "name": "@gears-frontx/framework",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-framework.js",
+              "unwrapKey": null,
+              "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+            },
+            {
+              "name": "@gears-frontx/state",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-state.js",
+              "unwrapKey": null,
+              "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+            },
+            {
+              "name": "@gears-frontx/mfes",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-mfes.js",
+              "unwrapKey": null,
+              "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+            },
+            {
+              "name": "@gears-frontx/gts-plugin",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-gts-plugin.js",
+              "unwrapKey": null,
+              "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+            },
+            {
+              "name": "@gears-frontx/api",
+              "version": "0.3.0-alpha.3",
+              "chunkPath": "shared/gears-frontx-api.js",
+              "unwrapKey": null,
+              "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+            },
+            {
+              "name": "@gears-frontx/i18n",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-i18n.js",
+              "unwrapKey": null,
+              "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "version": "5.101.4",
+              "chunkPath": "shared/tanstack-react-query.js",
+              "unwrapKey": null,
+              "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+            },
+            {
+              "name": "@reduxjs/toolkit",
+              "version": "2.12.0",
+              "chunkPath": "shared/reduxjs-toolkit.js",
+              "unwrapKey": null,
+              "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+            },
+            {
+              "name": "react-redux",
+              "version": "9.3.0",
+              "chunkPath": "shared/react-redux.js",
+              "unwrapKey": null,
+              "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+            }
+          ]
+        },
+        "exposedModule": "./lifecycle-widgets-host",
+        "exposeAssets": {
+          "js": {
+            "async": [],
+            "sync": [
+              "assets/lifecycle-widgets-host-Dv6Z-nL1.js"
+            ]
+          },
+          "css": {
+            "async": [],
+            "sync": [
+              "assets/kitThemeScope-ai-MhsHR.css"
+            ]
+          }
+        }
+      },
+      {
+        "id": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.uikit.v1",
+        "requiredProperties": [
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.theme.v1~",
+          "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.language.v1~"
+        ],
+        "actions": [],
+        "domainActions": [],
+        "manifest": {
+          "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.demo.mfe.manifest.v1",
+          "name": "demoMfe",
+          "metaData": {
+            "name": "demoMfe",
+            "type": "app",
+            "buildInfo": {
+              "buildVersion": "1.0.0",
+              "buildName": "demoMfe"
+            },
+            "remoteEntry": {
+              "name": "remoteEntry.js",
+              "path": "",
+              "type": "module"
+            },
+            "globalName": "demoMfe",
+            "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/demo-mfe/"
+          },
+          "shared": [
+            {
+              "name": "react",
+              "version": "19.2.4",
+              "chunkPath": "shared/react.js",
+              "unwrapKey": null,
+              "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+            },
+            {
+              "name": "react-dom",
+              "version": "19.2.4",
+              "chunkPath": "shared/react-dom.js",
+              "unwrapKey": null,
+              "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+            },
+            {
+              "name": "@gears-frontx/react",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-react.js",
+              "unwrapKey": null,
+              "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+            },
+            {
+              "name": "@gears-frontx/framework",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-framework.js",
+              "unwrapKey": null,
+              "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+            },
+            {
+              "name": "@gears-frontx/state",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-state.js",
+              "unwrapKey": null,
+              "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+            },
+            {
+              "name": "@gears-frontx/mfes",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-mfes.js",
+              "unwrapKey": null,
+              "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+            },
+            {
+              "name": "@gears-frontx/gts-plugin",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-gts-plugin.js",
+              "unwrapKey": null,
+              "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+            },
+            {
+              "name": "@gears-frontx/api",
+              "version": "0.3.0-alpha.3",
+              "chunkPath": "shared/gears-frontx-api.js",
+              "unwrapKey": null,
+              "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+            },
+            {
+              "name": "@gears-frontx/i18n",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-i18n.js",
+              "unwrapKey": null,
+              "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "version": "5.101.4",
+              "chunkPath": "shared/tanstack-react-query.js",
+              "unwrapKey": null,
+              "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+            },
+            {
+              "name": "@reduxjs/toolkit",
+              "version": "2.12.0",
+              "chunkPath": "shared/reduxjs-toolkit.js",
+              "unwrapKey": null,
+              "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+            },
+            {
+              "name": "react-redux",
+              "version": "9.3.0",
+              "chunkPath": "shared/react-redux.js",
+              "unwrapKey": null,
+              "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+            }
+          ]
+        },
+        "exposedModule": "./lifecycle-uikit",
+        "exposeAssets": {
+          "js": {
+            "async": [
+              "assets/LayoutElements-BV_ShT-G.js",
+              "assets/NavigationElements-Dgpj0MPH.js",
+              "assets/FormElements-DggkIJy5.js",
+              "assets/ActionElements-BQ9DqsY8.js",
+              "assets/FeedbackElements-CCMaN6Oo.js",
+              "assets/DataDisplayElements-CaTecZb0.js",
+              "assets/OverlayElements-BrdADxMm.js",
+              "assets/ar-wRyjSZww.js",
+              "assets/bn-C_omUdgp.js",
+              "assets/cs-Cc67Oai7.js",
+              "assets/da-DL1WX91h.js",
+              "assets/de-DPChbUjl.js",
+              "assets/el-Epmw0EKI.js",
+              "assets/en-CZA5hgJg.js",
+              "assets/es-CsYfw9MS.js",
+              "assets/fa-CHbuQPn0.js",
+              "assets/fi-B6Qw4qBa.js",
+              "assets/fr-kRbrNylE.js",
+              "assets/he-j086qzfr.js",
+              "assets/hi-BqPOCqwn.js",
+              "assets/hu-Do5Dj5gI.js",
+              "assets/id-dobeyKUq.js",
+              "assets/it-DbZCZJ0_.js",
+              "assets/ja-B79quAtM.js",
+              "assets/ko-DUjCGTpM.js",
+              "assets/ms-Dxo5V8QO.js",
+              "assets/nl-BeWYff2m.js",
+              "assets/no-D94j7jwI.js",
+              "assets/pl-CTAecGTt.js",
+              "assets/pt-tkhJPxm9.js",
+              "assets/ro-DX93qONj.js",
+              "assets/ru-C6Ozl8Pr.js",
+              "assets/sv-BvobHunH.js",
+              "assets/sw-DWrpRLUD.js",
+              "assets/ta-BuNcZZgS.js",
+              "assets/th-DYBqXrss.js",
+              "assets/tl-BmvmF0-I.js",
+              "assets/tr-iRmMiVwA.js",
+              "assets/uk-DT0_KMhk.js",
+              "assets/ur-DGcbQKtm.js",
+              "assets/vi-BkzBSjLt.js",
+              "assets/zh-TW-B0F3AXRx.js",
+              "assets/zh-DVKAkMe3.js"
+            ],
+            "sync": [
+              "assets/lifecycle-uikit-DcAESe8V.js"
+            ]
+          },
+          "css": {
+            "async": [],
+            "sync": [
+              "assets/kitThemeScope-ai-MhsHR.css",
+              "assets/lifecycle-uikit-C-1zlofZ.css"
+            ]
+          }
+        }
+      }
+    ],
+    "extensions": [
+      {
+        "id": "gts.frontx.mfes.ext.extension.v1~frontx.screensets.layout.screen.v1~frontx.widgets.host.screen.v1",
+        "domain": "gts.frontx.mfes.ext.domain.v1~frontx.screensets.layout.screen.v1",
+        "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.widgets_host.v1",
+        "route": "/widgets-host",
+        "presentation": {
+          "label": "Widgets Host",
+          "icon": "lucide:layout-grid",
+          "order": 200
+        }
+      },
+      {
+        "id": "gts.frontx.mfes.ext.extension.v1~frontx.screensets.layout.screen.v1~frontx.demo.screens.helloworld.v1",
+        "domain": "gts.frontx.mfes.ext.domain.v1~frontx.screensets.layout.screen.v1",
+        "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.helloworld.v1",
+        "route": "/hello-world",
+        "presentation": {
+          "label": "Hello World",
+          "icon": "lucide:globe",
+          "order": 10
+        }
+      },
+      {
+        "id": "gts.frontx.mfes.ext.extension.v1~frontx.screensets.layout.screen.v1~frontx.demo.screens.profile.v1",
+        "domain": "gts.frontx.mfes.ext.domain.v1~frontx.screensets.layout.screen.v1",
+        "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.profile.v1",
+        "route": "/profile",
+        "presentation": {
+          "label": "Profile",
+          "icon": "lucide:user",
+          "order": 20
+        }
+      },
+      {
+        "id": "gts.frontx.mfes.ext.extension.v1~frontx.screensets.layout.screen.v1~frontx.demo.screens.theme.v1",
+        "domain": "gts.frontx.mfes.ext.domain.v1~frontx.screensets.layout.screen.v1",
+        "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.theme.v1",
+        "route": "/current-theme",
+        "presentation": {
+          "label": "Current Theme",
+          "icon": "lucide:palette",
+          "order": 30
+        }
+      },
+      {
+        "id": "gts.frontx.mfes.ext.extension.v1~frontx.screensets.layout.screen.v1~frontx.demo.screens.uikit.v1",
+        "domain": "gts.frontx.mfes.ext.domain.v1~frontx.screensets.layout.screen.v1",
+        "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.demo.mfe.uikit.v1",
+        "route": "/uikit-elements",
+        "presentation": {
+          "label": "UIKit Elements",
+          "icon": "lucide:component",
+          "order": 40
+        }
+      }
+    ],
+    "schemas": [
+      {
+        "$id": "gts://gts.frontx.mfes.comm.action.v1~frontx.demo.action.refresh_profile.v1~",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$comment": "Self-contained and closed: re-declares every property action.v1 would otherwise provide and rejects any undeclared field, on itself and on its own payload.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "x-gts-ref": "/$id"
+          },
+          "target": {
+            "x-gts-ref": "gts.frontx.mfes.ext.extension.v1~frontx.screensets.layout.screen.v1~frontx.demo.screens.profile.v1"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": false
+          },
+          "timeout": {
+            "type": "number",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "type",
+          "target"
+        ]
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.widgets.fixture_a.manifest.v1",
+      "name": "widgetsFixtureA",
+      "metaData": {
+        "name": "widgetsFixtureA",
+        "type": "app",
+        "buildInfo": {
+          "buildVersion": "1.0.0",
+          "buildName": "widgetsFixtureA"
+        },
+        "remoteEntry": {
+          "name": "remoteEntry.js",
+          "path": "",
+          "type": "module"
+        },
+        "globalName": "widgetsFixtureA",
+        "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/widgets-fixture-a/"
+      },
+      "shared": [
+        {
+          "name": "react",
+          "version": "19.2.4",
+          "chunkPath": "shared/react.js",
+          "unwrapKey": null,
+          "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+        },
+        {
+          "name": "react-dom",
+          "version": "19.2.4",
+          "chunkPath": "shared/react-dom.js",
+          "unwrapKey": null,
+          "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+        },
+        {
+          "name": "@gears-frontx/react",
+          "version": "0.2.0-alpha.10",
+          "chunkPath": "shared/gears-frontx-react.js",
+          "unwrapKey": null,
+          "contentHash": "cc3c4706b8e7a9c04f5614751a3d7f6110db4c246f96083d44eca85f4fda6599"
+        },
+        {
+          "name": "@gears-frontx/routing-tanstack",
+          "version": "0.3.0-alpha.3",
+          "chunkPath": "shared/gears-frontx-routing-tanstack.js",
+          "unwrapKey": null,
+          "contentHash": "ee930a131ed1a76af896059fae33ad8bf69a6b98f3c325c3d2e4c368dd084902"
+        },
+        {
+          "name": "@gears-frontx/framework",
+          "version": "0.2.0-alpha.10",
+          "chunkPath": "shared/gears-frontx-framework.js",
+          "unwrapKey": null,
+          "contentHash": "45da561f42e3a873cc9fbfa399d0095eaac283b817f95d9a4e3099126c452a2a"
+        },
+        {
+          "name": "@gears-frontx/state",
+          "version": "0.2.0-alpha.1",
+          "chunkPath": "shared/gears-frontx-state.js",
+          "unwrapKey": null,
+          "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+        },
+        {
+          "name": "@gears-frontx/mfes",
+          "version": "0.3.0-alpha.11",
+          "chunkPath": "shared/gears-frontx-mfes.js",
+          "unwrapKey": null,
+          "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+        },
+        {
+          "name": "@gears-frontx/gts-plugin",
+          "version": "0.3.0-alpha.11",
+          "chunkPath": "shared/gears-frontx-gts-plugin.js",
+          "unwrapKey": null,
+          "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+        },
+        {
+          "name": "@gears-frontx/api",
+          "version": "0.3.0-alpha.3",
+          "chunkPath": "shared/gears-frontx-api.js",
+          "unwrapKey": null,
+          "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+        },
+        {
+          "name": "@gears-frontx/i18n",
+          "version": "0.2.0-alpha.1",
+          "chunkPath": "shared/gears-frontx-i18n.js",
+          "unwrapKey": null,
+          "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+        },
+        {
+          "name": "@tanstack/react-query",
+          "version": "5.101.4",
+          "chunkPath": "shared/tanstack-react-query.js",
+          "unwrapKey": null,
+          "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+        },
+        {
+          "name": "@reduxjs/toolkit",
+          "version": "2.12.0",
+          "chunkPath": "shared/reduxjs-toolkit.js",
+          "unwrapKey": null,
+          "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+        },
+        {
+          "name": "react-redux",
+          "version": "9.3.0",
+          "chunkPath": "shared/react-redux.js",
+          "unwrapKey": null,
+          "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+        }
+      ]
+    },
+    "entries": [
+      {
+        "id": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.widgets.fixture_a.entry.v1",
+        "requiredProperties": [],
+        "actions": [
+          "gts.frontx.mfes.comm.action.v1~frontx.widgets.test.widget_ping.v1~"
+        ],
+        "domainActions": [
+          "gts.frontx.mfes.comm.action.v1~frontx.mfes.ext.mount_ext.v1~",
+          "gts.frontx.mfes.comm.action.v1~frontx.mfes.ext.unmount_ext.v1~"
+        ],
+        "manifest": {
+          "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.widgets.fixture_a.manifest.v1",
+          "name": "widgetsFixtureA",
+          "metaData": {
+            "name": "widgetsFixtureA",
+            "type": "app",
+            "buildInfo": {
+              "buildVersion": "1.0.0",
+              "buildName": "widgetsFixtureA"
+            },
+            "remoteEntry": {
+              "name": "remoteEntry.js",
+              "path": "",
+              "type": "module"
+            },
+            "globalName": "widgetsFixtureA",
+            "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/widgets-fixture-a/"
+          },
+          "shared": [
+            {
+              "name": "react",
+              "version": "19.2.4",
+              "chunkPath": "shared/react.js",
+              "unwrapKey": null,
+              "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+            },
+            {
+              "name": "react-dom",
+              "version": "19.2.4",
+              "chunkPath": "shared/react-dom.js",
+              "unwrapKey": null,
+              "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+            },
+            {
+              "name": "@gears-frontx/react",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-react.js",
+              "unwrapKey": null,
+              "contentHash": "cc3c4706b8e7a9c04f5614751a3d7f6110db4c246f96083d44eca85f4fda6599"
+            },
+            {
+              "name": "@gears-frontx/routing-tanstack",
+              "version": "0.3.0-alpha.3",
+              "chunkPath": "shared/gears-frontx-routing-tanstack.js",
+              "unwrapKey": null,
+              "contentHash": "ee930a131ed1a76af896059fae33ad8bf69a6b98f3c325c3d2e4c368dd084902"
+            },
+            {
+              "name": "@gears-frontx/framework",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-framework.js",
+              "unwrapKey": null,
+              "contentHash": "45da561f42e3a873cc9fbfa399d0095eaac283b817f95d9a4e3099126c452a2a"
+            },
+            {
+              "name": "@gears-frontx/state",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-state.js",
+              "unwrapKey": null,
+              "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+            },
+            {
+              "name": "@gears-frontx/mfes",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-mfes.js",
+              "unwrapKey": null,
+              "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+            },
+            {
+              "name": "@gears-frontx/gts-plugin",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-gts-plugin.js",
+              "unwrapKey": null,
+              "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+            },
+            {
+              "name": "@gears-frontx/api",
+              "version": "0.3.0-alpha.3",
+              "chunkPath": "shared/gears-frontx-api.js",
+              "unwrapKey": null,
+              "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+            },
+            {
+              "name": "@gears-frontx/i18n",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-i18n.js",
+              "unwrapKey": null,
+              "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "version": "5.101.4",
+              "chunkPath": "shared/tanstack-react-query.js",
+              "unwrapKey": null,
+              "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+            },
+            {
+              "name": "@reduxjs/toolkit",
+              "version": "2.12.0",
+              "chunkPath": "shared/reduxjs-toolkit.js",
+              "unwrapKey": null,
+              "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+            },
+            {
+              "name": "react-redux",
+              "version": "9.3.0",
+              "chunkPath": "shared/react-redux.js",
+              "unwrapKey": null,
+              "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+            }
+          ]
+        },
+        "exposedModule": "./lifecycle",
+        "exposeAssets": {
+          "js": {
+            "async": [],
+            "sync": [
+              "assets/lifecycle-CYEtryEY.js"
+            ]
+          },
+          "css": {
+            "async": [],
+            "sync": []
+          }
+        }
+      }
+    ],
+    "extensions": [
+      {
+        "id": "gts.frontx.mfes.ext.extension.v1~frontx.widgets.fixture_a.widget_alpha.v1",
+        "domain": "gts.frontx.mfes.ext.domain.v1~frontx.widgets.area.main.v1",
+        "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.widgets.fixture_a.entry.v1",
+        "route": "/widget-alpha"
+      },
+      {
+        "id": "gts.frontx.mfes.ext.extension.v1~frontx.widgets.fixture_a.widget_beta.v1",
+        "domain": "gts.frontx.mfes.ext.domain.v1~frontx.widgets.area.main.v1",
+        "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.widgets.fixture_a.entry.v1",
+        "route": "/widget-beta"
+      }
+    ],
+    "schemas": [
+      {
+        "$id": "gts://gts.frontx.mfes.comm.action.v1~frontx.widgets.test.widget_ping.v1~",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$comment": "Derived Action type for the duplicate-entry-instance stress test. Self-contained and closed: re-declares every property the base action.v1 would otherwise provide and rejects any undeclared field, on itself and on its own payload (cpt-frontx-dod-gts-type-provider-infra-schema-ownership) \u2014 no fields are added or narrowed beyond the base contract. The mediator routes by (extensionInstanceId, actionType) so an action targeted at one instance does not reach another; per-entry validation enforces that only entries declaring this action in their actions[] (fixture-a's entry) accept it.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "x-gts-ref": "/$id",
+            "$comment": "Self-reference to this action's schema type ID"
+          },
+          "target": {
+            "x-gts-ref": "gts.frontx.mfes.ext.extension.v1~*",
+            "$comment": "Type ID of the target extension instance"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "$comment": "No payload fields \u2014 a ping carries nothing"
+          },
+          "timeout": {
+            "type": "number",
+            "minimum": 1,
+            "$comment": "Optional timeout override in milliseconds"
+          }
+        },
+        "required": [
+          "type",
+          "target"
+        ]
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.widgets.fixture_b.manifest.v1",
+      "name": "widgetsFixtureB",
+      "metaData": {
+        "name": "widgetsFixtureB",
+        "type": "app",
+        "buildInfo": {
+          "buildVersion": "1.0.0",
+          "buildName": "widgetsFixtureB"
+        },
+        "remoteEntry": {
+          "name": "remoteEntry.js",
+          "path": "",
+          "type": "module"
+        },
+        "globalName": "widgetsFixtureB",
+        "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/widgets-fixture-b/"
+      },
+      "shared": [
+        {
+          "name": "react",
+          "version": "19.2.4",
+          "chunkPath": "shared/react.js",
+          "unwrapKey": null,
+          "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+        },
+        {
+          "name": "react-dom",
+          "version": "19.2.4",
+          "chunkPath": "shared/react-dom.js",
+          "unwrapKey": null,
+          "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+        },
+        {
+          "name": "@gears-frontx/react",
+          "version": "0.2.0-alpha.10",
+          "chunkPath": "shared/gears-frontx-react.js",
+          "unwrapKey": null,
+          "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+        },
+        {
+          "name": "@gears-frontx/framework",
+          "version": "0.2.0-alpha.10",
+          "chunkPath": "shared/gears-frontx-framework.js",
+          "unwrapKey": null,
+          "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+        },
+        {
+          "name": "@gears-frontx/state",
+          "version": "0.2.0-alpha.1",
+          "chunkPath": "shared/gears-frontx-state.js",
+          "unwrapKey": null,
+          "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+        },
+        {
+          "name": "@gears-frontx/mfes",
+          "version": "0.3.0-alpha.11",
+          "chunkPath": "shared/gears-frontx-mfes.js",
+          "unwrapKey": null,
+          "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+        },
+        {
+          "name": "@gears-frontx/gts-plugin",
+          "version": "0.3.0-alpha.11",
+          "chunkPath": "shared/gears-frontx-gts-plugin.js",
+          "unwrapKey": null,
+          "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+        },
+        {
+          "name": "@gears-frontx/api",
+          "version": "0.3.0-alpha.3",
+          "chunkPath": "shared/gears-frontx-api.js",
+          "unwrapKey": null,
+          "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+        },
+        {
+          "name": "@gears-frontx/i18n",
+          "version": "0.2.0-alpha.1",
+          "chunkPath": "shared/gears-frontx-i18n.js",
+          "unwrapKey": null,
+          "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+        },
+        {
+          "name": "@tanstack/react-query",
+          "version": "5.101.4",
+          "chunkPath": "shared/tanstack-react-query.js",
+          "unwrapKey": null,
+          "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+        },
+        {
+          "name": "@reduxjs/toolkit",
+          "version": "2.12.0",
+          "chunkPath": "shared/reduxjs-toolkit.js",
+          "unwrapKey": null,
+          "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+        },
+        {
+          "name": "react-redux",
+          "version": "9.3.0",
+          "chunkPath": "shared/react-redux.js",
+          "unwrapKey": null,
+          "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+        }
+      ]
+    },
+    "entries": [
+      {
+        "id": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.widgets.fixture_b.entry.v1",
+        "requiredProperties": [],
+        "actions": [],
+        "domainActions": [
+          "gts.frontx.mfes.comm.action.v1~frontx.mfes.ext.mount_ext.v1~",
+          "gts.frontx.mfes.comm.action.v1~frontx.mfes.ext.unmount_ext.v1~"
+        ],
+        "manifest": {
+          "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.widgets.fixture_b.manifest.v1",
+          "name": "widgetsFixtureB",
+          "metaData": {
+            "name": "widgetsFixtureB",
+            "type": "app",
+            "buildInfo": {
+              "buildVersion": "1.0.0",
+              "buildName": "widgetsFixtureB"
+            },
+            "remoteEntry": {
+              "name": "remoteEntry.js",
+              "path": "",
+              "type": "module"
+            },
+            "globalName": "widgetsFixtureB",
+            "publicPath": "__FRONTX_EXAMPLE_ORIGIN__/examples/shell-mfe/mfes/widgets-fixture-b/"
+          },
+          "shared": [
+            {
+              "name": "react",
+              "version": "19.2.4",
+              "chunkPath": "shared/react.js",
+              "unwrapKey": null,
+              "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+            },
+            {
+              "name": "react-dom",
+              "version": "19.2.4",
+              "chunkPath": "shared/react-dom.js",
+              "unwrapKey": null,
+              "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+            },
+            {
+              "name": "@gears-frontx/react",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-react.js",
+              "unwrapKey": null,
+              "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+            },
+            {
+              "name": "@gears-frontx/framework",
+              "version": "0.2.0-alpha.10",
+              "chunkPath": "shared/gears-frontx-framework.js",
+              "unwrapKey": null,
+              "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+            },
+            {
+              "name": "@gears-frontx/state",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-state.js",
+              "unwrapKey": null,
+              "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+            },
+            {
+              "name": "@gears-frontx/mfes",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-mfes.js",
+              "unwrapKey": null,
+              "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+            },
+            {
+              "name": "@gears-frontx/gts-plugin",
+              "version": "0.3.0-alpha.11",
+              "chunkPath": "shared/gears-frontx-gts-plugin.js",
+              "unwrapKey": null,
+              "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+            },
+            {
+              "name": "@gears-frontx/api",
+              "version": "0.3.0-alpha.3",
+              "chunkPath": "shared/gears-frontx-api.js",
+              "unwrapKey": null,
+              "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+            },
+            {
+              "name": "@gears-frontx/i18n",
+              "version": "0.2.0-alpha.1",
+              "chunkPath": "shared/gears-frontx-i18n.js",
+              "unwrapKey": null,
+              "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "version": "5.101.4",
+              "chunkPath": "shared/tanstack-react-query.js",
+              "unwrapKey": null,
+              "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+            },
+            {
+              "name": "@reduxjs/toolkit",
+              "version": "2.12.0",
+              "chunkPath": "shared/reduxjs-toolkit.js",
+              "unwrapKey": null,
+              "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+            },
+            {
+              "name": "react-redux",
+              "version": "9.3.0",
+              "chunkPath": "shared/react-redux.js",
+              "unwrapKey": null,
+              "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+            }
+          ]
+        },
+        "exposedModule": "./lifecycle",
+        "exposeAssets": {
+          "js": {
+            "async": [],
+            "sync": [
+              "assets/lifecycle-CiFXZXp_.js"
+            ]
+          },
+          "css": {
+            "async": [],
+            "sync": []
+          }
+        }
+      }
+    ],
+    "extensions": [
+      {
+        "id": "gts.frontx.mfes.ext.extension.v1~frontx.widgets.fixture_b.widget.v1",
+        "domain": "gts.frontx.mfes.ext.domain.v1~frontx.widgets.area.main.v1",
+        "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.widgets.fixture_b.entry.v1",
+        "route": "/widget-b"
+      }
+    ]
+  }
+]

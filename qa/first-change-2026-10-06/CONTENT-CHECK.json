@@ -1,0 +1,11 @@
+{
+  "localLinkCount": 122,
+  "missingLinks": [],
+  "sourcePathsVerified": [
+    "https://github.com/constructorfabric/gears-frontx-templates/blob/3b6cddb2a700ae76bc5e1991204e127de566d597/template-mfe/src-app/mfe_packages/_blank-mfe/src/screens/home/HomeScreen.tsx",
+    "https://github.com/constructorfabric/gears-frontx-templates/blob/3b6cddb2a700ae76bc5e1991204e127de566d597/template-mfe/src-app/mfe_packages/_blank-mfe/src/screens/home/i18n/en.json",
+    "https://github.com/constructorfabric/gears-frontx-templates/blob/3b6cddb2a700ae76bc5e1991204e127de566d597/template-mfe/src-app/mfe_packages/_blank-mfe/mfe.json"
+  ],
+  "translation": "All seven keys retained; only title and description changed",
+  "plainText": "Both code blocks exactly match HTML"
+}

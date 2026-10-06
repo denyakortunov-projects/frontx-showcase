@@ -6,6 +6,7 @@
   width: fit-content;
   max-width: 100%;
   height: auto;
+  min-height: 44px;
   gap: 3px;
   padding: 4px;
   border: 1px solid var(--border);
@@ -74,3 +75,7 @@
     padding-inline: 10px;
   }
 }
+
+/* The kit may set a fixed height on its size variant. Keep room for the shared
+   trigger, padding and border when this composition is rendered by Astro. */
+.section-tabs:is([role="tablist"], [data-segments])[data-size="sm"] { min-height: 36px; }

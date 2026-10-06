@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-06",
+  "source": "3b6cddb2a700ae76bc5e1991204e127de566d597",
+  "cli": "0.3.0-alpha.7",
+  "node": "25.1.0",
+  "npm": "11.6.2",
+  "scratch": "/private/tmp/frontx-quickstart.x0H65i",
+  "inventory": "FRONTX_INVENTORY_ROOT (dedicated temporary inventory)",
+  "changedUpstreamSources": false,
+  "checks": {
+    "npmPublishedCLI": true,
+    "githubTemplateInstall": true,
+    "seed": true,
+    "add": true,
+    "dependencyInstall": true,
+    "buildWithExamples": true,
+    "typeCheckWithExamples": true,
+    "devAll": true,
+    "helloWorld": true,
+    "blankHome": true,
+    "backAndReload": true,
+    "exactGeneratedGuideScaffoldReplay": true
+  },
+  "unverified": [
+    "minimum Node version",
+    "Windows",
+    "production deployment",
+    "authentication",
+    "upgrades",
+    "AI Kit install"
+  ],
+  "audit": {
+    "low": 1,
+    "moderate": 11,
+    "high": 11,
+    "critical": 0
+  },
+  "lockfileSha256": "b5a6ef3e29676e0d4fc69bcc6be11e8dfdb410fa184aeeb774d3bc6f3e9fd6d3",
+  "fixtureServersStopped": true
+}

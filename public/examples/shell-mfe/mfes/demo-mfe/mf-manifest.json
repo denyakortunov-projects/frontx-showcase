@@ -1,0 +1,289 @@
+{
+  "id": "demoMfe",
+  "name": "demoMfe",
+  "metaData": {
+    "name": "demoMfe",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "demoMfe"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.js",
+      "path": "",
+      "type": "module"
+    },
+    "ssrRemoteEntry": {
+      "name": "remoteEntry.ssr.js",
+      "path": "",
+      "type": "module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "@mf-types.zip",
+      "api": "@mf-types.d.ts"
+    },
+    "globalName": "demoMfe",
+    "pluginVersion": "0.2.5",
+    "publicPath": "auto"
+  },
+  "shared": [],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "demoMfe:lifecycle-helloworld",
+      "name": "lifecycle-helloworld",
+      "assets": {
+        "js": {
+          "async": [
+            "assets/ar-EWDCFe0F.js",
+            "assets/bn-DgrY3utN.js",
+            "assets/cs-BD3tecbQ.js",
+            "assets/da-Cv_8USjG.js",
+            "assets/de-Cs7LFHCQ.js",
+            "assets/el-Ca4OE4Cc.js",
+            "assets/en-DOZSkZh7.js",
+            "assets/es-C6fijouW.js",
+            "assets/fa-CR0XO_Aq.js",
+            "assets/fi-CkmQFe6U.js",
+            "assets/fr-HZknqYZq.js",
+            "assets/he-CzrU-8BU.js",
+            "assets/hi-Dkok-ePm.js",
+            "assets/hu-DKNOtbUy.js",
+            "assets/id-DcEBrx20.js",
+            "assets/it-CqHp8GA7.js",
+            "assets/ja-BDLFvzX8.js",
+            "assets/ko-BgUoGx7z.js",
+            "assets/ms-D3lccp65.js",
+            "assets/nl-BXebFbSu.js",
+            "assets/no-BfW4tPPx.js",
+            "assets/pl-BftvLKBu.js",
+            "assets/pt-CrdL-uZY.js",
+            "assets/ro-BqRFYdQz.js",
+            "assets/ru-uk_uAhvl.js",
+            "assets/sv-DdhlVotb.js",
+            "assets/sw-B_zkDsgO.js",
+            "assets/ta-CdOO6tkP.js",
+            "assets/th-B9OYRfjC.js",
+            "assets/tl-1FdDheSc.js",
+            "assets/tr-HlgEfuWV.js",
+            "assets/uk-BB1SRxeq.js",
+            "assets/ur-B9UoadsK.js",
+            "assets/vi-Dlo8igjh.js",
+            "assets/zh-TW-DN_hrcXc.js",
+            "assets/zh-BYnBrnUr.js"
+          ],
+          "sync": [
+            "assets/lifecycle-helloworld-Crtjd8Xw.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "assets/kitThemeScope-ai-MhsHR.css",
+            "assets/lifecycle-helloworld-DhDcoe92.css"
+          ]
+        }
+      },
+      "path": "./lifecycle-helloworld"
+    },
+    {
+      "id": "demoMfe:lifecycle-profile",
+      "name": "lifecycle-profile",
+      "assets": {
+        "js": {
+          "async": [
+            "assets/ar-CV0ZZotq.js",
+            "assets/bn-CuFsxMFd.js",
+            "assets/cs-ms5vKMkW.js",
+            "assets/da-BM9y4Jip.js",
+            "assets/de-Dn0tGpg6.js",
+            "assets/el-CHyi8y92.js",
+            "assets/en-Lwd3vUCL.js",
+            "assets/es-BWytUjam.js",
+            "assets/fa-C1R_WzZ3.js",
+            "assets/fi-BYzFgjiJ.js",
+            "assets/fr-CTlugEad.js",
+            "assets/he-ChoV4FL3.js",
+            "assets/hi-avmuwKzM.js",
+            "assets/hu-Bx8x_Xc7.js",
+            "assets/id-BQaBVdaz.js",
+            "assets/it-Bc2c0FML.js",
+            "assets/ja-OQHKxrKd.js",
+            "assets/ko-C0kupUdm.js",
+            "assets/ms-BkxTQUGT.js",
+            "assets/nl-BFg_Dii9.js",
+            "assets/no-CxZxIBSg.js",
+            "assets/pl-BYtwaLVu.js",
+            "assets/pt-DUAhvw_g.js",
+            "assets/ro-BOousE7o.js",
+            "assets/ru-Bcfi-Boc.js",
+            "assets/sv-Bcjn80NO.js",
+            "assets/sw-DTwseXDa.js",
+            "assets/ta-BWhEUFiA.js",
+            "assets/th-Cq144U0p.js",
+            "assets/tl-UWsDnIpA.js",
+            "assets/tr-c_We7dq_.js",
+            "assets/uk-C6YiMPcO.js",
+            "assets/ur-C1p53Z7l.js",
+            "assets/vi-PYwfR50d.js",
+            "assets/zh-TW-CMnHypJU.js",
+            "assets/zh-D45Q2-UJ.js"
+          ],
+          "sync": [
+            "assets/lifecycle-profile-CsVq32iu.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "assets/kitThemeScope-ai-MhsHR.css",
+            "assets/lifecycle-profile-CVruDmYN.css"
+          ]
+        }
+      },
+      "path": "./lifecycle-profile"
+    },
+    {
+      "id": "demoMfe:lifecycle-theme",
+      "name": "lifecycle-theme",
+      "assets": {
+        "js": {
+          "async": [
+            "assets/ar-hb5GIeOK.js",
+            "assets/bn-Dktuvz5E.js",
+            "assets/cs-DVaZ8C6_.js",
+            "assets/da-BUxu7QgU.js",
+            "assets/de-BrS2Fbik.js",
+            "assets/el-CzsfrJm6.js",
+            "assets/en-a7Qh6zXS.js",
+            "assets/es-BIA-eOpy.js",
+            "assets/fa-EmFWPBNK.js",
+            "assets/fi-CZ-OyknE.js",
+            "assets/fr-Duy1S3H4.js",
+            "assets/he-DT1KqdXP.js",
+            "assets/hi-CbPv7lVJ.js",
+            "assets/hu-DCy_tbt3.js",
+            "assets/id-ZvsMwaNJ.js",
+            "assets/it-YI7DEhxk.js",
+            "assets/ja-C4s0DwXv.js",
+            "assets/ko-sU293Mm1.js",
+            "assets/ms-Bjp1Kvlh.js",
+            "assets/nl-CtFWiB0k.js",
+            "assets/no-dt8WIVRW.js",
+            "assets/pl-CAB5fqRU.js",
+            "assets/pt-CAG_n5-I.js",
+            "assets/ro-CMRKi6Gk.js",
+            "assets/ru-DZBIcAe5.js",
+            "assets/sv-DTfs2YuT.js",
+            "assets/sw-SbQboeNF.js",
+            "assets/ta-DwdjztJy.js",
+            "assets/th-uhKtnvPA.js",
+            "assets/tl-DV42YhKM.js",
+            "assets/tr-CGhlh-gH.js",
+            "assets/uk-CB-CfYKK.js",
+            "assets/ur-BmbPBluN.js",
+            "assets/vi-DUH0LrSX.js",
+            "assets/zh-TW-pApU_JdR.js",
+            "assets/zh-BLvEAXaM.js"
+          ],
+          "sync": [
+            "assets/lifecycle-theme-BUAoXtOn.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "assets/kitThemeScope-ai-MhsHR.css"
+          ]
+        }
+      },
+      "path": "./lifecycle-theme"
+    },
+    {
+      "id": "demoMfe:lifecycle-uikit",
+      "name": "lifecycle-uikit",
+      "assets": {
+        "js": {
+          "async": [
+            "assets/LayoutElements-BV_ShT-G.js",
+            "assets/NavigationElements-Dgpj0MPH.js",
+            "assets/FormElements-DggkIJy5.js",
+            "assets/ActionElements-BQ9DqsY8.js",
+            "assets/FeedbackElements-CCMaN6Oo.js",
+            "assets/DataDisplayElements-CaTecZb0.js",
+            "assets/OverlayElements-BrdADxMm.js",
+            "assets/ar-wRyjSZww.js",
+            "assets/bn-C_omUdgp.js",
+            "assets/cs-Cc67Oai7.js",
+            "assets/da-DL1WX91h.js",
+            "assets/de-DPChbUjl.js",
+            "assets/el-Epmw0EKI.js",
+            "assets/en-CZA5hgJg.js",
+            "assets/es-CsYfw9MS.js",
+            "assets/fa-CHbuQPn0.js",
+            "assets/fi-B6Qw4qBa.js",
+            "assets/fr-kRbrNylE.js",
+            "assets/he-j086qzfr.js",
+            "assets/hi-BqPOCqwn.js",
+            "assets/hu-Do5Dj5gI.js",
+            "assets/id-dobeyKUq.js",
+            "assets/it-DbZCZJ0_.js",
+            "assets/ja-B79quAtM.js",
+            "assets/ko-DUjCGTpM.js",
+            "assets/ms-Dxo5V8QO.js",
+            "assets/nl-BeWYff2m.js",
+            "assets/no-D94j7jwI.js",
+            "assets/pl-CTAecGTt.js",
+            "assets/pt-tkhJPxm9.js",
+            "assets/ro-DX93qONj.js",
+            "assets/ru-C6Ozl8Pr.js",
+            "assets/sv-BvobHunH.js",
+            "assets/sw-DWrpRLUD.js",
+            "assets/ta-BuNcZZgS.js",
+            "assets/th-DYBqXrss.js",
+            "assets/tl-BmvmF0-I.js",
+            "assets/tr-iRmMiVwA.js",
+            "assets/uk-DT0_KMhk.js",
+            "assets/ur-DGcbQKtm.js",
+            "assets/vi-BkzBSjLt.js",
+            "assets/zh-TW-B0F3AXRx.js",
+            "assets/zh-DVKAkMe3.js"
+          ],
+          "sync": [
+            "assets/lifecycle-uikit-DcAESe8V.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "assets/kitThemeScope-ai-MhsHR.css",
+            "assets/lifecycle-uikit-C-1zlofZ.css"
+          ]
+        }
+      },
+      "path": "./lifecycle-uikit"
+    },
+    {
+      "id": "demoMfe:lifecycle-widgets-host",
+      "name": "lifecycle-widgets-host",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "assets/lifecycle-widgets-host-Dv6Z-nL1.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "assets/kitThemeScope-ai-MhsHR.css"
+          ]
+        }
+      },
+      "path": "./lifecycle-widgets-host"
+    }
+  ],
+  "websiteAdapterNote": "Modified: include the existing shared UI Kit stylesheet omitted from this pinned manifest."
+}

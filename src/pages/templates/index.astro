@@ -1,0 +1,7 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import {templates} from '../../site/content';
+import {PanelsTopLeft, Layers, ScanLine, ArrowUpRight} from 'lucide-react';
+const icons=[PanelsTopLeft,Layers,ScanLine];
+---
+<SiteLayout title="Templates · FrontX" section="templates"><div class="site-container"><header class="page-intro"><p class="eyebrow">FRONTX / TEMPLATES</p><h1>A foundation for your project.</h1><p>Choose a starting shell, add a workspace for UI units, or bring design rules into an existing project.</p></header><div class="page-content"><div class="template-grid">{templates.map((t,i)=>{const Icon=icons[i];return <a class={`template-card template-${t.slug}`} href={`/templates/${t.slug}/`}><div class="template-art"><Icon size={52}/></div><div class="template-body"><span class="card-category">{t.type}</span><h3>{t.name}<ArrowUpRight size={17}/></h3><p>{t.detail}</p><p class="fine-print">Source version {t.version}</p></div></a>})}</div><p class="fine-print">Three templates identified in the source repository. Source versions are not a tested compatibility set.</p></div></div></SiteLayout>

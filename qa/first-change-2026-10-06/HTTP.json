@@ -1,0 +1,37 @@
+[
+  {
+    "path": "/docs/",
+    "status": 200,
+    "bytes": 13032
+  },
+  {
+    "path": "/docs/first-change/",
+    "status": 200,
+    "bytes": 27446
+  },
+  {
+    "path": "/docs/first-change.md",
+    "status": 200,
+    "bytes": 4534
+  },
+  {
+    "path": "/get-started/",
+    "status": 200,
+    "bytes": 29425
+  },
+  {
+    "path": "/get-started/shell-mfe.md",
+    "status": 200,
+    "bytes": 3769
+  },
+  {
+    "path": "/templates/mfe/",
+    "status": 200,
+    "bytes": 55743
+  },
+  {
+    "path": "/showcase/?page=handoff",
+    "status": 200,
+    "bytes": 669
+  }
+]

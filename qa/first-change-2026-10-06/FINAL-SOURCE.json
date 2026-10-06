@@ -1,0 +1,17 @@
+{
+  "files": {
+    "src/layouts/SiteLayout.astro": "98916101de6c7f169a8a54a83d6d605791332f68f3385541fcf0cfe252ace3ae",
+    "src/pages/get-started.astro": "22d0ac3a441c866e0d1f0395074a7e51d520c4c1e3782ae5a30eb3b50c98be38",
+    "src/pages/get-started/shell-mfe.md.ts": "ccdec6a094b5395d45408b62d50b67c5e693bc6081acf612d42cc8643bea77e4",
+    "src/pages/templates/[slug].astro": "0b871878f965dfd1c389689f3e4f24260127006b9475a86f78db4fcaeb682bce",
+    "src/pages/docs/index.astro": "6025cc936a18ddf96f21d5797964e4879ffa091c4076d7b58a1f1854d6b54fde",
+    "src/pages/docs/first-change.astro": "343f6cbcaadef22369469e866dbdc3f520b1a194fb946b5f7153ef14b52fab40",
+    "src/pages/docs/first-change.md.ts": "35878b31a510aab77d1ba0caa7151d2f3674d28a570b10e45bb1daf7f40b15a0",
+    "src/site/first-change.ts": "29177a6b3fef0b2492edcec04bc16f06a8d2af0b4e2895ba16d46fd7e8a6f2bc",
+    "src/site/DocsNav.astro": "d6b1f6b6166b3edb84606526a3180f3b107461f9925773bc813515fde0245252",
+    "src/site/docs.css": "216c79a58bea0ed7bac7612f4f169719ba48143659da2decb8960ef5d8c30f4b",
+    "src/site/DOCS.md": "26b9890c586cb7724b69d9de0ad289272c2ad9bdbc0acdcc6b86acba4dff1492"
+  },
+  "publication": "not deployed",
+  "designAcceptance": "awaiting user review"
+}

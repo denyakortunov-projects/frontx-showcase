@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "index.html",
+    "libraries/index.html",
+    "templates/index.html",
+    "templates/guardrails/index.html",
+    "templates/shell/index.html",
+    "templates/mfe/index.html",
+    "showcase/index.html",
+    "get-started/index.html"
+  ],
+  "localDestinations": 14,
+  "brokenLocalDestinations": [],
+  "changedExistingSourceFiles": [
+    "src/main.tsx",
+    "src/style.css"
+  ],
+  "tokensAndStylesPreserved": true,
+  "http": {
+    "/": 200,
+    "/_astro/SiteLayout.Cjw5H4dV.css": 200,
+    "/_astro/index.BopfPwMW.css": 200,
+    "/favicon.svg": 200,
+    "/get-started/": 200,
+    "/handoff/README.md": 200,
+    "/handoff/frontx-showcase-source.zip": 200,
+    "/libraries/": 200,
+    "/showcase/": 200,
+    "/showcase/assets/index-BlG04QPe.css": 200,
+    "/showcase/assets/index-Bu21u8Gn.js": 200,
+    "/showcase/favicon.svg": 200,
+    "/templates/": 200,
+    "/templates/guardrails/": 200,
+    "/templates/mfe/": 200,
+    "/templates/shell/": 200
+  }
+}

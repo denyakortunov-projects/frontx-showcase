@@ -1,0 +1,25 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import DocsNav from '../../site/DocsNav.astro';
+import ActionLink from '../../site/ActionLink';
+import {Terminal, FilePenLine, Blocks, ArrowUpRight, ArrowRight} from 'lucide-react';
+import {repos, coreRef} from '../../site/content';
+const paths = [
+  {href:'/get-started/',title:'Run Shell + MFE',description:'Create the host, add the microfrontend workspace and open two included screens.',label:'Start a project',icon:Terminal},
+  {href:'/docs/first-change/',title:'Make your first change',description:'Find the screen files, change a title and rebuild the example you just started.',label:'Continue the quickstart',icon:FilePenLine},
+  {href:'/showcase/?page=handoff',title:'Use UI Kit in your app',description:'Find component contracts and integration notes in the existing Showcase.',label:'Use a library',icon:Blocks},
+];
+---
+<SiteLayout title="Docs · FrontX" section="docs">
+  <div class="site-container">
+    <header class="page-intro"><h1>Build with FrontX.</h1><p>Start with a project template, or bring individual libraries into your application.</p></header>
+    <DocsNav current="overview"/>
+    <div class="page-content">
+      <div class="docs-paths">{paths.map((path,i)=><a class="guide-card docs-path" href={path.href}><div class="docs-path-top"><path.icon size={24}/><span>0{i+1}</span></div><p class="docs-path-label">{path.label}</p><h2>{path.title}</h2><p>{path.description}</p><span class="docs-path-arrow" aria-hidden="true"><ArrowRight size={18}/></span></a>)}</div>
+      <section class="docs-reference"><h2>Source & tools</h2><div class="guide-grid">
+        <article class="guide-card"><h3>Understand the templates</h3><p>Browse selected source files and run the composed Shell + MFE example before installing.</p><ActionLink href="/templates/">Explore templates</ActionLink></article>
+        <article class="guide-card"><h3>Work with an agent</h3><p>The guides are also available as plain text. FrontX AI Kit has its own setup through Constructor Studio CLI; that path is documented upstream.</p><a class="text-link" href={`${repos.frontx}/blob/${coreRef}/QUICK_START.md#ai-tooling`}>AI Kit documentation <ArrowUpRight size={14}/></a></article>
+      </div></section>
+    </div>
+  </div>
+</SiteLayout>

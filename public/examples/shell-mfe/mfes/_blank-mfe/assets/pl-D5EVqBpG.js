@@ -1,0 +1,1 @@
+const e="Home",n="Welcome to the home screen.",t="Bridge Info",o="Domain ID:",c="Instance ID:",r="Current Theme:",s="Current Language:",i={title:e,description:n,bridge_info:t,domain_id:o,instance_id:c,current_theme:r,current_language:s};export{t as bridge_info,s as current_language,r as current_theme,i as default,n as description,o as domain_id,c as instance_id,e as title};

@@ -1,0 +1,186 @@
+{
+  "templateExample": true,
+  "manifest": {
+    "id": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.blank.mfe.manifest.v1",
+    "remoteEntry": "http://localhost:3099/assets/remoteEntry.js",
+    "name": "blankMfe",
+    "metaData": {
+      "publicPath": "auto",
+      "name": "blankMfe",
+      "type": "app",
+      "buildInfo": {
+        "buildVersion": "1.0.0",
+        "buildName": "blankMfe"
+      },
+      "remoteEntry": {
+        "name": "remoteEntry.js",
+        "path": "",
+        "type": "module"
+      },
+      "globalName": "blankMfe"
+    },
+    "shared": [
+      {
+        "name": "react",
+        "version": "19.2.4",
+        "chunkPath": "shared/react.js",
+        "unwrapKey": null,
+        "contentHash": "3f16b6821384480b9941d6ef4aca2fd0dc7bb446594289874ee681e4b9dd6c3c"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.2.4",
+        "chunkPath": "shared/react-dom.js",
+        "unwrapKey": null,
+        "contentHash": "3e2c01d8099f772efbd16924ebfbf0c9517c6e2f87c8e65b894c679289a786e7"
+      },
+      {
+        "name": "@gears-frontx/react",
+        "version": "0.2.0-alpha.10",
+        "chunkPath": "shared/gears-frontx-react.js",
+        "unwrapKey": null,
+        "contentHash": "42cc6f15d73650e4a2e00b0f5d5471c31b4f236f8e1f81a1b3275abec2dc7295"
+      },
+      {
+        "name": "@gears-frontx/framework",
+        "version": "0.2.0-alpha.10",
+        "chunkPath": "shared/gears-frontx-framework.js",
+        "unwrapKey": null,
+        "contentHash": "4145b8b86aa404396826c8c30afd4c69ee7e5d0af725a462241c8ffffa9d3fcf"
+      },
+      {
+        "name": "@gears-frontx/state",
+        "version": "0.2.0-alpha.1",
+        "chunkPath": "shared/gears-frontx-state.js",
+        "unwrapKey": null,
+        "contentHash": "615c5215a2965af8c1fcce8af2d86929c2c608d457e51ae1ae8eed2f0e61ebae"
+      },
+      {
+        "name": "@gears-frontx/mfes",
+        "version": "0.3.0-alpha.11",
+        "chunkPath": "shared/gears-frontx-mfes.js",
+        "unwrapKey": null,
+        "contentHash": "120b73fbd98d25b3340d4db464cef44437e79dc7f131a00e4e66d58f19287e7e"
+      },
+      {
+        "name": "@gears-frontx/gts-plugin",
+        "version": "0.3.0-alpha.11",
+        "chunkPath": "shared/gears-frontx-gts-plugin.js",
+        "unwrapKey": null,
+        "contentHash": "4a33990b27bde5115f6177432c6a3cec35d9d135649c3c19167792ce71a78d96"
+      },
+      {
+        "name": "@gears-frontx/api",
+        "version": "0.3.0-alpha.3",
+        "chunkPath": "shared/gears-frontx-api.js",
+        "unwrapKey": null,
+        "contentHash": "83e9f520ee98ba39ae6e7aff52c88a7dcf12c017c791de064566875916ce0253"
+      },
+      {
+        "name": "@gears-frontx/i18n",
+        "version": "0.2.0-alpha.1",
+        "chunkPath": "shared/gears-frontx-i18n.js",
+        "unwrapKey": null,
+        "contentHash": "352720465c22fbcdd6c2ae6d815b662a3b0d241a49ecdb3142657527bca8d0bd"
+      },
+      {
+        "name": "@tanstack/react-query",
+        "version": "5.101.4",
+        "chunkPath": "shared/tanstack-react-query.js",
+        "unwrapKey": null,
+        "contentHash": "10b91ce485091b34c59ed1c4903ded197a553694cce83e19e97809f8cb90b363"
+      },
+      {
+        "name": "@reduxjs/toolkit",
+        "version": "2.12.0",
+        "chunkPath": "shared/reduxjs-toolkit.js",
+        "unwrapKey": null,
+        "contentHash": "75fd313fa4e9ef04c65e440652a83b1873f60158a50599480a76eb6bb87be21a"
+      },
+      {
+        "name": "react-redux",
+        "version": "9.3.0",
+        "chunkPath": "shared/react-redux.js",
+        "unwrapKey": null,
+        "contentHash": "798e5754bb334c0b9621754e37fa1729c63917ea51800bb295f8211c35eeaab6"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.blank.mfe.home.v1",
+      "requiredProperties": [
+        "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.theme.v1~",
+        "gts.frontx.mfes.comm.shared_property.v1~frontx.mfes.comm.language.v1~"
+      ],
+      "actions": [],
+      "domainActions": [],
+      "manifest": "gts.frontx.mfes.mfe.mf_manifest.v1~frontx.blank.mfe.manifest.v1",
+      "exposedModule": "./lifecycle",
+      "exposeAssets": {
+        "js": {
+          "async": [
+            "assets/ar-nL6_O5us.js",
+            "assets/bn-D5EVqBpG.js",
+            "assets/cs-BBCWjOov.js",
+            "assets/da-nL6_O5us.js",
+            "assets/de-D5EVqBpG.js",
+            "assets/el-D5EVqBpG.js",
+            "assets/en-D5EVqBpG.js",
+            "assets/es-CboOVgOW.js",
+            "assets/fa-nL6_O5us.js",
+            "assets/fi-D5EVqBpG.js",
+            "assets/fr-D5EVqBpG.js",
+            "assets/he-D5EVqBpG.js",
+            "assets/hi-D5EVqBpG.js",
+            "assets/hu-D5EVqBpG.js",
+            "assets/id-D5EVqBpG.js",
+            "assets/it-D5EVqBpG.js",
+            "assets/ja-nL6_O5us.js",
+            "assets/ko-D5EVqBpG.js",
+            "assets/ms-BBCWjOov.js",
+            "assets/nl-D5EVqBpG.js",
+            "assets/no-D5EVqBpG.js",
+            "assets/pl-D5EVqBpG.js",
+            "assets/pt-D5EVqBpG.js",
+            "assets/ro-D5EVqBpG.js",
+            "assets/ru-D5EVqBpG.js",
+            "assets/sv-BBCWjOov.js",
+            "assets/sw-BBCWjOov.js",
+            "assets/ta-nL6_O5us.js",
+            "assets/th-D5EVqBpG.js",
+            "assets/tl-D5EVqBpG.js",
+            "assets/tr-D5EVqBpG.js",
+            "assets/uk-D5EVqBpG.js",
+            "assets/ur-D5EVqBpG.js",
+            "assets/vi-D5EVqBpG.js",
+            "assets/zh-TW-D5EVqBpG.js",
+            "assets/zh-D5EVqBpG.js"
+          ],
+          "sync": [
+            "assets/lifecycle-Dl_gNwIm.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "assets/lifecycle-CQhNG4Xf.css"
+          ]
+        }
+      }
+    }
+  ],
+  "extensions": [
+    {
+      "id": "gts.frontx.mfes.ext.extension.v1~frontx.screensets.layout.screen.v1~frontx.blank.screens.home.v1",
+      "domain": "gts.frontx.mfes.ext.domain.v1~frontx.screensets.layout.screen.v1",
+      "entry": "gts.frontx.mfes.mfe.entry.v1~frontx.mfes.mfe.entry_mf.v1~frontx.blank.mfe.home.v1",
+      "route": "/blank-home",
+      "presentation": {
+        "label": "Blank Home",
+        "icon": "lucide:home",
+        "order": 100
+      }
+    }
+  ]
+}

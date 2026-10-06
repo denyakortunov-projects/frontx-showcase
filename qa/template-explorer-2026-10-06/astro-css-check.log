@@ -1,0 +1,25 @@
+16:32:23 [types] Generated 22ms
+16:32:23 [build] output: "static"
+16:32:23 [build] mode: "static"
+16:32:23 [build] directory: /Users/kortunov/Documents/Constructor Fabric/apps/frontx-showcase/dist/
+16:32:23 [build] Collecting build info...
+16:32:23 [build] ✓ Completed in 53ms.
+16:32:23 [build] Building static entrypoints...
+16:32:23 [vite] ✓ built in 65ms
+16:32:23 [vite] ✓ built in 379ms
+16:32:23 [build] Rearranging server assets...
+
+ generating static routes 
+16:32:24   ├─ /get-started/shell-mfe.md (+8ms) 
+16:32:24   ├─ /get-started/index.html (+11ms) 
+16:32:24   ├─ /libraries/index.html (+5ms) 
+16:32:24   ├─ /templates/shell/index.html (+5ms) 
+16:32:24   ├─ /templates/mfe/index.html (+6ms) 
+16:32:24   ├─ /templates/guardrails/index.html (+5ms) 
+16:32:24   ├─ /templates/index.html (+4ms) 
+16:32:24   ├─ /index.html (+11ms) 
+16:32:24 ✓ Completed in 148ms.
+
+16:32:24 [build] ✓ Completed in 612ms.
+16:32:24 [build] 7 page(s) built in 735ms
+16:32:24 [build] Complete!

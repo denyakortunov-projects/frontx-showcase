@@ -1,10 +1,10 @@
-# FrontX Showcase
+# FrontX website & Showcase
 
 Interactive collection of a reusable event calendar, modular charts and Fabric-style elements, using the published FrontX UI Kit. A demonstration and integration proposal, not a production analytics service or an accepted GTS schema.
 
 ## Run
 
-Node.js 22 or 24:
+Node.js 22.12+ (Astro 7):
 
 ```sh
 npm ci
@@ -12,6 +12,10 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+The site is static. Astro renders the homepage, template catalogue/detail pages, libraries and starting guide. A React island explains the architecture with three URL-addressable states. The existing interactive Showcase is kept at `/showcase/`; its established Vite build runs first into ignored `public/showcase/`, then Astro copies it into the single `dist/` output. This preserves its CSS cascade and isolates chart/calendar code from the homepage. It is the same app/repository and deployment artifact, not a new runtime UI library.
+
+`npm run dev` builds the Showcase once and starts Astro development. Astro pages have hot reload; after changing existing Showcase sources, run `npm run build:showcase` to refresh its static entry. `npm run build` rebuilds both entries. Old root `?page=…` URLs redirect to `/showcase/` preserving the full query and fragment.
 
 The application is static. Deploy `dist/` with no server, environment variables, database or credentials. Query-string routes work without server rewrites. All data is synthetic. Chart fixtures use 25 September 2026; Calendar uses an injected 5 October 2026 clock. Calendar edits are in memory and reset on reload.
 
@@ -24,7 +28,8 @@ Calendar review route: `?page=event-calendar`. See [calendar plan and acceptance
 - `src/widgets.tsx`: widget catalogue and 16 data visualizations using FrontX ChartContainer and Recharts.
 - `src/data.ts`: shared deterministic fixtures.
 - `src/WidgetFrame.tsx`: common header/body and loading/empty/error states.
-- `src/main.tsx`: gallery, chart playground, URL navigation and handoff.
+- `src/pages/`, `src/layouts/`, `src/site/`: Astro site, shared branded layout and explanatory island.
+- `src/main.tsx`, `src/ShowcaseApp.tsx`: interactive catalogue entry, gallery, URL navigation and handoff.
 - `src/UtilityWidgets.tsx`: Revenue pulse and Build activity using FrontX ChartContainer, Table, Badge and Dialog.
 - `src/TokenActivity.tsx`: annual activity grid, token aggregation and keyboard selection.
 - `src/Elements.tsx`: 20 interactive installed-kit examples.
@@ -33,7 +38,7 @@ Calendar review route: `?page=event-calendar`. See [calendar plan and acceptance
 - `src/UtilityWidgets.tsx`: revenue metric with sparkline and interactive build table.
 - `src/TokenActivity.tsx`: calendar heatmap with daily, weekly and cumulative modes.
 - `src/themes.ts`, `src/ThemeGallery.tsx`: five palettes, modes and token handoff.
-- `src/style.css`: responsive grid and five product themes.
+- `src/style.css`: existing responsive catalogue styles; `src/site/tokens.css`: unchanged shared theme tokens.
 - `public/handoff/`: integration notes and source download.
 
 Use React 19 and `@gears-frontx/ui-kit@0.4.0-alpha.5`; no copied primitive library. Product-owned adapters will provide real data, permissions, actions and persistence. The proposed JSON config describes this demo only; it is not a generic code executor or a production GTS renderer.
@@ -54,3 +59,17 @@ Shared SectionTabs gives the four catalogue tab consumers one button-group treat
 ## Shared numeric-axis rule — 2026-10-05
 
 All numeric Cartesian axes in `WidgetChart` use `src/chart-axis.ts`: outward-rounded bounds, steps from 1/2/5 × powers of ten, density based on chart dimensions, integer counts, and explicit bounded-percentage exceptions. Data values stay unchanged. [Policy and integration](public/handoff/CHART-AXES.md) covers stacked extents, dual axes, semantic intervals and regression checks. The source archive carries the helper and its tests. Consumers must adopt the updated source; this is not an automatic update of the published FrontX UI Kit or existing applications.
+
+
+## Local website slice — 6 October 2026
+
+See [implementation plan](qa/astro-site/PLAN.md) and [verification](qa/astro-site/PARITY.md). FrontX is a Gear within Constructor Fabric. Primary entry is Get started, a verified Shell + MFE guide. GitHub links distinguish core and templates repositories. Published CLI and pinned templates were installed, built, type-checked and run in an isolated consumer on macOS (Node 25.1.0/npm 11.6.2). See [quickstart verification](qa/quickstart-2026-10-06/PARITY.md) for versions, evidence and limitations, including upstream audit findings. Copyable commands and plain-text guide share `src/site/quickstart.ts`. This Astro implementation is not proof of FrontX Shell/MFE integration.
+
+The full website source archive and `release.json` are regenerated for the authorized 6 October publication, including Astro build inputs and licensed template examples. The separate calendar component bundle retains its preceding verified component version. See `qa/release-2026-10-06-astro-site/RELEASE.md` for publication evidence.
+
+## Template files and example - 6 October 2026
+
+Shell, MFE and Guardrails pages include selected original source files with GitHub permalinks, search, copy and URL selection. Shell/MFE also offer a click-to-load genuine composed runtime; Guardrails has no runtime screen. See [composition and refresh guidance](src/site/TEMPLATE-EXPLORER.md) and [local verification](qa/template-explorer-2026-10-06/PARITY.md). The checked-in static example snapshot stays in the existing site output and does not require extra servers for review. Its website hosting adapter is explicitly documented. The original local stage did not deploy; publication status is recorded separately in the release record.
+
+
+Practical docs: `/docs/` now links the verified quickstart, a first-change tutorial and the existing UI Kit handoff. HTML/plain-text tutorial content shares `src/site/first-change.ts`. Component/content guidance: `src/site/DOCS.md`; checks and limits: `qa/first-change-2026-10-06/PARITY.md`. These records describe local verification before the authorized release.

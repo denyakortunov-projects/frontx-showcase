@@ -1,0 +1,29 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import DocsNav from '../../site/DocsNav.astro';
+import ActionLink from '../../site/ActionLink';
+import CodeBlock from '../../site/CodeBlock';
+import {ArrowUpRight, Check, FileCode2, PanelLeft, ArrowRight} from 'lucide-react';
+import {firstChangeTitle,firstChangeDescription,firstChangePrerequisite,firstChangeSteps,projectFiles,sourceFile,editedTranslation,firstChangeTroubleshooting,provenanceNote} from '../../site/first-change';
+---
+<SiteLayout title="Your first change · FrontX" section="docs">
+  <div class="site-container">
+    <header class="page-intro"><h1>{firstChangeTitle}</h1><p>{firstChangeDescription}</p></header>
+    <DocsNav current="change"/>
+    <div class="page-content quickstart-layout">
+      <div class="quickstart-main">
+        <div class="quickstart-note docs-prerequisite"><h2>Continue from the quickstart</h2><p>{firstChangePrerequisite}</p><a href="/get-started/" class="text-link">Run Shell + MFE <ArrowRight size={14}/></a></div>
+        {firstChangeSteps.map((step,index)=><section class="quickstart-step" id={step.id}>
+          <div class="step-heading"><span class="step-number">{index+1}</span><h2>{step.title}</h2></div><p>{step.description}</p>
+          {step.id==='locate'&&<ul class="docs-files">{projectFiles.map(file=><li><FileCode2 size={18}/><div><a href={sourceFile(file.path)}>{file.name}<ArrowUpRight size={12}/></a><p>{file.role}</p><code>{file.path}</code></div></li>)}</ul>}
+          {'code' in step&&<><CodeBlock client:load label={step.label!} code={step.code!} kind={step.kind}/><p class="step-result"><Check size={15}/><span>{step.result}</span></p></>}
+          {step.id==='see'&&<figure class="docs-result"><figcaption>Expected result · English</figcaption><div class="docs-result-screen"><div class="docs-result-menu"><PanelLeft size={18}/><span>Blank Home</span></div><div><h3>{editedTranslation.title}</h3><p>{editedTranslation.description}</p></div></div></figure>}
+        </section>)}
+        <section class="docs-troubleshooting" id="troubleshooting"><h2>If something looks different</h2>{firstChangeTroubleshooting.map(item=><details><summary>{item.title}</summary><p>{item.text}</p></details>)}</section>
+        <section class="quickstart-step" id="changes"><h2>Keep track of your changes</h2><p>{provenanceNote}</p><p>The example edit passed the workspace type-check and build on macOS with Node.js 25.1.0 and npm 11.6.2. Creating a new MFE, upgrading templates and production integration are separate tasks. <a class="text-link" href="/get-started/#verification">Quickstart verification and limits <ArrowRight size={14}/></a></p></section>
+        <div class="page-links"><ActionLink href="/templates/mfe/?view=files">Explore MFE source</ActionLink><ActionLink href="/showcase/?page=handoff">UI Kit integration</ActionLink></div>
+      </div>
+      <aside class="quickstart-aside"><div class="detail-panel"><h2>In this guide</h2><nav aria-label="First change steps">{firstChangeSteps.map((step,i)=><a href={`#${step.id}`}><span>0{i+1}</span>{step.title}</a>)}</nav><a class="text-link" href="/docs/first-change.md">Plain-text guide <ArrowUpRight size={14}/></a></div></aside>
+    </div>
+  </div>
+</SiteLayout>

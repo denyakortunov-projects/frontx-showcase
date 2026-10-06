@@ -1,0 +1,19 @@
+---
+import '@gears-frontx/ui-kit/theme.css';
+import '../site/tokens.css';
+import '../site/site.css';
+import {Boxes, ArrowUpRight} from 'lucide-react';
+import ActionLink from '../site/ActionLink';
+import {repos} from '../site/content';
+const {title='FrontX · Constructor Fabric',description='The frontend Gear in Constructor Fabric. Explore reusable libraries, project templates and tools for building with AI.',section=''}=Astro.props;
+---
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><link rel="icon" href="/favicon.svg"/><title>{title}</title></head>
+<body class="frontx-site"><a class="site-skip" href="#content">Skip to content</a>
+<header class="site-header"><div class="site-container site-header-inner">
+<div class="site-brand"><a class="fabric-parent" href={repos.fabric}>Constructor Fabric <ArrowUpRight size={10}/></a><a class="frontx-brand" href="/" aria-label="FrontX home"><Boxes size={27}/><span>front<span class="brand-x">x</span></span><span class="gear-label">Gear</span></a></div>
+<nav class="site-nav" aria-label="Main navigation"><a href="/templates/" aria-current={section==='templates'?'page':undefined}>Templates</a><a href="/libraries/" aria-current={section==='libraries'?'page':undefined}>Libraries</a><a href="/docs/" aria-current={section==='docs'?'page':undefined}>Docs</a></nav>
+<div class="site-header-actions"><a href="/showcase/?page=gallery" class="kit-shortcut">UI Kit</a><ActionLink href={repos.frontx} external>GitHub</ActionLink></div>
+</div></header>
+<main id="content"><slot/></main>
+<footer class="site-footer site-container"><div><a class="frontx-brand" href="/">front<span class="brand-x">x</span></a><p>A Gear in Constructor Fabric.</p></div><nav aria-label="Source repositories"><a href={repos.frontx}>FrontX source <ArrowUpRight size={14}/></a><a href={repos.templates}>Template source <ArrowUpRight size={14}/></a><a href={repos.fabric}>Constructor Fabric <ArrowUpRight size={14}/></a></nav><small>Built with Astro & FrontX UI Kit.</small></footer>
+</body></html>

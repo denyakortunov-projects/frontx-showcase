@@ -3,3 +3,16 @@ dist/
 qa/*.png
 qa/browser-report.json
 .DS_Store
+
+.astro/
+qa/astro-site/*.png
+
+/public/showcase/
+
+qa/quickstart-2026-10-06/*.png
+
+qa/template-explorer-2026-10-06/*.png
+
+qa/template-explorer-2026-10-06/generated-artifact-backup/
+
+qa/first-change-2026-10-06/*.png
