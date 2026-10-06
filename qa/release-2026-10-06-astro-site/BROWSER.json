@@ -1,0 +1,13 @@
+{
+  "url": "https://frontx.constructor.rocks/",
+  "checks": [
+    "Home renders",
+    "Next diagram step changes scene URL and content",
+    "Shell source explorer renders",
+    "Example tab and Load example render ready Shell/MFE",
+    "Legacy calendar URL redirects preserving query and Event calendar loads",
+    "First-change document renders and copy feedback works"
+  ],
+  "consoleErrors": [],
+  "screenshot": "/private/tmp/frontx-site-release-20261006/published-home.png"
+}

@@ -1,0 +1,57 @@
+{
+  "upload": {
+    "status": "success",
+    "data": {
+      "filename": "frontx-showcase-deploy.zip"
+    }
+  },
+  "resolveSettings": {
+    "status": "success",
+    "data": {
+      "app_type": "astro",
+      "node_version": 22,
+      "root_directory": null,
+      "output_directory": "dist",
+      "build_script": "build",
+      "entry_file": null,
+      "package_manager": "npm",
+      "available_scripts": [
+        "dev",
+        "build",
+        "preview",
+        "build:showcase",
+        "check:templates"
+      ]
+    }
+  },
+  "build": {
+    "status": "success",
+    "data": {
+      "uuid": "01a110a3-442e-71a9-80d2-6752fdac8f13",
+      "state": "pending",
+      "options": {
+        "node_version": 22,
+        "app_type": "astro",
+        "root_directory": null,
+        "output_directory": "dist",
+        "build_script": "build",
+        "entry_file": null,
+        "package_manager": "npm",
+        "source_type": "archive",
+        "source_options": {
+          "archive_path": "frontx-showcase-deploy.zip",
+          "owner": null,
+          "repository": null,
+          "branch": null,
+          "installation_uuid": null,
+          "commit": null
+        }
+      },
+      "created_at": "2026-10-06T09:54:57Z",
+      "updated_at": "2026-10-06T09:54:57Z"
+    }
+  },
+  "removeArchive": {
+    "status": "skipped"
+  }
+}

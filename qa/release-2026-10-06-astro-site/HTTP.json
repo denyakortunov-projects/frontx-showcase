@@ -1,0 +1,131 @@
+{
+  "sourceFingerprint": "c94d80937134efe74281135e4d9b1dc91c4c8cb01d8ef872beacf07bce9ee0ac",
+  "checkedAt": "2026-10-06T09:56:02.190Z",
+  "checks": [
+    {
+      "path": "/release.json",
+      "status": 200,
+      "bytes": 74727
+    },
+    {
+      "path": "/handoff/frontx-showcase-source.zip",
+      "status": 200,
+      "bytes": 3250889
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 31936
+    },
+    {
+      "path": "/templates/",
+      "status": 200,
+      "bytes": 8171
+    },
+    {
+      "path": "/templates/shell/",
+      "status": 200,
+      "bytes": 60130
+    },
+    {
+      "path": "/templates/mfe/",
+      "status": 200,
+      "bytes": 55744
+    },
+    {
+      "path": "/templates/guardrails/",
+      "status": 200,
+      "bytes": 42990
+    },
+    {
+      "path": "/libraries/",
+      "status": 200,
+      "bytes": 8787
+    },
+    {
+      "path": "/get-started/",
+      "status": 200,
+      "bytes": 29425
+    },
+    {
+      "path": "/docs/",
+      "status": 200,
+      "bytes": 13032
+    },
+    {
+      "path": "/docs/first-change/",
+      "status": 200,
+      "bytes": 27448
+    },
+    {
+      "path": "/showcase/",
+      "status": 200,
+      "bytes": 669
+    },
+    {
+      "path": "/_astro/SiteLayout.CpB0cBTd.css",
+      "status": 200,
+      "bytes": 35884
+    },
+    {
+      "path": "/_astro/index.poN6PZyu.css",
+      "status": 200,
+      "bytes": 4544
+    },
+    {
+      "path": "/_astro/_slug_.f4KpjQ7Y.css",
+      "status": 200,
+      "bytes": 12037
+    },
+    {
+      "path": "/showcase/assets/index-DiaLoz5r.js",
+      "status": 200,
+      "bytes": 1111932
+    },
+    {
+      "path": "/showcase/assets/index-DWS2NgtX.css",
+      "status": 200,
+      "bytes": 116889
+    },
+    {
+      "path": "/docs/first-change.md",
+      "status": 200,
+      "bytes": 4534
+    },
+    {
+      "path": "/get-started/shell-mfe.md",
+      "status": 200,
+      "bytes": 3769
+    },
+    {
+      "path": "/examples/shell-mfe/index.html",
+      "status": 200,
+      "bytes": 2328
+    },
+    {
+      "path": "/examples/shell-mfe/generated-mfe-manifests.json",
+      "status": 200,
+      "bytes": 71184
+    },
+    {
+      "path": "/examples/shell-mfe/website-adapter.js",
+      "status": 200,
+      "bytes": 1549
+    },
+    {
+      "path": "/handoff/EVENT-CALENDAR.md",
+      "status": 200,
+      "bytes": 8258
+    },
+    {
+      "path": "/handoff/DATE-PICKER.md",
+      "status": 200,
+      "bytes": 5108
+    },
+    {
+      "path": "/handoff/frontx-calendar-components.zip",
+      "status": 200,
+      "bytes": 38609
+    }
+  ]
+}
