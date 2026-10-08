@@ -1,0 +1,9 @@
+---
+import {Plus,Braces,ArrowRight} from 'lucide-react';
+import {repos,coreRef} from './content';
+---
+<nav class="start-paths" aria-label="Choose your starting point">
+ <a href="#prepare" class="start-path start-path-current"><Plus size={22}/><div><strong>Start a new app</strong><span>Run Shell + MFE, then change your first screen.</span></div><ArrowRight size={18}/></a>
+ <a href="/libraries/" class="start-path"><Braces size={22}/><div><strong>Use in an existing app</strong><span>Choose a library without adopting the full structure.</span></div><ArrowRight size={18}/></a>
+</nav>
+<p class="start-agent">Working with a coding agent?<a href="/docs/first-change/#agent-task">First-change task<ArrowRight size={13}/></a><a href={`${repos.frontx}/blob/${coreRef}/QUICK_START.md#ai-tooling`}>AI Kit setup<ArrowRight size={13}/></a></p>

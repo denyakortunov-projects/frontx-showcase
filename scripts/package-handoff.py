@@ -13,6 +13,7 @@ files += sorted((base/'qa/date-picker-refresh').glob('*.md'))
 files += sorted((base/'qa/date-picker-refresh').glob('*.mjs'))
 files += sorted((base/'qa/date-picker-refresh').glob('*.py'))
 files += [base/'qa/date-picker-refresh/consumer.tsx',base/'qa/date-picker-refresh/consumer.html',base/'qa/date-picker-refresh/model.test.ts']
+files += [base/'public/favicon.ico',base/'public/apple-touch-icon.png',base/'public/site.webmanifest']
 files += [base/'public/favicon.svg',base/'public/handoff/README.md',base/'public/handoff/CONTRACT.md']
 files += [base/'public/handoff/CHART-AXES.md',base/'scripts/package-handoff.py']
 files += sorted((base/'qa/axis-rules').glob('*.ts'))
@@ -21,7 +22,7 @@ files += sorted((base/'qa/axis-rules').glob('*.md'))
 # Astro build inputs and the licensed static template example, not build output.
 files += sorted((base/'scripts').glob('*.mjs'))
 files += [base/'scripts/template-example-adapter.js', base/'scripts/package-deploy.py']
-for directory in ['public/template-source', 'public/examples/shell-mfe']:
+for directory in ['public/template-source', 'public/examples/shell-mfe', 'public/brand', 'public/images', 'public/fonts']:
  files += sorted((base/directory).rglob('*'))
 for directory in ['astro-site', 'quickstart-2026-10-06', 'template-explorer-2026-10-06', 'first-change-2026-10-06']:
  files += sorted((base/'qa'/directory).glob('*.md'))

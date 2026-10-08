@@ -496,3 +496,8 @@
     min-height: 205px;
   }
 }
+
+/* Homepage specimens land on the named runtime example below the shared header. */
+.elements-card[id]{scroll-margin-top:96px}
+.elements-card[id]:focus-visible{outline:2px solid var(--ring);outline-offset:4px}
+@media(max-width:900px){.elements-card[id]{scroll-margin-top:124px}}

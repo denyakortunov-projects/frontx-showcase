@@ -4,7 +4,7 @@ import DocsNav from '../../site/DocsNav.astro';
 import ActionLink from '../../site/ActionLink';
 import CodeBlock from '../../site/CodeBlock';
 import {ArrowUpRight, Check, FileCode2, PanelLeft, ArrowRight} from 'lucide-react';
-import {firstChangeTitle,firstChangeDescription,firstChangePrerequisite,firstChangeSteps,projectFiles,sourceFile,editedTranslation,firstChangeTroubleshooting,provenanceNote} from '../../site/first-change';
+import {firstChangeAgentTask,firstChangeTitle,firstChangeDescription,firstChangePrerequisite,firstChangeSteps,projectFiles,sourceFile,editedTranslation,firstChangeTroubleshooting,provenanceNote} from '../../site/first-change';
 ---
 <SiteLayout title="Your first change · FrontX" section="docs">
   <div class="site-container">
@@ -13,6 +13,7 @@ import {firstChangeTitle,firstChangeDescription,firstChangePrerequisite,firstCha
     <div class="page-content quickstart-layout">
       <div class="quickstart-main">
         <div class="quickstart-note docs-prerequisite"><h2>Continue from the quickstart</h2><p>{firstChangePrerequisite}</p><a href="/get-started/" class="text-link">Run Shell + MFE <ArrowRight size={14}/></a></div>
+        <details class="agent-task" id="agent-task"><summary>Task for your coding agent</summary><p>Use this in the existing project from the quickstart.</p><CodeBlock client:load label="First-change agent task" kind="source" code={firstChangeAgentTask}/><a class="text-link" href="/docs/agent-task.md">Plain-text task <ArrowUpRight size={14}/></a></details>
         {firstChangeSteps.map((step,index)=><section class="quickstart-step" id={step.id}>
           <div class="step-heading"><span class="step-number">{index+1}</span><h2>{step.title}</h2></div><p>{step.description}</p>
           {step.id==='locate'&&<ul class="docs-files">{projectFiles.map(file=><li><FileCode2 size={18}/><div><a href={sourceFile(file.path)}>{file.name}<ArrowUpRight size={12}/></a><p>{file.role}</p><code>{file.path}</code></div></li>)}</ul>}
@@ -20,7 +21,7 @@ import {firstChangeTitle,firstChangeDescription,firstChangePrerequisite,firstCha
           {step.id==='see'&&<figure class="docs-result"><figcaption>Expected result · English</figcaption><div class="docs-result-screen"><div class="docs-result-menu"><PanelLeft size={18}/><span>Blank Home</span></div><div><h3>{editedTranslation.title}</h3><p>{editedTranslation.description}</p></div></div></figure>}
         </section>)}
         <section class="docs-troubleshooting" id="troubleshooting"><h2>If something looks different</h2>{firstChangeTroubleshooting.map(item=><details><summary>{item.title}</summary><p>{item.text}</p></details>)}</section>
-        <section class="quickstart-step" id="changes"><h2>Keep track of your changes</h2><p>{provenanceNote}</p><p>The example edit passed the workspace type-check and build on macOS with Node.js 25.1.0 and npm 11.6.2. Creating a new MFE, upgrading templates and production integration are separate tasks. <a class="text-link" href="/get-started/#verification">Quickstart verification and limits <ArrowRight size={14}/></a></p></section>
+        <section class="quickstart-step" id="changes"><h2>Keep track of your changes</h2><p>{provenanceNote}</p><p><a class="text-link" href="/get-started/#verification">Quickstart verification and limits <ArrowRight size={14}/></a></p></section>
         <div class="page-links"><ActionLink href="/templates/mfe/?view=files">Explore MFE source</ActionLink><ActionLink href="/showcase/?page=handoff">UI Kit integration</ActionLink></div>
       </div>
       <aside class="quickstart-aside"><div class="detail-panel"><h2>In this guide</h2><nav aria-label="First change steps">{firstChangeSteps.map((step,i)=><a href={`#${step.id}`}><span>0{i+1}</span>{step.title}</a>)}</nav><a class="text-link" href="/docs/first-change.md">Plain-text guide <ArrowUpRight size={14}/></a></div></aside>

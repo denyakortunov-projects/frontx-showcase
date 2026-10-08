@@ -1,0 +1,20 @@
+// Deterministic raster exports of the existing vector identity. Run locally when branding changes.
+import fs from 'node:fs/promises';
+import sharp from 'sharp';
+const base = new URL('../public/', import.meta.url);
+const logo = await fs.readFile(new URL('brand/constructor-weave.svg',base),'utf8');
+const inner = logo.replace(/^<svg[^>]*>/,'').replace(/<\/svg>\s*$/,'');
+const frame = (size, inset=0, white=false) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">${white?`<rect width="${size}" height="${size}" fill="white"/>`:''}<svg x="${inset}" y="${inset}" width="${size-inset*2}" height="${size-inset*2}" viewBox="0 0 1254 1254">${inner}</svg></svg>`;
+const png = async (path, svg) => fs.writeFile(new URL(path,base), await sharp(Buffer.from(svg)).png().toBuffer());
+for (const size of [16,32,48]) await png(`brand/favicon-${size}.png`, frame(size));
+await png('apple-touch-icon.png',frame(180,18,true));
+for(const size of [192,512]) await png(`brand/icon-${size}.png`,frame(size,Math.round(size*.08),true));
+await png('brand/icon-maskable-512.png',frame(512,103,true));
+const sizes=[16,32,48];const images=await Promise.all(sizes.map(n=>fs.readFile(new URL(`brand/favicon-${n}.png`,base))));
+const header=Buffer.alloc(6+16*sizes.length);header.writeUInt16LE(1,2);header.writeUInt16LE(sizes.length,4);let offset=header.length;
+images.forEach((buf,i)=>{const o=6+i*16;header[o]=sizes[i];header[o+1]=sizes[i];header.writeUInt16LE(1,o+4);header.writeUInt16LE(32,o+6);header.writeUInt32LE(buf.length,o+8);header.writeUInt32LE(offset,o+12);offset+=buf.length;});
+await fs.writeFile(new URL('favicon.ico',base),Buffer.concat([header,...images]));
+const social=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><defs><linearGradient id="card" x2="1" y2="1"><stop stop-color="#f8faff"/><stop offset="1" stop-color="#e8edff"/></linearGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#2852ed" stroke-opacity=".055"/></pattern></defs><rect width="1200" height="630" fill="url(#card)"/><rect width="1200" height="630" fill="url(#grid)"/><svg x="54" y="49" width="62" height="62" viewBox="0 0 1254 1254">${inner}</svg><g font-family="Helvetica,Arial,sans-serif"><text x="134" y="91" font-size="28" fill="#18233f">Constructor Fabric</text><text x="64" y="272" font-size="108" font-weight="700" letter-spacing="-5" fill="#172346">Front<tspan fill="#2852ed">X</tspan></text><text x="69" y="363" font-size="42" letter-spacing="-1" fill="#18233f">Build complex apps.</text><text x="69" y="419" font-size="42" letter-spacing="-1" fill="#18233f">With a shared foundation.</text><text x="70" y="552" font-size="23" fill="#54617e">Open source · AI-assisted coding</text></g><svg x="817" y="198" width="300" height="300" viewBox="0 0 1254 1254">${inner}</svg></svg>`;
+await fs.writeFile(new URL('brand/frontx-share.svg',base),social);
+await png('brand/frontx-share.png',social);
+console.log('Exported favicon ICO/PNG, Apple touch icon, install icons and 1200×630 social card.');

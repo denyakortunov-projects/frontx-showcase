@@ -1,3 +1,9 @@
+import SiteHeader from './site/SiteHeader';
+import SiteFooter from './site/SiteFooter';
+import {initSiteNavigation,syncSiteNavigation} from './site/navigation';
+import './site/chrome.css';
+import './site/catalogue-chrome.css';
+import BrandLockup from './site/BrandLockup';
 import { PageHeader } from "./showcase/PageHeader";
 import { SectionTabs } from "./showcase/SectionTabs";
 import {
@@ -38,7 +44,6 @@ import {
   ArrowUpRight,
   ArrowUpDown,
   ArrowLeft,
-  Boxes,
   Code2,
   Copy,
   Download,
@@ -66,6 +71,9 @@ import {
 import { WidgetChart, widgets, chartData, type WidgetKind } from "./widgets";
 import "@gears-frontx/ui-kit/theme.css";
 import "./style.css";
+import {ComponentOverview} from './showcase/ComponentOverview';
+import {ComponentGuide} from './showcase/ComponentGuide';
+import {componentCatalogue} from './showcase/component-catalogue';
 import { Elements } from "./Elements";
 import { Themes } from "./ThemeGallery";
 import { Modularity } from "./Modularity";
@@ -77,6 +85,8 @@ const CalendarShowcase = lazy(() => import("./CalendarShowcase").then(m => ({ de
 import { utilityRows } from "./UtilityWidgets";
 
 type Route =
+  | "overview"
+  | "component"
   | "date-picker"
   | "event-calendar"
   | "gallery"
@@ -256,9 +266,13 @@ function SidebarLink({active,label,icon,onClick}:{active:boolean;label:string;ic
  return <Button variant="navigation" className="site-side-link" data-active={active || undefined} aria-current={active ? "page" : undefined} icon={icon} onClick={onClick}>{label}</Button>;
 }
 export default function ShowcaseApp() {
+  useEffect(initSiteNavigation, []);
   const [q, update] = useShowcaseQuery();
+  useEffect(syncSiteNavigation,[q.toString()]);
   const page = (
     [
+      "overview",
+      "component",
       "date-picker",
       "event-calendar",
       "gallery",
@@ -270,7 +284,7 @@ export default function ShowcaseApp() {
       "modularity",
     ].includes(q.get("page") || "")
       ? q.get("page")
-      : "gallery"
+      : "overview"
   ) as Route;
   const kind = (
     widgets.some((w) => w.id === q.get("widget")) ? q.get("widget") : "area"
@@ -278,7 +292,7 @@ export default function ShowcaseApp() {
   const theme = themes.map((t) => t.id as string).includes(q.get("theme") || "")
     ? q.get("theme")!
     : "fabric";
-  const dark = q.get("mode") === "dark";
+  const dark = false;
   const width = [3, 4, 6, 8, 9, 12].includes(Number(q.get("width")))
     ? Number(q.get("width"))
     : 6;
@@ -351,60 +365,21 @@ export default function ShowcaseApp() {
     URL.revokeObjectURL(url);
   };
   return (
-    <>
+    <div className="frontx-catalogue">
       <a className="skip" href="#main">
         Skip to content
       </a>
-      <header className="topbar">
-        <a
-          href="?page=gallery"
-          className="brand"
-          onClick={(e) => {
-            e.preventDefault();
-            go("gallery");
-          }}
-        >
-          <span className="brand-mark">
-            <Boxes size={23} />
-          </span>
-          <span>
-            front<span className="brand-x">x</span>
-          </span>
-          <span className="collection-label">collection</span>
-        </a>
-        <nav className="main-nav" aria-label="Main navigation">
-          {([
-            ["gallery", "Components", ["event-calendar", "date-picker", "gallery", "widget", "elements"]],
-            ["layouts", "Examples", ["layouts", "modularity"]],
-            ["themes", "Foundations", ["themes", "handoff"]],
-          ] as [Route, string, string[]][]).map(([route, label, pages]) => (
-            <a key={route} href={`?page=${route}`} aria-current={pages.includes(page) ? "page" : undefined}
-              onClick={e => {e.preventDefault();go(route)}}>{label}</a>
-          ))}
-        </nav>
-        <div className="top-actions">
-          <span className="version">v0.2 preview</span>
-          <Button
-            variant="ghost"
-            aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
-            onClick={() =>
-              update({
-                mode: dark ? "light" : "dark",
-              })
-            }
-            icon={dark ? <Sun /> : <Moon />}
-          />
-          <a
-            className="source-link"
-            href="/"
-          >
-            FrontX <ArrowUpRight size={16} />
-          </a>
-        </div>
-      </header>
+      <SiteHeader section="kit"/>
+      <div className="catalogue-localbar"><nav aria-label="UI Kit sections">
+       {([['overview','Components',['overview','component','event-calendar','date-picker','gallery','widget','elements']],['layouts','Examples',['layouts','modularity']],['themes','Foundations',['themes','handoff']]] as [Route,string,string[]][]).map(([route,label,pages])=><a key={route} href={`?page=${route}`} aria-current={pages.includes(page)?'page':undefined} onClick={e=>{e.preventDefault();go(route)}}>{label}</a>)}
+      </nav></div>
+      <div className="catalogue-mobile-pages"><Control label="UI Kit page" value={page==='widget'?'gallery':page==='component'?'overview':page} onChange={value=>go(value as Route)} options={[
+       ['overview','All components'],['gallery','Charts & widgets'],['event-calendar','Event calendar'],['date-picker','Date picker'],['elements','Elements'],['layouts','Compositions'],['modularity','Sizing & density'],['themes','Themes'],['handoff','Developer handoff']
+      ]}/></div>
       <div className="workspace">
         <aside className="sidebar">
           <div className="sidebar-label">COMPONENTS</div>
+          <SidebarLink active={page === "overview" || page === "component"} label="All components" icon={<Grid2X2 size={17}/>} onClick={() => go("overview")}/>
           <SidebarLink active={page === "gallery" || page === "widget"} label="Charts & widgets" icon={<ChartArea size={17}/>} onClick={() => go("gallery")}/>
           <SidebarLink active={page === "event-calendar"} label="Event calendar" icon={<CalendarDays size={17}/>} onClick={() => go("event-calendar")}/>
           <SidebarLink active={page === "date-picker"} label="Date picker" icon={<CalendarDays size={17}/>} onClick={() => go("date-picker")}/>
@@ -426,8 +401,8 @@ export default function ShowcaseApp() {
         <main id="main">
           <div className="page-topline">
             <span>
-              Collection <ChevronRight size={13} />{" "}
-              {page === "date-picker" ? "Date picker" : page === "event-calendar" ? "Event calendar" : page === "widget"
+              UI Kit <ChevronRight size={13} />{" "}
+              {page === "overview" ? "All components" : page === "component" ? componentCatalogue.find(c=>c.id===q.get("component"))?.title || "Component" : page === "date-picker" ? "Date picker" : page === "event-calendar" ? "Event calendar" : page === "widget"
                 ? current.title
                 : page === "gallery"
                   ? "Charts & widgets"
@@ -458,6 +433,8 @@ export default function ShowcaseApp() {
               ))}
             </span>
           </div>
+          {page === "overview" && <ComponentOverview query={q} update={update}/>}
+          {page === "component" && <ComponentGuide query={q} update={update}/>}
           {page === "date-picker" && <Suspense fallback={<p role="status">Loading date picker…</p>}><DatePickerShowcase query={q} update={update}/></Suspense>}
           {page === "event-calendar" && <Suspense fallback={<p role="status">Loading calendar…</p>}><CalendarShowcase query={q} update={update}/></Suspense>}
           {page === "gallery" && (
@@ -905,13 +882,7 @@ export default function ShowcaseApp() {
               </p>
             </>
           )}
-          <footer>
-            <span>FrontX collection</span>
-            <span>Built on shared foundations.</span>
-            <a href="/handoff/README.md">
-              Implementation notes <ArrowUpRight size={13} />
-            </a>
-          </footer>
+
         </main>
       </div>
       {notice && (
@@ -920,6 +891,7 @@ export default function ShowcaseApp() {
           {notice}
         </div>
       )}
-    </>
+      <SiteFooter/>
+    </div>
   );
 }

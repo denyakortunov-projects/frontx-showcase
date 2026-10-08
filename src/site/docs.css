@@ -42,3 +42,5 @@
 @media(max-width:900px) { .docs-paths { grid-template-columns:1fr; gap:18px; } .docs-path-top { margin-bottom:18px; } .docs-reference { margin-top:36px; } }
 @media(max-width:560px) { .docs-nav { gap:10px 20px; } .docs-nav a { font-size:12px; } .docs-result-screen { grid-template-columns:1fr; } .docs-result-menu { border-right:0; border-bottom:1px solid var(--border); padding:14px 20px; } .docs-result-screen>div:last-child { padding:22px 20px; } .docs-files li { padding:16px; gap:10px; } }
 @media(prefers-reduced-motion:reduce) { .docs-path { transition:none; } }
+
+.agent-task{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:18px 20px;margin:0 0 30px;scroll-margin-top:110px}.agent-task summary{cursor:pointer;font-size:14px;font-weight:550}.agent-task>p{font-size:13px;color:var(--muted-foreground);line-height:1.7;margin-top:16px}.agent-task .command-block pre{white-space:pre-wrap;overflow-wrap:anywhere}.agent-task>.text-link{font-size:12px}.agent-task summary:focus-visible{outline:2px solid var(--ring);outline-offset:6px}

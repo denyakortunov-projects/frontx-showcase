@@ -5,6 +5,7 @@ import {Tabs, TabsContent, TabsTrigger} from '@gears-frontx/ui-kit/tabs';
 import {SectionTabs} from '../showcase/SectionTabs';
 import {ArrowUpRight, FileCode2, FolderOpen, Play, RotateCcw, Search, Layers, Code2} from 'lucide-react';
 import CodeBlock from './CodeBlock';
+import {syncSiteNavigation} from './navigation';
 import './template-explorer.css';
 
 export type TemplateFile = {path:string;description:string;content:string;sha256:string;url:string};
@@ -19,6 +20,7 @@ export default function TemplateExplorer({files,slug,revision}:{files:TemplateFi
   const [filter,setFilter]=useState('');
   const [notice,setNotice]=useState('');
   const [exampleScreen,setExampleScreen]=useState('hello-world');
+  useEffect(()=>{syncSiteNavigation();},[view,selected,filter,exampleScreen]);
   useEffect(()=>{
     function restore() {
       const url=new URL(location.href), requested=url.searchParams.get('file');
@@ -33,7 +35,7 @@ export default function TemplateExplorer({files,slug,revision}:{files:TemplateFi
       if(!validFile || !validView) {
         if(!validFile) url.searchParams.delete('file');
         if(!validView) url.searchParams.delete('view');
-        history.replaceState(null,'',url);
+        history.replaceState({...history.state},'',url);
       }
     }
     restore();window.addEventListener('popstate',restore);
@@ -42,7 +44,7 @@ export default function TemplateExplorer({files,slug,revision}:{files:TemplateFi
   function update(nextView:View,nextFile=selected) {
     const url=new URL(location.href);
     url.searchParams.set('view',nextView);url.searchParams.set('file',nextFile);
-    if(url.href!==location.href) history.pushState(null,'',url);
+    if(url.href!==location.href) history.pushState({...history.state},'',url);
     setView(nextView);setSelected(nextFile);setNotice('');
   }
   const file=files.find(f=>f.path===selected)??files[0];
@@ -63,13 +65,13 @@ export default function TemplateExplorer({files,slug,revision}:{files:TemplateFi
             <div className="file-list-heading"><FolderOpen size={17}/><strong>Key files</strong><span>{files.length}</span></div>
             <div className="file-search"><Search size={14}/><Input aria-label="Find a file" placeholder="Find a file…" value={filter} onChange={e=>{
               const value=e.target.value;setFilter(value);
-              const url=new URL(location.href);if(value)url.searchParams.set('find',value);else url.searchParams.delete('find');history.replaceState(null,'',url);
+              const url=new URL(location.href);if(value)url.searchParams.set('find',value);else url.searchParams.delete('find');history.replaceState({...history.state},'',url);
             }}/></div>
             <nav className="file-list" aria-label="Files">
               {shown.map(f=><Button key={f.path} variant={f.path===selected?'secondary':'ghost'} aria-current={f.path===selected?'true':undefined} className="file-choice" onClick={()=>update('files',f.path)}>
                 <FileCode2 size={16}/><span><strong>{f.path.split('/').pop()}</strong><small>{f.path.includes('/')?f.path.slice(0,f.path.lastIndexOf('/')):'Template root'}</small></span>
               </Button>)}
-              {!shown.length && <div className="file-empty"><p>No matching files.</p><Button variant="ghost" size="sm" onClick={()=>{setFilter('');const u=new URL(location.href);u.searchParams.delete('find');history.replaceState(null,'',u);}}>Clear search</Button></div>}
+              {!shown.length && <div className="file-empty"><p>No matching files.</p><Button variant="ghost" size="sm" onClick={()=>{setFilter('');const u=new URL(location.href);u.searchParams.delete('find');history.replaceState({...history.state},'',u);}}>Clear search</Button></div>}
             </nav>
             <p className="file-scope">Selected original files.<br/><a href={files[0].url.replace('/blob/','/tree/').replace('/frontx-template.json','')} className="text-link">Full repository <ArrowUpRight size={13}/></a></p>
           </aside>
@@ -82,7 +84,7 @@ export default function TemplateExplorer({files,slug,revision}:{files:TemplateFi
       </TabsContent>
       {hasExample && <TabsContent value="example" animate={false}><TemplateExample screen={exampleScreen} onScreen={screen=>{
         const u=new URL(location.href);u.searchParams.set('example',screen);
-        if(u.href!==location.href)history.pushState(null,'',u);setExampleScreen(screen);
+        if(u.href!==location.href)history.pushState({...history.state},'',u);setExampleScreen(screen);
       }}/></TabsContent>}
     </Tabs>
   </section>;
@@ -113,7 +115,7 @@ function TemplateExample({screen,onScreen}:{screen:string;onScreen:(screen:strin
     onScreen(next);setStarted(true);setAttempt(x=>x+1);
   }
   return <div className="template-example">
-    <div className="example-context"><div><h2>Shell + MFE</h2><p>A composed example from both templates. Adapted for this site’s paths and narrow-screen navigation. The Files tab shows unchanged source.</p></div><a className="text-link" href="/get-started/">Run it locally <ArrowUpRight size={14}/></a></div>
+    <div className="example-context"><div><h2>Shell + MFE</h2><p>A host running two independent microfrontends.</p></div><a className="text-link" href="/get-started/">Run it locally <ArrowUpRight size={14}/></a></div>
     <div className="example-toolbar">
       <span><Layers size={15}/> Included screens</span>
       <Button variant="outline" size="sm" onClick={()=>start('hello-world')}>Hello World</Button>

@@ -1,0 +1,14 @@
+---
+import {ArrowRight,FileCode2,PanelsTopLeft,GitBranch} from 'lucide-react';
+import {editedTranslation} from './first-change';
+---
+<section class="change-story fx-wrap" aria-labelledby="change-title">
+ <div class="change-heading"><div><h2 id="change-title">A small change. In the right place.</h2><p>Give your agent a focused task, then review the file and the result.</p></div><a class="fx-text-link" href="/docs/first-change/">Follow the first change<ArrowRight size={16}/></a></div>
+ <div class="change-workbench">
+  <div class="change-request"><GitBranch size={18}/><p>“Rename the Blank Home screen to <strong>Project overview.</strong> Keep the existing navigation and shared components.”</p></div>
+  <div class="change-edit-result">
+   <div class="change-source change-panel"><div class="change-panel-heading"><FileCode2 size={16}/><span>_blank-mfe / screens / home / i18n/en.json</span></div><div class="change-diff"><div><span>−</span><code>"title": "Blank Home"</code></div><div><span>+</span><code>"title": "{editedTranslation.title}"</code></div></div></div>
+   <div class="change-preview change-panel"><div class="change-panel-heading"><PanelsTopLeft size={16}/><span>Preview</span></div><div class="change-window"><div class="change-rail"><span></span><span></span><b>Blank Home</b></div><div><strong>{editedTranslation.title}</strong><span>Your first change is running inside the Shell.</span><i></i><i></i></div></div></div>
+  </div>
+ </div>
+</section>

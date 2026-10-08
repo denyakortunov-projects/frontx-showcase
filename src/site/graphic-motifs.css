@@ -1,0 +1,36 @@
+/* Shared brand graphics, derived from the accepted flat architecture diagram.
+   Decoration stays outside working controls and never carries meaning alone. */
+:root{--fx-hatch:repeating-linear-gradient(135deg,transparent 0 6px,#6b86d24d 6px 7px);--fx-dots:radial-gradient(#8c7cbe6b 1px,transparent 1px);--fx-motif-size:7px 7px}
+.fx-comparison{position:relative;isolation:isolate}.fx-comparison::before{content:"";position:absolute;right:0;top:0;width:40%;height:180px;background:var(--fx-dots);background-size:var(--fx-motif-size);mask-image:linear-gradient(200deg,#000,transparent 72%);opacity:.4;pointer-events:none;z-index:-1}
+
+
+.change-request{position:relative;overflow:hidden}.change-request::after{content:"";position:absolute;right:0;bottom:0;width:150px;height:12px;background:var(--fx-hatch);mask-image:linear-gradient(90deg,transparent,#000);pointer-events:none}
+.fx-ui-intro{position:relative}.fx-ui-intro::after{content:"";position:absolute;left:48%;top:7px;width:56px;height:100px;background:var(--fx-dots);background-size:var(--fx-motif-size);mask-image:linear-gradient(#000,transparent);opacity:.45;pointer-events:none}
+.fx-end{isolation:isolate}.fx-end::after{content:"";position:absolute;left:0;bottom:0;width:48%;height:44px;background:repeating-linear-gradient(135deg,transparent 0 7px,#bacaff44 7px 8px);mask-image:linear-gradient(90deg,#000,transparent);pointer-events:none;z-index:0}.fx-end>.fx-wrap{position:relative;z-index:1}
+.frontx-site:not(.fx-page) .page-intro{position:relative;isolation:isolate}.frontx-site:not(.fx-page) .page-intro::after{content:"";position:absolute;right:0;top:45px;width:180px;height:105px;background:var(--fx-dots);background-size:var(--fx-motif-size);mask-image:linear-gradient(120deg,transparent,#000);opacity:.42;pointer-events:none;z-index:-1}
+.frontx-site .template-art{position:relative;isolation:isolate}.frontx-site .template-art::after{content:"";position:absolute;inset:auto 0 0;height:18px;background:var(--fx-hatch);pointer-events:none}.frontx-site .template-mfe .template-art::after{background:var(--fx-dots);background-size:var(--fx-motif-size)}
+.frontx-site .docs-path{position:relative;overflow:hidden}.frontx-site .docs-path::after{content:"";position:absolute;right:0;top:0;width:125px;height:40px;background:var(--fx-hatch);mask-image:linear-gradient(90deg,transparent,#000);pointer-events:none;opacity:.65}
+.frontx-catalogue .page-topline{position:relative;padding-bottom:12px}.frontx-catalogue .page-topline::after{content:"";position:absolute;left:0;bottom:-6px;width:170px;height:8px;background:var(--fx-hatch);mask-image:linear-gradient(90deg,#000,transparent);pointer-events:none}
+[data-frontx-version="1"] .frontx-site:not(.fx-page) .page-intro::after{background:var(--fx-hatch);opacity:.55}
+@media(max-width:1100px){.frontx-site:not(.fx-page) .page-intro::after{width:110px;opacity:.28}.fx-ui-intro::after{display:none}}
+@media(max-width:640px){.fx-comparison::before{width:48%;height:120px;opacity:.25}.frontx-site:not(.fx-page) .page-intro::after{top:15px;right:0;width:80px;height:50px;opacity:.22}.fx-end::after{width:65%;height:25px}}
+
+
+
+
+
+
+
+/* V2 material language: soft light, solid surfaces; technical hatch stays in V1. */
+[data-frontx-version="2"]{--fx-hatch:linear-gradient(110deg,#e7edff,#f0eafa);--fx-dots:radial-gradient(ellipse at 70% 30%,#c3b4f0,transparent 70%);--fx-motif-size:100% 100%}
+
+[data-frontx-version="2"] .change-request::after,
+[data-frontx-version="2"] .fx-ui-intro::after,
+[data-frontx-version="2"] .fx-end::after,
+[data-frontx-version="2"] .template-art::after,
+[data-frontx-version="2"] .docs-path::after,
+[data-frontx-version="2"] .page-topline::after{display:none}
+[data-frontx-version="2"] .frontx-site .template-art{background:radial-gradient(ellipse at 60% 20%,#e9e3fb,transparent 70%),linear-gradient(135deg,#edf2ff,#f6f7fc)}
+[data-frontx-version="2"] .frontx-site .docs-path{background:linear-gradient(130deg,#fff 55%,#f4f1fc)}
+[data-frontx-version="2"] .frontx-site:not(.fx-page) .page-intro::after{width:240px;height:150px;top:15px;opacity:.32;filter:blur(18px);mask-image:none}
+@media(max-width:640px){[data-frontx-version="2"] .frontx-site:not(.fx-page) .page-intro::after{width:100px;height:80px;opacity:.2}}

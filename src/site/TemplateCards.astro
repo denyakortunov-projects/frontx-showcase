@@ -1,0 +1,7 @@
+---
+import {templates} from './content';
+import FeatureGraphic from './FeatureGraphic.astro';
+import {ArrowUpRight,Braces,Plus} from 'lucide-react';
+---
+<div class="template-pair"><div class="template-pair-heading"><h2>Start an application</h2><span>Shell + MFE workspace</span></div><div class="template-grid">{templates.filter(t=>t.slug!=='guardrails').map(t=><a class={`template-card template-${t.slug}`} href={`/templates/${t.slug}/`}><div class="template-art"><FeatureGraphic kind={t.slug==='shell'?'shell':'modules'}/></div><div class="template-body"><h3>{t.name}<ArrowUpRight size={18}/></h3><p>{t.slug==='shell'?'A host for your web app, with routing and navigation.':'Add screens that run inside the host.'}</p></div></a>)}<span class="template-pair-plus" aria-hidden="true"><Plus size={21}/></span></div></div>
+<a class="template-rules" href="/templates/guardrails/"><span><Braces size={27}/></span><div><h2>Add Design Guardrails</h2><p>Design rules, agent guidance and interface checks for an existing project.</p></div><ArrowUpRight size={20}/></a>

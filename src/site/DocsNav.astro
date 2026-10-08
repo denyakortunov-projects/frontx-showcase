@@ -1,7 +1,7 @@
 ---
 import './docs.css';
 const { current } = Astro.props;
-const links = [{id:'overview',href:'/docs/',title:'Overview'},{id:'start',href:'/get-started/',title:'Run Shell + MFE'},{id:'change',href:'/docs/first-change/',title:'First change'}];
+const links = [{id:'overview',href:'/docs/',title:'Overview'},{id:'start',href:'/get-started/',title:'Run Shell + MFE'},{id:'change',href:'/docs/first-change/',title:'First change'},{id:'libraries',href:'/libraries/',title:'Libraries'}];
 ---
 <nav class="docs-nav" aria-label="Documentation guides">
   {links.map(link => <a href={link.href} aria-current={current === link.id ? 'page' : undefined}>{link.title}</a>)}

@@ -36,3 +36,17 @@ export const provenanceNote = '.frontx/provenance.json records which templates a
 export function firstChangeMarkdown() {
   return `# FrontX: ${firstChangeTitle}\n\n${firstChangeDescription}\n\nPrerequisite: ${firstChangePrerequisite}\nQuickstart: /get-started/shell-mfe.md\nTemplate revision: ${templateRef}\n\n${firstChangeSteps.map((s, i) => `## ${i + 1}. ${s.title}\n\n${s.description}${s.id === 'locate' ? '\n\n' + projectFiles.map(f => `- ${f.path}: ${f.role}\n  Source: ${sourceFile(f.path)}`).join('\n') : ''}${'code' in s ? `\n\n\`\`\`${s.kind === 'source' ? 'json' : 'sh'}\n${s.code}\n\`\`\`\n\n${s.result}` : ''}${s.id === 'see' ? `\n\nExpected:\n${editedTranslation.title}\n${editedTranslation.description}\n\nThe menu label stays Blank Home.` : ''}`).join('\n\n')}\n\n## Troubleshooting\n\n${firstChangeTroubleshooting.map(f => `### ${f.title}\n\n${f.text}`).join('\n\n')}\n\n## Keep track of your changes\n\n${provenanceNote}\n\nVerification: the two-string change passed the existing workspace type-check and build on macOS, Node.js 25.1.0 / npm 11.6.2. The unchanged Shell + MFE startup and two-screen route were checked in the preceding quickstart. This is a small edit to a development example; upgrade, new-MFE creation and production integration are outside this guide. See /get-started/#verification for the pinned example's dependency-audit findings.\n`;
 }
+
+
+/** A bounded task, not a claim that an agent or the website executes it. */
+export const firstChangeAgentTask = `Continue in the Shell + MFE project created by the FrontX quickstart.
+
+Read these guides before editing:
+https://frontx.constructor.rocks/get-started/shell-mfe.md
+https://frontx.constructor.rocks/docs/first-change.md
+
+Rename the English Blank Home screen title to "Project overview" and its description to "Your first change is running inside the Shell."
+
+Keep the Blank Home menu entry, the application Shell, shared components and all other translations unchanged. Use the pinned versions from the guides. If the project or prerequisites are missing, explain what is needed before changing anything; do not seed over an existing project.
+
+Run the documented type-check and rebuild the example. Report the changed files, command results and any remaining browser checks. Do not claim the screen works until it has been opened and checked.`;

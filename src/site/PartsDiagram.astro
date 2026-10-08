@@ -1,0 +1,41 @@
+---
+import {ArrowUpRight} from 'lucide-react';
+import './architecture.css';
+---
+<section id="how-it-works" class="arch-section fx-wrap" aria-labelledby="parts-title">
+ <div class="arch-heading"><div><span class="fx-section-label">Inside FrontX</span><h2 id="parts-title">One shell.<br/>Independent screens.</h2></div><p>The Shell hosts your screens. Reuse UI components across them, and apply shared design rules while you build.</p></div>
+ <figure class="arch-map" aria-label="The App Shell contains independent screens. Both can reuse the optional UI Kit. Design Guardrails guide development.">
+  <div class="arch-canvas">
+   <div class="arch-shell"><a href="/templates/shell/">App Shell<ArrowUpRight size={20}/></a><a class="arch-template-link" href="/templates/mfe/">Screen templates<ArrowUpRight size={14}/></a></div>
+   <svg class="arch-links arch-desktop" viewBox="0 0 1120 480" fill="none" aria-hidden="true">
+    <path class="arch-wire" pathLength="1" d="M310 152H378Q402 152 402 176V202Q402 226 426 226H570"/>
+    <path class="arch-wire arch-wire-second" pathLength="1" d="M402 196V304Q402 328 426 328H570"/>
+    <path class="arch-guidance" pathLength="1" d="M310 352H364Q378 352 378 366V386Q378 400 392 400H508"/>
+    <circle class="arch-junction" cx="402" cy="196" r="4"/>
+    <circle class="arch-terminal" cx="310" cy="152" r="5"/><circle class="arch-terminal" cx="570" cy="226" r="5"/><circle class="arch-terminal" cx="570" cy="328" r="5"/>
+    <circle class="arch-terminal arch-terminal-lilac" cx="310" cy="352" r="5"/><circle class="arch-terminal arch-terminal-lilac" cx="508" cy="400" r="5"/>
+   </svg>
+   <svg class="arch-links arch-mobile" viewBox="0 0 360 630" fill="none" aria-hidden="true">
+    <path class="arch-wire" pathLength="1" d="M96 156V180Q96 196 80 196H62Q46 196 46 212V337Q46 353 62 353H82"/>
+    <path class="arch-wire arch-wire-second" pathLength="1" d="M46 270V438Q46 454 62 454H82"/>
+    <path class="arch-guidance" pathLength="1" d="M268 156V200Q268 216 252 216H240V252"/>
+    <circle class="arch-junction" cx="46" cy="270" r="4"/>
+    <circle class="arch-terminal" cx="96" cy="156" r="4"/><circle class="arch-terminal" cx="82" cy="353" r="4"/><circle class="arch-terminal" cx="82" cy="454" r="4"/>
+    <circle class="arch-terminal arch-terminal-lilac" cx="268" cy="156" r="4"/><circle class="arch-terminal arch-terminal-lilac" cx="240" cy="252" r="4"/>
+   </svg>
+   <a class="arch-block arch-kit" href="/showcase/?page=overview"><span class="arch-block-top"><span class="arch-small">Optional</span><ArrowUpRight size={18}/></span><strong>UI Kit</strong><span class="arch-pattern" aria-hidden="true"></span></a>
+   <a class="arch-block arch-guardrails" href="/templates/guardrails/"><span class="arch-block-top"><span class="arch-small">While you build</span><ArrowUpRight size={18}/></span><strong>Design<br/>Guardrails</strong><span class="arch-pattern" aria-hidden="true"></span></a>
+   <a class="arch-block arch-screen arch-screen-a" href="/templates/mfe/" aria-label="Screen A: explore screen templates"><strong>Screen A</strong><ArrowUpRight size={19}/><span class="arch-pattern" aria-hidden="true"></span></a>
+   <a class="arch-block arch-screen arch-screen-b" href="/templates/mfe/" aria-label="Screen B: explore screen templates"><strong>Screen B</strong><ArrowUpRight size={19}/><span class="arch-pattern" aria-hidden="true"></span></a>
+   <span class="arch-reuse">Shared components</span>
+   <span class="arch-rules-label">Shared rules</span>
+  </div>
+ </figure>
+</section>
+<script>
+ const diagrams=document.querySelectorAll<HTMLElement>('.arch-map');
+ window.addEventListener('popstate',()=>{if(location.hash==='#how-it-works')requestAnimationFrame(()=>document.getElementById('how-it-works')?.scrollIntoView({block:'start'}));});
+ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('arch-enter');observer.unobserve(entry.target);}}),{threshold:.3});diagrams.forEach(diagram=>observer.observe(diagram));
+ }
+</script>

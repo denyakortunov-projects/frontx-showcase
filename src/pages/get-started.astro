@@ -2,6 +2,7 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import DocsNav from '../site/DocsNav.astro';
 import ActionLink from '../site/ActionLink';
+import StartPaths from '../site/StartPaths.astro';
 import CodeBlock from '../site/CodeBlock';
 import { repos, coreRef, templateRef } from '../site/content';
 import { cliVersion, quickstartSteps } from '../site/quickstart';
@@ -10,19 +11,20 @@ import { Check, CheckCircle2, ArrowUpRight, Terminal, Layers } from 'lucide-reac
 <SiteLayout title="Get started · FrontX" section="docs">
   <div class="site-container">
     <header class="page-intro">
-      <p class="eyebrow">FRONTX / GET STARTED</p>
+
       <h1>Run Shell + MFE.</h1>
       <p>Start a host application, add its microfrontend workspace, and open the included examples.</p>
       <div class="quickstart-meta">
         <span><Terminal size={14}/> Node.js 25.1.0 · npm 11.6.2</span>
         <span><Layers size={14}/> CLI {cliVersion}</span>
-        <span><CheckCircle2 size={14}/> Local run checked · 6 Oct 2026</span>
+
       </div>
     </header>
     <DocsNav current="start"/>
+    <StartPaths/>
     <div class="page-content quickstart-layout">
       <div class="quickstart-main">
-        <p class="quickstart-status"><CheckCircle2 size={16}/><span>Checked on macOS with the versions above. Commands use a macOS/Linux shell.</span></p>
+        <p class="quickstart-status">Commands use a macOS/Linux shell.</p>
         {quickstartSteps.map((step, index) => (
           <section class="quickstart-step" id={step.id}>
             <div class="step-heading"><span class="step-number">{index + 1}</span><h2>{step.title}</h2></div>
@@ -34,18 +36,19 @@ import { Check, CheckCircle2, ArrowUpRight, Terminal, Layers } from 'lucide-reac
         ))}
         <details class="source-disclosure" id="verification">
           <summary>Versions, verification and limitations</summary>
-          <p>Verified: template download, Shell seed, MFE add, dependency installation, build, type-check, and the Hello World / Blank Home browser flow with Back and reload. Source: <a class="text-link" href={`${repos.templates}/tree/${templateRef}`}>{templateRef.slice(0,8)} <ArrowUpRight size={12}/></a>. Shell 0.1.0-alpha.5; MFE workspace 0.1.0-alpha.2.</p>
+          <p>Tested on macOS with Node.js 25.1.0 and npm 11.6.2. AI Kit setup is documented upstream and was not part of this check. Verified: template download, Shell seed, MFE add, dependency installation, build, type-check, and the Hello World / Blank Home browser flow with Back and reload. Source: <a class="text-link" href={`${repos.templates}/tree/${templateRef}`}>{templateRef.slice(0,8)} <ArrowUpRight size={12}/></a>. Shell 0.1.0-alpha.5; MFE workspace 0.1.0-alpha.2.</p>
           <p>This is a development example. Its installed dependency tree reported 23 npm audit findings (1 low, 11 moderate, 11 high). Those upstream dependencies were left unchanged. Run npm audit and review affected packages before adopting this example. Production deployment, authentication and upgrade flows are outside this verification. Upstream CI targets Node.js 24.14+; that minimum and Windows commands have not been tested locally.</p>
           <p>The <a class="text-link" href={`${repos.templates}/blob/${templateRef}/README.md#consuming-a-template`}>templates README</a> shows <code>seed shell --source …</code> and <code>add mfe --source …</code>, which differ from CLI 0.3.0-alpha.7. These instructions use the published CLI’s verified install → seed → add sequence. After adding MFE, use npm install: the Shell-only lockfile does not yet include the new workspace.</p>
         </details>
-        <section class="quickstart-more" id="next-step"><h2>Make it yours</h2><p class="source-notice">Change the existing Blank Home screen, rebuild it, and see your first edit inside the Shell.</p><ActionLink href="/docs/first-change/" primary>Make your first change</ActionLink></section>
+
         <section class="quickstart-more" id="other-paths">
           <h2>Other ways to use FrontX</h2>
           <div class="guide-grid">
             <article class="guide-card"><h3>Use a library</h3><p>Add individual capabilities to your existing application. UI Kit works independently of the full project structure.</p><ActionLink href="/libraries/">Explore libraries</ActionLink></article>
-            <article class="guide-card" id="ai"><h3>Build with an agent</h3><p>The FrontX AI Kit is installed through Constructor Studio CLI. This separate setup is documented upstream and has not been verified here.</p><ActionLink href={`${repos.frontx}/blob/${coreRef}/QUICK_START.md#ai-tooling`} external>AI Kit documentation</ActionLink></article>
+            <article class="guide-card" id="ai"><h3>Build with an agent</h3><p>Set up FrontX AI Kit through Constructor Studio CLI using the upstream guide.</p><ActionLink href={`${repos.frontx}/blob/${coreRef}/QUICK_START.md#ai-tooling`} external>AI Kit documentation</ActionLink></article>
           </div>
         </section>
+        <section class="quickstart-next" id="next-step"><h2>Make it yours</h2><p>Change the existing Blank Home screen, rebuild it, and see your first edit inside the Shell.</p><ActionLink href="/docs/first-change/" primary>Make your first change</ActionLink></section>
       </div>
       <aside class="quickstart-aside">
         <div class="detail-panel">

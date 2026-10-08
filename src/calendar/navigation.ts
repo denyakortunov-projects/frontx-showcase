@@ -80,7 +80,7 @@ export function useShowcaseQuery() {
   const update = async (values: Record<string, string>) => {
     if (pending.current) return;
     const onlyAppearance = Object.keys(values).every((k) =>
-      ["mode", "theme", "calDensity", "calWidth", "calHeight"].includes(k),
+      ["v", "mode", "theme", "calDensity", "calWidth", "calHeight"].includes(k),
     );
     if (!onlyAppearance && guards.size && !(await mayLeave())) return;
     const p = new URLSearchParams(location.search);
@@ -90,7 +90,7 @@ export function useShowcaseQuery() {
     history.pushState(
       { frontxIndex: index.current },
       "",
-      `${location.pathname}?${p}`,
+      `${location.pathname}?${p}${onlyAppearance ? location.hash : ""}`,
     );
     setQuery(p);
   };

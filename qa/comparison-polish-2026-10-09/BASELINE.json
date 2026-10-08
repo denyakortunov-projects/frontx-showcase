@@ -1,0 +1,10 @@
+{
+  "fingerprint": "3a639e8b0986d04776dac165cd94c83fe207836ffdd6ff0a2dffa2fb100740c1",
+  "matches": {
+    "src/site/ComparisonMetrics.tsx": true,
+    "src/site/comparison.css": true,
+    "src/site/UIKitPlayground.tsx": true,
+    "src/site/ChangeWalkthrough.astro": true,
+    "src/site/story.css": true
+  }
+}

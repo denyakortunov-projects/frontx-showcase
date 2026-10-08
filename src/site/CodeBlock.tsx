@@ -1,3 +1,4 @@
+import './code-block.css';
 import { useEffect, useState } from 'react';
 import { Button } from '@gears-frontx/ui-kit/button';
 import { Check, Copy } from 'lucide-react';

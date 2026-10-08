@@ -1,0 +1,13 @@
+{
+  "baseline": "3a639e8b0986d04776dac165cd94c83fe207836ffdd6ff0a2dffa2fb100740c1",
+  "stage": "/private/tmp/frontx-polish-release-20261009",
+  "included": {
+    "src/site/ComparisonMetrics.tsx": "71bcfcfdd10055bff62a0f925d2795abc9cafae8333fb1068a7373866d2e01cc",
+    "src/site/comparison.css": "7f8feee204499fa2d6daf6aa3e6e07190b5ba758ae37a4baa0665034fe2a7419",
+    "src/site/chart-palette.ts": "fb6fc2da8ef9daeb1384c7db0eba0cd78f2b2b952603efb5eb734482dae43810",
+    "src/site/UIKitPlayground.tsx": "f5e9221d45ae3388c9fd96b4f52ab4574a29e276fda7666912aed0e81d6205b9",
+    "src/site/ChangeWalkthrough.astro": "46d29e7a47de7bea29a5ddf354226610485cd531fc87bf86d83e635041e6d94b",
+    "src/site/story.css": "883fe784415cf588ff5a29e661b203614e4e8b005dbaa4e227c5e65de1de0604"
+  },
+  "excluded": "unrelated workspace changes, duplicated sources, design originals, internal QA and credentials"
+}

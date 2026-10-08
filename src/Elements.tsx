@@ -1,5 +1,6 @@
+import {componentCatalogue} from "./showcase/component-catalogue";
 import { SectionTabs } from "./showcase/SectionTabs";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -98,21 +99,40 @@ function Example({
   children: ReactNode;
   className?: string;
 }) {
+  const id = `component-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
   return (
-    <article className={`elements-card ${className}`}>
+    <article id={id} tabIndex={-1} aria-labelledby={`${id}-title`} className={`elements-card ${className}`}>
       <header className="elements-card-head">
         <span className="elements-number">{number}</span>
         <div className="elements-card-copy">
-          <h2 className="showcase-card-title">{title}</h2>
+          <h2 id={`${id}-title`} className="showcase-card-title">{title}</h2>
           <p>{description}</p>
         </div>
       </header>
       <div className="elements-stage">{children}</div>
+      {componentCatalogue.some(c=>`component-${c.id}`===id)&&<a className="element-use-link" href={`?page=component&component=${id.replace("component-","")}`}>Use this component<ArrowUpRight size={14}/></a>}
     </article>
   );
 }
 
 export function Elements() {
+  useEffect(() => {
+    let frame = 0;
+    const revealComponent = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const id = window.location.hash.slice(1);
+        if (!/^component-[a-z-]+$/.test(id)) return;
+        const card = document.getElementById(id);
+        if (!card) return;
+        card.scrollIntoView({ block: "start", behavior: "instant" });
+        card.focus({ preventScroll: true });
+      });
+    };
+    revealComponent();
+    window.addEventListener("hashchange", revealComponent);
+    return () => { cancelAnimationFrame(frame); window.removeEventListener("hashchange", revealComponent); };
+  }, []);
   const [activeTab, setActiveTab] = useState("overview");
   const [score, setScore] = useState(64);
   const [notifications, setNotifications] = useState(true);

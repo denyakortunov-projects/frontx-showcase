@@ -1,0 +1,15 @@
+/* All cards share the same header, value, chart and explanation rows. */
+.comparison-dashboard{margin-top:32px}
+.comparison-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.comparison-metric{display:grid;grid-template-rows:44px 56px 104px 1fr;gap:24px;min-width:0;padding:24px;border:1px solid var(--fx-line);border-radius:12px;background:#fff}
+.metric-title{display:flex;align-items:start;justify-content:space-between;gap:12px}
+.fx-page .metric-title h3{font-size:15px;line-height:1.4;letter-spacing:-.02em;color:var(--fx-ink)}
+.metric-title>span{font-size:11px;line-height:1.9;color:#48566b;white-space:nowrap}
+.metric-benefit{display:flex;align-items:center;gap:12px;color:var(--fx-blue)}
+.metric-benefit strong{font-size:40px;line-height:1.1;font-weight:600;letter-spacing:-.05em;white-space:nowrap}
+.metric-benefit>span{font-size:13px;line-height:1.5;max-width:104px;color:#48566b}
+.metric-chart{height:104px;min-width:0;width:100%;aspect-ratio:auto}
+.comparison-metric .metric-explanation{font-size:14px;line-height:1.6;color:#48566b;border-top:1px solid var(--fx-line);padding-top:24px;margin:0}
+@media(max-width:1100px){.comparison-metrics{gap:16px}.comparison-metric{padding:20px;grid-template-rows:64px 56px 104px 1fr}.metric-title{display:block}.metric-title>span{display:block}.metric-benefit{gap:8px}.metric-benefit strong{font-size:34px}}
+@media(max-width:900px){.comparison-metrics{grid-template-columns:1fr}.comparison-metric{padding:24px;grid-template-rows:auto 56px 104px auto}.metric-title{display:flex}.metric-benefit strong{font-size:40px}}
+@media(max-width:360px){.comparison-metric{padding:20px;grid-template-rows:64px 56px 104px 1fr}.metric-title{display:block}.metric-benefit strong{font-size:36px}}

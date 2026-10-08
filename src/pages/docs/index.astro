@@ -15,10 +15,10 @@ const paths = [
     <header class="page-intro"><h1>Build with FrontX.</h1><p>Start with a project template, or bring individual libraries into your application.</p></header>
     <DocsNav current="overview"/>
     <div class="page-content">
-      <div class="docs-paths">{paths.map((path,i)=><a class="guide-card docs-path" href={path.href}><div class="docs-path-top"><path.icon size={24}/><span>0{i+1}</span></div><p class="docs-path-label">{path.label}</p><h2>{path.title}</h2><p>{path.description}</p><span class="docs-path-arrow" aria-hidden="true"><ArrowRight size={18}/></span></a>)}</div>
+      <div class="docs-paths">{paths.map((path,i)=><a class="guide-card docs-path" href={path.href}><div class="docs-path-top"><path.icon size={24}/></div><h2>{path.title}</h2><p>{path.description}</p><span class="docs-path-arrow" aria-hidden="true"><ArrowRight size={18}/></span></a>)}</div>
       <section class="docs-reference"><h2>Source & tools</h2><div class="guide-grid">
         <article class="guide-card"><h3>Understand the templates</h3><p>Browse selected source files and run the composed Shell + MFE example before installing.</p><ActionLink href="/templates/">Explore templates</ActionLink></article>
-        <article class="guide-card"><h3>Work with an agent</h3><p>The guides are also available as plain text. FrontX AI Kit has its own setup through Constructor Studio CLI; that path is documented upstream.</p><a class="text-link" href={`${repos.frontx}/blob/${coreRef}/QUICK_START.md#ai-tooling`}>AI Kit documentation <ArrowUpRight size={14}/></a></article>
+        <article class="guide-card"><h3>Work with an agent</h3><p>Use a focused task with the first-change guide. AI Kit setup is documented separately.</p><p><a class="text-link" href="/docs/first-change/#agent-task">Get the first-change task <ArrowRight size={14}/></a></p><a class="text-link" href={`${repos.frontx}/blob/${coreRef}/QUICK_START.md#ai-tooling`}>AI Kit documentation <ArrowUpRight size={14}/></a></article>
       </div></section>
     </div>
   </div>
